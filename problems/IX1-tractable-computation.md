@@ -18,6 +18,10 @@ incomplete locking, consistent with a defected state in a small box."
   periods per direction). Track: D₄ spectral power vs. annealing step,
   single-crystal vs. poly-crystal final states, triad phase-locking order
   parameter.
+- **Baseline:** `verification/irh93_pkg2/sim7_fairtest.py` — the v93.0
+  fair-test implementation (D₄ 77.1% direct quench, 89.5% annealed and still
+  rising at step 14000; control 21% vs 79%). Extend it; do not reimplement
+  from scratch. Keep its parameter conventions ($L=2\pi$, $q_0^2=7.5$).
 - Pass criterion (from VI.1): phase locking "should drive toward unity" in larger
   volume. If it saturates well below 1, the locking claim weakens and the defect
   density becomes the story.
@@ -42,6 +46,11 @@ nucleation event).
   ball of radius $R$ in a disordered background, relax under conserved (Model B)
   dynamics, and find the $R$ at which the droplet grows rather than collapses.
   Barrier height = free-energy difference at the critical radius.
+- **Seeded-state protocol:** `verification/irh93_pkg2/sim6_units.py` — the
+  II.8 implementation (seed all 24 modes in phase at $A^*=0.0776$,
+  $\bar\psi=-0.18$, $L=\pi$, $q_0^2=8.0$; Model B holds to four significant
+  figures). Start droplet runs from this protocol. Note the unit convention:
+  $q_0^2=8.0$ requires $L=\pi$ (see `verification/README.md`).
 - Vary $\bar\psi$ across the band ($-0.33 \lesssim \bar\psi \lesssim 0.03$) and map
   barrier height vs. position in the band; near the linearly-unstable edge
   ($\bar\psi \approx -0.10$) the barrier should vanish — check.

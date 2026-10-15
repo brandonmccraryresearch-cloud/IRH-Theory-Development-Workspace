@@ -64,3 +64,12 @@ section is given for the full argument.
 - Independent re-derivation of load-bearing claims — §VI-A.1.
 - Lean 4 formalization, machine-checked end to end (no sorry/admit/axiom) —
   §VI-A.2.
+- **Executed record:** `verification/irh93_pkg2/` — `verify_claims.py` (51/51
+  checks passed: root enumeration, moment isotropy, resonance maximum, shell
+  combinatorics, selection exact rationals, stationary state, CFL bound,
+  dispersion identity, cross-section, Weyl groups, quaternion checks);
+  `sim6_units.py` (II.8 seeded-state reproduction, Model B holds / Model A
+  drifts, matching the paper to all quoted digits); `sim7_fairtest.py` (II.6
+  fair test: cubic term flips the winner, 77.1% vs 21.1% control, 89.5%
+  annealed); `lean/` (8 modules, `lake build` exit 0); `FINAL_AUDIT.md` (full
+  report + v93.0 re-verification addendum). See `verification/README.md`.
