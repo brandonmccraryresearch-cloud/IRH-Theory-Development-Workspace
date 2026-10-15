@@ -8,8 +8,13 @@ never by convenience.
 ## Excluded by theorem
 
 - **𝔰𝔬(8) as gauge algebra** — two independent proofs (§IV.1): chirality
-  ($-1 \in W(D_4)$, all representations real) and embedding (Borel–de
-  Siebenthal: no maximal-rank subalgebra contains 𝔰𝔲(3)⊕𝔰𝔲(2)).
+  ($-1 \in W(D_4)$, formalized in `verification/lean/Irh/WeylD4.lean`, implies
+  every irrep is self-conjugate, hence none complex, hence vector-like — the
+  manuscript's stronger "all representations real" is not established by the
+  Weyl fact alone and is not needed for the no-go; see
+  `verification/AUDIT_2026-10-15.md` §2) and embedding (Borel–de
+  Siebenthal: no maximal-rank subalgebra contains 𝔰𝔲(3)⊕𝔰𝔲(2) — prose-level,
+  cited, not formalized).
 - **Standard Model embedding in 𝔰𝔬(8)** by any route; **Pati–Salam from
   𝔰𝔬(8)** (rank 5 cannot come from rank 4; the v92 cascade also increased
   dimension 15→21).
