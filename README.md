@@ -32,6 +32,10 @@ closed claims. The open problems are the research focus.
   v93/v93.0 audit — `verify_claims.py` (51/51 checks), `sim6_units.py`,
   `sim7_fairtest.py`, `FINAL_AUDIT.md`, and the 8-module Lean 4 development).
   See `verification/README.md` for the contents map and the conventions it fixes.
+  `verification/AUDIT_2026-10-15.md` records CAIC's independent re-verification
+  of the external consolidated audit (confirmed/refined/downgraded per item),
+  including manuscript errata flagged for a future revision (τ-ratio, CFL table
+  labels) and the executed 32-maximum proof.
 
 ## The two sharpest questions (§IX.5)
 

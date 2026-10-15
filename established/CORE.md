@@ -10,7 +10,8 @@ section is given for the full argument.
 
 - D₄ isotropic through 4th order (exact; spherical 5-design) — §II.1.
 - D₄ isodual; unique interference maximum (modulo lattice periodicity; 32
-  periodic images on the $16^4$ grid) — §II.2.
+  periodic images on the $16^4$ grid — proved by exhaustive enumeration in
+  `verification/reconcile_resonance_count.py`, exit 0) — §II.2.
 - Selection criterion $S = \tau^2/q_4$ parameter-free in $u,v$; BCC recovered
   in 3D (Alexander–McTague) — §II.3–II.4.
 - D₄ selected in 4D: $S = 64/141 \approx 0.454$, exact rationals, 17.3% margin
@@ -35,7 +36,7 @@ section is given for the full argument.
 - Conserved (Model B) dynamics required; $\bar\psi$ preserved to
   $8.3\times10^{-17}$ — §I.3.
 - Exact dispersion, Hamiltonian positivity, CFL bound
-  $\Delta t \le \sqrt{3/2}\,a_0/c$ (worst-case spatial sum exactly 32) —
+  $\Delta t \le \frac{\sqrt{3}}{2}\,a_0/c$ (worst-case spatial sum exactly 32) —
   §III.1–III.2.
 - Corrected envelope equation + quantified validity ($<1\%$ for
   $a_0|\mathbf{k}| \lesssim 0.3$) — §III.3.
