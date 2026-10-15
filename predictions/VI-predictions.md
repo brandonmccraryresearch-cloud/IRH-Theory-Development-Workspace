@@ -17,7 +17,7 @@ locking, consistent with a defected state in a small box."
 **Test.** Larger volume should drive this toward unity (→ problem 1.1).
 **Fail criterion:** locking saturates well below 1 in the large-volume limit.
 
-**Baseline implementation.** `verification/irh93_pkg2/sim7_fairtest.py` — the
+**Baseline implementation.** `verification/sim7_fairtest.py` — the
 II.6 fair test at v93.0 fully-specified parameters ($16^4$, $L=2\pi$,
 $q_0^2=7.5$, D₄ vs. triad-free competitor at degenerate linear penalty).
 Larger-volume runs extend this script; keep its parameter conventions.
@@ -57,9 +57,9 @@ sum exactly 32).
 **Fail criterion:** a stable run above the bound (would indicate an error in
 the derivation).
 
-**Baseline implementation.** Both `verification/irh93_pkg2/sim6_units.py` and
+**Baseline implementation.** Both `verification/sim6_units.py` and
 `sim7_fairtest.py` run within the bound ($\Delta t = 0.05$); the Lean module
-`verification/irh93_pkg2/lean/Irh/CFL.lean` machine-checks it.
+`verification/lean/Irh/CFL.lean` machine-checks it.
 
 ## VI.5 Isotropy to fourth order — a prediction of absence
 
