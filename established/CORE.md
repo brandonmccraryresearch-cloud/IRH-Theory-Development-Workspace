@@ -64,7 +64,7 @@ section is given for the full argument.
 - Independent re-derivation of load-bearing claims — §VI-A.1.
 - Lean 4 formalization, machine-checked end to end (no sorry/admit/axiom) —
   §VI-A.2.
-- **Executed record:** `verification/irh93_pkg2/` — `verify_claims.py` (51/51
+- **Executed record:** `verification/` — `verify_claims.py` (51/51
   checks passed: root enumeration, moment isotropy, resonance maximum, shell
   combinatorics, selection exact rationals, stationary state, CFL bound,
   dispersion identity, cross-section, Weyl groups, quaternion checks);

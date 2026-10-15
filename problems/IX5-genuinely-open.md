@@ -66,8 +66,8 @@ framework without a beginning.
   the numbers determine what kind of seed is needed (a rare thermal
   fluctuation? a pre-existing defect?). The II.9 consistency check
   ($r_{\mathrm{eff}}=+0.107>0$ confirmed) is in
-  `verification/irh93_pkg2/FINAL_AUDIT.md` Part 2; droplet simulations extend
-  the `verification/irh93_pkg2/sim6_units.py` seeded-state protocol.
+  `verification/FINAL_AUDIT.md` Part 2; droplet simulations extend
+  the `verification/sim6_units.py` seeded-state protocol.
 - **The linearly-unstable path:** at lower $|\bar\psi|$ ($\bar\psi \approx
   -0.10$, $r_{\mathrm{eff}} < 0$) the disordered state is linearly unstable and
   the pattern *grows from noise* — no nucleation needed. A cosmological
