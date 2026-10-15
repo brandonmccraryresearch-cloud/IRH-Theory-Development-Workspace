@@ -49,6 +49,51 @@ $\mathbf{24}$, $\mathbf{5}\oplus\bar{\mathbf{5}}$. **$H_{78}$ carries no VEV
 in the corrected chain — redundant as written** (load-bearing only in the
 $U(1)$-preserving variant). The "minimal" label is unsupported.
 
+## Correction (2026-10-15, post Gemini adversarial audit) — RETRACTION
+
+The "Minimality" section above contains a **false claim**, caught by the
+Gemini Spark adversarial audit ("Renormalizable Scalar Potential
+Analysis," 2026-10-15). Corrected as follows; the VEV-inconsistency
+findings (steps 1–2, 66 Goldstones) are **unchanged**.
+
+**Retracted:** "$H_{78}$ carries no VEV in the corrected chain — redundant
+as written."
+
+**Why it is false:** under $SU(5)$, $\mathbf{27} =
+\mathbf{1}\oplus\mathbf{1}\oplus\mathbf{5}\oplus\bar{\mathbf{5}}\oplus
+\bar{\mathbf{5}}\oplus\mathbf{10}$ (via $\mathbf{27} =
+\mathbf{16}\oplus\mathbf{10}\oplus\mathbf{1}$ under $SO(10)$). Every SM
+singlet $(\mathbf{1},\mathbf{1})_{0}$ in the $\mathbf{27}$ is one of the two
+$SU(5)$ singlets. Hence **no number of $\mathbf{27}/\overline{\mathbf{27}}$
+VEVs can break $SU(5) \to$ SM** — all 24 $SU(5)$ generators annihilate them
+(54 Goldstones max). Step 3's $\langle H_{24}\rangle$ in
+$(\mathbf{1},\mathbf{1})_{0}$ must come from a representation containing
+$\mathbf{24}\subset SU(5)$: minimally $H_{78}$ ($\mathbf{78}\supset
+\mathbf{45}_{0}\supset\mathbf{24}_{(0,0)}$), or $\mathbf{650}$/
+$\mathbf{351}'$. **$H_{78}$ is load-bearing for stage 3, not redundant.**
+
+**Refinement (two $\mathbf{27}$s required):** the two $SU(5)$-singlet
+directions $e_{1}, e_{2}\subset\mathbf{27}$ form an $\mathfrak{su}(2)$
+doublet (under $\mathfrak{su}(2)\subset\mathfrak{su}(6)\oplus\mathfrak{su}(2)
+\subset\mathfrak{e}_{6}$). Any VEV $v_{1}e_{1}+v_{2}e_{2}$ inside a
+**single** $\mathbf{27}$ is $E_{6}$-gauge-equivalent to a single direction,
+giving only $SO(10)$ (33 Goldstones), never $SU(5)$. Steps 1–2 therefore
+require **two linearly independent multiplets**
+$\Phi_{1},\Phi_{2}\in\mathbf{27}$ (the note's "$H_{16}$" is the
+$\mathbf{16}\subset\mathbf{27}$ of the second multiplet).
+
+**Consequence for stage 3 (Gemini no-go, tree level):** with field content
+$\{\Phi_{1},\Phi_{2}\in\mathbf{27}, H\in\mathbf{78}\}$, the tree-level
+$d\le4$ potential restricted to $H\in\mathfrak{su}(5)$ depends only on
+$\operatorname{Tr}(H^{2})$ — $E_{6}$ has Casimir degrees
+$\{2,5,6,8,9,12\}$, so $\operatorname{Tr}_{27}(H^{4})\equiv
+\frac{1}{12}[\operatorname{Tr}_{27}(H^{2})]^{2}$ identically (Okubo) —
+giving an accidental $O(24)$ symmetry that cannot select the SM vacuum
+over $SU(4)\times U(1)$ (11 pseudo-Goldstones). Stage 3 at tree level
+requires either 1-loop Coleman–Weinberg / $d{=}6$ $\operatorname{Tr}(H^{6})$
+or upgrading to $\Phi_{650}$/$\Phi_{351'}$. Decision pending (see main
+chat 2026-10-15).
+
 ## What remains (unchanged)
 
 Scalar potential and vacuum alignment; what sets $v_1, v_2, v_3$; explicit
