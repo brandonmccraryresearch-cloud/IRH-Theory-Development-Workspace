@@ -1,4 +1,4 @@
-# Independent Verification Package — `irh93_pkg2`
+# Independent Verification Package
 
 **Source:** independent verification audit of *Intrinsic Resonance Holography*
 v93/v93.0 by Enigma, 2026-09-17. Supplied by the author; preserved here
