@@ -28,6 +28,10 @@ closed claims. The open problems are the research focus.
   them as such.
 - `established/CORE.md` — the verified geometric core (Part VIII.1), compressed to
   the facts new work may build on without re-derivation.
+- `verification/` — the independent verification package (`irh93_pkg2`: Enigma's
+  v93/v93.0 audit — `verify_claims.py` (51/51 checks), `sim6_units.py`,
+  `sim7_fairtest.py`, `FINAL_AUDIT.md`, and the 8-module Lean 4 development).
+  See `verification/README.md` for the contents map and the conventions it fixes.
 
 ## The two sharpest questions (§IX.5)
 
