@@ -14,7 +14,7 @@ physics has to come from.
 baseline tension $\bar\psi$ is an initial datum rather than a tuned coupling —
 which reclassifies the fine-tuning objection as a cosmological
 initial-condition question, "a different and weaker charge." But no mechanism
-sets its value, so whether occupying the D₄ band is a prediction or a tuning
+sets its value, so whether occupying the $D_{4}$ band is a prediction or a tuning
 remains undetermined.
 
 **Why it is sharp.** The entire selection result is conditional on
@@ -44,7 +44,7 @@ as dynamics.
   theory's character.
 
 **Done looks like:** a mechanism (dynamical or cosmological) that places
-$\bar\psi$ in the D₄ band, with the residual tuning quantified — or a theorem
+$\bar\psi$ in the $D_{4}$ band, with the residual tuning quantified — or a theorem
 that no such mechanism exists within the framework's dynamics, promoting the
 band occupancy to a stated cosmological input.
 
@@ -52,17 +52,17 @@ band occupancy to a stated cosmological input.
 
 **The problem, in the paper's words.** The transition is first order (§II.9):
 at $\bar\psi=-0.18$, $r_{\mathrm{eff}}=+0.107>0$, the disordered state is
-linearly stable, and the D₄ phase must be nucleated across a barrier.
+linearly stable, and the $D_{4}$ phase must be nucleated across a barrier.
 "Spontaneous emergence from a featureless substrate does not occur at the
 relevant baseline tension."
 
 **Why it is sharp.** The framework's origin story — "spacetime crystallizes
-from noise" — is literally false at the baseline tension where the D₄ phase is
+from noise" — is literally false at the baseline tension where the $D_{4}$ phase is
 the global minimum. Something must seed it. An unanswered 5.2 leaves the
 framework without a beginning.
 
 **Attack routes.**
-- **Computational (→ 1.2):** barrier height and critical droplet size first —
+- **Computational $(\to 1.2)$:** barrier height and critical droplet size first —
   the numbers determine what kind of seed is needed (a rare thermal
   fluctuation? a pre-existing defect?). The II.9 consistency check
   ($r_{\mathrm{eff}}=+0.107>0$ confirmed) is in
@@ -77,7 +77,7 @@ framework without a beginning.
 - **Seed inventory:** topological defects as nucleation sites (cf. 1.4 —
   dislocation sheets and point solitons pre-exist in the disordered phase?);
   collisions; external driving during a quench.
-- **Inflationary embedding (→ 3.4):** if the framework needs inflation for
+- **Inflationary embedding $(\to 3.4)$:** if the framework needs inflation for
   monopoles anyway, the inflaton dynamics may supply the seed or the
   $\bar\psi$ trajectory. One early-universe story, not three.
 

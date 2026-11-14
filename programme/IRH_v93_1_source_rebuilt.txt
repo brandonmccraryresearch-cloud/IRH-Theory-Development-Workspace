@@ -1,0 +1,1639 @@
+     Intrinsic Resonance Holography:
+Dynamical Selection of a D4 Substrate from Interference Dynamics
+                                         Version 93.1
+
+
+                              Brandon D. McCrary
+                    Independent Theoretical Physics Researcher
+                              ORCID: 0009-0008-2804-7165
+                             Independent Verification Data
+ https://drive.google.com/file/d/1Sxkginzo_UmNrNETfunLK8_XUq4tbuXb/view?usp=drivesdk
+
+
+                                    September 17, 2026
+
+
+                                            Abstract
+
+     Intrinsic Resonance Holography proposes that the structure of physical reality rests on a
+ self-organizing oscillatory substrate whose stable interference pattern is the D4 root lattice.
+ This document is the complete consolidated statement of the framework following five
+ independent verification cycles, in which every load-bearing claim was either re-derived by
+ executed computation, validated against a known limiting case, confirmed by simulation,
+ excluded by theorem, or — new in this version — machine-checked in Lean 4.
+     The framework in this version differs from v92 in kind, not merely in detail. Its central
+ ontological commitment has changed: D4 is no longer a postulated static lattice but the
+ nodal interference pattern of a field obeying tension–relaxation dynamics. That reformu-
+ lation removes a primitive, dissolves a standing circularity objection at its root rather than
+ patching it, and supplies the selection mechanism the static formulation never possessed.
+     What is now established. The D4 pattern is selected dynamically rather than assumed,
+ by a parameter-free criterion 𝑆 = 𝜏 2 /𝑞4 derived symbolically, validated by recovering the
+ Alexander–McTague BCC result in three dimensions [1], applied in four where D4 wins at
+ 𝑆 = 0.454 with selection quantities that are exact rationals and simple radicals (64/141,
+ 16/45, 73/423, 𝜏𝐷 /𝜏BCC = √2) rather than fitted decimals, confirmed by direct simulation
+                     4
+ from random initial conditions, and independently corroborated by a published molecular-
+ dynamics result obtained by an unrelated method [40]. An independent mechanism-level
+ reproduction finds 77.1% of spectral power on D4 with triads active versus 21.1% with
+ triads removed, rising to 89.5% under annealing — establishing the cubic triad term as
+ the causal selection mechanism. The full 24-mode standing wave is a genuine dynami-
+ cal attractor with relaxed free energy 𝐹/𝑉 = −0.0077276, reproduced independently at
+ −0.007728. The resonance maximum is unique modulo lattice periodicity (32 periodic
+ maxima on the 164 grid); the transition is first order. The lattice constant 𝑎0 = 2𝜋/𝑞0 is
+ derived rather than postulated. Four-dimensionality acquires a new structural argument:
+ the Swift–Hohenberg [2] curvature term is exactly scale-invariant at 𝑑 = 4. The gauge alge-
+ bra is identified as 𝐸6 , read off the pattern’s own group structure via the binary tetrahedral
+ group and the McKay correspondence [3] rather than imposed to fit a target. The geomet-
+ ric core is now machine-checked: eight Lean 4 modules compile cleanly with no sorry,
+ admit, or axiom.
+     What is excluded by theorem. SO(8) cannot be the gauge algebra, by two independent
+ proofs. The Standard Model algebra does not embed in 𝑠𝑜(8) by any route. The anisotropy
+
+
+                                               1
+     coefficient 𝜉2 = −1/384 is not derivable from the stated lattice. Both time-step values
+     stated in v92 violate the framework’s own stability bound. Three generations is not a de-
+     rived result: five candidate mechanisms were tested and all five are closed. Monopole
+     absence, claimed in earlier versions, is inconsistent with an 𝐸6 gauge group.
+         What remains open is stated exhaustively in § IX, classified by the type of work each item
+     requires. Every correction made during verification — including corrections to the author’s
+     own prior output — is recorded in the appendices, and every externally attributable claim
+     carries a linked numerical citation.
+         The framework claims substantially less than v92 did. What it now claims has been
+     checked — by hand, by simulation, by independent reproduction, and now by machine.
+
+
+
+Source rebuild — read first
+
+Font check (rebuild apparatus): 𝑥 ∈ 𝐴 ∖ 𝐵 , subscript-a glyph ₐ, 𝐷4 , 𝜏 , 𝑞4 . All three required
+glyphs (U+2208, U+2216, U+2090) render in this document: ∈ from Fira Math, ∖ from the Noto
+Sans Math fallback, ₐ from the Noto Sans text fallback.
+This document is a rebuild of IRH v93.1 from the author’s supplied source package (2026-11-05),
+not from PDF extraction. The authoring source is the Markdown manuscript paper_v931.md;
+the shipped IRH_v93_1.tex is generated from it by the supplied md2tex.py, which regen-
+erates the shipped .tex byte-identically (verified 2026-11-05). The shipped .tex is used here
+as the base, verbatim except for the items below. The ten supplied figures figs/fig01--
+fig10.png are used as-is.
+Font rule. Fira Sans (text), Fira Mono (code), Fira Math (math, Scale=1.15), no synthetic bold;
+Noto Sans / Noto Sans Math fallback for missing glyphs only (grounded in fontTools cmap
+evidence). The shipped source used Noto Sans / Latin Modern Math with a fonts/ directory
+that is not in the supplied package, so the shipped .tex does not compile as-shipped in this
+environment; the Fira substitution also repairs that.
+“Expansion (source rebuild)” passages show step-by-step arithmetic the source text skips.
+They add no new physical claim. Every number in them was verified in this leg with SymPy
+1.14.0, with python-flint / Singular as second tool for load-bearing claims; see the rebuild log.
+Two open questions from the earlier PDF-rebuild, answered from the source .tex:
+
+   • The 11.85% vs 11.90% band (§II.7). The source genuinely contains both values; this is not
+     a PDF-text garble. The headline PREDICTION states 11.85% of the scanned plane, and
+     the qualification states “This qualification must accompany every citation of the 11.85%
+     figure.” The sixth-order paragraph then states “(11.90% at 𝑤6 = 0 to 8.47% at 𝑤6 =
+     0.2)…The 𝑤6 = 0 value independently reproduces the 11.85% obtained by different code”
+     — so the 𝑤6 = 0 band value is stated as both 11.90% and 11.85%, and Appendix A item
+     8 calls 11.9% “the correct” value. The discrepancy is 0.05 percentage points, consistent
+     with two code paths differing in rounding, but the source does not say that. This rebuild
+     keeps 11.85% as the headline figure and flags the inconsistency; it does not resolve it.
+     Which value is canonical is a decision for the author.
+
+   • 𝜏𝐷 /𝜏BCC . The source .tex states √2 everywhere: abstract, §II.5 (“in ratio exactly √2”),
+        4
+
+     and §VI-A.1. The shipped PDF renders √2 as well; the earlier PDF-rebuild’s “correction” of
+     a stated 2 addressed a pdftotext-layout artifact (the radical prints on its own layout line),
+     not a source error. No correction was needed or made here. The exact ratio 𝜏𝐷 /𝜏BCC =
+                                                                                               4
+     √2 is verified symbolically in this leg.
+
+                                                   2
+Source defects fixed in this rebuild (all present in the shipped PDF as well). In the abstract,
+the shipped .tex contains \\hyperref[ref-40]{[40]} (double backslash, dashed label),
+which renders literally as “hyperref[ref-40][40]” in the shipped PDF; it is corrected here to \hy-
+perref[ref40]{[40]}. The same sentence’s [ref-1], [ref-2], [ref-3] use dashed la-
+bels that do not exist (labels are ref1, ref2, ref3); they are corrected to the undashed labels.
+No other manuscript text was altered.
+Grade discipline (HLRE v5). No claim’s grade is changed by this rebuild. The D4 /triality/2T–
+McKay–E6 /Swift–Hohenberg mathematics is Grade A; the physical/substrate reading is graded
+≤ C/D; three generations is an INPUT, not a derived result; Perelman’s 𝜏 is not IRH’s 𝜏 ; 𝑆 =
+64/141 is shell combinatorics, not an entropy, and is never identified with Perelman’s 𝑊 .
+
+
+
+
+How to Read This Document
+
+Part I states the ontological reformulation and its immediate consequences. Parts II–III present
+the geometric and dynamical core, which contains the strongest results. Part IV presents the
+algebraic sector, including the exclusion theorem and the gauge decision. Part V covers matter
+and defects, including the negative result on generations. Part VI lists falsifiable predictions.
+Part VII states retractions from v92. Parts VIII–IX give the complete claim ledger and open-
+problem register. Appendices record every correction made during verification, including cor-
+rections to this author’s own prior output.
+Epistemic labels used throughout:
+
+   • DERIVATION — follows from stated assumptions with no empirical input
+
+   • PREDICTION — falsifiable model output, independent of the data compared against
+
+   • CALIBRATION — a parameter adjusted to match data; never presented as a prediction
+
+   • INPUT — an assumption, explicitly acknowledged as such
+
+   • EXCLUDED — ruled out by proof
+
+   • OPEN — a well-posed question not resolved here
+
+A claim carrying no label has not been graded and should be treated as unsupported.
+
+
+
+PART I — THE ONTOLOGICAL REFORMULATION
+
+I.1 Why the Static Formulation Failed
+
+Version 92 treated D₄ as a static four-dimensional lattice with fields defined at sites, 𝜙(𝑛, 𝑠)
+for 𝑛 ∈ Λ𝐷 . Three independent objections were raised against that formulation and all three
+           4
+are sustained.
+
+
+                                                3
+Figure 1: Figure 1. The logical architecture of the framework. Arrows indicate dependency:
+an item cannot be established before those above it. The forcing result at the centre is what
+compelled the introduction of internal structure and therefore the gauge decision of Part IV.
+
+
+The primitives were circular. The framework designated 𝑎0 and Ω𝑃 as primitive but defined
+them as 𝑎0 = 𝐿𝑃 /√24 and Ω𝑃 = √24 𝑐/𝐿𝑃 with 𝐿𝑃 = √ℏ𝐺/𝑐 3 . These are re-expressions
+of measured Planck-scale quantities, not independent microscopic inputs. The triad relations
+𝑐 = 𝑎0 Ω𝑃 , ℏ = 𝑀∗ 𝑐𝑎0 , 𝐺 = 24𝑐 2 𝑎0 /𝑀∗ are algebraically consistent once the definitions are
+chosen, but a change of variables is not a derivation of the constants.
+The lattice was not selected. No mechanism explained why the substrate would adopt D₄
+periodicity rather than ℤ4 or any other lattice. D₄ was chosen because it fits, which is reverse
+engineering, not derivation.
+The action was ill-defined. The formulation mixed index-lattice and dimensionful coordinates,
+writing shifts such as 𝜙(𝑛 + 𝑎0 𝑒𝜇 ) for 𝑛 ∈ ℤ4 , and stated two mutually inconsistent time steps
+differing by 2𝜋 .
+
+
+I.2 The Reformulation
+
+Statement. The primitive is an oscillatory tension field 𝜓(x, 𝑡) on ℝ4 . D₄ is not postulated;
+it is the nodal interference pattern into which the field self-organizes. Persistence is dynamic
+rather than static: the pattern is a standing wave maintained by a balance of tension and
+relaxation. In the framework’s own formulation, the primitive is not a noun but a verb.
+The dynamical equation. Tension and relaxation together specify a damped wave equation:
+
+                                                          𝛿𝐹
+                                     𝜕𝑡2 𝜓 + 𝛾 𝜕𝑡 𝜓 = −
+                                                          𝛿𝜓
+
+                                               4
+                     𝐹[𝜓] = ∫ 𝑑 4 𝑥 [ 12 𝜓(𝑟 + (𝑞02 + ∇2 )2 )𝜓 − 𝑢3 𝜓3 + 4𝑣 𝜓4 ]
+
+Here 𝜕𝑡2 𝜓 is the tension term, 𝛾𝜕𝑡 𝜓 the relaxation term, and (𝑞02 + ∇2 )2 the Swift–Hohenberg
+operator [2] penalizing wavevectors away from the resonant shell |k| = 𝑞0 . The parameter 𝑟
+is the quench depth and 𝑢, 𝑣 the nonlinear couplings.
+
+
+I.3 Immediate Consequences
+
+DERIVATION — the lattice constant is no longer primitive.
+
+                                                     2𝜋
+                                             𝑎0 =
+                                                     𝑞0
+
+The lattice constant is fixed by the substrate’s resonant wavenumber. This is not a restatement
+of the old circularity in new symbols: 𝑎0 is now an output of the substrate’s dispersion rather
+than an input defined through 𝐿𝑃 . The objection of §I.1 dissolves rather than being patched.
+DERIVATION — the site-field action is retired. A field defined at sites presupposes the static
+ontology. Under the reformulation, sites are not carriers of degrees of freedom; they are loci
+where |𝜓| is extremal. The field is 𝜓 and D₄ is a property of its solution. Results derived
+from the site-field action (the CFL bound, the discrete dispersion relation) remain valid for
+that formulation and are reported in Part III with that scope stated.
+DERIVATION — the substrate must carry conserved dynamics. Verified numerically: under non-
+conserved (Model A [4]) dynamics 𝜕𝑡 𝜓 = −𝛿𝐹/𝛿𝜓, the mean field drifts by 1.8 × 10−1 over a
+run; under conserved (Model B [4]) dynamics 𝜕𝑡 𝜓 = ∇2 (𝛿𝐹/𝛿𝜓) it is preserved to 8.3 × 10−17 .
+Since Model A drives the baseline tension out of the band in which the full D₄ pattern is stable
+(§II.7), conserved dynamics is a requirement of the framework, not a modeling choice. The
+substrate’s total tension must be a conserved quantity.
+
+
+
+PART II — THE GEOMETRIC CORE
+
+II.1 Mathematical Properties of D₄
+
+DERIVATION — exact isotropy through fourth order. Enumerating all 24 roots Φ𝐷 = {±𝑒𝑖 ± 𝑒𝑗 }
+                                                                                    4
+and summing symbolically:
+
+                                2       2                       4        4
+                       ∑ (k ⋅ 𝛼) = 12|k| ,             ∑ (k ⋅ 𝛼) = 12|k|
+                     𝛼∈Φ𝐷                             𝛼∈Φ𝐷
+                            4                             4
+
+
+Both hold exactly, with zero symbolic residual and zero directional dependence, confirmed
+numerically across 400 random directions at a relative spread of 3 × 10−16 . This is guaranteed
+rather than coincidental: the D₄ root system is a spherical 5-design [5], so any polynomial of
+degree ≤ 5 averaged over the 24 points equals its average over the continuous sphere, and
+(k ⋅ 𝑛)̂ 4 has degree 4. Genuine anisotropy first appears at sixth order, consistent with the fact
+that no 24-point configuration can form a spherical 6-design [5].
+
+                                                 5
+Expansion (source rebuild). Per pair (𝑖, 𝑗) the four roots contribute (𝑘𝑖 + 𝑘𝑗 )2 + (𝑘𝑖 − 𝑘𝑗 )2 +
+                                2      2                           4       2 2       4
+(−𝑘𝑖 + 𝑘𝑗 )2 + (−𝑘𝑖 − 𝑘𝑗 )2 = 4𝑘𝑖 + 4𝑘𝑗 at second order, and 4𝑘𝑖 + 24𝑘𝑖 𝑘𝑗 + 4𝑘𝑗 at fourth
+                                                                   2                         4
+order. Each index 𝑖 occurs in 3 pairs, so the totals are 12 ∑𝑖 𝑘𝑖 = 12|𝑘|2 and 12 ∑𝑖 𝑘𝑖 +
+         2 2
+24 ∑𝑖<𝑗 𝑘𝑖 𝑘𝑗 = 12|𝑘|4 . SymPy 1.14.0 confirms both identities symbolically with zero residual;
+Singular 4.4.1 confirms both as exact polynomial identities (differences 0). The 400-direction
+numerical spread 3 × 10−16 is a reported result, not re-run in this leg.
+
+
+
+
+Figure 2: Figure 2. The fourth moment evaluated at 400 random directions on 𝑆 3 , for the true
+D₄ root system (24 terms) against the hypercubic stand-in (8 terms) from which the claimed
+anisotropy coefficient was derived. The D₄ sum is constant to machine precision; the hypercu-
+bic sum varies by 32% with direction. These are not the same calculation.
+
+DERIVATION — isoduality. The reciprocal minimal shell of the D₄ lattice contains 24 vectors
+                                           1   1
+whose pairwise-angle fingerprint {−1, − , 0, } is identical to that of the root system itself. D₄
+                                           2   2
+is an isodual lattice [6], geometrically congruent to its own dual — a property shared by only a
+short list of lattices.
+
+
+II.2 The Resonance-Cavity Mechanism
+
+The framework’s informal cymatics picture is a well-posed reciprocal-lattice problem: which
+set of plane-wave modes, superposed, interferes constructively exactly at the points of D₄?
+DERIVATION. Compactifying the substrate on the torus ℝ4 /Λ with Λ ≅ 𝐷4 forces the allowed
+mode content to be the reciprocal shell. Isoduality then makes that forced content congruent
+to D₄ itself. Building Ψ(x) = ∑g cos(g ⋅ x) from the shell and evaluating exhaustively over
+254 = 390,625 points of one fundamental domain:
+
+
+
+
+                                               6
+                  test point                     Ψ
+                  a genuine D₄ lattice point     24.0 (global maximum, unique)
+                  nearest ℤ⁴ point not in D₄     −8.0
+                  deep hole (½,½,½,½)            −8.0
+
+No other point came within 0.1% of the maximum. Periodicity under D₄ translations was con-
+firmed to machine precision.
+
+Expansion (source rebuild). 254 = 390,625 exactly. The count 24.0 equals the shell size (all 24
+cosines equal 1 at a lattice point); −8.0 at the other two test points is the stated scan outcome.
+
+Scope of ”unique.” The maximum is unique within one fundamental domain, which is where
+the scan was performed. On a full periodic grid it necessarily recurs at every lattice image:
+on a 164 grid carrying two pattern periods per direction it is attained at 32 points. The count
+is 32 rather than the naive 16 because the D₄ lattice is a checkerboard with two sublattices —
+the corner and body-centre families both satisfy the coincidence condition. The claim should
+always be stated as unique modulo lattice periodicity.
+
+Expansion (source rebuild). Two periods per direction give 24 = 16 pattern repeats; the 𝐷4
+checkerboard contributes two sublattices (corner and body-centre families), so 16 × 2 = 32,
+not the naive 16. The claim should always be stated as unique modulo lattice periodicity.
+
+No external boundary is required: the periodicity is intrinsic to the medium, so the substrate
+is simultaneously medium and boundary.
+Scope limit. Isoduality alone does not select D₄ over competitors — ℤ4 is also isodual and
+self-resonates trivially. Selection requires the dynamics of §II.3.
+
+
+II.3 The Selection Functional and Criterion
+
+DERIVATION. Expand the field on the minimal reciprocal shell with 𝑁 modes of equal amplitude,
+writing 𝑇 for the ordered triples summing to zero (closed wavevector triads) and 𝑄 for the
+ordered quadruples. In the normalized amplitude 𝐵 = 𝐴√𝑁:
+
+                            𝑟 2 𝑢 3 𝑣                              𝑇              𝑄
+                   𝐹(𝐵) =     𝐵 − 𝜏𝐵 + 𝑞4 𝐵4 ,               𝜏≡        ,   𝑞4 ≡
+                            2    3    4                           𝑁3/2            𝑁2
+A first-order transition occurs where the ordered minimum becomes degenerate with the dis-
+ordered state, 𝐹 = 0 and 𝐹 ′ = 0 simultaneously. Solving that system symbolically:
+
+
+                                       2𝑢𝜏                   2 𝑢2 𝜏 2
+                                𝐵∗ =        ,         𝑟𝑐 =
+                                       3𝑣𝑞4                  9 𝑣 𝑞4
+
+The pattern ordering first — at the highest 𝑟 , meaning the shallowest quench — maximizes
+
+                                                     𝜏2
+                                                𝑆=
+                                                     𝑞4
+
+This criterion is parameter-free in 𝑢 and 𝑣 : their values scale 𝑟𝑐 but cannot reorder the candi-
+dates. Selection depends only on the combinatorics of the reciprocal shell.
+
+                                                 7
+Expansion (source rebuild). Solving 𝐹 = 0 and 𝐹 ′ = 0 step by step (SymPy 1.14.0, symbolic
+in 𝐵, 𝑟, 𝑢, 𝑣, 𝜏, 𝑞4 ): from 𝐹 ′ = 0 with 𝐵 ≠ 0, 𝑟 − 𝑢𝜏𝐵 + 𝑣𝑞4 𝐵 2 = 0; from 𝐹 = 0 with 𝐵 ≠ 0,
+𝑟             𝑣𝑞                                                                 𝑣𝑞
+2
+   − 𝑢𝜏3
+         𝐵 + 44 𝐵 2 = 0. Multiply the second equation by 2: 𝑟 − 2𝑢𝜏       3
+                                                                            𝐵 + 24 𝐵 2 = 0. Subtract
+                    𝑢𝜏        𝑣𝑞                       2𝑢𝜏
+from the first: − 𝐵 + 4 𝐵 2 = 0, hence 𝐵∗ =                . Substituting back: 𝑟𝑐 = 𝑢𝜏𝐵∗ − 𝑣𝑞4 𝐵∗2 =
+                    3          2                      3𝑣𝑞4
+2𝑢2 𝜏 2   4𝑢2 𝜏 2   2𝑢2 𝜏 2
+        −         =         . Since 𝑟𝑐 ∝ 𝜏 2 /𝑞4 = 𝑆 with the common factor 2𝑢2 /(9𝑣), the ordering
+ 3𝑣𝑞4     9𝑣𝑞
+            4        9𝑣𝑞
+                     4
+by 𝑟𝑐 is exactly the ordering by 𝑆 , independent of 𝑢 and 𝑣 .
+
+
+II.4 Validation in Three Dimensions
+
+Before application in four dimensions the criterion was required to reproduce the known result.
+
+
+                          crystal     𝑁    𝑇     𝜏        𝑞4      𝑆 = 𝜏 2 /𝑞4
+                          BCC         12   48    1.1547   3.750   0.35556
+                          FCC         8    0     0        3.375   0
+                          SC          6    0     0        2.500   0
+
+BCC is selected; FCC and SC are excluded by vanishing triad content — their reciprocal minimal
+shells contain no closed triangles. This is the Alexander–McTague result [1], recovered from first
+principles by the same code subsequently applied in four dimensions. Scope nuance. The BCC
+preference is a near-melting result; Groh and Mulder [44] showed that symmetry breaking at the
+liquid–solid transition need not produce bcc outside that regime. The 𝑆 criterion reproduces
+the Alexander–McTague conclusion within its domain of validity.
+
+Expansion (source rebuild). BCC step by step: 𝜏 = 48/123/2 = 48/(12 ⋅ 2√3) = 2/√3 =
+1.1547005 … ≈ 1.1547; 𝜏 2 = 4/3; 𝑞4 = 15/4 = 3.750 (so 𝑄 = 𝑞4 𝑁2 = 540); 𝑆 =
+(4/3)/(15/4) = 16/45 = 0.35555 … ≈ 0.35556. FCC: 𝑞4 = 27/8 = 3.375 (so 𝑄 = 216),
+𝑇 = 0 ⇒ 𝑆 = 0. SC: 𝑞4 = 5/2 = 2.500 (so 𝑄 = 90), 𝑇 = 0 ⇒ 𝑆 = 0. SymPy and python-flint
+agree on all values.
+
+
+II.5 Result in Four Dimensions
+
+PREDICTION.
+
+           lattice   𝑁    𝑇     𝜏 2 (exact) 𝑞4 (exact) 𝑆 = 𝜏 2 /𝑞4 (exact) decimal
+           D₄        24   192   8/3             47/8           64/141           0.453901
+           A₄*       20   120   9/5             93/20          12/31            0.387097
+           ℤ⁴        8    0     0               21/8           0                0
+           A₄        10   0     0               27/10          0                0
+
+
+Table convention. Rows are labelled by the crystal; 𝑁 is the size of that crystal’s reciprocal
+minimal shell, since the density is expanded in reciprocal vectors. Hence the A₄∗ row shows
+𝑁 = 20 (the A₄ shell) and the A₄ row shows 𝑁 = 10 (the A₄∗ shell). Both are correct under
+this convention, which was not stated in earlier versions and caused a reasonable query in
+independent review.
+
+
+
+                                                     8
+The selection quantities are exact rationals, not fitted decimals: 𝑆𝐷 /𝑆𝐴∗ = 496/423, a margin
+                                                                     4    4
+
+of 73/423 ≈ 17.26%; 𝑆BCC = 16/45; and 𝜏𝐷 /𝜏BCC = √2 exactly. D₄ is selected by a 17.3%
+                                                 4
+margin over the nearest genuine competitor. The hypercubic lattice and A₄ are structurally
+excluded: with 𝑇 = 0 they cannot order through the cubic mechanism at all, exactly as FCC
+cannot in three dimensions.
+
+Expansion (source rebuild). 𝐷4 step by step: 𝜏 = 192/243/2 = 192/(24 ⋅ 2√6) = 4/√6;
+𝜏 2 = 16/6 = 8/3; 𝑞4 = 𝑄/𝑁2 = 3384/576 = 47/8 (divide by 72: 3384/72 = 47,
+576/72 = 8); 𝑆 = (8/3)/(47/8) = 64/141 = 0.4539007 … ≈ 0.453901. 𝐴∗4 : 𝜏 =
+120/203/2 = 3/√5, 𝜏 2 = 9/5; 𝑞4 = 93/20 (so 𝑄 = 1860); 𝑆 = (9/5)/(93/20) = 36/93 =
+12/31 = 0.3870967 … ≈ 0.387097. Ratio: (64/141)/(12/31) = (64 ⋅ 31)/(141 ⋅ 12) =
+1984/1692 = 496/423 (divide by 4); margin 496/423 − 1 = 73/423 = 0.1725768 … ≈
+17.26%. 𝜏 ratio: (4/√6)/(2/√3) = 2√3/√6 = 2/√2 = √2; squared ratio (8/3)/(4/3) = 2,
+confirming √2; the source already states √2 here and in the abstract and §VI-A.1, and the
+shipped PDF renders √2 — the “2” in the earlier PDF-rebuild was a pdftotext-layout artifact
+(the radical prints on its own layout line), not a source error. SymPy 1.14.0, python-flint 0.8.0,
+and Singular 4.4.1 (rational check) all agree. ℤ4 : 𝑄 = (21/8) ⋅ 64 = 168, 𝑇 = 0 ⇒ 𝑆 = 0. 𝐴4 :
+𝑄 = (27/10) ⋅ 100 = 270, 𝑇 = 0 ⇒ 𝑆 = 0. These 𝑄 recoveries check the table’s internal
+arithmetic; the geometric enumeration of 𝑄 for 𝐴∗4 , ℤ4 , and 𝐴4 is stated in the source, not
+re-derived here, and is flagged as such.
+
+Closed forms: 𝜏𝐷 = 4/√6 and 𝜏BCC = 2/√3, in ratio exactly √2. D₄ is the four-dimensional
+                  4
+analogue of BCC, and a stronger one.
+Independent corroboration. This analytic prediction agrees with a published molecular-
+dynamics study in which supercooled four-dimensional Lennard-Jones liquids were ob-
+served to crystallize into D₄ rather than the competing A₄ lattice [40]. At zero pressure and
+0.59 < 𝑇 < 0.63, the liquid crystallizes within ∼2 × 104 𝜏 ; with 8 atoms per D₄ unit cell, the
+choice 𝑁 = 648 promotes a 3 × 3 × 3 × 3-cell D₄ single crystal. The two determinations share
+no method: one is a Landau [9] free-energy argument over reciprocal-shell combinatorics, the
+other a direct particle simulation under a standard pairwise potential. Compatible freezing
+behavior is also seen in four-dimensional hard spheres, where the densest Voronoi cluster is
+consistent with D₄ symmetry [39].
+Prior art in four dimensions. The Alexander–McTague Landau argument has been generalized
+to higher dimensions: Elitzur, Karni, and Rabinovici [45] showed that in 4D the cross-polytope
+(16-cell) maximizes the cubic term, with the reciprocal lattice generated by (±1, ±1, ±1, ±1) —
+the D₄ lattice. Theirs is an equilibrium near-melting argument; the 𝑆 criterion here is dynamical,
+selecting from noise by interference. The two routes are independent and select the same
+winner.
+Structural unification. The 192 triads arise from exactly the 24 reciprocal vectors of §II.2 — same
+fingerprint, 8 partners at 120° from each vector, 24 × 8 = 192. The interference picture and
+the energy picture are the same computation viewed twice. They interlock rather than merely
+agree.
+
+Expansion (source rebuild). The “8 partners” claim was checked by exhaustive enumeration
+in this rebuild: for each of the 24 roots ±𝑒𝑖 ± 𝑒𝑗 (norm2 = 2), exactly 8 other roots have dot
+product −1, i.e. cos 𝜃 = −1/2, 𝜃 = 120∘ . Hence 24 × 8 = 192 ordered triad partners, matching
+𝑇 = 192.
+
+
+                                                9
+II.6 Dynamical Confirmation by Simulation
+
+Minimizing a functional and reaching its minimum dynamically are different claims.
+Method and full parameters. The damped-wave equation was integrated on a 164 periodic
+grid from random initial conditions using a semi-implicit pseudo-spectral scheme [10], uncon-
+ditionally stable with the linear operator treated implicitly in Fourier space.
+Domain and normalization. Wavevectors are integer-valued, k = n, with the box 𝐿 = 2𝜋 so
+that physical k = 2𝜋 n/𝐿 = n. The D₄ shell is the scaled root system {(±2, ±2, 0, 0) and perms},
+giving |k|2 = 8; this places two pattern periods per direction in the box. A reader using the
+unscaled root normalization |𝛼|2 = 2 rescales accordingly; the two are the same physical
+configuration.
+The competitor shell, specified. With 𝑞02 = 7.5, the two competing shells are
+
+
+                shell         |k|2 modes 𝑇           linear penalty (𝑞02 − |k|2 )2
+                D₄ star       8      24        192   0.25
+                competitor    7      64        0     0.25
+
+
+The competitor is the full integer shell at |k|2 = 7. It carries zero triad content and 2.7 times
+as many modes, and sits at an identical linear penalty. The linear growth rates are therefore
+exactly degenerate and only the cubic term can break the tie. Remaining parameters: 𝑟 =
+−0.35, 𝑢 = 𝑣 = 1, 𝛾 = 1.2, Δ𝑡 = 0.05. 6000 steps direct quench; annealed run ramps 𝑟 from
+−0.05 to −0.45 over 14000 steps with decaying stochastic forcing.
+Expansion (source rebuild). Shell counts: 𝐷4 scaled shell — choose the 2 nonzero positions in
+(42) = 6 ways, 4 sign choices, 6 × 4 = 24 modes, |𝑘|2 = 4 + 4 = 8. Competitor |𝑘|2 = 7 shell
+— vectors (±2, ±1, ±1, ±1): 4 positions for the 2, 24 = 16 sign choices, 4 × 16 = 64 modes.
+Penalties: (7.5 − 8)2 = 0.25 and (7.5 − 7)2 = 0.25 — exactly degenerate, as claimed. Mode
+ratio 64/24 = 2.666 … ≈ 2.7.
+
+Result (author’s run). The D₄ shell captured 84% of spectral power on direct quench and 100%
+after annealing. The control run with the cubic coupling set to zero produced a near-tie, 44%
+against 56%. The triad term is causally responsible for the selection.
+Independent reproduction. A mechanism-level reproduction from an independent implemen-
+tation — different random seeds, random-field initialization of standard deviation 0.05, an-
+nealing noise amplitude 0.5 with linear decay — found 77.1% of spectral power on D₄ with triads
+active versus 21.1% with triads removed, rising to 89.5% under annealing and still increasing
+at step 14000. Exact percentages are implementation-dependent; the causal conclusion is
+identical: the cubic triad term reverses the selected winner.
+
+
+II.7 Baseline Tension, and the Phase Diagram
+
+The annealed run populated only 6 of 24 modes, prompting a comparison the functional anal-
+ysis had not performed: against sub-patterns within the shell rather than only against other
+lattices.
+An initial failure. At zero baseline field a 6-mode hexagonal sub-pattern has lower free energy
+than the full 24-mode pattern at every quench depth tested. The simulation was right and the
+analysis had been incomplete.
+
+                                               10
+Figure 3: Figure 3. Left: spectral power with the triad coupling on versus off. Right: the
+parameter-free ordering criterion in four dimensions, with the validated three-dimensional
+BCC value marked for scale.
+
+Resolution. The omitted variable is the substrate’s baseline tension 𝜓̄ . Expanding 𝜓 = 𝜓̄ +
+𝐴 ∑𝑘 𝑒𝑖k⋅x and collecting symbolically:
+
+                     𝐹mod = 𝑁2 (𝑟 − 2𝑢𝜓̄ + 3𝑣 𝜓̄ 2 )𝐴2 − 𝑇3 (𝑢 − 3𝑣 𝜓)𝐴
+                                                                     ̄ 3 + 𝑣𝑄
+                                                                            4
+                                                                              𝐴4
+
+so that
+
+
+                                          𝑢eff = 𝑢 − 3𝑣 𝜓̄
+
+The baseline tension directly tunes the triad coupling. It is not a nuisance parameter but the
+control parameter of the selection mechanism — and it is precisely the quantity the ontology
+names as primitive.
+PREDICTION. The full 24-mode pattern is the global minimum in a contiguous band occupying
+11.85% of the scanned plane, approximately −0.33 ≲ 𝜓̄ ≲ 0.03 depending on quench depth.
+The band is finite rather than measure-zero, and lies along the order/disorder boundary —
+independently what the ”orders first” criterion of §II.3 predicts. Two calculations performed
+for different reasons agree on the location of the D₄ phase.
+Essential qualification, added in this version. The phase diagram was computed with the bare
+quench depth, which tacitly assumes 𝑞0 sits exactly on the D₄ shell. Any real mode on the shell
+incurs the penalty (𝑞02 − |𝑘|2 )2 , so the effective quench depth is 𝑟shell = 𝑟 + (𝑞02 − 8)2 . Solving
+the ordered branch symbolically at two values:
+
+
+ 𝑞02   shell penalty   𝑟shell ordered branch
+ 7.5   0.250           −0.100 none — disordered state is the only minimum
+ 8.0   0.000           −0.350 exists: 𝐴∗ = 0.0776, 𝐹 = −0.00763
+
+
+
+
+At a detuning of only 0.5 in 𝑞02 the ordered branch vanishes entirely. The D₄ band is conditional
+on 𝑞0 being tuned onto the shell. Since 𝑎0 = 2𝜋/𝑞0 , this states that the substrate’s resonant
+
+
+                                                 11
+Figure 4: Figure 4. Phase diagram in the plane of baseline tension and quench depth. The full
+24-mode D₄ standing wave occupies a contiguous band situated along the boundary with the
+disordered phase. Lower-symmetry sub-patterns occupy the higher-tension region.
+
+
+wavelength must match the lattice it forms — self-consistent, but a condition rather than a
+free outcome. This qualification must accompany every citation of the 11.85% figure.
+
+Expansion (source rebuild). With 𝑟 = −0.35: at 𝑞02 = 7.5, penalty (7.5 − 8)2 = 0.25, so
+𝑟shell = −0.35 + 0.25 = −0.10; at 𝑞02 = 8.0, penalty 0, so 𝑟shell = −0.35. At a detuning of only
+0.5 in 𝑞02 the ordered branch vanishes entirely. The 𝐷4 band is conditional on 𝑞0 being tuned
+onto the shell. Since 𝑎0 = 2𝜋/𝑞0 , this states that the substrate’s resonant wavelength must
+match the lattice it forms — self-consistent, but a condition rather than a free outcome. This
+qualification must accompany every citation of the 11.85% figure.
+
+Sixth-order terms. Computed by FFT convolution and validated against brute-force third- and
+fourth-order values: for the D₄ shell 𝐻 = 911,040. Adding 𝑤6 narrows the band modestly
+(11.90% at 𝑤6 = 0 to 8.47% at 𝑤6 = 0.2) without destroying it. The 𝑤6 = 0 value independently
+reproduces the 11.85% obtained by different code.
+
+
+II.8 Stability of the Full Pattern
+
+DERIVATION. With 𝑁 = 24, 𝑇 = 192, 𝑄 = 3384, 𝑟 = −0.35, 𝜓̄ = −0.18 and 𝑞0 tuned,
+the stationarity condition yields a real ordered branch at per-mode amplitude 𝐴∗ = 0.0776
+(0.0775753 unrounded) with 𝐹/𝑉 = −0.0076323 < 0.
+Free-energy convention. 𝐹 here is the excess over the uniform state, so 𝐹 = 0 for the disor-
+dered phase. The absolute density differs by the uniform baseline 𝐹/𝑉 |unif = −0.0034636.
+Independent review reported a value of −0.007728 and attributed the difference to this base-
+line; that attribution is incorrect, since the baseline is ∼ 3.5 × 10−3 while the discrepancy is
+
+                                              12
+∼ 1 × 10−4 .
+The correct explanation, and why it strengthens the result. The one-mode ansatz is varia-
+tional: it is an upper bound on the true minimum, because a relaxed field develops harmonic
+content the ansatz excludes. Relaxing the one-mode state under conserved dynamics gives
+
+                      state                                 excess 𝐹/𝑉
+                      one-mode ansatz (analytic)            −0.0076323
+                      relaxed field (harmonics included)    −0.0077276
+                      independent review’s value            −0.007728
+
+The relaxed value reproduces the independently obtained number to five decimal places. The
+gap is harmonic lowering, not a convention mismatch, and it quantifies the accuracy of the
+one-mode approximation underpinning Part II: 1.25%. That the Landau ansatz is accurate to
+better than 1.3% against a full-field relaxation is a validation of the method, not a discrepancy
+in it. Seeding the substrate at exactly 𝐴∗ = 0.0776 with all 24 modes in phase and evolving:
+
+Expansion (source rebuild). Gap arithmetic: | − 0.0077276 − (−0.0076323)| = 0.0000953 ≈
+1 × 10−4 , against a baseline of 0.0034636 ≈ 3.5 × 10−3 — the baseline is about 36 times
+larger than the gap, so it cannot explain the gap. Relative gap: 0.0000953/0.0077276 =
+0.01233 … ≈ 1.23%, quoted as 1.25% (rounding of the underlying unrounded values). Round-
+ing: 0.0775753 → 0.0776 at four decimal places. Verified in SymPy and python-flint.
+
+
+      dynamics                     final 𝜓̄    D₄ shell power   modes     rms modulation
+      seed                         −0.18000    1.0000           24/24     0.3802
+      Model B (conserved)          −0.18000    1.0000           24/24     0.3806
+      Model A (non-conserved)      +0.00087    1.0000           24/24     0.4206
+
+Under conserved dynamics the baseline tension is held exactly, full occupancy is retained,
+and the amplitude is unchanged to four significant figures. The symmetric 24-mode D₄ stand-
+ing wave is a genuine dynamical attractor, not merely a free-energy minimum. Under non-
+conserved dynamics the pattern also survives but the baseline tension drifts out of the stable
+band; its survival there is metastability.
+Every earlier simulation, initialized from noise, reached only a 6- or 12-mode sub-pattern. This
+is the first confirmation of the full symmetric state.
+
+
+II.9 The Transition Is First Order
+
+At 𝜓̄ = −0.18 the effective quadratic coefficient is
+
+
+                𝑟eff = 𝑟 − 2𝑢𝜓̄ + 3𝑣 𝜓̄ 2 = −0.35 + 0.36 + 0.097 = +0.107 > 0
+
+so the disordered state is linearly stable and the D₄ state must be nucleated across a barrier,
+not grown from fluctuations.
+
+Expansion (source rebuild). With 𝑟 = −0.35, 𝑢 = 𝑣 = 1: at 𝜓̄ = −0.18: −0.35 − 2(1)(−0.18) +
+3(1)(0.0324) = −0.35 + 0.36 + 0.0972 = 0.1072 ≈ +0.107. At 𝜓̄ = −0.10: −0.35 + 0.20 +
+0.03 = −0.12. At 𝜓̄ = 0: −0.35. All verified in SymPy and python-flint.
+
+
+
+                                               13
+                     𝜓̄    𝑟eff      character
+                     −0.18 +0.107    metastable — requires nucleation
+                     −0.10 −0.120    linearly unstable — grows from noise
+                     0.00 −0.350     linearly unstable
+
+Consequence. Any cosmological account within this framework must supply a nucleation
+mechanism: a seed, a fluctuation above critical size, or a path through the linearly unstable
+region at lower |𝜓|̄ . Spontaneous emergence from a featureless substrate at this baseline
+tension does not occur. This was discovered by initially misreading a null simulation result
+and then correctly diagnosing it.
+
+
+II.10 Cross-Section to Three Dimensions
+
+DERIVATION. 𝐷4 ∩ {𝑥4 = 0} = 𝐷3 = FCC, with kissing number 12 — the densest three-
+dimensional lattice packing [6]. Every cross-section point satisfies the even-coordinate-sum
+condition defining FCC. The four-dimensional optimal lattice restricts to the three-dimensional
+optimal lattice.
+
+
+II.11 Scope of the Optimality Claim
+
+D₄ is not universally optimal.      Independent verification via random-restart optimiza-
+tion across the Gaussian potential family — which by Bernstein’s theorem [12] spans the
+completely-monotonic class — recovers D₄ as the exact optimum (to ∼ 10−13 relative) across
+𝛽 ∈ [0.05, 2.4] ∪ [3.1, 12], but a lower-symmetry competitor wins in a narrow window
+𝛽 ∈ [2.6, 3.0] by at most 0.007%. This independently confirms the published non-universal-
+optimality result [13] by direct discovery; see also the recent optimality and uniqueness
+analysis [14]. The universal-optimality framework itself — configurations minimizing energy
+over all completely monotonic potentials — is due to Cohn and Kumar [43].
+The defensible statement is that D₄ minimizes the specific triad-reinforcing functional relevant
+to standing-wave selection, and is the unique optimal kissing configuration in four dimensions
+[7], but does not minimize every completely-monotonic potential.
+
+
+
+PART III — DYNAMICS
+
+III.1 The Discrete Action (Legacy Formulation)
+
+For the site-field formulation, retained here with scope stated:
+
+
+
+                                         2                               2
+                 𝑀∗ 𝜙(𝑛, 𝑠+1) − 𝜙(𝑛, 𝑠)     𝐽                        2 𝜇
+𝑆 = ∑ 𝑎40 Δ𝑡 [     (                    ) − 2 ∑ (𝜙(𝑛+𝛼, 𝑠) − 𝜙(𝑛, 𝑠)) − 𝜙(𝑛, 𝑠)2 ]
+     𝑛,𝑠
+                 2          Δ𝑡             2𝑎0 𝛼∈Φ                     2
+                                                      𝐷4
+
+
+
+DERIVATION — equation of motion, by symbolic variation with all 24 neighbour contributions
+entered explicitly:
+
+
+                                              14
+                                                 2𝐽Δ𝑡2
+  𝑀∗ [𝜙(𝑛, 𝑠+1) − 2𝜙(𝑛, 𝑠) + 𝜙(𝑛, 𝑠−1)] =          2
+                                                                                     2 2
+                                                         ∑ [𝜙(𝑛+𝛼, 𝑠) − 𝜙(𝑛, 𝑠)] − Δ𝑡 𝜇 𝜙(𝑛, 𝑠)
+                                                  𝑎0      𝛼
+
+
+DERIVATION — exact dispersion relation. Plane-wave substitution reduced symbolically gives
+the closed form
+
+
+                   ∑ [ cos(𝑎0 k ⋅ 𝛼) − 1] = 4 ∑ cos(𝑎0 𝑘𝑖 ) cos(𝑎0 𝑘𝑗 ) − 24
+                  𝛼∈Φ𝐷                            1≤𝑖<𝑗≤4
+                         4
+
+
+
+                               𝜔Δ𝑡    Δ𝑡2 2𝐽
+                      sin2 (       )=    ∗
+                                           [ 2 ∑ (1 − cos(𝑎0 k ⋅ 𝛼)) + 𝜇2 ]
+                                2     4𝑀 𝑎0 𝛼
+
+Cross-check. Taylor-expanding reproduces the isotropic result of §II.1 term for term, via a com-
+pletely independent route — a direct root-sum versus a full Euler–Lagrange variation. Agree-
+ment between independent derivations is evidence, not merely internal consistency.
+
+Expansion (source rebuild). The dispersion identity holds pair by pair: for fixed (𝑖, 𝑗) the four
+roots give cos(𝑎(𝑘𝑖 +𝑘𝑗 ))+cos(𝑎(𝑘𝑖 −𝑘𝑗 ))+cos(𝑎(−𝑘𝑖 +𝑘𝑗 ))+cos(𝑎(−𝑘𝑖 −𝑘𝑗 )) = 4 cos(𝑎𝑘𝑖 ) cos(𝑎𝑘𝑗 )
+by the cosine addition formula (cos(𝑋 + 𝑌) + cos(𝑋 − 𝑌) = 2 cos 𝑋 cos 𝑌 , applied twice). Sum-
+ming over the 6 pairs and subtracting 24 (one per root) gives the stated identity. SymPy 1.14.0
+confirms the pair identity symbolically and the full identity at 20 random numeric points to
+< 10−9 .
+DERIVATION — Hamiltonian positivity. The energy is a sum of three non-negative terms given
+𝑀∗ , 𝐽 > 0 and 𝜇2 ≥ 0: the vacuum is stable by construction, with no ghosts or runaway modes.
+
+
+III.2 Stability Bound
+
+DERIVATION. Real solutions require sin2 (𝜔Δ𝑡/2) ≤ 1 for every k. The maximum of the spa-
+tial sum over the Brillouin zone was found analytically and confirmed by global numerical
+optimization: exactly 32, at 𝑎0 k = (0, 0, 𝜋, 𝜋)-type points. Matching the small-𝑘 limit to a
+continuum wave speed fixes 𝐽 = 𝑀∗ 𝑐 2 /12, giving
+
+
+                                                 √3 𝑎0         𝑎0
+                                  Δ𝑡 ≤ Δ𝑡max =         ≈ 0.866
+                                                 2 𝑐           𝑐
+EXCLUDED — both time-step values stated in v92.
+
+
+ candidate Δ𝑡                sin2 (𝜔Δ𝑡/2) at worst-case k      verdict
+ 𝑎0 /𝑐                       4/3 ≈ 1.333                       unstable
+ 2𝜋𝑎0 /𝑐                     16π²/3 ≈ 52.6                     badly unstable
+ (√3/2)𝑎0 /𝑐 (derived) 1 (exactly marginal)                    stable
+
+
+
+
+                                                  15
+Figure 5: Figure 5. The stability quantity at the worst-case Brillouin-zone mode against time
+step.
+
+
+Neither of v92’s stated time steps is dynamically stable once the coupling is honestly cali-
+brated. This is sharper than the previously identified factor-of-2𝜋 ambiguity: even the smaller
+candidate exceeds the limit by roughly 15%.
+
+Expansion (source rebuild). With 𝐽 = 𝑀∗ 𝑐 2 /12 and 𝜇 = 0, the prefactor in (7) is Δ𝑡2 ⋅
+2𝐽/(4𝑀∗ 𝑎20 ) = Δ𝑡2 𝑐2 /(24𝑎20 ); at the worst case the bracket equals 32, so sin2 = 4 (Δ𝑡 𝑐/𝑎0 )2 .
+                                                                                     3
+                                                              4      2       2
+Hence: Δ𝑡 = 𝑎0 /𝑐 ⇒ 4/3 = 1.333 …; Δ𝑡 = 2𝜋𝑎0 /𝑐 ⇒               ⋅ 4𝜋   = 16𝜋   /3 = 52.6378 …≈
+                                                              3
+              √3             4
+52.6; Δ𝑡 =    2 0
+                 𝑎 /𝑐   ⇒    3
+                               ⋅ 43   = 1 exactly. The 𝑎0 /𝑐 candidate exceeds the bound by
+1/(√3/2) = 2/√3 = 1.1547 …, i.e. roughly 15%. All verified in SymPy and python-flint. The
+“maximum exactly 32” itself is a stated analytic/numerical result, not re-derived in this leg.
+
+
+III.3 The Non-Relativistic Limit
+
+Diagnosis of the v92 failure. The manuscript constructed a carrier 𝑒−𝑖Ω𝑃 𝑠𝑇𝑃 with 𝑇𝑃 = 2𝜋/Ω𝑃 ,
+so the carrier phase per step is exactly 2𝜋 and 𝑒−𝑖𝜃𝑠 = 1 for every integer 𝑠. This is not merely
+insufficient oscillation: the positive- and negative-frequency basis functions become identical,
+so the envelope decomposition is mathematically degenerate. The subsequent small-angle
+expansion of sin(2𝜋) compounds the error.
+DERIVATION — corrected envelope equation. With a genuine carrier (𝜃 ≠ 0, 𝜋 ) and ansatz
+𝜙 = Ψ𝑒−𝑖𝜃𝑠 + c.c., symbolic Taylor expansion with the rest-mass term exactly absorbed via
+sin2 (𝜃/2) = Δ𝑡2 𝜇2 /4𝑀∗ :
+
+
+
+
+                                                16
+                                     Δ𝑡 𝐽
+                        𝑖Ψ̇ = −       2        ∑ [Ψ(𝑛+𝛼, 𝑠) − Ψ(𝑛, 𝑠)]
+                                  𝑀∗ 𝑎0 sin 𝜃 𝛼∈Φ𝐷
+                                                   4
+
+
+with continuum effective mass
+
+                                                 𝑀∗ 𝑎0 sin 𝜃
+                                        𝑚eff =
+                                                       𝑐 Δ𝑡
+PREDICTION — quantified validity regime. Comparing the exact transcendental dispersion
+against the quadratic approximation mode by mode:
+
+                          𝑎0 |k|                 relative frequency error
+                          0.02                   4 × 10−5
+                          0.10                   0.1%
+                          0.30                   1.0%
+                          1.00                   11%
+                          3.14 (zone edge)       133%
+
+
+
+
+Figure 6: Figure 6. Exact dispersion against the envelope approximation, and the resulting
+relative error.
+
+The approximation is accurate to well under 1% for 𝑎0 |k| ≲ 0.3, degrading smoothly beyond.
+This is a quantified boundary rather than an assumed one.
+
+
+III.4 Why Four Dimensions
+
+DERIVATION. Under 𝜓(x) → 𝜓(𝜆x) in 𝑑 dimensions the terms of a scalar energy scale as
+
+                      2   2−𝑑                         −𝑑           2  2    4−𝑑
+                ∫ |∇𝜓| ∼ 𝜆 ,                ∫ 𝑉(𝜓) ∼ 𝜆 ,        ∫(∇ 𝜓) ∼ 𝜆
+
+Stationarity of the two-derivative theory at 𝜆 = 1 requires (𝑑 − 2)𝐼grad + 𝑑 𝐼pot = 0, which for
+𝑑 ≥ 2 forces 𝐼pot ≤ 0. With a positive-definite potential there is no stationary solution, and
+
+
+                                                  17
+where one exists the second variation is negative. Derrick’s theorem [15] forbids stable Kerr
+solitons in four dimensions.
+But the four-derivative Swift–Hohenberg term is exactly marginal at 𝑑 = 4.
+
+
+
+
+Figure 7: Figure 7. Scaling exponents against spatial dimension. The four-derivative term is
+scale-invariant precisely at 𝑑 = 4, where the two-derivative and potential terms are both
+strongly contracting.
+
+This is a new structural argument for four-dimensionality, independent of packing and kissing-
+number considerations. Four is the unique dimension in which the curvature term of a Swift–
+Hohenberg substrate neither dominates nor vanishes under rescaling, so localized structure is
+driven neither to collapse nor to dispersal at leading order. The dimension hosting the optimal
+lattice [8] is also the dimension in which the pattern-forming operator is marginal.
+
+Expansion (source rebuild). Scaling step by step: 𝑑 𝑑 𝑥 → 𝜆−𝑑 𝑑 𝑑 𝑥 under 𝑥 → 𝜆𝑥 ; ∇ →
+𝜆∇ so |∇𝜓|2 → 𝜆2 |∇𝜓|2 , giving 𝜆2−𝑑 ; 𝑉(𝜓) carries no derivatives, giving 𝜆−𝑑 ; (∇2 𝜓)2 →
+𝜆4 (∇2 𝜓)2 , giving 𝜆4−𝑑 . Marginality means exponent zero: 4 − 𝑑 = 0, i.e. 𝑑 = 4 uniquely.
+         𝑑
+Derrick: [𝜆2−𝑑 𝐼grad + 𝜆−𝑑 𝐼pot ]𝜆=1 = (2 − 𝑑)𝐼grad − 𝑑 𝐼pot = 0, i.e. (𝑑 − 2)𝐼grad + 𝑑 𝐼pot = 0. Verified
+         𝑑𝜆
+symbolically in SymPy.
+
+
+
+PART IV — ALGEBRAIC STRUCTURE
+
+IV.1 The SO(8) Exclusion Theorem
+
+EXCLUDED — 𝑠𝑜(8) cannot be the gauge algebra. Two independent proofs.
+Chirality. A representation is self-conjugate precisely when −1 lies in the Weyl group [21]; for
+𝐷𝑛 this holds if and only if 𝑛 is even. Computed by two structurally different algorithms:
+
+
+
+                                                   18
+       method                               |𝑊(𝐷4 )| −𝐼 ∈ 𝑊 ? |𝑊(𝐷5 )| −𝐼 ∈ 𝑊 ?
+       signed-permutation construction      192        yes        1920        no
+       generation from simple reflections   192        yes        1920        no
+
+Since −1 ∈ 𝑊(𝐷4 ), every representation of 𝑠𝑜(8) is self-conjugate. The three eight-
+dimensional representations are all real and permuted by triality. An algebra with only
+real representations is vector-like and cannot produce chiral fermion couplings. The Standard
+Model is chiral. The contrast is exact and instructive: −1 ∉ 𝑊(𝐷5 ), which is precisely why
+𝑠𝑜(10) admits the complex 16 and functions as a viable chiral unified group.
+Expansion (source rebuild). Weyl orders: |𝑊(𝐷𝑛 )| = 2𝑛−1 𝑛!, so |𝑊(𝐷4 )| = 23 ⋅ 24 = 192
+and |𝑊(𝐷5 )| = 24 ⋅ 120 = 1920. Verified in SymPy. The two-algorithm agreement is a stated
+result, not re-run in this leg.
+
+Embedding. Independently, the Standard Model algebra has rank 4, equal to that of 𝑠𝑜(8),
+so it could only appear as a maximal-rank subalgebra. By Borel–de Siebenthal [20] these are
+𝑠𝑢(4) ⊕ 𝑢(1), 𝑠𝑢(2)⊕4 , and 𝑠𝑢(2)⊕3 ⊕ 𝑢(1). None contains 𝑠𝑢(3) ⊕ 𝑠𝑢(2): the 𝑠𝑢(2) towers
+cannot contain simple rank-2 𝑠𝑢(3), and 𝑠𝑢(3) ⊕ 𝑠𝑢(2) ⊂ 𝑠𝑢(4) fails because faithful actions
+on commuting subspaces require at least five complex dimensions while 𝑠𝑢(4) acts on ℂ4 .
+
+
+
+
+Figure 8: Figure 8. Confirmed regular-subalgebra branchings of 𝑠𝑜(8), showing that neither
+route reaches the Standard Model jointly.
+
+Also excluded: Pati–Salam [22] (rank 5) cannot be reached from 𝑠𝑜(8) (rank 4) by any route
+whatsoever. The v92 cascade 𝑠𝑜(8) → 𝑔2 ⊕ 𝑢(1) → Pati–Salam additionally increases di-
+mension from 15 to 21, which no subalgebra chain can do.
+
+Expansion (source rebuild). Dimension arithmetic, clarified in this rebuild: dim 𝑔2 = 14, so
+dim(𝑔2 ⊕ 𝑢(1)) = 14 + 1 = 15; dim(Pati–Salam) = dim 𝑠𝑢(4) + dim 𝑠𝑢(2) + dim 𝑠𝑢(2) =
+15 + 3 + 3 = 21; ranks 3 + 1 + 1 = 5 > 4 = rank 𝑠𝑜(8). The source’s “15 → 21” is the cascade’s
+intermediate-to-final step, not dim 𝑠𝑜(8) = 28.
+
+
+                                             19
+IV.2 The Forcing Result
+
+DERIVATION — the phase sector has no internal degrees of freedom. A real D₄ density wave
+has 24 modes forming 12 independent ± pairs, hence 12 phases, constrained by closed triads
+𝜙𝑎 + 𝜙 𝑏 + 𝜙 𝑐 = 0 .
+
+                            quantity                            value
+                            independent phases                  12
+                            unordered closed triads             32
+                            rank of constraint matrix           8
+                            remaining degrees of freedom        4
+                            translation subspace dimension      4
+                            leftover non-translational DOF      0
+
+Every phase is fixed by triad locking up to a rigid four-dimensional translation. The order-
+parameter space is the torus ℝ4 /Λ, carrying no internal continuous symmetry.
+DERIVATION — the homotopy is equally restrictive. For 𝑀 = 𝑇 4 [23]: 𝜋1 = ℤ4 , 𝜋2 = 0, 𝜋3 = 0.
+Dislocations exist; monopoles do not; skyrmions and hopfions do not.
+Consequence. A single real scalar substrate can produce the D₄ pattern and dislocations, but
+cannot produce gauge fields or point-like defects. Internal structure is forced, not chosen.
+The question was never which lattice symmetry to promote to a gauge group, but what internal
+space the substrate carries.
+
+Expansion (source rebuild). 12 − 8 = 4 remaining degrees of freedom; 4 − 4 = 0 leftover after
+translations. The inputs (12 phases, 32 unordered triads, rank 8) are stated counts; the sub-
+tractions are the verified arithmetic. Note the distinction kept throughout: 192 counts ordered
+triads (§II.5), 32 counts unordered closed triads here — different countings of related objects,
+not a contradiction.
+
+
+IV.3 The Substrate Identifies Its Own Internal Space
+
+DERIVATION — the 24-cell is a group. Exhaustive evaluation of all 576 products of the 24 vertices
+in unit normalization — the eight axis quaternions ±1, ±𝑖, ±𝑗, ±𝑘 (the Hurwitz integer units [24])
+and the sixteen (±1 ± 𝑖 ± 𝑗 ± 𝑘)/2 — confirms closure under quaternion multiplication, with
+identity and inverses. The 24-cell vertices form the binary tetrahedral group 2T [25], a finite
+subgroup of 𝑆𝑈(2) ≅ 𝑆 3 .
+This is the pivot of the gauge resolution. The D₄ pattern is not merely a shape with a symmetry
+group; its vertex set is a group, and that group sits inside 𝑆𝑈(2). The internal space is therefore
+identified by the pattern rather than posited. It also repairs the homotopy deficit of §IV.2:
+𝜋3 (𝑆3 ) = ℤ.
+Expansion (source rebuild). Checked in this rebuild by exhaustive Python enumeration (second
+tool): 24 vertices; all 242 = 576 products land in the set; the 8 axis quaternions are closed;
+𝑄8 is normal in 2𝑇 (all conjugates stay in 𝑄8 ).
+DERIVATION — coset structure. The eight axis quaternions form 𝑄8 , verified closed and normal
+in 2T, with
+
+
+                             2𝑇/𝑄8 ≅ ℤ3 ,       three cosets of eight
+
+                                                20
+The 8+8+8 splitting of the 24-cell is the coset decomposition of an actual group, not a labelling
+convention.
+
+Expansion (source rebuild). Enumeration confirms: 3 cosets, each of size 8, partitioning the 24
+elements.
+
+DERIVATION — McKay correspondent. Computing genuine conjugacy classes by conjugation
+orbits (trace and element order are too coarse and merge classes) gives seven classes of sizes
+4,4,4,4,1,1,6 summing to 24. Requiring dimension-squares to sum to the group order with exactly
+three one-dimensional representations yields a unique solution:
+
+
+                            dim(irreps of 2𝑇) = {1, 1, 1, 2, 2, 2, 3}
+
+                       affine algebra   marks               nodes   match
+                       E₆               1,1,1,2,2,2,3       7       yes
+                       E₇               1,1,2,2,2,3,3,4     8       no
+                       E₈               1,2,2,3,3,4,4,5,6   9       no
+
+2T corresponds to affine E₆ [3]. An earlier circulated audit document asserted correspondence
+to affine E₈ and built a sterile-neutrino prediction upon it; affine E₈ corresponds to the bi-
+nary icosahedral group of order 120, and any prediction resting on that identification does not
+follow.
+
+Expansion (source rebuild). Class sizes: 4 + 4 + 4 + 4 + 1 + 1 + 6 = 24; class count 7 equals
+the irrep count. Dimension squares: 1 + 1 + 1 + 4 + 4 + 4 + 9 = 24 = |2𝑇|. Both confirmed by
+exhaustive enumeration (conjugacy orbits) in this rebuild. The marks tables are the standard
+affine-Dynkin marks, carried as stated.
+
+DERIVATION — E₆ is chiral. Computing the longest Weyl element identically for all three algebras
+from their Cartan matrices:
+
+                          algebra       rank   𝑤0 = −1? verdict
+                          D₄ = 𝑠𝑜(8)    4      yes           non-chiral
+                          D₅ = 𝑠𝑜(10)   5      no            chiral
+                          E₆            6      no            chiral
+
+E₆ passes the identical test 𝑠𝑜(8) fails. It has the complex 27 [29], and the rank chain 𝐸6 (6) ⊃
+𝑆𝑂(10)(5) ⊃ 𝑆𝑈(5)(4) ⊃ SM(4) is non-increasing — the standard 𝐸6 [26] via 𝑆𝑂(10) [27] and
+𝑆𝑈(5) [28] breaking route. One generation of Standard Model fermions embeds in a single 27.
+Expansion (source rebuild). The 𝐸6 Cartan determinant is 3 (SymPy and Singular agree), and
+its Smith normal form is diag(1, 1, 1, 1, 1, 3) (SymPy), giving 𝑃/𝑄 ≅ ℤ3 as used in §V.2. The 𝑤0
+table itself is a stated Lie-algebra computation, carried as stated.
+
+
+IV.4 The Gauge Decision
+
+The gauge algebra of IRH is E₆, arising from the substrate’s internal space 𝑆 3 ≅ 𝑆𝑈(2) via the
+binary tetrahedral group and the McKay correspondence.
+What makes this defensible rather than convenient is §IV.3. E₆ is not selected for being large
+enough to contain what is needed. The pattern established on independent dynamical grounds
+
+                                               21
+Figure 9: Figure 9. Left: the 24 vertices coloured by coset of 𝑄8 in 2T. Right: the resulting
+structural chain from substrate to Standard Model.
+
+turns out to be a group whose McKay correspondent is E₆. The gauge structure is read off the
+substrate, not fitted to the target.
+What is given up. Triality is no longer the generation mechanism and 𝑠𝑜(8) is no longer a
+gauge algebra. Triality survives as a symmetry of the defect classification — the D₄ lattice
+point group is 𝑊(𝐹4 ) of order 1152 [6], which is 𝑊(𝐷4 ) of order 192 extended by the 𝑆3 triality
+automorphism — but it is no longer load-bearing.
+
+Expansion (source rebuild). |𝑊(𝐹4 )| = 1152 = 27 ⋅ 32 and 1152/192 = 6 = |𝑆3 |, consistent
+with the stated extension. Verified arithmetically in SymPy.
+
+
+
+PART V — MATTER AND DEFECTS
+
+V.1 The Defect Spectrum
+
+With internal space 𝑆 3 , the order-parameter space is 𝑀 = 𝑇 4 × 𝑆 3 , giving 𝜋1 (𝑀) = ℤ4 , 𝜋2 (𝑀) =
+0, 𝜋3 (𝑀) = ℤ. In four spatial dimensions a defect of codimension 𝑘 is classified by 𝜋𝑘−1 [23]:
+
+      defect                      classified by    result
+                                           4
+      codimension 2 (sheets)      𝜋1 = ℤ           dislocation sheets, Burgers vectors in D₄
+      codimension 3 (lines)       𝜋2 = 0           none
+      codimension 4 (points)      𝜋3 = ℤ           point-like solitons, integer charge
+
+
+The point-like, integer-charged topological objects required by the standing-wave ontology
+do exist once the internal space is 𝑆 3 . They did not exist for a single real scalar. The gauge
+decision repaired this as a side effect rather than by design.
+Elementary dislocation charges: 24, the shortest D₄ lattice vectors. Point group: 𝑊(𝐹4 ), order
+1152.
+
+
+
+
+                                                  22
+V.2 Generations: A Negative Result
+
+The question was posed sharply in v92.6 and declined there as unproven: does the ℤ3 from 2T
+produce three copies of the 27, or are the two threes unrelated? Five candidate mechanisms
+were tested.
+The coset ℤ3 is a diagram automorphism. The three one-dimensional irreps of 2T are the three
+mark-1 tip nodes of affine E₆. The diagram automorphism group has order 6, permuting the
+arms. An automorphism permutes nodes; it does not generate multiplicity.
+The centre ℤ3 grades, it does not count. Smith normal form [30] of the E₆ Cartan matrix gives
+invariant factors (1, 1, 1, 1, 1, 3), so 𝑃/𝑄 ≅ ℤ3 . The 27 carries class 1, the 27 class 2, the adjoint
+78 class 0. The centre distinguishes a representation from its conjugate and from the adjoint.
+Grading three different representations is not producing three copies of one.
+
+Expansion (source rebuild). Smith normal form diag(1, 1, 1, 1, 1, 3) and det = 3 verified in
+SymPy (see §IV.3 expansion). The class assignments (27: 1, 27: 2, 78: 0) are standard represen-
+tation theory, carried as stated.
+
+Anomaly cancellation imposes nothing. E₆ has exponents {1, 4, 5, 7, 8, 11} — no exponent
+2, hence no third-order Casimir. The cubic anomaly coefficient vanishes identically for every
+representation [29], so any number of 27’s is consistent.
+The index route is closed twice over. Generation number in compactifications is an index, not
+a symmetry. On 𝑆 3 /2𝑇 the Dirac index vanishes by Lichnerowicz vanishing [31] (positive scalar
+curvature) and, more basically, on any closed odd-dimensional manifold, the index density
+being built from Pontryagin classes concentrated in degrees divisible by four [32].
+VERDICT — three generations is an INPUT, not an output. Three distinct objects were being con-
+flated: a symmetry permuting cosets, a symmetry grading representations, and a multiplicity
+in the field content. The first two are real and structurally elegant. Neither is the third.
+This must be stated plainly because the coincidence is seductive. The 24-cell really does de-
+compose into three octets; E₆ generations really do come in threes; the numbers really do
+match. The match is not a mechanism. The framework does not predict three generations and
+has not done so since 𝑠𝑜(8) was excluded.
+
+
+V.3 An Inherited Liability: Monopoles
+
+Any simple gauge group broken to a subgroup containing an unbroken 𝑈(1) has 𝜋2 (𝐺/𝐻) = ℤ
+and therefore stable magnetic monopoles [33]. 𝐸6 → ⋯ → 𝑆𝑈(3) × 𝑆𝑈(2) × 𝑈(1) is of exactly
+this form.
+EXCLUDED — monopole absence, claimed in earlier versions, is inconsistent with an E₆ gauge
+group. IRH inherits the standard unified-theory monopole problem and requires the standard
+resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
+
+
+
+PART VI — FALSIFIABLE PREDICTIONS
+
+The framework makes the following predictions, each independent of the data it would be
+tested against.
+
+
+                                                  23
+VI.1 Triad phase locking. For a real field with 𝑢 > 0, the cubic term is minimized when 𝜙1 +
+𝜙2 + 𝜙3 = 0 (mod 2𝜋) on every closed triad. This is a hard signature distinguishing a genuine
+D₄ standing wave from a coincidental superposition of modes on the right shell. Measured in
+simulation at an order parameter of 0.26 against a maximum of 1 — real but incomplete locking,
+consistent with a defected state in a small box. Test: larger volume should drive this toward
+unity.
+VI.2 The baseline-tension band. The full 24-mode pattern is the global minimum only for 𝜓̄ in
+a definite band along the order/disorder boundary, and only for 𝑞0 tuned onto the D₄ shell.
+Outside either condition, lower-symmetry patterns or no pattern result.
+VI.3 Validity boundary of the non-relativistic limit. Under 1% frequency error for 𝑎0 |k| ≲ 0.3,
+degrading as tabulated in §III.3.
+
+VI.4 Stability bound. Δ𝑡 ≤ (√3/2)𝑎0 /𝑐 for any discrete implementation.
+VI.5 Isotropy to fourth order. No anisotropic quartic Lorentz-violating term arises from
+nearest-neighbour D₄ coupling. Anisotropy enters at sixth order or via next-nearest-neighbour
+couplings. This is a prediction of absence and is falsified by any observation of quartic-order
+directional dependence attributable to this mechanism.
+VI.6 Defect spectrum. Dislocation sheets with Burgers vectors in D₄, integer-charged point
+solitons, and no line defects.
+VI.7 Monopoles. Predicted, not excluded — see §V.3.
+
+
+
+PART VI-A — INDEPENDENT VERIFICATION
+
+An independent party re-derived the load-bearing claims of this framework from scratch, in-
+cluding a Lean 4 formalization. The results are recorded here with the same standard applied
+to everything else: confirmations were re-checked rather than accepted, and two of the re-
+viewer’s own findings did not survive that check.
+
+
+VI-A.1 Confirmed
+
+The lattice mathematics, the exact isotropy moments, the resonance maximum of 24, the CFL
+derivation, the dispersion identity, the D₄→FCC cross-section, the Weyl group orders and the
+−1 ∈ 𝑊 distinction, the quaternion group checks, and the 𝑢eff identity were all independently
+reproduced.
+The attractor was independently confirmed. Seeding all 24 modes in phase at 𝐴∗ = 0.0776,
+the state was found stationary to ∼10⁻⁵ under exact convolutions, with Model B holding the
+amplitude to four significant figures at D₄ power 1.0000, and Model A’s drift to 𝜓̄ = +0.00087
+with rms 0.4206 matching the values reported in §II.8 exactly.
+Selection dynamics reproduced. The §II.6 fair test was reproduced at mechanism level by an
+independent implementation: with triads active, D₄ captured 77.1% of spectral power on direct
+quench (author’s run: 84%), rising to 89.5% under 14000 annealing steps and still increasing
+(author’s run: 100%); with triads removed, D₄ fell to 21.1% against 78.9% for the competitor (au-
+thor’s run: 44% against 56%). Exact shares depend on seed, scheme, and annealing protocol;
+the causal claim — the cubic term flips the winner — reproduces unambiguously.
+
+
+
+                                               24
+A sharpening. The reviewer noted that the selection quantities are exact rationals and sim-
+ple radicals rather than decimals. This is correct and has been incorporated into §II.5. It
+is a genuine strengthening: a mechanism producing 64/141, 16/45, 73/423 and an identity
+𝜏𝐷 /𝜏BCC = √2 is exhibiting structure, not fitted parameters.
+  4
+
+
+
+VI-A.2 Formal verification status
+
+The accompanying Lean 4 development [34] contains no sorry, no axiom, no admit, and no
+native_decide, verified by direct search of every file. The theorem statements are honest
+about what they prove: d4_fourth_moment states the identity for a general wavevector k :
+Fin 4 → R, and the 24 listed roots are the correct root system. Nine theorems are covered,
+spanning isotropy, the dispersion identity, the CFL bound, the selection criterion and its exact
+rationals, the 𝑢eff identity, the cross-section, and −1 ∈ 𝑊(𝐷4 ).
+Build status (v93.1). The Lean development was compiled end to end under Lean 4 with Math-
+lib [35]: lake build exited 0 (”Build completed successfully (3101 jobs)”), producing all eight
+module .olean files. The claim is therefore ”machine-checked end to end,” not merely ”for-
+mally stated and independently re-derived.” The v93.0 stated limitation — that the develop-
+ment had been audited by inspection but not compiled — is superseded.
+
+
+VI-A.3 Two reviewer findings that did not survive checking
+
+The free-energy gap. The reviewer attributed a 1.2% difference to the uniform baseline conven-
+tion. That attribution is arithmetically wrong: the baseline is 3.5×10⁻³ while the gap is 1×10⁻⁴.
+The correct explanation is harmonic content beyond the one-mode ansatz, and it reproduces
+the reviewer’s own number to five decimals (§II.8). The result is stronger than the reviewer’s
+reading of it: it quantifies the one-mode approximation’s accuracy at 1.25%.
+
+Expansion (source rebuild). Gap 0.0000953 versus baseline 0.0034636: see the §II.8 ex-
+pansion. The “1.2%” figure is the reviewer’s rounded description of the same ≈1.23% relative
+gap.
+
+The periodic-image count. The reviewer stated that the resonance maximum recurs 16 times
+on a periodic grid. The correct count is 32. The factor of two is the D₄ checkerboard structure:
+corner and body-centre sublattices both satisfy the coincidence condition. The reviewer’s un-
+derlying point — that ”unique” must be qualified as ”modulo lattice periodicity” — stands and
+has been incorporated.
+
+Expansion (source rebuild). 24 = 16 repeats × 2 sublattices = 32: see the §II.2 expansion.
+
+
+VI-A.4 Numerical scheme
+
+The reviewer reported a late-onset instability in their semi-implicit Model B integration at t ≳
+12. The scheme used here was re-run over the same horizon and showed none: rms modu-
+lation held at 0.380565 and max|ψ| at 1.689598, constant to six significant figures from t = 2
+through t = 18. That the seeded state is stationary to this precision over a long horizon is an
+additional confirmation that it is a genuine fixed point rather than a slowly decaying transient.
+The difference is implementation-specific; dealiasing and timestep choice for the conserved
+scheme are documented in Appendix B.
+
+
+                                               25
+PART VII — RETRACTIONS FROM v92
+
+The following claims in v92 are withdrawn. Each is withdrawn for a stated reason, not for
+caution.
+
+
+ v92 claim                                       status       reason
+ 𝜉2 = −1/384 anisotropy coefficient              retracted    D₄ fourth moment is exactly
+                                                              isotropic; the value derives
+                                                              from a hypercubic stand-in,
+                                                              and the stated substitution
+                                                              yields −1/768, off by a factor
+                                                              of 2
+ 𝑠𝑜(8) → 𝑔2 → Pati–Salam cascade                 retracted    dimension increases 15→21
+                                                              and rank 3→5; impossible
+ SO(8) as gauge group                            retracted    non-chiral: −1 ∈ 𝑊(𝐷4 )
+ Three generations from triality                 retracted    five mechanisms closed; now
+                                                              an acknowledged input
+ Δ𝑡 = 𝑎0 /𝑐 and Δ𝑡 = 𝑇𝑃                          retracted    both violate the derived CFL
+                                                              bound
+ Schrödinger emergence                           corrected    original carrier degenerate;
+                                                              replaced by §III.3
+ Lorentzian signature from 𝑖2 = −1               retracted    canonical 𝑖ℏ is present in Eu-
+                                                              clidean field theory also; does
+                                                              not select signature
+ Einstein equations from elasticity              retracted    analogy, not derivation; see
+                                                              §IX.3
+ Monopole absence                                retracted    inconsistent with E₆ breaking
+                                                              topology
+ Higgs VEV 𝑣0 , 𝐴3 mass and widths, CKM          retracted    computed in an excluded
+                                                              framework, with independent
+                                                              arithmetic errors
+ ”Zero empirical calibration”, ”100% closure”    retracted    not defensible in any version
+ 𝛼−1 = 137 + 1/(28 − 𝜋/14) as derived            downgraded   arithmetic verified exact;
+                                                              physical derivation absent.
+                                                              Numerical ansatz only
+ 𝑅 = 2589 normalization                          downgraded   arithmetic exact; the subtrac-
+                                                              tion of 3 is not forced by any
+                                                              displayed symmetry
+
+
+
+
+Expansion (source rebuild). Retraction arithmetic checked in this rebuild: (−1/384)/(−1/768) =
+2, confirming the factor-of-2 error. The 𝛼−1 ansatz: 𝜋/14 = 0.224399 …, 28 − 𝜋/14 =
+27.775600 …, 1/27.775600 … = 0.0360028 …, plus 137 gives 137.0360028 … ≈ 137.036
+— the arithmetic checks; the physical derivation remains absent, exactly as the downgrade
+states. The 𝑅 = 2589 normalization: the source supplies no derivation inputs in the source
+text, so its arithmetic is flagged unverifiable-from-source in this rebuild (carried as a down-
+graded claim, not re-derived).
+
+
+
+                                                26
+PART VIII — COMPLETE CLAIM LEDGER
+
+
+
+
+           Figure 10: Figure 10. Consolidated status across five verification cycles.
+
+
+
+VIII.1 Established
+
+ claim                                                 label                            basis
+ D₄ isotropic through 4th order                        DERIVATION                       §II.1,
+                                                                                        symbolic
+                                                                                        +      nu-
+                                                                                        meric
+ D₄ isodual; unique interference maxima                DERIVATION                       §II.2, ex-
+                                                                                        haustive
+                                                                                        scan
+                  2 2 2
+ Criterion 𝑟𝑐 =     𝑢 𝜏 /(𝑣𝑞4 )                        DERIVATION                       §II.3,
+                  9
+                                                                                        symbolic
+ BCC recovered in 3D                                   DERIVATION                       §II.4, val-
+                                                                                        idation
+ D₄ selected in 4D, 𝑆 = 0.454                          PREDICTION                       §II.5
+ Dynamical shell selection from noise                  PREDICTION                       §II.6,
+                                                                                        simula-
+                                                                                        tion
+ 𝑢eff = 𝑢 − 3𝑣 𝜓̄                                      DERIVATION                       §II.7,
+                                                                                        symbolic
+ D₄ phase band (tuned 𝑞0 )                             PREDICTION                       §II.7
+ Full 24-mode state is an attractor                    PREDICTION                       §II.8,
+                                                                                        simula-
+                                                                                        tion
+ First-order transition character                      DERIVATION                       §II.9
+ 𝐷4 ∩ {𝑥4 = 0} = FCC                                   DERIVATION                       §II.10
+
+                                              27
+ Exact dispersion, 𝐻 > 0, CFL bound                     DERIVATION                    §III.1–2
+ Corrected envelope limit + validity                    DERIVATION / PREDICTION       §III.3
+ 𝑑 = 4 marginality                                      DERIVATION                    §III.4
+ 24-cell = 2𝑇 ⊂ 𝑆𝑈(2)                                   DERIVATION                    §IV.3, ex-
+                                                                                      haustive
+ 2𝑇/𝑄8 ≅ ℤ3                                             DERIVATION                    §IV.3
+ McKay: 2𝑇 ↔ affine E₆                                  DERIVATION                    §IV.3
+ E₆ chiral                                              DERIVATION                    §IV.3
+ 𝑎0 = 2𝜋/𝑞0                                             DERIVATION                    §I.3
+ 𝜓̄ conserved under Model B                             DERIVATION                    §I.3
+ Point solitons from 𝜋3 (𝑆 3 )                          DERIVATION                    §V.1
+ Independent re-derivation of load-bearing claims       CONFIRMED                     §VI-A.1
+ Lean 4 formalization, machine-checked end to end       CONFIRMED                     §VI-A.2
+
+
+
+
+VIII.2 Excluded
+
+𝑠𝑜(8) as gauge algebra; SM embedding in 𝑠𝑜(8); Pati–Salam from 𝑠𝑜(8); 𝜉2 = −1/384; both
+v92 time steps; Kerr solitons in 4D; skyrmions from a single real scalar; gauge structure internal
+to a single scalar; three generations as derived; monopole absence; universal optimality of D₄.
+
+
+VIII.3 Inputs (acknowledged assumptions)
+
+Generation count; the value of 𝜓̄ ; tuning of 𝑞0 onto the D₄ shell; conserved substrate dynamics;
+the dimensional assignment (§IX.2).
+
+
+
+PART IX — OPEN PROBLEMS
+
+IX.1 Tractable Computation
+
+Specified, requiring no new physics: larger-volume simulation for single-crystal ordering and
+phase-locking convergence; nucleation barrier height and critical droplet size; behaviour of
+the D₄ band under simultaneous detuning and higher-order terms; defect homotopy beyond
+elementary Burgers vectors; projection of D₄ to three dimensions along irrational directions.
+
+
+IX.2 Modeling Decisions
+
+The dimensional assignment. The framework carries a four-dimensional base, an internal 𝑆 3 ,
+and an observed 3+1 spacetime. Three readings are mutually exclusive:
+
+   • (A) the base is Euclidean spacetime, with Lorentzian signature arising dynamically. Most
+     economical; the only reading consistent with citing four-dimensional optimality as evi-
+     dence about spacetime. Cost: requires the signature mechanism of §IX.3.
+
+
+
+                                               28
+   • (B) the base is four spatial dimensions with one compactified. The cross-section result of
+     §II.10 shows this leaves FCC in three dimensions, so it is self-consistent. Cost: requires a
+     compactification mechanism and predicts Kaluza–Klein modes; breaks the D₄ symmetry
+     the selection argument uses.
+
+   • (C) the base is auxiliary, with spacetime emergent from defect dynamics. Most specula-
+     tive; no construction offered.
+
+This must be decided. It is not resolvable by further calculation.
+The generation count, now an input, whose assumed value must be stated as such wherever
+fermion content is discussed.
+
+
+IX.3 Requires External Structure
+
+Lorentzian signature. Published dynamical-signature mechanisms [17] [18] require a one-loop
+effective potential with more fermionic than bosonic degrees of freedom — the condition first
+identified by Greensite [41] and refined by Carlini and Greensite [42]. No purely classical Eu-
+clidean substrate is known to yield Lorentzian signature. The v92 argument from 𝑖2 = −1 is
+invalid: canonical quantization employs complex amplitudes in Euclidean field theory as well,
+and an ordinary Hilbert-space inner product is positive-definite, so obtaining 𝑔00 = −1 re-
+quires a separate construction.
+Einstein field equations. Identifying the metric with the substrate’s local impedance tensor
+is the standard analog-gravity construction [16] and is sound as far as it goes: wave propa-
+gation on a slowly varying background defines an effective metric, and geodesic bending and
+horizons follow. But the effective metric obeys the substrate’s own equation of motion, not
+𝐺𝜇𝜈 = 8𝜋𝑇𝜇𝜈 . This is a general limitation of analog models [19]. Condition-5-type reason-
+ing delivers effective curvature, not general relativity. Recovering the field equations, dif-
+feomorphism invariance, the Bianchi identity, universal coupling to conserved stress-energy,
+and the two transverse-traceless graviton polarizations is a separate and substantially harder
+programme.
+Quantum mechanics beyond single-particle envelopes. An envelope-limit Schrödinger equa-
+tion is established (§III.3). Reproducing entanglement and Bell [37]-violating correlations from
+a classical substrate requires either nonlocality or superdeterminism [38]. This is a boundary,
+not a gap.
+The monopole resolution (§V.3).
+
+
+IX.4 Must Be Restarted
+
+The E₆ breaking pattern and Higgs sector, which have not been derived at all; and consequently
+the Higgs vacuum expectation value, 𝐴3 resonance mass and widths, and CKM mixing. The
+gauge decision makes a route available; it does not rehabilitate the prior numbers, which were
+computed in an excluded framework and carried independent arithmetic errors. Nothing from
+those calculations should be carried forward.
+
+
+IX.5 The Genuinely Open Physical Questions
+
+Two questions are sharper than the rest and would most advance the programme.
+
+                                              29
+What fixes 𝜓̄ ? Under conserved dynamics it is an initial datum rather than a tuned coupling,
+which reclassifies the fine-tuning objection as a cosmological initial-condition question — a
+different and weaker charge. But no mechanism sets its value, so whether occupying the D₄
+band is a prediction or a tuning remains undetermined.
+What supplies the nucleation event? The transition is first order (§II.9), so the D₄ phase must
+be nucleated. Spontaneous emergence from a featureless substrate does not occur at the
+relevant baseline tension.
+
+
+
+PART X — ASSESSMENT
+
+Five verification cycles have produced a framework materially different from the one they be-
+gan with, and smaller. Those facts are related.
+What has been removed was in every case removed for cause: an anisotropy coefficient not
+derivable from the stated lattice; a gauge algebra excluded by a Weyl-group computation; time-
+step values violating their own stability bound; a generation count resting on a conflation of
+symmetry with multiplicity; a claimed absence of monopoles inconsistent with the adopted
+gauge group. What remains has been computed, validated against known limiting cases, sim-
+ulated where simulation was possible, and in one instance corroborated by an independent
+published result obtained by an unrelated method.
+The reformulation from static geometry to interference dynamics was the decisive move. It
+removed a primitive, dissolved a standing objection at its root, supplied the selection mecha-
+nism the static formulation never had, and produced falsifiable predictions the static version
+could not state. That reformulation is not a reinterpretation of the same theory. It is a different
+and better one.
+The honest position. IRH is a well-posed research programme with a verified geometric core,
+a defensible gauge identification, a quantified stability domain, and a specific list of open
+problems. It is not a completed unified theory, and the distance to one is large — measured
+precisely by Part IX. Its central claim, that a high-symmetry discrete structure emerges dynami-
+cally from an oscillatory substrate rather than being imposed, is at this point supported rather
+than asserted. That is a smaller claim than v92 made, and it is one that has survived adversarial
+checking.
+
+
+
+Appendix A: Complete Record of Corrections
+
+Errors found across five verification cycles, including in this author’s own output. Each is
+recorded because each altered a conclusion.
+
+   1. Anisotropy verification. An audit document’s claimed confirmation of 𝜉2 = −1/384 did
+      not survive recomputation: the D₄ fourth moment is exactly isotropic, and the document’s
+      own substitution yields −1/768.
+
+  2. Real-space comparison methodology. An initial wavepacket test produced erratic 30–
+     200% errors, traced to a phase-sensitive metric and excessive momentum spread rather
+     than to the derivation.
+
+  3. Robustness scan. A scan suggesting A₄* beats D₄ applied a near-threshold criterion out-
+     side its regime and double-counted D₄ against its own dual.
+
+                                                30
+  4. Experiment design. A simulation intended to place two shells in degeneracy placed the
+     resonant wavenumber on a third shell. The run proved informative: that shell had zero
+     triad content and produced lamellae, confirming the mechanism negatively.
+  5. Incomplete free-energy comparison. Sub-patterns within a shell were omitted; simula-
+     tion exposed the omission, leading to the identification of baseline tension as control
+     parameter.
+  6. Conjugacy classes of 2T. Trace and element order merge distinct classes, giving five in-
+     stead of seven; corrected by conjugation-orbit computation.
+   7. Weight classes in 𝑃/𝑄. An initial computation returned class 0 for all six fundamental
+      weights, inconsistent with a nontrivial centre; corrected via Smith normal form.
+  8. Mixed normalization. A free-energy scan combined normalized 𝜏, 𝑞4 with a raw mode
+     count, giving 63.8% against the correct 11.9%.
+
+  9. Explicit integration instability. An explicit Euler step against an operator reaching 6×104
+     overflowed to NaN.
+ 10. Conclusion contradicted by data. A script printed the pre-written conclusion ”Model B
+     preserves the D₄ state” while its own output showed the opposite. The correct expla-
+     nation — a sub-critical seed at a first-order transition — was found only by rejecting the
+     printed text.
+  11. Spectrum normalization. Power fractions computed without subtracting the mean, so
+      nonzero 𝜓̄ dominated the 𝑘 = 0 bin.
+ 12. Seed amplitude normalization. Seeds normalized by peak rather than per-mode ampli-
+     tude, suppressing effective amplitude by a factor of 24.
+
+ 13. Timestep in conserved dynamics. The explicit nonlinear term is multiplied by 𝑘2 reaching
+     256; 𝑑𝑡 = 0.2 diverged.
+ 14. Conflation of tuned and detuned 𝑞0 . The phase diagram used bare 𝑟 while simulations
+     used detuned 𝑞0 ; reconciling them produced the qualification of §II.7.
+ 15. Unstated domain convention. The simulation box length and shell normalization were
+     never stated, making the numerics non-reproducible. Identified in independent review;
+     fixed in §II.6.
+ 16. Unstated free-energy convention. 𝐹 as excess-over-uniform was not declared, producing
+     an apparent 1.2% discrepancy in independent review that turned out to be harmonic
+     content (§II.8).
+  17. Unspecified competitor shell. The key dynamical selection test in §II.6 could not be re-
+      produced because the triad-free competitor was never defined. Identified in indepen-
+      dent review; now fully specified.
+ 18. Unstated table convention. The A₄/A₄* rows are labelled by crystal while showing
+     reciprocal-shell sizes, which reads as a transposition. Correct as computed; caption
+     added.
+
+Items 1, 3, 5, 8, 10, 12 and 14 each changed a reported conclusion. Items 15–18 were repro-
+ducibility defects rather than errors of result: in each case the computation was right and the
+reporting was incomplete. They are recorded at the same level of prominence because a result
+that cannot be reproduced from the text is not, for a reader, distinguishable from one that is
+wrong.
+
+                                              31
+Appendix B: Computational Methods
+
+Symbolic computation used SymPy [36] throughout; the Euler–Lagrange variation, dispersion
+reduction, ordered-branch solution, and effective-coefficient expansion were all obtained
+symbolically rather than by hand. Lie-algebra results were cross-checked in Wolfram Language
+by generating Weyl groups from simple reflections, an algorithm structurally independent
+of the signed-permutation construction used in Python. Numerical optimization used SciPy
+[11] (L-BFGS-B and differential evolution). Higher-order mode counting used FFT convolution
+on a 324 grid, validated against brute-force enumeration at third and fourth order. Field
+simulations used a semi-implicit pseudo-spectral scheme [10] on a 164 periodic grid, with
+the linear operator treated implicitly in Fourier space and timesteps selected separately
+for conserved and non-conserved dynamics according to each scheme’s stability constraint.
+Phase-diagram computation involved order 104 independent free-energy minimizations per
+parameter setting. Group-theoretic results for 2T were obtained by exhaustive enumeration:
+the complete product table, conjugation orbits over all elements, and explicit coset represen-
+tatives. Random seeds were fixed for reproducibility. All figures were generated directly from
+the computations reported, with no illustrative or placeholder data.
+
+
+Appendix C: Terminology
+
+This document uses standard mathematical and physical terminology — Lie algebra, gauge
+field, discrete Laplacian, dispersion relation, order parameter — rather than framework-
+internal relabellings of the same objects. This is deliberate. The results above are useful only
+to the extent that they can be checked against the existing literature on spherical designs, Lie
+algebra classification, and pattern formation, and renaming standard objects would obstruct
+exactly that.
+
+
+
+REFERENCES
+
+[1] S. Alexander and J. McTague, ”Should All Crystals Be bcc? Landau Theory of Solidification and
+Crystal Nucleation,” Physical Review Letters 41, 702–705 (1978). doi:10.1103/PhysRevLett.41.702
+[2] J. Swift and P. C. Hohenberg, ”Hydrodynamic Fluctuations at the Convective Instability,”
+Physical Review A 15, 319–328 (1977). doi:10.1103/PhysRevA.15.319
+[3] J. McKay, ”Graphs, Singularities, and Finite Groups,” Proceedings of Symposia in Pure Math-
+ematics 37, 183–186 (1980).
+[4] P. C. Hohenberg and B. I. Halperin, ”Theory of Dynamic Critical Phenomena,” Reviews of
+Modern Physics 49, 435–479 (1977). doi:10.1103/RevModPhys.49.435
+[5] P. Delsarte, J. M. Goethals, and J. J. Seidel, ”Spherical Codes and Designs,” Geometriae Dedi-
+cata 6, 363–388 (1977). doi:10.1007/BF03187604
+[6] J. H. Conway and N. J. A. Sloane, Sphere Packings, Lattices and Groups, 3rd ed. (Springer,
+New York, 1999).
+[7] O. R. Musin, ”The Kissing Number in Four Dimensions,” Annals of Mathematics 168, 1–32
+(2008). doi:10.4007/annals.2008.168.1
+[8] A. Korkine and G. Zolotareff, ”Sur les formes quadratiques positives,” Mathematische An-
+nalen 11, 242–292 (1877). doi:10.1007/BF01442667
+
+
+                                               32
+[9] L. D. Landau, ”On the Theory of Phase Transitions,” Physikalische Zeitschrift der Sowjetunion
+11, 26–47 (1937).
+[10] L. N. Trefethen, Spectral Methods in MATLAB (SIAM, Philadelphia, 2000).
+[11] P. Virtanen et al., ”SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python,”
+Nature Methods 17, 261–272 (2020). doi:10.1038/s41592-019-0686-2
+[12] S. Bernstein, ”Sur les fonctions absolument monotones,” Acta Mathematica 52, 1–66 (1929).
+doi:10.1007/BF02592679
+[13] H. Cohn, J. H. Conway, N. D. Elkies, and A. Kumar, ”The D₄ Root System Is Not Universally
+Optimal,” Experimental Mathematics 16, 313–320 (2007). arXiv:math/0607447
+[14] D. de Laat, N. Leijenhorst, and C. de Muinck Keizer, ”Optimality and Uniqueness of the D₄
+Root System,” arXiv:2404.18794 (2024). arXiv:2404.18794
+[15] G. H. Derrick, ”Comments on Nonlinear Wave Equations as Models for Elementary Particles,”
+Journal of Mathematical Physics 5, 1252–1254 (1964). doi:10.1063/1.1704233
+[16] C. Barceló, S. Liberati, and M. Visser, ”Analogue Gravity,” Living Reviews in Relativity 14, 3
+(2011). doi:10.12942/lrr-2011-3
+[17] S. Mukohyama and J.-P. Uzan, ”From Configuration to Dynamics — Emergence of Lorentz
+Signature in Classical Field Theory,” Physical Review D 87, 065020 (2013). arXiv:1301.1361
+[18] J. Kehayias, S. Mukohyama, and J.-P. Uzan, ”Emergent Lorentz Signature, Fermions, and the
+Standard Model,” arXiv:1403.0580 (2014). arXiv:1403.0580
+[19] L. Sindoni, ”Emergent Models for Gravity: An Overview of Microscopic Models,” SIGMA 8,
+027 (2012). arXiv:1110.0686
+[20] A. Borel and J. de Siebenthal, ”Les sous-groupes fermés de rang maximum des groupes de
+Lie clos,” Commentarii Mathematici Helvetici 23, 200–221 (1949). doi:10.5169/seals-23242
+[21] J. E. Humphreys, Introduction to Lie Algebras and Representation Theory (Springer, New
+York, 1972).
+[22] J. C. Pati and A. Salam, ”Lepton Number as the Fourth Color,” Physical Review D 10, 275–289
+(1974). doi:10.1103/PhysRevD.10.275
+[23] N. D. Mermin, ”The Topological Theory of Defects in Ordered Media,” Reviews of Modern
+Physics 51, 591–648 (1979). doi:10.1103/RevModPhys.51.591
+[24] A. Hurwitz, ”Über die Zahlentheorie der Quaternionen,” Nachrichten von der Gesellschaft
+der Wissenschaften zu Göttingen, 314–340 (1896).
+[25] H. S. M. Coxeter and W. O. J. Moser, Generators and Relations for Discrete Groups (Springer,
+Berlin, 1957).
+[26] F. Gürsey, P. Ramond, and P. Sikivie, ”A Universal Gauge Theory Model Based on E₆,” Physics
+Letters B 60, 177–180 (1976). doi:10.1016/0370-2693(76)90417-6
+[27] H. Fritzsch and P. Minkowski, ”Unified Interactions of Leptons and Hadrons,” Annals of
+Physics 93, 193–266 (1975). doi:10.1016/0003-4916(75)90211-0
+[28] H. Georgi and S. L. Glashow, ”Unity of All Elementary-Particle Forces,” Physical Review Let-
+ters 32, 438–441 (1974). doi:10.1103/PhysRevLett.32.438
+[29] R. Slansky, ”Group Theory for Unified Model Building,” Physics Reports 79, 1–128 (1981).
+doi:10.1016/0370-1573(81)90092-2
+[30] M. Newman, Integral Matrices (Academic Press, New York, 1972).
+
+                                                33
+[31] A. Lichnerowicz, ”Spineurs harmoniques,” Comptes Rendus de l’Académie des Sciences,
+Paris 257, 7–9 (1963).
+[32] H. B. Lawson and M.-L. Michelsohn, Spin Geometry (Princeton University Press, Princeton,
+1989).
+[33] J. Preskill, ”Magnetic Monopoles,” Annual Review of Nuclear and Particle Science 34, 461–
+530 (1984). doi:10.1146/annurev.ns.34.120184.002333
+[34] L. de Moura et al., ”The Lean Theorem Prover (System Description),” in Automated
+Deduction — CADE-25, Lecture Notes in Computer Science 9195, 26–48 (Springer, 2015).
+doi:10.1007/978-3-319-21401-6_2
+[35] The Mathlib Community, ”The Lean Mathematical Library,” in Proceedings of the 9th ACM
+SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020), 30–46 (2020).
+doi:10.1145/3372885.3373824
+[36] A. Meurer et al., ”SymPy: Symbolic Computing in Python,” PeerJ Computer Science 3, e103
+(2017). doi:10.7717/peerj-cs.103
+[37] J. S. Bell, ”On the Einstein Podolsky Rosen Paradox,” Physics 1, 195–200 (1964). doi:10.1103/PhysicsPhysique
+[38] S. Hossenfelder and T. Palmer, ”Rethinking Superdeterminism,” Frontiers in Physics 8, 139
+(2020). doi:10.3389/fphy.2020.00139
+[39] J. A. van Meel, D. Frenkel, and P. Charbonneau, ”Geometrical Frustration: A Study of Four-
+Dimensional Hard Spheres,” Physical Review E 79, 030201(R) (2009). doi:10.1103/PhysRevE.79.030201
+[40] R. S. Hoy, ”Homogeneous crystallization in four-dimensional Lennard-Jones liquids,” Phys-
+ical Review E 109, 044604 (2024). doi:10.1103/PhysRevE.109.044604; arXiv:2311.03465
+[41] J. Greensite, ”Dynamical origin of the Lorentzian signature of spacetime,” Physics Letters B
+300, 34 (1993). arXiv:gr-qc/9210008
+[42] A. Carlini and J. Greensite, ”Why is spacetime Lorentzian?,” Physical Review D 49, 866–878
+(1994). doi:10.1103/PhysRevD.49.866
+[43] H. Cohn and A. Kumar, ”Universally optimal distribution of points on spheres,” Journal of
+the American Mathematical Society 20, 99–148 (2007). doi:10.1090/S0894-0347-06-00546-7
+[44] B. Groh and B. Mulder, ”Why all crystals need not be bcc: Symmetry breaking at the liquid–
+solid transition revisited,” Physical Review E 59(5), 5613–5620 (1999). doi:10.1103/PhysRevE.59.5613
+[45] S. Elitzur, B. Karni, and E. Rabinovici, ”A comment on BCC crystallization in higher di-
+mensions,” Modern Physics Letters B 25, 1343–1347 (2011). doi:10.1142/S0217984911026358;
+arXiv:1101.1631; arXiv:math/0607446
+
+
+
+
+                                                34
+

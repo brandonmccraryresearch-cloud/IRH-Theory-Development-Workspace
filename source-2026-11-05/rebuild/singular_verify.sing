@@ -1,0 +1,56 @@
+// Singular 4.4.1 second-tool check (exact polynomial identities).
+// D4 roots +-e_i +-e_j: per pair (i,j) the four linear forms are
+// ki+kj, ki-kj, -ki+kj, -ki-kj. S2/S4 summed over all 6 pairs.
+// Run: Singular -q < singular_verify.sing   (stdin must be the script, not a tty)
+ring R = 0,(k0,k1,k2,k3),dp;
+poly K2 = k0^2+k1^2+k2^2+k3^2;
+poly S2 = 0;
+poly S4 = 0;
+poly p;
+// pair (0,1)
+p = k0+k1; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k0-k1; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0+k1; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0-k1; S2 = S2 + p^2; S4 = S4 + p^4;
+// pair (0,2)
+p = k0+k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k0-k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0+k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0-k2; S2 = S2 + p^2; S4 = S4 + p^4;
+// pair (0,3)
+p = k0+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k0-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k0-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+// pair (1,2)
+p = k1+k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k1-k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k1+k2; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k1-k2; S2 = S2 + p^2; S4 = S4 + p^4;
+// pair (1,3)
+p = k1+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k1-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k1+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k1-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+// pair (2,3)
+p = k2+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = k2-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k2+k3; S2 = S2 + p^2; S4 = S4 + p^4;
+p = -k2-k3; S2 = S2 + p^2; S4 = S4 + p^4;
+"S2 - 12*K2 ="; print(S2 - 12*K2);
+"S4 - 12*K2^2 ="; print(S4 - 12*K2^2);
+if ((S2 - 12*K2 == 0) && (S4 - 12*K2^2 == 0)) { "MOMENT_IDENTITIES: PASS"; } else { "MOMENT_IDENTITIES: FAIL"; }
+// E6 Cartan determinant (integer matrix)
+ring S = 0,x,dp;
+matrix E6[6][6] =
+  2,-1,0,0,0,0,
+  -1,2,-1,0,0,0,
+  0,-1,2,-1,0,-1,
+  0,0,-1,2,-1,0,
+  0,0,0,-1,2,0,
+  0,0,-1,0,0,2;
+"det(E6 Cartan) ="; print(det(E6));
+if (det(E6) == 3) { "E6_DET: PASS"; } else { "E6_DET: FAIL"; }
+// Selection rationals in exact arithmetic
+"64/141 check: (8/3)/(47/8) ="; print(number(8/3)/number(47/8));
+quit;

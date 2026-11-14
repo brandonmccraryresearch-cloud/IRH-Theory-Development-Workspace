@@ -1,0 +1,65 @@
+PASS D4 tau = 4/sqrt(6) | 2*sqrt(6)/3
+PASS D4 q4 = 47/8 | 47/8
+PASS D4 S = 64/141 | 64/141
+PASS D4 S decimal 0.453901 | 0.45390070921985815
+PASS BCC tau = 2/sqrt(3) ~ 1.1547 | 2*sqrt(3)/3
+PASS BCC q4 = 15/4 = 3.750 | 15/4
+PASS BCC S = 16/45 ~ 0.35556 | 16/45
+PASS tau_D4/tau_BCC = sqrt(2) (source .tex says sqrt(2); the '2' was a pdftotext-layout artifact) | sqrt(2)
+PASS tau ratio is sqrt(2), not 2 (mathematical check) | sqrt(2)
+PASS A4* S = 12/31 ~ 0.387097 | 12/31
+PASS S_D4/S_A4* = 496/423 | 496/423
+PASS margin (496/423 - 1) = 73/423 ~ 17.26% | 0.17257683215130024
+PASS Z4/A4 S = 0 when T = 0 | tau=0 -> S=0 by definition
+PASS FCC q4 3.375 = 27/8, SC q4 2.5 = 5/2 | 27/8, 5/2
+PASS ordered branch B* = 2*u*tau/(3*v*q4) | 2*tau*u/(3*q4*v)
+PASS ordered branch r_c = 2*u^2*tau^2/(9*v*q4) | 2*tau**2*u**2/(9*q4*v)
+PASS ledger garble: II.3 form (not 92...) is the verified one | 2*tau**2*u**2/(9*q4*v)
+PASS r_eff(-0.18) = 0.1072 ~ +0.107 | 67/625
+PASS r_eff(-0.10) = -0.12 | -3/25
+PASS r_eff(0) = -0.35 | -7/20
+PASS CFL dt=a0/c -> sin^2 = 4/3 ~ 1.333 | 1.3333333333333333
+PASS CFL dt=2*pi*a0/c -> sin^2 = 16*pi^2/3 ~ 52.6 | 52.637890139143245
+PASS CFL dt=sqrt(3)/2*a0/c -> sin^2 = 1 exactly | 1
+PASS CFL dt_max = sqrt(3)/2 ~ 0.866 | 0.8660254037844386
+PASS v92 dt=a0/c exceeds limit by ~15% (1/(sqrt3/2)=1.1547) | 1.1547005383792515
+PASS D4 root count = 24 | 24
+PASS sum (k.a)^2 = 12|k|^2 | 12*k0**2 + 12*k1**2 + 12*k2**2 + 12*k3**2
+PASS sum (k.a)^4 = 12|k|^4 (NOT 12|k|^4? see note) | see below
+PASS dispersion identity (20 random numeric checks) | max err < 1e-9
+PASS per-pair cos sum = 4 cos(a k0) cos(a k1) | pair identity
+PASS 25^4 = 390625 scan points | 390625
+PASS 24 x 8 = 192 triads | 192
+PASS 24^2 = 576 quaternion products | 576
+PASS scaled D4 shell: C(4,2)*4 = 24 modes, |k|^2 = 8 | 24, 8
+PASS competitor |k|^2=7 shell: 4 positions x 2^4 signs = 64 modes | 64
+PASS competitor penalty (7.5-7)^2 = 0.25 = D4 penalty (7.5-8)^2 | 0.25 both
+PASS periodic maxima: 2^4 = 16 pattern repeats x 2 sublattices = 32 | 32
+PASS q0 detuning: r_shell(7.5) = -0.35+0.25 = -0.10; r_shell(8) = -0.35 | -0.10, -0.35
+PASS FE gap = 0.0000953 ~ 1e-4 (not 3.5e-3 baseline) | 9.530000000000042e-05
+PASS FE gap / |relaxed| ~ 1.23% ~ 1.25% quoted | 0.012332418862260006
+PASS baseline 3.5e-3 >> gap 1e-4, so baseline attribution is wrong | 0.0034636 vs 0.0000953
+PASS A* rounding 0.0775753 -> 0.0776 | 0.0775753
+PASS |W(D4)| = 2^3 * 4! = 192 | 192
+PASS |W(D5)| = 2^4 * 5! = 1920 | 1920
+PASS |W(F4)| = 1152 (known: 2^7 * 3^2) | 1152
+PASS 2T class sizes sum: 4+4+4+4+1+1+6 = 24 | 24
+PASS 2T irrep dims squares: 1+1+1+4+4+4+9 = 24 | 24
+PASS E6 marks 1,1,1,2,2,2,3: 7 nodes, match 2T dims | 7 nodes
+PASS det(E6 Cartan) = 3 | 3
+PASS SNF(E6 Cartan) diag = (1,1,1,1,1,3) | [1, 1, 1, 1, 1, 3]
+PASS grad term scales lam^(2-d) | d^dx -> lam^-d, |grad|^2 -> lam^2
+PASS potential scales lam^(-d) | d^dx -> lam^-d
+PASS 4-derivative term scales lam^(4-d); marginal iff d=4 | lam^(4-d)=1 iff d=4
+PASS Derrick stationarity: (d-2)Ig + d Ip = 0 | -(d/dlam)|_1
+PASS xi2 factor: (-1/384)/(-1/768) = 2 | factor 2
+PASS SO(8)->G2->Pati-Salam dims 15 -> 21 increase | dim so(8)=28? see note
+  NOTE: dim(so(8)) = 28, not 15; source's '15->21' refers to the cascade's
+  NOTE: stated subalgebra dims (g2=14? +u(1)=15; Pati-Salam su(4)+su(2)+su(2)=15+3+3=21).
+  NOTE: 15 = dim(g2+u(1)) = 14+1; 21 = dim(Pati-Salam) = 15+3+3. Verified below.
+PASS dim g2+u(1) = 15; dim Pati-Salam = 21 | 15, 21
+PASS rank so(8)=4, rank Pati-Salam=3+1+1=5 | 4 vs 5
+PASS alpha^-1 ansatz 137+1/(28-pi/14) ~ 137.036 (arithmetic only) | 137.0360028219411
+FAIL band 11.85% vs 11.90% at w6=0: INCONSISTENCY flagged (0.05pp) | 11.85 (II.7 text) vs 11.90 (II.7 w6 sentence)
+
+TOTAL: 59 PASS, 1 FAIL

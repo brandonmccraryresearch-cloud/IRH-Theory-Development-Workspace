@@ -8,27 +8,27 @@ section is given for the full argument.
 
 ## Geometry and selection
 
-- D₄ isotropic through 4th order (exact; spherical 5-design) — §II.1.
-- D₄ isodual; unique interference maximum (modulo lattice periodicity; 32
+- $D_{4}$ isotropic through 4th order (exact; spherical 5-design) — §II.1.
+- $D_{4}$ isodual; unique interference maximum (modulo lattice periodicity; 32
   periodic images on the $16^4$ grid — proved by exhaustive enumeration in
   `verification/reconcile_resonance_count.py`, exit 0) — §II.2.
 - Selection criterion $S = \tau^2/q_4$ parameter-free in $u,v$; BCC recovered
   in 3D (Alexander–McTague) — §II.3–II.4.
-- D₄ selected in 4D: $S = 64/141 \approx 0.454$, exact rationals, 17.3% margin
-  over A₄*; ℤ⁴ and A₄ structurally excluded ($T=0$) — §II.5.
-- Independent corroboration: 4D Lennard-Jones crystallization to D₄ (Hoy [40]).
+- $D_{4}$ selected in 4D: $S = 64/141 \approx 0.454$, exact rationals, 17.3% margin
+  over $A_{4}$*; $\mathbb{Z}^{4}$ and $A_{4}$ structurally excluded ($T=0$) — §II.5.
+- Independent corroboration: 4D Lennard-Jones crystallization to $D_{4} ($Hoy [40]).
 - Dynamical shell selection from noise; triad term causally responsible
   (77.1% vs 21.1% control; 89.5% annealed, independent reproduction) — §II.6.
 - $u_{\mathrm{eff}} = u - 3v\bar\psi$; $\bar\psi$ is the control parameter —
   §II.7.
-- D₄ phase band: 11.85% of scanned plane **(conditional on $q_0$ tuned onto
+- $D_{4}$ phase band: 11.85% of scanned plane **(conditional on $q_0$ tuned onto
   shell — always cite the qualification)** — §II.7.
 - Full 24-mode state is a genuine dynamical attractor ($F/V=-0.0077276$ relaxed;
   one-mode ansatz accurate to 1.25%) — §II.8.
 - First-order transition character ($r_{\mathrm{eff}}=+0.107$ at
   $\bar\psi=-0.18$; nucleation required) — §II.9.
 - $D_4 \cap \{x_4=0\} = \mathrm{FCC}$ — §II.10.
-- D₄ not universally optimal (narrow window loss ≤0.007%) — §II.11.
+- $D_{4}$ not universally optimal (narrow window loss $\leq0.007$%) — §II.11.
 
 ## Dynamics
 
@@ -45,19 +45,19 @@ section is given for the full argument.
 
 ## Algebra
 
-- 24-cell vertices = binary tetrahedral group $2T \subset SU(2)$ (exhaustive) —
+- 24-cell vertices = binary tetrahedral group \$2$$T \subset$\$ SU(2)\$ (exhaustive) —
   §IV.3.
-- $2T/Q_8 \cong \mathbb{Z}_3$ (8+8+8 coset decomposition) — §IV.3.
-- McKay: $2T \leftrightarrow$ affine E₆ (unique; irreps {1,1,1,2,2,2,3}) —
+- \$2$$T/Q_{8} \cong \mathbb{Z}$$_3\$ (8+8+8 coset decomposition) — §IV.3.
+- McKay: \$2$$T \leftrightarrow$$\$ affine $E_{6} ($unique; irreps {1,1,1,2,2,2,3}) —
   §IV.3.
-- E₆ chiral ($w_0 \neq -1$); complex **27**; E₆ ⊃ SO(10) ⊃ SU(5) ⊃ SM chain
+- $E_{6}$ chiral ($w_0 \neq -1$); complex **27**; $E_{6} \supset$ SO$(10) \supset$ SU$(5) \supset$ SM chain
   non-increasing in rank — §IV.3–IV.4.
-- **Gauge algebra of IRH is E₆**, read off the substrate — §IV.4.
+- **Gauge algebra of IRH is $E_{6}$**, read off the substrate — §IV.4.
 
 ## Matter and defects
 
 - Order-parameter space $M = T^4 \times S^3$: dislocation sheets (Burgers
-  vectors in D₄), no line defects, integer-charged point solitons — §V.1.
+  vectors in $D_{4})$, no line defects, integer-charged point solitons — §V.1.
 - Point group $W(F_4)$, order 1152.
 
 ## Verification

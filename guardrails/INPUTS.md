@@ -9,8 +9,8 @@ promoted to a derivation by relabeling.
    discussed. See `problems/IX2-modeling-decisions.md` §2.2.
 2. **The value of $\bar\psi$.** The baseline tension is an initial datum under
    conserved dynamics; no mechanism sets it (§IX.5, problem 5.1). Any result
-   conditional on $\bar\psi$ being in the D₄ band must say so.
-3. **Tuning of $q_0$ onto the D₄ shell.** The ordered branch vanishes at
+   conditional on $\bar\psi$ being in the $D_{4}$ band must say so.
+3. **Tuning of $q_0$ onto the $D_{4}$ shell.** The ordered branch vanishes at
    detuning 0.5 in $q_0^2$ (§II.7). The 11.85% band figure is conditional on
    this tuning — cite the qualification every time the figure is cited.
 4. **Conserved substrate dynamics.** Model B ($\partial_t\psi =

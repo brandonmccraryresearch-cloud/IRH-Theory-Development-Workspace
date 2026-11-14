@@ -8,18 +8,18 @@ it can be proven wrong.
 
 **Prediction.** For a real field with $u>0$, the cubic term is minimized when
 $\phi_1+\phi_2+\phi_3 = 0 \pmod{2\pi}$ on every closed triad — a hard signature
-distinguishing a genuine D₄ standing wave from a coincidental superposition of
+distinguishing a genuine $D_{4}$ standing wave from a coincidental superposition of
 modes on the right shell.
 
 **Measured.** Order parameter 0.26 against a maximum of 1 — "real but incomplete
 locking, consistent with a defected state in a small box."
 
-**Test.** Larger volume should drive this toward unity (→ problem 1.1).
+**Test.** Larger volume should drive this toward unity $(\to$ problem 1.1).
 **Fail criterion:** locking saturates well below 1 in the large-volume limit.
 
 **Baseline implementation.** `verification/sim7_fairtest.py` — the
 II.6 fair test at v93.0 fully-specified parameters ($16^4$, $L=2\pi$,
-$q_0^2=7.5$, D₄ vs. triad-free competitor at degenerate linear penalty).
+$q_0^2=7.5$, $D_{4}$ vs. triad-free competitor at degenerate linear penalty).
 Larger-volume runs extend this script; keep its parameter conventions.
 
 ## VI.2 The baseline-tension band
@@ -27,11 +27,11 @@ Larger-volume runs extend this script; keep its parameter conventions.
 **Prediction.** The full 24-mode pattern is the global minimum only for
 $\bar\psi$ in a definite band along the order/disorder boundary ($\approx
 -0.33 \lesssim \bar\psi \lesssim 0.03$, 11.85% of the scanned plane), **and
-only for $q_0$ tuned onto the D₄ shell**. Outside either condition,
+only for $q_0$ tuned onto the $D_{4}$ shell**. Outside either condition,
 lower-symmetry patterns or no pattern result.
 
 **Test.** Map the band under simultaneous detuning and higher-order terms
-(→ problem 1.3).
+$(\to$ problem 1.3).
 **Fail criterion:** the band vanishes under physically reasonable $w_6$ and
 detuning — the tuning requirement becomes effectively measure-zero.
 
@@ -64,7 +64,7 @@ the derivation).
 ## VI.5 Isotropy to fourth order — a prediction of absence
 
 **Prediction.** No anisotropic quartic Lorentz-violating term arises from
-nearest-neighbour D₄ coupling. Anisotropy enters at sixth order or via
+nearest-neighbour $D_{4}$ coupling. Anisotropy enters at sixth order or via
 next-nearest-neighbour couplings. **This is falsified by any observation of
 quartic-order directional dependence attributable to this mechanism.**
 
@@ -76,10 +76,10 @@ the next-nearest-neighbour contributions — the paper states where anisotropy
 
 ## VI.6 Defect spectrum
 
-**Prediction.** Dislocation sheets with Burgers vectors in D₄, integer-charged
+**Prediction.** Dislocation sheets with Burgers vectors in $D_{4}$, integer-charged
 point solitons, **no line defects**.
 
-**Test.** Classify defect composites (→ problem 1.4); the absence of line
+**Test.** Classify defect composites $(\to$ problem 1.4); the absence of line
 defects is the sharpest sub-prediction.
 **Fail criterion:** a stable line defect in the $T^4 \times S^3$
 order-parameter space.
@@ -87,9 +87,9 @@ order-parameter space.
 ## VI.7 Monopoles — predicted, not excluded
 
 **Prediction.** Stable magnetic monopoles exist ($\pi_2(G/H)=\mathbb{Z}$ for
-E₆ → ⋯ → SM breaking).
+$E_{6} \to$ ⋯ $\to$ SM breaking).
 
 **Test.** This is a prediction *of* the framework, but an undiluted monopole
 abundance contradicts observation — so the mandatory companion is the
-resolution (→ problem 3.4).
+resolution $(\to$ problem 3.4).
 **Fail criterion:** no monopole resolution consistent with observation.

@@ -27,8 +27,8 @@ readings:
 - **Self-consistent:** the cross-section result (§II.10) leaves FCC in three
   dimensions.
 - **Cost:** requires a compactification mechanism; predicts Kaluza–Klein modes;
-  and — the sharpest cost — compactification **breaks the D₄ symmetry the
-  selection argument uses**. The S-criterion selected D₄ in 4D; singling out one
+  and — the sharpest cost — compactification **breaks the $D_{4}$ symmetry the
+  selection argument uses**. The S-criterion selected $D_{4}$ in 4D; singling out one
   direction for compactification has to be justified without circularity.
 - **What would strengthen it:** a dynamical compactification mechanism (cf.
   problem 1.5 — irrational projections may bear on this); a KK-mode phenomenology
@@ -56,23 +56,23 @@ previous entry stays — the log is append-only.*
 
 - (A) couples to 3.1 (signature) and 3.2 (Einstein equations) — the hard external
   problems.
-- (B) couples to 1.5 (projections) and 4.1 (E₆ breaking — KK modes affect the
+- (B) couples to 1.5 (projections) and $4.1 (E_{6}$ breaking — KK modes affect the
   running).
 - (C) couples to nothing yet, because nothing is built.
 
 ## 2.2 Generation count as input
 
 **Standing rule.** Three generations is an INPUT (§VIII.3, §V.2 verdict), not an
-output. Five candidate mechanisms were tested and closed; the ℤ₃ coincidences
+output. Five candidate mechanisms were tested and closed; the $\mathbb{Z}_{3}$ coincidences
 (coset structure, centre grading) are real symmetries that do not generate
 multiplicity.
 
 Wherever fermion content is discussed in new work:
 - State "three generations assumed" explicitly.
-- Do not present the 8+8+8 coset decomposition or the centre ℤ₃ as an
+- Do not present the 8+8+8 coset decomposition or the centre $\mathbb{Z}_{3}$ as an
   explanation of family replication. The paper calls this conflation "seductive"
   and it is now a known trap — see `guardrails/EXCLUDED.md`.
 
 **Open sub-question (legitimate):** *given* three generations as input, how do
-they embed in the E₆ → SO(10) → SU(5) → SM breaking chain? That is problem 4.1,
+they embed in the $E_{6} \to$ SO$(10) \to$ SU$(5) \to$ SM breaking chain? That is problem 4.1,
 not a reopening of the derivation question.

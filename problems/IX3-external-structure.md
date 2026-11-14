@@ -27,7 +27,7 @@ quantization uses complex amplitudes in Euclidean field theory too.
   DOF at the scale where signature is fixed).
 - Attempt the Mukohyama–Uzan construction concretely on the
   Swift–Hohenberg substrate: compute the one-loop effective potential for the
-  D₄ background and check the sign structure. This is a real calculation with a
+  $D_{4}$ background and check the sign structure. This is a real calculation with a
   yes/no answer.
 - Note the coupling to reading (A) of the dimensional assignment (2.1): if 3.1
   is impossible in principle, reading (A) is dead and the decision collapses to
@@ -53,7 +53,7 @@ delivers effective curvature, **not general relativity**."
 
 **Attack routes.**
 - Map the precise gap: write the substrate's equation of motion for a
-  slowly-varying D₄ background in geometric form, and identify exactly which
+  slowly-varying $D_{4}$ background in geometric form, and identify exactly which
   of the GR structures (diffeomorphism invariance, Bianchi, universal coupling,
   TT polarizations) fail and where.
 - Survey emergent-gravity programs (Sakharov induced gravity, Verlinde
@@ -85,7 +85,7 @@ next calculation begins.
 
 ## 3.4 Monopole resolution
 
-**The problem.** E₆ → ⋯ → SU(3)×SU(2)×U(1) has $\pi_2(G/H)=\mathbb{Z}$: stable
+**The problem.** $E_{6} \to$ ⋯ $\to$ SU$(3)\times$SU$(2)\timesU(1)$ has $\pi_2(G/H)=\mathbb{Z}$: stable
 magnetic monopoles are predicted (§V.3, §VI.7). Monopole *absence* is excluded;
 the framework inherits the standard unified-theory monopole problem.
 
@@ -94,9 +94,9 @@ the framework inherits the standard unified-theory monopole problem.
   phase anyway if it is to address cosmological initial conditions (cf. 5.1,
   5.2). Check whether the Swift–Hohenberg substrate admits an inflation-like
   epoch — the first-order transition (§II.9) is suggestive but undeveloped.
-- **Breaking pattern avoiding the topology:** classify E₆ breaking chains and
+- **Breaking pattern avoiding the topology:** classify $E_{6}$ breaking chains and
   identify any in which the unbroken subgroup avoids the $\pi_2$ obstruction
-  at every stage. This couples to 4.1 (the E₆ breaking pattern must be worked
+  at every stage. This couples to 4.1 (the $E_{6}$ breaking pattern must be worked
   out regardless).
 - Note: this is a *prediction* (VI.7), not an embarrassment — but an
   undiluted monopole abundance contradicts observation, so the resolution is

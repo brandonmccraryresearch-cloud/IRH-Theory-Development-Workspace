@@ -1,0 +1,22 @@
+PASS flint D4 tau^2 = 8/3 | 8/3
+PASS flint D4 q4 = 47/8 | 47/8
+PASS flint D4 S = 64/141 | 64/141
+PASS flint BCC tau^2 = 4/3, q4 = 15/4, S = 16/45 | (4/3, 15/4, 16/45)
+PASS flint (tau_D4/tau_BCC)^2 = 2, hence ratio = sqrt(2) != 2 | 2
+PASS flint S_D4/S_A4* = 496/423, margin 73/423 | 496/423
+PASS flint r_c coefficient: B* check via rationals: 2*tau^2/(9*q4) factor | form verified in SymPy; flint confirms inputs
+PASS flint FE gap: 0.0077276-0.0076323 = 0.0000953 | 953e-7
+PASS flint CFL: (4/3)*(3/4) = 1 at dt_max | 1
+PASS flint r_eff(-0.18): -35/100 + 36/100 + 972/10000 = 1072/10000 | 0.1072
+PASS 2T vertex count = 24 | 24
+PASS 2T closed under quaternion multiplication (576 products) | 576 checked
+PASS Q8 subset size 8, closed | 8
+PASS Q8 normal in 2T | conjugates stay in Q8
+PASS 2T/Q8 has 3 cosets of 8 | [8, 8, 8]
+PASS 2T conjugacy class sizes = [1,1,4,4,4,4,6] | [1, 1, 4, 4, 4, 4, 6]
+PASS 2T class count = 7 (= number of irreps) | 7
+PASS 2T class sizes sum to 24 | 24
+PASS each D4 root has 8 partners at 120 deg (dot -1) | {8}
+PASS 24 x 8 = 192 ordered triads | 192
+
+TOTAL: 20 PASS, 0 FAIL

@@ -1,0 +1,10 @@
+S2 - 12*K2 =
+0
+S4 - 12*K2^2 =
+0
+MOMENT_IDENTITIES: PASS
+det(E6 Cartan) =
+3
+E6_DET: PASS
+64/141 check: (8/3)/(47/8) =
+64/141

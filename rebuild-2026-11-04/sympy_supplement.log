@@ -1,0 +1,9 @@
+PASS A4* recovers T = 120 from tau^2 = 9/5, N = 20 | 120
+PASS A4* recovers Q = 1860 from q4 = 93/20, N = 20 | 1860
+PASS Z4 recovers Q = 168 from q4 = 21/8, N = 8 | 168
+PASS A4 recovers Q = 270 from q4 = 27/10, N = 10 | 270
+PASS FCC recovers Q = 216 from q4 = 27/8, N = 8 | 216
+PASS SC recovers Q = 90 from q4 = 5/2, N = 6 | 90
+PASS BCC recovers T = 48, Q = 540 | (48, 540)
+
+TOTAL: 7 PASS, 0 FAIL
