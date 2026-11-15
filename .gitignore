@@ -1,2 +1,14 @@
 __pycache__/
 *.pyc
+
+# LaTeX build intermediates (v94 tree builds clean from .tex + figs/)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+*.toc
+*.lof
+*.lot

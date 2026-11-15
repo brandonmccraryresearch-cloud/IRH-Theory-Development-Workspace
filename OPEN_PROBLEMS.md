@@ -9,7 +9,10 @@ exclusion, or promotion to the established core).
 
 ## IX.1 — Tractable Computation (§IX.1)
 
-Specified; requires no new physics. All OPEN.
+Specified; requires no new physics. All OPEN. Programme note (2026-11-14):
+  IX.1.1 and IX.1.2 have partial results — $4\pi$-box dissolution and the
+  $L \gtrsim 61$ size bound (see gap inventory G-A9, G-A10) — but no item changes
+  status; all five stay OPEN.
 
 | # | Problem | Paper reference | Status |
 |---|---------|-----------------|--------|
@@ -18,6 +21,13 @@ Specified; requires no new physics. All OPEN.
 | 1.3 | $D_{4}$ band under simultaneous detuning and higher-order terms | §II.7 | OPEN |
 | 1.4 | Defect homotopy beyond elementary Burgers vectors | §V.1 | OPEN |
 | 1.5 | Projection of $D_{4}$ to three dimensions along irrational directions | §II.10 | OPEN |
+
+Programme note (2026-11-14): row 1.4 narrowed but stays OPEN. Phonon-stiffness
+corrects the local side — the translation (Burgers) lattice is $\pi D_{4}^{*}$,
+not $\pi D_{4}$, and the equilibrium edge/screw factor is $4/3$, not $2$; the
+shortest-shell classification is supported at B / F2 (PROPOSED, see gap inventory
+G-A11). The full homotopy classification is untouched, and defect realisation is
+contradicted in the tested setup (Volterra defect heals under relaxation).
 
 $\to$ Brief: `problems/IX1-tractable-computation.md`
 
@@ -58,6 +68,14 @@ The two sharpest; highest leverage in the program.
 |---|---------|--------|
 | 5.1 | **What fixes $\bar\psi$?** Under conserved dynamics it is an initial datum, reclassifying the fine-tuning objection as a cosmological initial-condition question — but no mechanism sets its value. | OPEN |
 | 5.2 | **What supplies the nucleation event?** First-order transition (§II.9); the $D_{4}$ phase must be nucleated across a barrier at $\bar\psi=-0.18$. | OPEN |
+
+Programme note (2026-11-14): stays OPEN. Noise-nucleation (chat 923db040, partial
+bundle) is a negative result: no transition-gate crossings in 192 ordinary runs or
+the bounded adaptive-splitting search; per-configuration 95% upper bound on gate
+entry by model time 40 is $8.94\%$ (Clopper–Pearson $0/32$). The null is expected
+at barrier/noise $\approx 34$ (Kramers factor $\sim 10^{15}$); it is a
+per-configuration gate-entry bound in the radial envelope, not a selection rate,
+and it neither confirms nor refutes a nucleation mechanism.
 
 $\to$ Brief: `problems/IX5-genuinely-open.md`
 

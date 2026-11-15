@@ -47,13 +47,13 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts.** 74 entries in total: **63 open gaps**, **7 closed-as-verdict**
+**Counts.** 75 entries in total: **64 open gaps**, **7 closed-as-verdict**
 (recorded inside their groups), **4 recorded non-gaps** (a boundary, a
-standing rule, a gated non-item, a record guard). By group: A — 20 entries
-(18 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (18 open, 2 closed,
+standing rule, a gated non-item, a record guard). By group: A — 21 entries
+(19 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (18 open, 2 closed,
 2 recorded non-gaps); D — 12 (11 open, 1 recorded); E — 11 (8 open,
 2 closed, 1 record guard). A further list of verdict-closures that are not gaps at
-all (§6) is given separately and is not counted in the 74.
+all (§6) is given separately and is not counted in the 75.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -130,7 +130,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A5 — The truncation gap: do the $D_{4}$ basin results survive outside the 24-mode truncation? [FIRST JOINT ITEM — PARTIAL, narrowed, stays OPEN — Batch 2 audit 2026-11-12]
 
-- **Status/grade:** PARTIAL, narrowed, stays OPEN. Patterned recovery with harmonics VERIFIED (Track E B / Track F F2). General selection from noise NOT established (0/6 random starts recover; Wilson 95% upper bound on the true rate $\approx 39$%).
+- **Status/grade:** PARTIAL, narrowed, stays OPEN. Patterned recovery with harmonics VERIFIED in two cell constructions plus the 4D field test (Track E B / Track F **F1 (PROPOSED**, was F2 — two-leg evidence: full rerun + independent re-derivation)). General selection from noise NOT established anywhere (0/6 field; pooled 0/20 uniform per star, Wilson 95% upper bound $\approx 16\%$; AMS null expected at barrier/noise $\approx 34$). **LANDED and audited 2026-11-14:** noise-nucleation 4D field test (chat 02dfb5cb: 18 runs to $t=200$, meshes $18^{4}$/$28^{4}$; 9/9 patterned + 3/3 bridge recover, 6/6 random decay to uniform) and native-cells (Task 4) — see consolidated comparison.
 - **What we know:** everything in WS-A/WS-C is inside the 24-mode
   truncation $(L = \pi$ box, $16^{4}$ grid, shell modes only). The "Compare $D_{4}$
   Selection Frameworks" gap memo (16th task, finished overnight
@@ -158,6 +158,8 @@ discrepancy), §8.2 (Model B artifact).
 ### G-A6 — Off-shell instabilities of the full $D_{4}$ wave [CLOSED as a mapping task — VERIFIED (Track E B / Track F F2) — Batch 2 audit 2026-11-12]
 
 - **Status/grade:** CLOSED as a mapping task — VERIFIED (Track E B / Track F F2). The frozen-ansatz spectrum is fully verified (audit re-ran `run_offshell.py` at $K = 3, 6, 8$; headline $K = 8$ rate $+0.022877243496718158$ reproduces exactly; all other block rates to $\leq 8\times10^{-14}$). Stability of the harmonically relaxed state is ABSTAIN — a new follow-on gap, not G-A6.
+
+**Follow-on landed 2026-11-14 (bloch-growth, Task 6):** sampled stability of the relaxed state is supported at grade **C (PROPOSED)** — three routes agree (52 $\Lambda$-sector fiber maxima, 259 $q$, 14,641 $q$ dense GCP map), no positive rate anywhere sampled; Goldstone zeros / mean channel F2 supported; frozen quartet $+0.0228772435$ confirmed as an artefact (F2 supported). Continuum Bloch stability for all $q$: **ABSTAIN** (no interval enclosure). Qualifier: the 52 rates are $\Lambda$-sector fiber maxima, not full-fiber maxima; one open numerical gap ($\Gamma$ first finite rate $-2.73844227$ vs $-2.73813733$, difference $3.05\times10^{-4}$).
 - **What we know:** distinct from G-A5 (a field test of formation) and
   from WS-A task 3 (band under detuning within the truncation). The
   linear-stability analysis of the standing wave against off-shell
@@ -208,7 +210,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A9 — Larger-volume simulation: single-crystal ordering and phase-locking convergence (IX.1.1); larger-box droplet run costed, not run
 
-- **Status/grade:** OPEN (repo register); no grade.
+- **Status/grade:** PARTIAL, narrowed, stays OPEN. Dissolution in the $4\pi$ box supports Track E **B (PROPOSED)**; size bound $L \gtrsim 61$ (35.11 GiB per real array at cutoff $6.5$) supports Track E **B (PROPOSED)**. Local growth in the $2\pi$ box is now read as finite-box/image-assisted filling, not an isolated-droplet threshold (local shell-fraction scaling predicts the $4\pi$ dissolution). The larger-box droplet run itself is still unrun; infinite-volume $R_{c}$ stays ABSTAIN.
 - **What we know:** all package simulations are $L = \pi$, N = 16 (1.4
   wavelengths across); periodic images may stabilise sub-patterns that
   would be unstable in a larger box (WS-A task 5 §5). A larger-box
@@ -227,7 +229,7 @@ discrepancy), §8.2 (Model B artifact).
 - **Status/grade:** OPEN (repo register). Partial verdicts: ODE
   $R_{c} = 12.57 / \DeltaF* = 555$, grade B (exact within the amplitude
   equation); thin-wall $R_{c} = 7.38 / \DeltaF* = 37.2$, grade C (approximation
-  shown to fail — $\xi = 8.64 > R_{c})$.
+  shown to fail — $\xi = 8.64 > R_{c})$. **2026-11-14:** saddle energy alone does not decide full-field fate — supported at Track E **C (PROPOSED)** (single-profile family; interface-tension: tensions $0.0189904$ / $0.0264060$ at coexistence, thin-wall transfers $36.95$ / $138.12$ vs saved saddle $550.93$; transferred tension is path-dependent by 40%). Deterministic saddle/threshold supports B / F2. Any rate stays ABSTAIN.
 - **What we know:** the ODE and thin-wall routes use the one-mode
   $F_{mod}$ and the envelope gradient coefficient, ignoring higher harmonics
   and the relaxed free energy (1.2% lower at the operating point). The
@@ -241,19 +243,15 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A11 — Defect homotopy beyond elementary Burgers vectors (IX.1.4)
 
-- **Status/grade:** OPEN (repo register); untouched by all 15 tasks.
-- **What we know:** nothing in the programme bears on it. Manuscript
-  §V.1 states the defect spectrum (dislocations yes; monopoles,
-  skyrmions, hopfions no — line 924); the homotopy classification beyond
-  elementary Burgers vectors is not computed anywhere.
+- **Status/grade:** OPEN, narrowed. Shortest-shell classification supported at Track E **B / Track F F2 (PROPOSED)**; full homotopy untouched.
+- **What we know (2026-11-14, phonon-stiffness, Task 8, 31/31 VERIFIED):** the translation (Burgers) lattice is $\pi D_{4}^{*}$, **not** $\pi D_{4}$ — the local side was wrong and Co-scientist is right (GCP confirms $(\pi/2)(1,1,1,1)$ is the shortest vector, $|b|=\pi$); one $W(F_{4})$ orbit per $D_{4}^{*}$ shell $\|b\|^{2}\le6$ verified (group order 1152 by exact-rational BFS). Stiffness $\lambda=\mu=4A^{2}q_{0}^{4}=1.54058921014457$ agrees exactly with the local value. Equilibrium edge/screw factor is $4/3$, **not** $2$ — the local edge coefficient was a non-equilibrium trial-field value, $3/2$ high; corrected elementary edge $K$ $0.490385\to0.326923$, $E/A(R=20)$ $0.899\to0.666$; screw unchanged. **Local edge leg demoted pending correction C5 (script rerun outstanding).** Defect realisation contradicted in the tested setup (Volterra defect heals under relaxation; GCP Job 3).
 - **What would close it:** a computation / classification of the defect
   homotopy, or a stated reason it is out of scope.
 - **Owner:** Co-scientist task (new).
 
 ### G-A12 — Projection of $D_{4}$ to three dimensions along irrational directions (IX.1.5): approximate icosahedral signature uncomputed
 
-- **Status/grade:** Partly verified, partly open. |Aut$(D_{4})$| = 1152 (F3);
-  no exact icosahedral projection (5 ∤ 1152) — verified (WS-A task 1).
+- **Status/grade:** Partly verified, partly open; stays OPEN. The verified geometric-mapping part supports Track E **B / Track F F1 (PROPOSED)** (peak-ratios, Task 7: 41/41 VERIFIED across two bundles; $A_{1}$–$A_{4}$, $C_{1}$–$C_{4}$, $F_{1}$, $F_{2}$, $D_{1}$ agree to printed precision on both sides). No nearest-icosahedral search was run; the synthetic-discriminant reading supports B / F1, the measurable-discriminant reading stays C (post-hoc selection, I1, no detector/noise model, one normal).
 - **What we know:** an *approximate* or finite-window icosahedral-like
   pattern is a separate, uncomputed question. Window counts (485/339/
   485/819 distinct positions; lattice fraction 249/1465 for irrational
@@ -383,6 +381,7 @@ discrepancy), §8.2 (Model B artifact).
   numbers must be struck from any summary of A20.** (Spot-check note:
   the onset digits do occur as raw data values in the scan/boundaries
   tables; the audit's "appear nowhere" means nowhere as stated results.)
+  **2026-11-14 identity finding (material):** `matched-branches/` is **byte-identical to the Batch 2 `a20-onset/` record** — every data file matches (scan-table sha256 `da415b0c…`, same reproduction zip); `methods.md` differs only in LaTeX-delimiter style. This is a re-audit of the same record under a new task name, **not** a second independent delivery; it adds no new evidence beyond Batch 2. New in the 2026-11-14 audit: the rebuild-2 vs original-PDF check (unchanged — VERIFIED) and a fresh independent re-derivation + rerun (exit 0; 90,024-row scan max diff $0.0$). The chat-final-message numbers (onset $0.0301$–$0.0434$, $0.0399 \pm 0.0003$, $0.0329 \pm 0.0017$ / $0.0355$) remain UNVERIFIED and must be struck from any summary; the '$A_{4}^{*}$ branch does not exist on $24^{4}$/$28^{4}$ grids' phrasing remains REFUTED as phrased (branch exists in 7,765 scan rows).
 - **What would close it (in part):** the candidate task "Calculate
   matched $D_{4}$ and $A_{4}$* onset branches" (Academia 2026-11-12 email) — both
   candidates on the same normalized amplitude / shell-penalty footing.
@@ -392,6 +391,13 @@ discrepancy), §8.2 (Model B artifact).
   programme item.
 - **Owner:** Co-scientist task (LANDED, audited 2026-11-12) for the onset branches; the full fair test is a
   programme-scale item to be scoped and costed.
+
+### G-A21 (proposed) — F-LOCAL-1: the local solver's physical cap is $|k|^{2} \leq 64$, so the GCP '$K=6$ full study' never widened the $A_{4}^{*}$ band
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** the local solver's physical cap is hardcoded at $|k|^{2} \leq 64$, so the GCP '$K=6$' energies are identical to $K=4$ to 15 figures — trap robustness to a genuinely wider band is still UNVERIFIED.
+- **What would close it:** a rerun with a genuinely wider band (cap raised), costed first.
+- **Owner:** Local Muse verification (small local runs) / Co-scientist task.
 
 ## Group B — Substrate models and dynamics convergence
 
@@ -842,7 +848,7 @@ torus-node comparison §7.3.
 
 ### G-C21 — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved
 
-- **Status/grade:** Open; ABSTAIN on the endpoint (WS-D task 12).
+- **Status/grade:** Open; continuum UV endpoint bounded to $[3/2, 2]$ at grade **B (PROPOSED)**; sharp value ABSTAIN. Core verdict confirmed (Gemini Sweep 5, audited 2026-11-12): the $\sim 2$ vs $\sim 3/2$ split is bare-coupling and extrapolation-regime dependence; the canonical point is $\approx 2$; the continuum UV value is bounded to $[3/2, 2]$ at B with the sharp value abstained; no grade change to any IRH claim.
 - **What we know:** CDT $D_{s}(\sigma) = 4.02 - 119/(54+\sigma)$ evaluates 1.816 at
   $\sigma\to0 ($paper $1.80 \pm 0.25)$ and 4.02 at $\sigma\to\infty ($paper $4.02 \pm 0.10)$; IRH
   holds D = 4 at all scales — largest divergence |$4 - 1.82$| $\approx 2.18$ at
@@ -912,6 +918,7 @@ entirety" (programme brief).
   $3.8585\times10^{-5}$ at $A_{max} = 0.00980059)$. No nucleation mechanism or rate is
   stated (§II.9 line 641: "Any cosmological account within this
   framework must supply a nucleation mechanism").
+  **2026-11-14 (noise-nucleation chat 923db040, partial bundle):** negative result — no transition-gate crossings in 192 ordinary runs or the bounded adaptive-splitting search; per-configuration 95% upper bound on gate entry by model time 40 is $8.94\%$ (Clopper–Pearson $0/32$; pooled $0/192$ would be $1.55\%$). The null coheres with the local radial-envelope saddle ($550.930573$ at $dr=0.5$): at barrier/noise $\approx 34$ the Kramers factor $\exp(551/16) \approx 9.0\times10^{14}$ predicts $\sim 10^{-13}$ expected hits per run, so the null is expected, not evidence against nucleation. Open item: re-run the audit when the chat's 7 files land, checking the 192-vs-160 count discrepancy first (192 = code's 6-config default $\times 32$; bundle has 160 in `ensemble.log`, 128 tabulated).
 - **What would close it:** a nucleation mechanism and rate — what
   nucleates the $D_{4}$ phase, at what temperature T\*, with what strength $\alpha$
   and duration $\beta/H ($task 15 requirements list, item 5). "These three
@@ -978,8 +985,7 @@ entirety" (programme brief).
 
 ### G-D6 — No independent work citing or discussing IRH was found
 
-- **Status/grade:** INCOMPLETE-EVIDENCE (WS-E task 14, M8; search-bounded
-  absence, not a claim none exists).
+- **Status/grade:** INCOMPLETE-EVIDENCE (unchanged). Gemini Sweep 6 (Task mode, 2026-11-13) audited 2026-11-13: **MISS** confirmed — zero independent works citing or discussing IRH; G-D6.1 (final) B CONFIRMED; G-D6.2 B (scoped bound) / ABSTAIN (universal negative) CONFIRMED, re-anchored on the Argon run. **Model-label correction:** the follow-up run was **Gemini 4 Hydrogen, not Argon** — cite it as Hydrogen; the two runs are one artificial pipeline ($\to$ I1), not two independent verifications. **Independence correction: G-D6.2 $I2 \to I1$** (the initial report's I2 is refuted as an overclaim; grade impact none — the $I1 \to C$ bound was repealed 2026-11-12). G-D6.3 F2 CONFIRMED and STRENGTHENED (Chaudhary 88-page full-text check closes the pp. 65–88 gap).
 - **What we know:** no independent work citing/discussing IRH was found
   in the 63-query / 73-paper retrieval. "A different query set could
   find something."
@@ -1036,7 +1042,7 @@ entirety" (programme brief).
 
 ### G-D10 — IRH alone in the (2,2) corner: a structural fact, not evidence; no independent corroboration
 
-- **Status/grade:** Open (narrowed); grade C — strengthened bound (WS-E task 14, M6, C/I1/F1). DECIDED 2026-11-12 ~19:11 CST by the assistant under Brandon's standing decision autonomy ("act as I would"); his widget tap for this option was withdrawn by his "disregard last message" instruction immediately after, so the call is the assistant's, on the audit's evidence. The broad claim stays overturned (audit grade B); the gap continues in narrowed form.
+- **Status/grade:** Open (narrowed); grade C — strengthened bound (WS-E task 14, M6, C/I1/F1). DECIDED 2026-11-12 ~19:11 CST by the assistant under Brandon's standing decision autonomy ("act as I would"); his widget tap for this option was withdrawn by his "disregard last message" instruction immediately after, so the call is the assistant's, on the audit's evidence. The broad claim stays overturned (audit grade B); the gap continues in narrowed form. **Audit landed 2026-11-12 (Gemini Sweep 1 audit):** the overturn stands under the stated three-criteria definition (IRH is not alone in the (2,2) corner; SSM (2,2,2)); the conditional sub-verdict is preserved at grade C — narrowed to spectral/Turing-only selection, no retrieved approach occupies the spectral-only (2,2) corner (SSM sits at (2,1,2), Lee at (2,1,1), Four Null at (2,1,1) under that reading). What would close the narrowed form: a retrieved approach with emergent spectral/Turing selection in the (2,2) corner, or a wider retrieval that still finds none.
 - **What we know:** on the three structural criteria, no retrieved
   approach is close to IRH on all three at once; IRH is alone in the
   (substrate 2, selection 2) corner. GFT is closest on ontology
@@ -1257,7 +1263,7 @@ entirety" (programme brief).
 ## 6. Closed in this baseline (graded verdicts that are not gaps)
 
 These items are **closed** under the §0 definition — each has a graded
-verdict — and are therefore not counted among the 63 open gaps. Several
+verdict — and are therefore not counted among the 64 open gaps. Several
 close by showing the claim as written is wrong; the correction is the
 result. (Items marked $\dagger$ are also cross-listed inside their groups with
 CLOSED status.)
@@ -1306,14 +1312,14 @@ CLOSED status.)
 
 | Group | Entries | Open | Closed-as-verdict | Recorded non-gaps |
 |---|---|---|---|---|
-| A — $D_{4}$ selection, band, basin, truncation | 20 | 18 | 2 (A17, A18) | 0 |
+| A — $D_{4}$ selection, band, basin, truncation | 21 | 19 | 2 (A17, A18) | 0 |
 | B — Substrate models, dynamics convergence | 9 | 8 | 1 (B9) | 0 |
 | C — Frameworks, rivals, constants, gravity | 22 | 18 | 2 (C17, C22) | 2 (C4 boundary, C9 standing rule) |
 | D — Cosmology, early universe | 12 | 11 | 0 | 1 (D12 gated) |
 | E — Programme, provenance, audit scope | 11 | 8 | 2 (E1, E4) | 1 (E11 record guard) |
-| **Total** | **74** | **63** | **7** | **4** |
+| **Total** | **75** | **64** | **7** | **4** |
 
-**By owner (open gaps only, 63 — counted by each entry's *next* step's owner;
+**By owner (open gaps only, 64 — counted by each entry's *next* step's owner;
 entries gated on a Brandon decision or a stated input are counted under
 Brandon until that step is taken, and under Co-scientist/local/literature
 after it):**
@@ -1322,12 +1328,12 @@ after it):**
 |---|---|---|
 | Brandon's call (alone or first) | 23 | A1, A2, A8, A16, B2, B3, B4, B7, C5, C8, C11, C12, C13, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
 | Co-scientist task (new / running / candidate) | 23 | A3, A4, A5 (running), A6 (running), A9, A10, A11, A12, A13, A14, A19, A20 (running), B5, B8, C2, C3, C6, C7, C10, C15, D2, D3, E8 |
-| Local Muse verification | 9 | A7, A15, B1, B6, C16, E2, E3, E5, E9 |
+| Local Muse verification | 10 | A7, A15, A21, B1, B6, C16, E2, E3, E5, E9 |
 | Literature / external | 8 | C1, C18, C19, C20, C21, D6, D10, E10 |
-| **Total** | **63** | |
+| **Total** | **64** | |
 
-23 + 23 + 9 + 8 = 63. Brandon's call and Co-scientist task are now tied as
-the largest owner classes (23 each of 63) — over a third of the open gaps
+23 + 23 + 10 + 8 = 64. Brandon's call and Co-scientist task are now tied as
+the largest owner classes (23 each of 64) — over a third of the open gaps
 still need a decision or a stated input from Brandon before any task can
 close them. Of the 23 Co-scientist-owned gaps, 3 are running (A5, the 4D
 field test; A6, off-shell instabilities; A20, matched $D_{4}/A_{4}$* onset).

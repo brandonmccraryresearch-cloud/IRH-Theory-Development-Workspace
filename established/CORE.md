@@ -56,8 +56,11 @@ section is given for the full argument.
 
 ## Matter and defects
 
-- Order-parameter space $M = T^4 \times S^3$: dislocation sheets (Burgers
-  vectors in $D_{4})$, no line defects, integer-charged point solitons — §V.1.
+- Order-parameter space $M = T^4 \times S^3$: dislocation sheets (Burgers vectors
+  in the translation lattice $\pi D_{4}^{*}$ — corrected 2026-11-14; the $D_{4}$ form
+  was wrong), no line defects, integer-charged point solitons — §V.1. Equilibrium
+  edge/screw defect-cost factor is $4/3$, not $2$ (corrected 2026-11-14; elementary
+  edge $K$ $0.490385\to0.326923$); screw costs unchanged.
 - Point group $W(F_4)$, order 1152.
 
 ## Verification

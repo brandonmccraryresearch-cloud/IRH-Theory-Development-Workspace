@@ -1501,33 +1501,9 @@ factor 2); no IRH grade moves.
 `IRH_GAP_INVENTORY_2026-11-12.md`. This section maps only the live and
 candidate Academia items.)
 
-- **RUNNING — "Run a four-dimensional field test of $D_{4}$ formation"
-  (Academia Co-scientist, launched 2026-11-12, chat
-  `02dfb5cb-5423-47eb-9bbe-d8e3d25b6fdc`).** A small 4D periodic field
-  calculation that also permits off-shell modes, from random fields and
-  patterned seeds, returning mode-occupancy, harmonic-power and energy
-  trajectories. **Gap attacked (inventory G-A5): the truncation gap** —
-  whether the $D_{4}$ basin results survive outside the 24-mode truncation.
-  It is the headline gap from the (not-locatable) "Compare $D_{4}$ Selection
-  Frameworks" gap memo: the gap between *selecting* the $D_{4}$ shell and
-  *spontaneously reaching* its full 24-mode pattern. Locally, the
-  sharpest form of the gap is: noise quench reaches 24/24 in 0/5 seeds
-  (WS-C) and 0/6 noise seeds grow at all (WS-A task 5); the 24-mode is
-  the attractor from seeded/basin starts but is never reached from noise
-  inside the truncation. The 4D test is the first attempt to see whether
-  that changes once off-shell modes are permitted. When it lands, it is
-  audited claim-by-claim locally under truth-seeking-frontier /
-  cross-domain-discovery / HLRE v5.1; nothing is filed, committed, or
-  written into the manuscript.
-- **CANDIDATE (not launched) — "Map off-shell instabilities of the full
-  $D_{4}$ wave".** Linearizes around the standing wave; leading unstable bands
-  on a finite Fourier grid. **Gap attacked (inventory G-A6):** the
-  stability of the full $D_{4}$ wave against off-shell perturbations — a
-  different method from WS-A task 3 (which maps the band under detuning
-  within the truncation). Genuinely new, not a duplicate.
-- **CANDIDATE (not launched) — "Calculate matched $D_{4}$ and $A_{4}$* onset
-  branches".** Both candidates on the same normalized amplitude /
-  shell-penalty footing. **Gap attacked (inventory G-A20):** no $A_{4}$*
+- **LANDED and audited 2026-11-14 — "Run a four-dimensional field test of $D_{4}$ formation" (Academia Co-scientist, chat `02dfb5cb-5423-47eb-9bbe-d8e3d25b6fdc`).** 18 trajectories + 6 refinements to $t = 200$, meshes to $28^{4}$; all 9 patterned starts recovered phase-locked $D_{4}$; all 6 random starts decayed to uniform. Audited claim-by-claim locally (noise-nucleation audit, 21/27 VERIFIED, 1 correction, 1 REFUTED as a nucleation measurement, 4 UNVERIFIED). G-A5 confirmed, not moved: patterned recovery VERIFIED; general selection from noise NOT established.
+- **LANDED and audited 2026-11-12 (Batch 2) and 2026-11-14 (bloch-growth, Task 6) — "Map off-shell instabilities of the full $D_{4}$ wave".** Frozen-ansatz spectrum fully verified (headline $K=8$ rate $+0.022877243496718158$ reproduces exactly); follow-on sampled stability of the relaxed state supported at grade C (PROPOSED) — three routes agree, no positive rate anywhere sampled; continuum Bloch stability stays ABSTAIN. **Gap attacked (inventory G-A6)** — mapping task CLOSED; follow-on recorded in the gap inventory.
+- **LANDED and audited 2026-11-12 (Batch 2) — "Calculate matched $D_{4}$ and $A_{4}$* onset branches".** Exact-combinatorics and matched-pure-branch part VERIFIED (Track E B / Track F F1); dynamical-competition, nucleation, and unbiased-emergence parts stay OPEN. **2026-11-14 identity finding:** `matched-branches/` is byte-identical to the Batch 2 `a20-onset/` record — a re-audit, not a second independent delivery; no new evidence beyond Batch 2. **Gap attacked (inventory G-A20):** no $A_{4}$*
   control was ever simulated (Hark R4 — every simulation box is $L=\pi$
   hypercubic; no preregistered competitor set). No $A_{4}$* onset-branch
   computation was found in the local WS-D summary. $A_{4}$* is the

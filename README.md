@@ -70,7 +70,12 @@ is not IRH's $\tau$; $S$ is never Perelman's $W$.
   1 CORRECTED, 1 ABSTAIN.
 - Batch 2 audit (`programme/AUDIT_batch2_2026-11-12.md`): 53 claims — 43 VERIFIED,
   9 UNVERIFIED, 1 REFUTED. G-A5 PARTIAL, stays open; G-A6 CLOSED as a mapping task
-  (grade B / F2); G-A20 PARTIAL.
+  (grade B / F2); G-A20 PARTIAL. G-A6 follow-on
+  (2026-11-14): sampled stability of the relaxed state is supported at grade
+  **C (PROPOSED)** — three routes agree (52 sector fibers, 259 $q$,
+  14,641 $q$), no positive rate anywhere sampled; continuum Bloch stability
+  for all $q$ stays ABSTAIN (no interval enclosure exists). The mapping-task
+  closure (B / F2) is unchanged.
 - Gemini 4 sweeps (specs in `programme/GEMINI-SWEEPS-SPECS-2026-11-12.md`; Task mode
   from Sweep 6, model pinned to Argon):
   - Sweep 1, G-D10: broad claim overturned (B); narrowed to spectral/Turing-only
@@ -84,16 +89,24 @@ is not IRH's $\tau$; $S$ is never Perelman's $W$.
     The follow-up run was Gemini 4 Hydrogen, not Argon; cite it as Hydrogen.
     G-D6.2 independence $I2 \to I1$.
 - Local independent reproduction (2026-11-14, \$0): all eight follow-on tasks
-  re-run locally, blind to Co-scientist output — noise nucleation, grain locking,
-  critical seed, native cells, spectral threshold, Bloch growth, peak ratios,
-  phonon stiffness. Reports + code in `programme/local-independent/`; head-to-head
-  comparison PENDING (scaffolds in each `COMPARISON_taskN.md`) until Co-scientist
-  results land. No grades changed by this programme.
+  re-run locally, blind to Co-scientist output. Head-to-head comparison COMPLETE
+  2026-11-14 (`CONSOLIDATED_COMPARISON_2026-11-14.md` in
+  `~/workspace/research/irh/co-scientist-tasks-2026-11-10/`): 314 claims audited —
+  277 VERIFIED, 10 VERIFIED WITH CORRECTION, 4 REFUTED, 20 UNVERIFIED, 1 ABSTAIN.
+  Six completed `COMPARISON_taskN.md` scaffolds; interface-tension and
+  matched-branches comparisons are sections inside their audit files. No grades
+  changed by this programme (grade implications are stated as evidence only; grade
+  changes are Brandon's).
 - Follow-on tasks in Academia: ten launched 2026-11-14 (the eight plus two Brandon
-  launched himself); results pending.
-- Heavy follow-ons: GCP caps approved 2026-11-14 (\~\$102 total: Task 4 \$25,
-  Task 6 \$2.44, Task 8 \$25 + \$50); status in
-  `programme/local-independent/CONSOLIDATED_SUMMARY_LOCAL_2026-11-14.md`.
+  launched himself); eight landed and audited 2026-11-14 (314 claims, see R1).
+  Grain-locking and spectral-threshold still BLOCKED — no files on disk
+  (reproducibility zips 215 MiB and 306 MiB undownloaded); their
+  `COMPARISON_task2.md` / `COMPARISON_task5.md` scaffolds remain pending.
+- Heavy follow-ons: GCP caps approved 2026-11-14 (~\$102 total: Task 4 \$25,
+  Task 6 \$2.44, Task 8 \$25 + \$50); all four runs DONE 2026-11-14, total spend
+  **\$9.13** (\$0.19 / \$2.89 / \$0.03 / \$6.02); lean-build-4 STOPPED (asleep).
+  Jobs 1, 2, 4 COMPLETE; Job 3 prototype only (Volterra defect heals under
+  relaxation; $N=32$ production not run).
 - HLRE amendments 2026-11-12 (`programme/HLRE-*.md`): §6.5 human-gate repeal;
   external-verification authorization (Manus, Gemini 4 (Argon), Co-scientist);
   $I1 \to C$ bound repealed and replaced by external verification audited locally
