@@ -47,13 +47,13 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts.** 75 entries in total: **64 open gaps**, **7 closed-as-verdict**
+**Counts.** 80 entries in total: **68 open gaps**, **8 closed-as-verdict**
 (recorded inside their groups), **4 recorded non-gaps** (a boundary, a
-standing rule, a gated non-item, a record guard). By group: A — 21 entries
-(19 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (18 open, 2 closed,
+standing rule, a gated non-item, a record guard). By group: A — 26 entries
+(24 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (17 open, 3 closed,
 2 recorded non-gaps); D — 12 (11 open, 1 recorded); E — 11 (8 open,
 2 closed, 1 record guard). A further list of verdict-closures that are not gaps at
-all (§6) is given separately and is not counted in the 75.
+all (§6) is given separately and is not counted in the 80.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -398,6 +398,41 @@ discrepancy), §8.2 (Model B artifact).
 - **What we know:** the local solver's physical cap is hardcoded at $|k|^{2} \leq 64$, so the GCP '$K=6$' energies are identical to $K=4$ to 15 figures — trap robustness to a genuinely wider band is still UNVERIFIED.
 - **What would close it:** a rerun with a genuinely wider band (cap raised), costed first.
 - **Owner:** Local Muse verification (small local runs) / Co-scientist task.
+
+### G-A22 (proposed 2026-11-17, filed) — McKay gauge-dynamics gap: v94 never derives a Yang–Mills kinetic term for $E_6$ from the tension–relaxation Lagrangian, nor Higgs representations for $E_6 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ without light exotic relics
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 identifies $E_6$ as "the gauge algebra" by McKay identification (2T ↔ affine $E_6$) but never derives a Yang–Mills kinetic term $\frac14 F^a_{\mu\nu}F^{a\mu\nu}$ for $E_6$ from the Lagrangian. The deepest-research cross-domain synthesis (2026-11-17) finds the bridge does not exist anywhere in the literature either (scoped absence, C/I1): McKay gives a label; Kronheimer/quiver constructions give $\prod_i U(n_i)$; every $E_6$ dynamics route imports the kinetic term from elsewhere (DBI action, 11D supergravity, dilaton VEV). $E_6 \to$ SM breaking always costs Higgs representations plus light exotics or fine-tuning (B/I2).
+- **What would close it:** (a) a construction of the kinetic term inside IRH's own Lagrangian, (b) an Ali-style root-sum postulate labelled as such (grade D, post-hoc), or (c) downgrading "the gauge algebra" to "the gauge-algebra label" in the manuscript.
+- **Owner:** Brandon's call (construction vs scope decision); Local Muse verification (literature).
+
+### G-A23 (proposed 2026-11-17, filed) — §III.4 $d = 4$ marginality wording + Model B label + Derrick wording
+
+- **Status/grade:** Open; wording corrections, no grade moves follow from the fixes alone.
+- **What we know:** the RG gloss ("exactly marginal," "RG-irrelevant") is contradicted by the isotropic-Lifshitz literature ($d_u = 8$, not 4; fluctuations relevant at $d = 4$, Brazovskii 1975); only tree-level scaling $\lambda^{4-d}$ survives (B/I1). The headline damped-wave equation is not Model B; "Kerr solitons" is nonstandard for Derrick.
+- **What would close it:** reword §III.4 to tree-level Derrick scaling; restrict "Model B" to the conserved variant; correct the Derrick wording.
+- **Owner:** Local Muse verification (manuscript edit).
+
+### G-A24 (proposed 2026-11-17, filed) — §IX.3 Greensite misattribution + classical-substrate sentence + G-C20 overstatement
+
+- **Status/grade:** Open; corrections + grade challenge. The §IX.3 sentence corrections are FILED in the v94 2026-11-17 patch (see G-C20); the G-C20 grade challenge is adjudicated there (B/F2 kept for the calculation recovery, D = 4 uniqueness qualified).
+- **What we know:** the one-loop $n_F > n_B$ condition was attributed to [17][18] (classical clock-field papers) instead of [41][42]; "no purely classical Euclidean substrate is known…" was false as stated (Mukohyama–Uzan 2013); G-C20 "verified, $D = 4$ uniqueness" (B/F2) was overstated — at most C/I1 for the calculation as reported, with the $D = 6$ broken-SUSY qualifier (synthesis challenge; adjudication under G-C20).
+- **What would close it:** the citation fix and sentence narrowing (done in the patch); the remaining wording (D = 6 qualifier) is filed in the patch.
+- **Owner:** Local Muse verification (manuscript edit — done 2026-11-17).
+
+### G-A25 (proposed 2026-11-17, filed) — §II.5 Elitzur gloss + missing citations
+
+- **Status/grade:** Open; corrections, no grade moves follow from the fixes alone.
+- **What we know:** the $(\pm1,\pm1,\pm1,\pm1)$ / $D_4$ gloss misstates Elitzur 2011 (needs the isoduality step $D_4^* \cong D_4$ and the correct vectors); Lifshitz–Petrich 1997 and Klein 2001 are uncited though directly relevant.
+- **What would close it:** correct §II.5; add both citations with the Klein scope note.
+- **Owner:** Local Muse verification (manuscript edit).
+
+### G-A26 (proposed 2026-11-17, filed) — Bell disjunction incompleteness (v94:962)
+
+- **Status/grade:** Open; wording, no grade moves follow from the fix alone.
+- **What we know:** "nonlocality or superdeterminism" omits giving up realism/single outcomes (many-worlds, QBism) and retrocausality; superdeterminism is a programme proposal (Hossenfelder–Palmer 2020), not a constructed model.
+- **What would close it:** complete the disjunction or justify the restriction.
+- **Owner:** Local Muse verification (manuscript edit).
 
 ## Group B — Substrate models and dynamics convergence
 
@@ -835,16 +870,12 @@ torus-node comparison §7.3.
   (e.g. lunar laser ranging from the primary source).
 - **Owner:** Literature (retrieval).
 
-### G-C20 — Full Greensite one-loop mechanism: ABSTAIN
+### G-C20 — Full Greensite one-loop mechanism — RESOLVED at B / F2 (decided; adjudicated 2026-11-17)
 
-- **Status/grade:** ABSTAIN (WS-D task 12, G6; no grade).
-- **What we know:** only the toy sign-flip was verified $(\mathrm{Re} V_{toy}(\theta)$ =
-  $\Delta\cdot\cos \theta$; Lorentzian favoured iff $n_{F} > n_{B}$ — G5, F3). The exact $V(\theta)$
-  and the D = 4 uniqueness were not recovered; the exact Greensite
-  one-loop determinant was not recovered (NOT RUN).
-- **What would close it:** recovery of the exact one-loop determinant
-  and the D = 4 uniqueness argument from the primary source.
-- **Owner:** Literature (retrieval) / Co-scientist task.
+- **Status/grade:** RESOLVED at Track E B / Track F F2 (decided). Calculation recovery: the exact one-loop potential $V(\theta)$ recovered and re-derived locally (SymPy, exact; sweep-4 audit 2026-11-12); D = 4 uniqueness Cases I–V verified; §5 mass effects and the D = 6 broken-SUSY exception verified; heat-kernel regularization premise ledgered (argued, not proved).
+- **Adjudication 2026-11-17 (Brandon: all decisions authorized):** the deepest-research cross-domain synthesis (2026-11-17) challenged B/F2 to at most C/I1, citing Greensite's own hedges and no independent replication. DECLINED for the calculation as reported: the sweep-4 audit's exact local re-derivation IS the second derivation. The challenge stands where it is right: "$D=4$ uniqueness" unqualified is withdrawn — it holds for massless non-SUSY fields only ($D=6$ also possible in broken SUSY, C&G §5) — and the §IX.3 sentences were grade D as written; they are corrected in the v94 2026-11-17 patch (one-loop requirement reattributed to [41][42]; classical-substrate sentence narrowed to the scoped reading: no classical mechanism known that selects signature for a single-scalar Swift–Hohenberg $D_4$ substrate without a tuned clock field).
+- **What we know:** the Greensite calculation as stated is correctly reported; the mechanism's conclusion stays conditional on the heat-kernel regularization premise and the massless non-SUSY scope; neither the Greensite (quantum) nor the Mukohyama (classical clock-field) route is instantiated by IRH's substrate (no fermions, no loops, no clock field).
+- **Owner:** Closed as a calculation-recovery verdict; the §IX.3 wording correction is filed in v94.
 
 ### G-C21 — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved
 
