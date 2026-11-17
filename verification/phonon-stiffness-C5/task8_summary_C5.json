@@ -1,0 +1,322 @@
+{
+  "alpha": 0.1072,
+  "beta": 1.54,
+  "A_star": 0.07757529633928074,
+  "A_star_sq": 0.006017926602127225,
+  "lambda_": 1.5405892101445695,
+  "mu": 1.5405892101445695,
+  "bulk_4d": 2.3108838152168545,
+  "group_order_WF4": 1152,
+  "group_order_signedperm": 384,
+  "core_radius_coeff_edge": 1.8462487390302467,
+  "core_radius_coeff_screw": 1.59889830970518,
+  "F_density": -0.0076323,
+  "R_sys": 20.0,
+  "stiffness_rows": [
+    {
+      "state": "uniax100",
+      "f2_coeff": 2.3108838152168545,
+      "f3_coeff": 2.3108838152168545,
+      "ratio_f3_over_f2_at_e01": 0.1,
+      "tr": 1.0,
+      "tr_eps2": 1.0
+    },
+    {
+      "state": "uniax110",
+      "f2_coeff": 2.3108838152168536,
+      "f3_coeff": 2.310883815216853,
+      "ratio_f3_over_f2_at_e01": 0.09999999999999998,
+      "tr": 0.9999999999999998,
+      "tr_eps2": 0.9999999999999996
+    },
+    {
+      "state": "uniax111",
+      "f2_coeff": 2.3108838152168554,
+      "f3_coeff": 2.310883815216856,
+      "ratio_f3_over_f2_at_e01": 0.10000000000000002,
+      "tr": 1.0000000000000002,
+      "tr_eps2": 1.0000000000000007
+    },
+    {
+      "state": "uniax1111",
+      "f2_coeff": 2.3108838152168545,
+      "f3_coeff": 2.3108838152168545,
+      "ratio_f3_over_f2_at_e01": 0.1,
+      "tr": 1.0,
+      "tr_eps2": 1.0
+    },
+    {
+      "state": "hydrostatic",
+      "f2_coeff": 18.487070521734836,
+      "f3_coeff": 18.487070521734836,
+      "ratio_f3_over_f2_at_e01": 0.1,
+      "tr": 4.0,
+      "tr_eps2": 4.0
+    },
+    {
+      "state": "shear12",
+      "f2_coeff": 0.7702946050722848,
+      "f3_coeff": 0.0,
+      "ratio_f3_over_f2_at_e01": 0.0,
+      "tr": 0.0,
+      "tr_eps2": 0.5
+    },
+    {
+      "state": "biaxial_pm",
+      "f2_coeff": 3.081178420289139,
+      "f3_coeff": 0.0,
+      "ratio_f3_over_f2_at_e01": 0.0,
+      "tr": 0.0,
+      "tr_eps2": 2.0
+    },
+    {
+      "state": "biaxial_1122",
+      "f2_coeff": 1.5405892101445695,
+      "f3_coeff": 0.0,
+      "ratio_f3_over_f2_at_e01": 0.0,
+      "tr": 0.0,
+      "tr_eps2": 1.0
+    }
+  ],
+  "burgers": [
+    {
+      "n2": 2,
+      "count": 24,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        24
+      ],
+      "n_orbits_signedperm": 1,
+      "orbit_sizes_sp": [
+        24
+      ],
+      "reps": [
+        [
+          -1,
+          -1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "n2": 4,
+      "count": 24,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        24
+      ],
+      "n_orbits_signedperm": 2,
+      "orbit_sizes_sp": [
+        8,
+        16
+      ],
+      "reps": [
+        [
+          -2,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "n2": 6,
+      "count": 96,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        96
+      ],
+      "n_orbits_signedperm": 1,
+      "orbit_sizes_sp": [
+        96
+      ],
+      "reps": [
+        [
+          -2,
+          -1,
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "n2": 8,
+      "count": 24,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        24
+      ],
+      "n_orbits_signedperm": 1,
+      "orbit_sizes_sp": [
+        24
+      ],
+      "reps": [
+        [
+          -2,
+          -2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "n2": 10,
+      "count": 144,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        144
+      ],
+      "n_orbits_signedperm": 2,
+      "orbit_sizes_sp": [
+        48,
+        96
+      ],
+      "reps": [
+        [
+          -3,
+          -1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "n2": 12,
+      "count": 96,
+      "n_orbits_F4": 1,
+      "orbit_sizes_F4": [
+        96
+      ],
+      "n_orbits_signedperm": 2,
+      "orbit_sizes_sp": [
+        32,
+        64
+      ],
+      "reps": [
+        [
+          -3,
+          -1,
+          -1,
+          -1
+        ]
+      ]
+    }
+  ],
+  "dislocation": [
+    {
+      "n2": 2.0,
+      "b": 1.4142135623730951,
+      "K_edge": 0.3269231840913959,
+      "K_screw": 0.24519238806854696,
+      "r0_edge": 2.6109900062508,
+      "r0_screw": 2.261183674440483,
+      "E_edge_R20": 0.6656165219220885,
+      "E_screw_R20": 0.5344811186160469,
+      "n_min_roots": 1.0,
+      "ratio_to_elem_edge": 1.0,
+      "split_cost_edge": 0.6656165219220885,
+      "split_cheaper_edge": false,
+      "R_crossover_edge": null,
+      "ratio_to_elem_screw": 1.0,
+      "split_cost_screw": 0.5344811186160469,
+      "split_cheaper_screw": false,
+      "R_crossover_screw": null
+    },
+    {
+      "n2": 4.0,
+      "b": 2.0,
+      "K_edge": 0.6538463681827918,
+      "K_screw": 0.4903847761370939,
+      "r0_edge": 3.6924974780604933,
+      "r0_screw": 3.19779661941036,
+      "E_edge_R20": 1.1046271605315459,
+      "E_screw_R20": 0.8990078247476205,
+      "n_min_roots": 2.0,
+      "ratio_to_elem_edge": 1.6595549000823093,
+      "split_cost_edge": 1.331233043844177,
+      "split_cheaper_edge": false,
+      "R_crossover_edge": null,
+      "ratio_to_elem_screw": 1.6820198009528515,
+      "split_cost_screw": 1.0689622372320937,
+      "split_cheaper_screw": false,
+      "R_crossover_screw": null
+    },
+    {
+      "n2": 6.0,
+      "b": 2.449489742783178,
+      "K_edge": 0.9807695522741878,
+      "K_screw": 0.7355771642056409,
+      "r0_edge": 4.522367348880965,
+      "r0_screw": 3.9164850093761996,
+      "E_edge_R20": 1.4581068245262943,
+      "E_screw_R20": 1.1993862999181621,
+      "n_min_roots": 2.0,
+      "ratio_to_elem_edge": 2.19061092461429,
+      "split_cost_edge": 1.331233043844177,
+      "split_cheaper_edge": true,
+      "R_crossover_edge": 13.567102046642884,
+      "ratio_to_elem_screw": 2.2440199628076303,
+      "split_cost_screw": 1.0689622372320937,
+      "split_cheaper_screw": true,
+      "R_crossover_screw": 11.749455028128594
+    },
+    {
+      "n2": 8.0,
+      "b": 2.8284271247461903,
+      "K_edge": 1.3076927363655837,
+      "K_screw": 0.9807695522741878,
+      "r0_edge": 5.2219800125016,
+      "r0_screw": 4.522367348880966,
+      "E_edge_R20": 1.7560425544378298,
+      "E_screw_R20": 1.458106824526294,
+      "n_min_roots": 2.0,
+      "ratio_to_elem_edge": 2.6382196003292377,
+      "split_cost_edge": 1.331233043844177,
+      "split_cheaper_edge": true,
+      "R_crossover_edge": 10.443960025003204,
+      "ratio_to_elem_screw": 2.728079203811405,
+      "split_cost_screw": 1.0689622372320937,
+      "split_cheaper_screw": true,
+      "R_crossover_screw": 9.044734697761932
+    },
+    {
+      "n2": 10.0,
+      "b": 3.1622776601683795,
+      "K_edge": 1.6346159204569795,
+      "K_screw": 1.2259619403427346,
+      "r0_edge": 5.8383511425493895,
+      "r0_screw": 5.056160405661674,
+      "E_edge_R20": 2.0126761922845287,
+      "E_screw_R20": 1.685850780085799,
+      "n_min_roots": 3.0,
+      "ratio_to_elem_edge": 3.023777394335947,
+      "split_cost_edge": 1.9968495657662655,
+      "split_cheaper_edge": true,
+      "R_crossover_edge": 19.521703618139608,
+      "ratio_to_elem_screw": 3.1541821055363735,
+      "split_cost_screw": 1.6034433558481407,
+      "split_cheaper_screw": true,
+      "R_crossover_screw": 16.9062912584595
+    },
+    {
+      "n2": 12.0,
+      "b": 3.4641016151377544,
+      "K_edge": 1.9615391045483757,
+      "K_screw": 1.4711543284112818,
+      "r0_edge": 6.3955932388207195,
+      "r0_screw": 5.53874621709074,
+      "E_edge_R20": 2.2363959991146958,
+      "E_screw_R20": 1.8889093623829043,
+      "n_min_roots": 3.0,
+      "ratio_to_elem_edge": 3.3598865494755095,
+      "split_cost_edge": 1.9968495657662655,
+      "split_cheaper_edge": true,
+      "R_crossover_edge": 15.665940037504797,
+      "ratio_to_elem_screw": 3.5340993284738142,
+      "split_cost_screw": 1.6034433558481407,
+      "split_cheaper_screw": true,
+      "R_crossover_screw": 13.567102046642896
+    }
+  ]
+}

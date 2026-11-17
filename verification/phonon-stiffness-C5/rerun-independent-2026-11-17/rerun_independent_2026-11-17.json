@@ -1,0 +1,125 @@
+{
+  "route": "independent second route: SymPy exact rationals for A*, mpmath 50-digit evaluation, exhaustive n_min check, SymPy symbolic differentiation + mpmath quadrature for the equilibrium-field factor",
+  "tools": {
+    "python": "3.11.16 (conda jacobian-conjecture-2d)",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1"
+  },
+  "inputs": {
+    "alpha": "67/625",
+    "beta": "77/50",
+    "F_DENS": "-0.0076323",
+    "R_sys": "20.0"
+  },
+  "A_star": "0.07757529633928075713817052",
+  "A_star_sq": "0.006017926602127226439306814",
+  "lambda_mu": "1.540589210144569968462544",
+  "K_edge_elem_eq": "0.3269231840913960237844303",
+  "K_edge_elem_old": "0.4903847761370940356766455",
+  "E_edge_elem_R20_eq": "0.6656165219220886707618428",
+  "E_edge_elem_R20_old": "0.8990078247476205950307233",
+  "r0_coeff_edge_eq": "1.84624873903024687095917",
+  "r0_coeff_edge_old": "2.261183674440483157187463",
+  "r0_coeff_screw": "1.598898309705180238046021",
+  "table": [
+    {
+      "n2": 2,
+      "n_min": 1,
+      "ratio_edge_eq": "1.0",
+      "ratio_edge_old": "1.0",
+      "ratio_screw": "1.0",
+      "split_edge_eq": false,
+      "split_edge_old": false,
+      "split_screw": false,
+      "Rstar_edge_eq": null,
+      "Rstar_edge_old": null,
+      "Rstar_screw": null
+    },
+    {
+      "n2": 4,
+      "n_min": 2,
+      "ratio_edge_eq": "1.6595549000823094805",
+      "ratio_edge_old": "1.6219067113633080573",
+      "ratio_screw": "1.6820198009528512429",
+      "split_edge_eq": false,
+      "split_edge_old": false,
+      "split_screw": false,
+      "Rstar_edge_eq": null,
+      "Rstar_edge_old": null,
+      "Rstar_screw": null
+    },
+    {
+      "n2": 6,
+      "n_min": 2,
+      "ratio_edge_eq": "2.1906109246142900275",
+      "ratio_edge_old": "2.1011044736047542516",
+      "ratio_screw": "2.2440199628076301529",
+      "split_edge_eq": true,
+      "split_edge_old": true,
+      "split_screw": true,
+      "Rstar_edge_eq": "13.567102046642898943",
+      "Rstar_edge_old": "16.616238651272221839",
+      "Rstar_screw": "11.749455028128600524"
+    },
+    {
+      "n2": 8,
+      "n_min": 2,
+      "ratio_edge_eq": "2.6382196003292379218",
+      "ratio_edge_old": "2.487626845453232229",
+      "ratio_screw": "2.7280792038114049716",
+      "split_edge_eq": true,
+      "split_edge_old": true,
+      "split_screw": true,
+      "Rstar_edge_eq": "10.443960025003200466",
+      "Rstar_edge_old": "12.791186477641441904",
+      "Rstar_screw": "9.0447346977619326287"
+    },
+    {
+      "n2": 10,
+      "n_min": 3,
+      "ratio_edge_eq": "3.0237773943359478297",
+      "ratio_edge_old": "2.8052364265652706765",
+      "ratio_screw": "3.1541821055363740357",
+      "split_edge_eq": true,
+      "split_edge_old": false,
+      "split_screw": true,
+      "Rstar_edge_eq": "19.521703618139604793",
+      "Rstar_edge_old": "23.909106387143108889",
+      "Rstar_screw": "16.90629125845948812"
+    },
+    {
+      "n2": 12,
+      "n_min": 3,
+      "ratio_edge_eq": "3.3598865494755084964",
+      "ratio_edge_old": "3.0679290812994326751",
+      "ratio_screw": "3.5340993284738140345",
+      "split_edge_eq": true,
+      "split_edge_old": true,
+      "split_screw": true,
+      "Rstar_edge_eq": "15.665940037504800699",
+      "Rstar_edge_old": "19.186779716462162857",
+      "Rstar_screw": "13.567102046642898943"
+    }
+  ],
+  "b10_edge": {
+    "ratio_eq": "3.023777394335947829749123",
+    "ratio_old": "2.80523642656527067650558",
+    "margin_abs": "0.0237773943359478",
+    "margin_pct_over_nmin": "0.7925798112",
+    "Rstar_eq": "19.52170361813960479301428",
+    "Rstar_old": "23.90910638714310888882407",
+    "Rstar_margin_pct_below_20": "2.391481909",
+    "split_eq": true,
+    "split_old": false
+  },
+  "b4_bound_margin_Ke_ln2": "0.2266058833126311196211143",
+  "b4_bound_survives": true,
+  "flip_boundary": {
+    "c_flip": "1.8914832180063516266",
+    "c_actual": "1.846248739030246871",
+    "c_rise_pct_to_unflip": "2.45007501",
+    "F_fall_pct_to_unflip": "4.725771961",
+    "d_rho_d_ln_absF": "-0.9706384464"
+  },
+  "verdict": "FLIP CONFIRMED"
+}
