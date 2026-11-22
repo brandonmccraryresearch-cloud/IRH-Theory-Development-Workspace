@@ -515,18 +515,18 @@ with continuum effective mass
 
 \[m_{\rm eff}=\frac{M^{*}a_0\sin\theta}{c\,\Delta t}\]
 
-\textbf{PREDICTION — quantified validity regime.} Comparing the exact transcendental dispersion against the quadratic approximation mode by mode:
+\textbf{PREDICTION — quantified validity regime.} Comparing the exact transcendental dispersion against the quadratic approximation mode by mode. \textbf{Stated parameters (v94 rebuild, run 11).} Units $a_0=c=M^{*}=1$, $J=M^{*}c^2/12$. Exact: (7) with the carrier substituted, $\sin^2(\omega\Delta t/2)=\sin^2(\theta/2)+(\Delta t^2c^2/24a_0^2)\sum_\alpha(1-\cos a_0\mathbf k\cdot\alpha)$. Quadratic: $\omega_{\rm quad}=\theta/\Delta t+|\mathbf k|^2/2m_{\rm eff}$ with $m_{\rm eff}$ as above (the small-$k$ tangent of the exact curve). Relative error $|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$. Direction $\mathbf k\parallel e_1$: the Brillouin zone of D₄ is a 24-cell whose facet centres $(\pi/a_0)e_i$ and $(\pi/a_0)(\pm\tfrac12)^4$ (one $W(F_4)$ orbit) lie at $a_0|\mathbf k|=\pi$, so $e_1$ reaches the zone edge exactly at $a_0|\mathbf k|=\pi$; the $(0,0,\pi,\pi)$ points of §III.2 are zone corners at $\sqrt2\pi$. Time step: with $\mu\ne0$ the bound of §III.2 becomes $\Delta t_{\max}(\theta)=(\sqrt3/2)\cos(\theta/2)\,a_0/c$ (marginal at the zone corner), and this is used. The text fixes only $\theta\ne0,\pi$; the primary carrier is $\theta=\pi/2$, midway between the two excluded values, so $\Delta t=\sqrt{3/8}\,a_0/c$. Because $\theta$ is free, the last column gives the range over $\theta\in[\pi/6,5\pi/6]$ (each at $\Delta t_{\max}(\theta)$).
 
 \begin{center}
-\begin{tabular}{ll}
+\begin{tabular}{lll}
 \hline
-$a_0|\mathbf k|$ & relative frequency error \\
+$a_0|\mathbf k|$ & relative frequency error ($\theta=\pi/2$) & range, $\theta\in[\pi/6,5\pi/6]$ \\
 \hline
-0.02 & $4\times10^{-5}$ \\
-0.10 & 0.1\% \\
-0.30 & 1.0\% \\
-1.00 & 11\% \\
-3.14 (zone edge) & 133\% \\
+0.02 & $1.6\times10^{-9}$ & $1.2\times10^{-10}$ -- $1.5\times10^{-7}$ \\
+0.10 & $9.9\times10^{-7}$ & $7.6\times10^{-8}$ -- $9.0\times10^{-5}$ \\
+0.30 & $7.9\times10^{-5}$ & $6.2\times10^{-6}$ -- $6.0\times10^{-3}$ \\
+1.00 & 0.82\% & 0.076\% -- 23\% \\
+$\pi$ (zone edge) & 41\% & 8.0\% -- 248\% \\
 \hline
 \end{tabular}
 \end{center}
@@ -534,10 +534,10 @@ $a_0|\mathbf k|$ & relative frequency error \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figs/fig06.png}
-\caption{\textbf{Figure 6.} Exact dispersion against the envelope approximation, and the resulting relative error.}
+\caption{\textbf{Figure 6.} Exact dispersion against the envelope approximation, and the resulting relative error, along $\mathbf k\parallel e_1$ (zone-edge facet direction) for $a_0=c=M^{*}=1$, $J=M^{*}c^2/12$, $\theta=\pi/2$, $\Delta t=\Delta t_{\max}(\theta)=\sqrt{3/8}\,a_0/c$; error $=|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$. The dotted lines mark the 1\% level and its crossing at $a_0|\mathbf k|=1.057$.}
 \end{figure}
 
-The approximation is accurate to well under 1\% for $a_0|\mathbf k|\lesssim0.3$, degrading smoothly beyond. This is a quantified boundary rather than an assumed one.
+At $\theta=\pi/2$ the approximation is accurate to better than 1\% for $a_0|\mathbf k|<1.057$, with the error growing as $(a_0|\mathbf k|)^4$ at small $k$ and reaching 41\% at the zone edge. The 1\% crossing depends on the free carrier angle: it lies between $a_0|\mathbf k|=0.346$ ($\theta=\pi/6$) and $1.908$ ($\theta=5\pi/6$), so the earlier statement ``under 1\% for $a_0|\mathbf k|\lesssim0.3$'' holds throughout $\theta\in[\pi/6,5\pi/6]$ but not for small carriers (at $\theta=\pi/12$ the crossing is $0.173$). This is a quantified boundary at stated parameters rather than an assumed one.
 
 \subsection*{III.4 Why Four Dimensions}
 
