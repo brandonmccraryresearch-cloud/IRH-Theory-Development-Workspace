@@ -1269,7 +1269,8 @@ entirety" (programme brief).
 
 ### G-E10 — Task 14's most-likely-miss: a small emergence programme at (2,2) not retrieved
 
-- **Status/grade:** Open; bounded by retrieval (WS-E task 14).
+- **Status/grade:** CLOSED (run 11, EXP-1105). Outcome: **M6 refuted as worded** (broad "IRH alone at (2,2)" overturned). 4 non-IRH LITERAL (2,2) entries: SSM (Kulkarni, refereed, Quantum Rep. 8(4) 121, full text), quantum graphity (full text), Kelly–Trugenberger–Biancalana (arXiv:1901.09870), and Hunter's FoR substrate-field paper (abstract only; physics ABSTAIN). The robust ones are SSM and quantum graphity; either alone suffices. Track E **C**, I1, [D] (literature scoring, judgement-based). Scope: bounded by the queries run (R1 84 + R2 re-runs, logged); not a census. (Was: Open; bounded by retrieval (WS-E task 14).)
+- **Reconciliation with v94 l.448 (open record items, not decided here):** (1) v94 records "the broad claim OVERTURNED at grade B"; the run-11 record supports only Track E C / I1 and does not endorse B. Unless v94's B rests on evidence not in the run-11 record, the record should read C. (2) The narrowed v94 sentence ("under the narrowed reading no retrieved approach occupies the corner") is **CONTESTED, pending the FoR full text** (DOI 10.5281/zenodo.19151764 / 19170453): defeated at abstract level for the run-11 retrieval, true of v94's own retrieval. (3) The corrected M6 wording (`G-E10_final_trace.md` §4) is for the map's M6 row and was not applied. Formerly Brandon items; now under the 2026-11-22 delegation.
 - **What we know:** retrieval is bounded by 63 queries / 73 papers —
   "an approach not retrieved is not scored". The most likely miss is a
   small emergence programme scoring (2,2) — which would overturn M6
