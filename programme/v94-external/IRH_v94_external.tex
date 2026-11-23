@@ -64,9 +64,9 @@ Intrinsic Resonance Holography proposes that the structure of physical reality r
 
 The framework in this version differs from v92 in kind, not merely in detail. Its central ontological commitment has changed: D$_4$ is no longer a postulated static lattice but the nodal interference pattern of a field obeying tension--relaxation dynamics. That reformulation removes a primitive, dissolves a standing circularity objection at its root rather than patching it, and supplies the selection mechanism the static formulation never possessed.
 
-\textbf{What is now established.} The D$_4$ pattern is selected dynamically rather than assumed, by a parameter-free criterion $S=\tau^2/q_4$ derived symbolically, validated by recovering the Alexander--McTague BCC result in three dimensions \hyperref[ref1]{[1]}, applied in four where D$_4$ wins at $S=0.454$ with selection quantities that are exact rationals and simple radicals ($64/141$, $16/45$, $73/423$, $\tau_{D_4}/\tau_{\mathrm{BCC}}=\sqrt{2}$) rather than fitted decimals, confirmed by direct simulation from random initial conditions, and independently corroborated by a published molecular-dynamics result obtained by an unrelated method \hyperref[ref40]{[40]}. An independent mechanism-level reproduction finds $77.1\%$ of spectral power on D$_4$ with triads active versus $21.1\%$ with triads removed, rising to $89.5\%$ under annealing --- establishing the cubic triad term as the causal selection mechanism. The full 24-mode standing wave is a genuine dynamical attractor with relaxed free energy $F/V=-0.0077276$, reproduced independently at $-0.007728$. The resonance maximum is unique modulo lattice periodicity (32 periodic maxima on the $16^4$ grid); the transition is first order. The lattice constant $a_0=2\pi/q_0$ is derived rather than postulated. Four-dimensionality acquires a new structural argument: the Swift--Hohenberg \hyperref[ref2]{[2]} curvature term is exactly scale-invariant at $d=4$. The gauge algebra is identified as $E_6$, read off the pattern's own group structure via the binary tetrahedral group and the McKay correspondence \hyperref[ref3]{[3]} rather than imposed to fit a target. The geometric core is now machine-checked: eight Lean~4 modules compile cleanly with no \texttt{sorry}, \texttt{admit}, or \texttt{axiom}.
+\textbf{What is now established.} The D$_4$ pattern is selected dynamically rather than assumed, by a parameter-free criterion $S=\tau^2/q_4$ derived symbolically, validated by recovering the Alexander--McTague BCC result in three dimensions \hyperref[ref1]{[1]}, applied in four where D$_4$ wins at $S=0.454$ with selection quantities that are exact rationals and simple radicals ($64/141$, $16/45$, $73/423$, $\tau_{D_4}/\tau_{\mathrm{BCC}}=\sqrt{2}$) rather than fitted decimals, supported in simulation by the fair test of \S~II.6 (in the author's run $84\%$ of spectral power on D$_4$ on direct quench and $100\%$ after annealing; a power share, not a recovery rate) though general selection from noise is not established (G-A5, OPEN: 0/6 broadband random starts; nucleation 0/32 per configuration with 128/192 runs tabulated), and independently corroborated by a published molecular-dynamics result obtained by an unrelated method \hyperref[ref40]{[40]}. An independent mechanism-level reproduction finds $77.1\%$ of spectral power on D$_4$ with triads active versus $21.1\%$ with triads removed, rising to $89.5\%$ under annealing --- establishing the cubic triad term as the causal selection mechanism. The full 24-mode standing wave is a genuine dynamical attractor with relaxed free energy $F/V=-0.0077276$, reproduced independently at $-0.007728$. The resonance maximum is unique modulo lattice periodicity (32 periodic maxima on the $16^4$ grid); the transition is first order. The lattice constant $a_0=2\pi/q_0$ is derived rather than postulated. Four-dimensionality acquires a new structural argument: the Swift--Hohenberg \hyperref[ref2]{[2]} curvature term is exactly scale-invariant at $d=4$. The gauge-algebra label is identified as $E_6$, read off the pattern's own group structure via the binary tetrahedral group and the McKay correspondence \hyperref[ref3]{[3]} rather than imposed to fit a target. The geometric core is now machine-checked: eight Lean~4 modules compile cleanly with no \texttt{sorry}, \texttt{admit}, or \texttt{axiom}.
 
-\textbf{What is excluded by theorem.} SO(8) cannot be the gauge algebra, by two independent proofs. The Standard Model algebra does not embed in $\mathfrak{so}(8)$ by any route. The anisotropy coefficient $\xi_2=-1/384$ is not derivable from the stated lattice. Both time-step values stated in v92 violate the framework's own stability bound. Three generations is \textbf{not} a derived result: five candidate mechanisms were tested and all five are closed. Monopole absence, claimed in earlier versions, is inconsistent with an $E_6$ gauge group.
+\textbf{What is excluded by theorem.} SO(8) cannot be the gauge algebra, by two independent proofs. The Standard Model algebra does not embed in $\mathfrak{so}(8)$ by any route. The anisotropy coefficient $\xi_2=-1/384$ is not derivable from the stated lattice. Both time-step values stated in v92 violate the framework's own stability bound. Three generations is \textbf{not} a derived result: five candidate mechanisms were tested and all five are closed. Monopole absence, claimed in earlier versions, is withdrawn: it would be inconsistent with $E_6$ realised as a broken gauge group (\S~V.3).
 
 \textbf{What remains open} is stated exhaustively in \S~IX, classified by the type of work each item requires. Every correction made during verification --- including corrections to the author's own prior output --- is recorded in the appendices, and every externally attributable claim carries a linked numerical citation.
 
@@ -515,18 +515,18 @@ with continuum effective mass
 
 \[m_{\rm eff}=\frac{M^{*}a_0\sin\theta}{c\,\Delta t}\]
 
-\textbf{PREDICTION — quantified validity regime.} Comparing the exact transcendental dispersion against the quadratic approximation mode by mode:
+\textbf{QUANTIFIED VALIDITY REGIME.} Comparing the exact transcendental dispersion against the quadratic approximation mode by mode. \textbf{Stated parameters (v94 rebuild, run 11).} Units $a_0=c=M^{*}=1$, $J=M^{*}c^2/12$. Exact: (7) with the carrier substituted, $\sin^2(\omega\Delta t/2)=\sin^2(\theta/2)+(\Delta t^2c^2/24a_0^2)\sum_\alpha(1-\cos a_0\mathbf k\cdot\alpha)$. Quadratic: $\omega_{\rm quad}=\theta/\Delta t+|\mathbf k|^2/2m_{\rm eff}$ with $m_{\rm eff}$ as above (the small-$k$ tangent of the exact curve). Relative error $|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$. Direction $\mathbf k\parallel e_1$: the Brillouin zone of D₄ is a 24-cell whose facet centres $(\pi/a_0)e_i$ and $(\pi/a_0)(\pm\tfrac12)^4$ (one $W(F_4)$ orbit) lie at $a_0|\mathbf k|=\pi$, so $e_1$ reaches the zone edge exactly at $a_0|\mathbf k|=\pi$; the $(0,0,\pi,\pi)$ points of §III.2 are zone corners at $\sqrt2\pi$. Time step: with $\mu\ne0$ the bound of §III.2 becomes $\Delta t_{\max}(\theta)=(\sqrt3/2)\cos(\theta/2)\,a_0/c$ (marginal at the zone corner), and this is used. The text fixes only $\theta\ne0,\pi$; the primary carrier is $\theta=\pi/2$, midway between the two excluded values, so $\Delta t=\sqrt{3/8}\,a_0/c$. Because $\theta$ is free, the last column gives the range over $\theta\in[\pi/6,5\pi/6]$ (each at $\Delta t_{\max}(\theta)$).
 
 \begin{center}
-\begin{tabular}{ll}
+\begin{tabular}{lll}
 \hline
-$a_0|\mathbf k|$ & relative frequency error \\
+$a_0|\mathbf k|$ & relative frequency error ($\theta=\pi/2$) & range, $\theta\in[\pi/6,5\pi/6]$ \\
 \hline
-0.02 & $4\times10^{-5}$ \\
-0.10 & 0.1\% \\
-0.30 & 1.0\% \\
-1.00 & 11\% \\
-3.14 (zone edge) & 133\% \\
+0.02 & $1.6\times10^{-9}$ & $1.2\times10^{-10}$ -- $1.5\times10^{-7}$ \\
+0.10 & $9.9\times10^{-7}$ & $7.6\times10^{-8}$ -- $9.0\times10^{-5}$ \\
+0.30 & $7.9\times10^{-5}$ & $6.2\times10^{-6}$ -- $6.0\times10^{-3}$ \\
+1.00 & 0.82\% & 0.076\% -- 23\% \\
+$\pi$ (zone edge) & 41\% & 8.0\% -- 248\% \\
 \hline
 \end{tabular}
 \end{center}
@@ -534,10 +534,10 @@ $a_0|\mathbf k|$ & relative frequency error \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figs/fig06.png}
-\caption{\textbf{Figure 6.} Exact dispersion against the envelope approximation, and the resulting relative error.}
+\caption{\textbf{Figure 6.} Exact dispersion against the quadratic (small-$k$ envelope-limit) approximation, and the resulting relative error, along $\mathbf k\parallel e_1$ (zone-edge facet direction) for $a_0=c=M^{*}=1$, $J=M^{*}c^2/12$, $\theta=\pi/2$, $\Delta t=\Delta t_{\max}(\theta)=\sqrt{3/8}\,a_0/c$; error $=|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$. The dotted lines mark the 1\% level and its crossing at $a_0|\mathbf k|=1.057$.}
 \end{figure}
 
-The approximation is accurate to well under 1\% for $a_0|\mathbf k|\lesssim0.3$, degrading smoothly beyond. This is a quantified boundary rather than an assumed one.
+At $\theta=\pi/2$ the approximation is accurate to better than 1\% for $a_0|\mathbf k|<1.057$, with the error growing as $(a_0|\mathbf k|)^4$ at small $k$ and reaching 41\% at the zone edge. The 1\% crossing depends on the free carrier angle: it lies between $a_0|\mathbf k|=0.346$ ($\theta=\pi/6$) and $1.908$ ($\theta=5\pi/6$), so the earlier statement ``under 1\% for $a_0|\mathbf k|\lesssim0.3$'' holds throughout $\theta\in[\pi/6,5\pi/6]$ but not for small carriers (at $\theta=\pi/12$ the crossing is $0.173$). This is a quantified boundary at stated parameters rather than an assumed one.
 
 \subsection*{III.4 Why Four Dimensions}
 
@@ -680,14 +680,14 @@ E₆ passes the identical test $\mathfrak{s}$$\mathfrak{o}$(8) fails. It has the
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figs/fig09.png}
-\caption{\textbf{Figure 9.} \textit{Left:} the 24 vertices coloured by coset of $Q_8$ in 2T. \textit{Right:} the resulting structural chain from substrate to Standard Model.}
+\caption{\textbf{Figure 9.} \textit{Left:} the 24 vertices coloured by coset of $Q_8$ in 2T. \textit{Right:} the resulting structural chain from substrate to Standard Model. Scope (gap G-A22): the box ``$\Rightarrow$ gauge algebra $E_6$'' records the gauge-algebra label adopted by the scope decision of \S IV.4, not a derived gauge algebra; no Yang--Mills kinetic term or Higgs sector for $E_6$ is derived. The box ``$2T/Q_8=\mathbb{Z}_3$'' records three cosets of eight; three generations are NOT derived from it (\S V.2).}
 \end{figure}
 
 \subsection*{IV.4 The Gauge Decision}
 
-\textbf{The gauge algebra of IRH is E₆}, arising from the substrate's internal space $S^3\cong SU(2)$ via the binary tetrahedral group and the McKay correspondence.
+\textbf{The gauge-algebra label of IRH is E₆}, arising from the substrate's internal space $S^3\cong SU(2)$ via the binary tetrahedral group and the McKay correspondence. Scope (gap G-A22): this is an algebraic identification only --- no Yang--Mills kinetic term for a dynamical $E_6$ connection is derived from the tension--relaxation dynamics of \S I.2, and no Higgs sector for $E_6\to SU(3)_C\times SU(2)_L\times U(1)_Y$ without light exotic relics is specified.
 
-What makes this defensible rather than convenient is §IV.3. E₆ is not selected for being large enough to contain what is needed. The pattern established on independent dynamical grounds turns out to \textit{be} a group whose McKay correspondent is E₆. The gauge structure is read off the substrate, not fitted to the target.
+What makes this defensible rather than convenient is §IV.3. E₆ is not selected for being large enough to contain what is needed. The pattern established on independent dynamical grounds turns out to \textit{be} a group whose McKay correspondent is E₆. The gauge-algebra label is read off the substrate, not fitted to the target.
 
 \textbf{What is given up.} Triality is no longer the generation mechanism and $\mathfrak{so}(8)$ is no longer a gauge algebra. Triality survives as a symmetry of the defect classification — the D₄ lattice point group is $W(F_4)$ of order 1152 \hyperref[ref6]{[6]}, which is $W(D_4)$ of order 192 extended by the $S_3$ triality automorphism — but it is no longer load-bearing.
 
@@ -715,7 +715,7 @@ codimension 3 (lines) & $\pi_2=0$ & none \\
 
 The point-like, integer-charged topological objects required by the standing-wave ontology \textbf{do exist} once the internal space is $S^3$. They did not exist for a single real scalar. The gauge decision repaired this as a side effect rather than by design.
 
-\textbf{Elementary dislocation charges:} 24, the shortest D₄ lattice vectors. \textbf{Point group:} $W(F_4)$, order 1152.
+\textbf{Elementary dislocation charges:} 24, the shortest vectors of the Burgers lattice $\pi D_4^*$ ($|\mathbf{b}|=\pi$; \S~V.1a). \textbf{Point group:} $W(F_4)$, order 1152.
 
 \subsection*{V.1a Phonon stiffness and dislocation coefficients (corrected in v94)}
 
@@ -745,7 +745,7 @@ This must be stated plainly because the coincidence is seductive. The 24-cell re
 
 Any simple gauge group broken to a subgroup containing an unbroken $U(1)$ has $\pi_2(G/H)=\mathbb{Z}$ and therefore stable magnetic monopoles \hyperref[ref33]{[33]}. $E_6\to\cdots\to SU(3)\times SU(2)\times U(1)$ is of exactly this form.
 
-\textbf{EXCLUDED — monopole absence}, claimed in earlier versions, is inconsistent with an E₆ gauge group. IRH inherits the standard unified-theory monopole problem and requires the standard resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
+\textbf{Monopole absence — retracted}, claimed in earlier versions, is not excluded by proof but retracted: it would be inconsistent with E₆ realised as a broken gauge group. If E₆ is realised as a broken gauge group, IRH would inherit the standard unified-theory monopole problem and would require the standard resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
 
 \medskip\hrule\medskip
 
@@ -828,7 +828,7 @@ $\Delta t=a_0/c$ and $\Delta t=T_P$ & \textbf{retracted} & both violate the deri
 Schrödinger emergence & \textbf{corrected} & original carrier degenerate; replaced by §III.3 \\
 Lorentzian signature from $i^2=-1$ & \textbf{retracted} & canonical $i\hbar$ is present in Euclidean field theory also; does not select signature \\
 Einstein equations from elasticity & \textbf{retracted} & analogy, not derivation; see §IX.3 \\
-Monopole absence & \textbf{retracted} & inconsistent with E₆ breaking topology \\
+Monopole absence & \textbf{retracted} & inconsistent with E₆ breaking topology if E₆ is realised as a broken gauge group (§V.3) \\
 Higgs VEV $v_0$, $A_3$ mass and widths, CKM & \textbf{retracted} & computed in an excluded framework, with independent arithmetic errors \\
 "Zero empirical calibration", "100\% closure" & \textbf{retracted} & not defensible in any version \\
 $\alpha^{-1}=137+1/(28-\pi/14)$ as derived & \textbf{downgraded} & arithmetic verified exact; physical derivation absent. Numerical ansatz only \\
@@ -846,7 +846,7 @@ $R=2589$ normalization & \textbf{downgraded} & arithmetic exact; the subtraction
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figs/fig10.png}
-\caption{\textbf{Figure 10.} Consolidated status across five verification cycles.}
+\caption{\textbf{Figure 10.} Consolidated status across five verification cycles. The ``$D_4$ selected in 4D'' box reports the fair-test spectral-power share on $D_4$ after annealing (\S~II.6), not a recovery rate; general selection from noise is OPEN (G-A5), and $8.94\%$ is a per-configuration gate-entry bound for 0/32 (\S~II.9), not a selection rate.}
 \end{figure}
 
 \subsection*{VIII.1 Established}
@@ -885,7 +885,7 @@ Lean 4 formalization, machine-checked end to end & CONFIRMED & §VI-A.2 \\
 
 \subsection*{VIII.2 Excluded}
 
-$\mathfrak{so}(8)$ as gauge algebra; SM embedding in $\mathfrak{so}(8)$; Pati–Salam from $\mathfrak{so}(8)$; $\xi_2=-1/384$; both v92 time steps; Kerr solitons in 4D; skyrmions from a single real scalar; gauge structure internal to a single scalar; three generations as derived; monopole absence; universal optimality of D₄.
+$\mathfrak{so}(8)$ as gauge algebra; SM embedding in $\mathfrak{so}(8)$; Pati–Salam from $\mathfrak{so}(8)$; $\xi_2=-1/384$; both v92 time steps; Kerr solitons in 4D; skyrmions from a single real scalar; gauge structure internal to a single scalar; three generations as derived; universal optimality of D₄. Monopole absence is withdrawn rather than excluded: it fails only if E₆ is realised as a broken gauge group (§V.3).
 
 \subsection*{VIII.3 Inputs (acknowledged assumptions)}
 
@@ -981,11 +981,11 @@ Two questions are sharper than the rest and would most advance the programme.
 
 Five verification cycles have produced a framework materially different from the one they began with, and smaller. Those facts are related.
 
-What has been removed was in every case removed for cause: an anisotropy coefficient not derivable from the stated lattice; a gauge algebra excluded by a Weyl-group computation; time-step values violating their own stability bound; a generation count resting on a conflation of symmetry with multiplicity; a claimed absence of monopoles inconsistent with the adopted gauge group. What remains has been computed, validated against known limiting cases, simulated where simulation was possible, and in one instance corroborated by an independent published result obtained by an unrelated method.
+What has been removed was in every case removed for cause: an anisotropy coefficient not derivable from the stated lattice; a gauge algebra excluded by a Weyl-group computation; time-step values violating their own stability bound; a generation count resting on a conflation of symmetry with multiplicity; a claimed absence of monopoles inconsistent with an $E_6$ gauge group. What remains has been computed, validated against known limiting cases, simulated where simulation was possible, and in one instance corroborated by an independent published result obtained by an unrelated method.
 
 The reformulation from static geometry to interference dynamics was the decisive move. It removed a primitive, dissolved a standing objection at its root, supplied the selection mechanism the static formulation never had, and produced falsifiable predictions the static version could not state. That reformulation is not a reinterpretation of the same theory. It is a different and better one.
 
-\textbf{The honest position.} IRH is a well-posed research programme with a verified geometric core, a defensible gauge identification, a quantified stability domain, and a specific list of open problems. It is not a completed unified theory, and the distance to one is large — measured precisely by Part IX. Its central claim, that a high-symmetry discrete structure emerges dynamically from an oscillatory substrate rather than being imposed, is at this point supported rather than asserted. That is a smaller claim than v92 made, and it is one that has survived adversarial checking.
+\textbf{The honest position.} IRH is a well-posed research programme with a verified geometric core, a defensible gauge-algebra label, a quantified stability domain, and a specific list of open problems. It is not a completed unified theory, and the distance to one is large — measured precisely by Part IX. Its central claim, that a high-symmetry discrete structure emerges dynamically from an oscillatory substrate rather than being imposed, is at this point supported rather than asserted. That is a smaller claim than v92 made, and it is one that has survived adversarial checking.
 
 \textbf{v94 addendum.} Since v93.1, external verification has narrowed rather than widened the programme's established ground: patterned recovery is verified while general selection from noise is not (G-A5, OPEN); sampled stability is supported while continuum stability is abstained (G-A6); the dislocation coefficients are corrected and defect realisation is contradicted in the tested setup (G-A11, OPEN); no independent work cites IRH (G-D6, MISS); and the (2,2) uniqueness claim is overturned in its broad form and narrowed (G-D10). Every grade change in v94 was decided by the author on 2026-11-14, on the concurrence of an independent audit delivered that evening (all eight grade proposals concurred); nothing else in this assessment changes.
 
