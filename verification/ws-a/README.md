@@ -14,3 +14,14 @@ imported; each is byte-identical to the zip member (`SHA256SUMS.import`).
 Run from this folder (scripts use `sys.path.insert(0, ".")` and relative
 `tables/`, `figures/` paths). Reports: `programme/workstreams/ws-a-core-computations/`.
 Any change after the import commit is a run-12 artifact fix and cites EXP-1200.
+
+## Run-12 fix G-B3 (EXP-1200): active-triad lock metric
+
+`d4model.ModelB.analyze` now returns `lock` = mean cos S over triads whose
+three modes are all active (`mag > 0.5*mag.max()`, the `ndom` criterion);
+the shipped all-32-triad value is kept as `lock_all`, and `n_lock_triads`
+counts the active triads. Patterns with no active triad (sq4, sq8) get
+`lock = NaN` (undefined) instead of a roundoff-dependent number.
+Not changed: WS-C `irh_models.make_analyzer` (l.167) carries the same
+all-triad metric; it is outside EXP-1200's G-B3 scope and is recorded as
+an open item in run-12 w-p0code CHANGES.md.

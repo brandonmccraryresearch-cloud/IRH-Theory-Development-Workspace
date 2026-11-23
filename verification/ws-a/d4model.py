@@ -259,7 +259,8 @@ class ModelB:
 
     def analyze(self, ph):
         """(psibar, mean|A| over shell, D4 shell power fraction, dominant
-        mode count, triad phase locking <cos S>, rms modulation, F excess).
+        mode count, triad phase locking <cos S> over active triads, rms
+        modulation, F excess).
         Fourier indices are the UNSCALED root labels n = (+-1,+-1,0,0):
         physical k = (2*pi/L) n, so with L = pi the shell sits at |k|^2 = 8.
         (d4 is 0.0 when there is no non-zero-mode power at all.)"""
@@ -279,7 +280,21 @@ class ModelB:
                 if ic > ib:
                     triads.append((ia, ib, ic))
         S = np.array([pha[a] + pha[b] + pha[c] for a, b, c in triads])
-        lock = float(np.mean(np.cos(S))) if len(S) else float('nan')
+        # Run-12 fix (EXP-1200 R-CODE, gap G-B3; Hark F2): the shipped metric
+        # averaged cos S over all 32 triads, including modes at roundoff
+        # amplitude whose phases are noise, so it was platform-dependent for
+        # partial patterns (hex6 0.304 / WS-C A5 0.455 vs shipped 1.000).
+        # `lock` is now the mean over ACTIVE triads only: all three modes
+        # active, with "active" = the same criterion as ndom
+        # (mag > 0.5 * mag.max()). For the full 24-mode pattern every triad
+        # is active and the value is unchanged. The old all-triad value is
+        # kept as `lock_all`; `n_lock_triads` is the number of active triads.
+        lock_all = float(np.mean(np.cos(S))) if len(S) else float('nan')
+        active = (mag > 0.5 * mag.max()) if mag.max() > 0 else \
+            np.zeros(len(mag), bool)
+        act = [k for k, (a, b, c) in enumerate(triads)
+               if active[a] and active[b] and active[c]]
+        lock = float(np.mean(np.cos(S[act]))) if act else float('nan')
         pb = float(ph[0, 0, 0, 0].real / self.N ** 4)
         fld = np.fft.ifftn(ph).real
         rms = float(np.sqrt(((fld - fld.mean()) ** 2).mean()))
@@ -287,7 +302,8 @@ class ModelB:
         pu = np.zeros_like(ph)
         pu[0, 0, 0, 0] = ph[0, 0, 0, 0]
         return dict(psibar=pb, amp=float(mag.mean()), d4=d4, ndom=ndom,
-                    lock=lock, rms=rms, Fexc=F - self.free_energy(pu),
+                    lock=lock, lock_all=lock_all, n_lock_triads=len(act),
+                    rms=rms, Fexc=F - self.free_energy(pu),
                     mags=mag, phases=pha)
 
     def seed_full(self, psibar=PSIBAR, amp=A_STAR, phases=None):
