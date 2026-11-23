@@ -94,3 +94,12 @@ v94 l.958 already scopes $[3/2,2]$ to CDT. Recommended addition after "no IRH gr
 - WS-D's shipped scripts (task10_scripts, task12_models) are not in the repo at 64bd065. They exist only in `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-d-frameworks-rivals/`. The recommendation is to add them on a branch, with their shas (`G-E8_trace.md` §5.1, sha256 `fec787c48e73cd21aeadcb4fe9c54ba4c130bd342092b930e097282c075b2079`).
 - The G-A15 task-13 code is outside the repo as well (`irh_models.py`, `task2a_attractor_ladder.py`; shas are in the inventory entry). Depositing it is a repo change for a branch (`G-A15_trace.md` §4.6(b), sha256 `8ee7bb48befd2f96f53d84bec23cb9ace760b950508cc74d5e69af09f2be095d`).
 - Optional G-A16 note (unregistered, closes nothing): an unforced redundant spectral sector grows at the bare shell rate $k^2|\omega^2|=2.8$, the semi-implicit image of WS-C's 1.0142/step (`G-A15_trace.md` §4.7).
+
+## 9. Merge record (m-p0, EXP-1200 Phase 0, 2026-11-23)
+
+- Base: `origin/main` = `64bd0657a2ea50b374d8af542d3a261e42338fb0`.
+- Merge 1, R-CODE `run12/artifact-fixes` @ `3c4e08c9e62901078d7264b6fe8c73b09deae2df`: merge commit `cdaa3b01450ec4d606489b1168183b13def15ed8`.
+- Merge 2, R-TEX `run12/tex-record-fixes` @ `f7fcbf9df3e2b6a3fb4195ec4829345d406582ce`: merge commit `cda11ec8929b6c6990dfe64d845f17282e1dcfca`.
+- Merge 3, R-INV `run12/inventory-record-fixes` @ `0fb18c58de303de32ff59c20cb22e7a12ca4db19`: merge commit `6b4efb27a1225aab06f8bcf73b7a6ce079d96fb8`.
+- All merges `--no-ff`, no conflicts. Verifier verdicts v-p0 + v-p0b; adjudicator trace `adj/PHASE0_EXP-1200_trace.md` sha256 `3fb09a4712fdbdda0b9e8954b25062a557d688e06e0a2b75134b47227cbaa5f4`.
+- C1 rounding recipe (amendment A1) reconstructed to match the shipped strings, not independently justified.
