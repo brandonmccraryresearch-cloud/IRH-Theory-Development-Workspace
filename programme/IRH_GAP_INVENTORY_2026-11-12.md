@@ -227,8 +227,8 @@ discrepancy), §8.2 (Model B artifact).
 ### G-A10 — Nucleation barrier height and critical droplet size (IX.1.2): full-PDE droplet uncomputed
 
 - **Status/grade:** OPEN (repo register). Partial verdicts: ODE
-  $R_{c} = 12.57 / \DeltaF* = 555$, grade B (exact within the amplitude
-  equation); thin-wall $R_{c} = 7.38 / \DeltaF* = 37.2$, grade C (approximation
+  $R_{c} = 12.57 / \Delta F* = 555$, grade B (exact within the amplitude
+  equation); thin-wall $R_{c} = 7.38 / \Delta F* = 37.2$, grade C (approximation
   shown to fail — $\xi = 8.64 > R_{c})$. **2026-11-14:** saddle energy alone does not decide full-field fate — supported at Track E **C (PROPOSED)** (single-profile family; interface-tension: tensions $0.0189904$ / $0.0264060$ at coexistence, thin-wall transfers $36.95$ / $138.12$ vs saved saddle $550.93$; transferred tension is path-dependent by 40%). Deterministic saddle/threshold supports B / F2. Any rate stays ABSTAIN.
 - **What we know:** the ODE and thin-wall routes use the one-mode
   $F_{mod}$ and the envelope gradient coefficient, ignoring higher harmonics
@@ -236,7 +236,7 @@ discrepancy), §8.2 (Model B artifact).
   box threshold is a finite-box quantity, not the infinite-volume $R_{c}$
   (see Summary §2, task 4).
 - **What would close it:** a full-PDE critical droplet (shooting the PDE,
-  not the amplitude equation) — expected to refine $R_{c} / \DeltaF$* by ~1–10%;
+  not the amplitude equation) — expected to refine $R_{c} / \Delta F$* by ~1–10%;
   the thick-wall character would survive. Plus the larger-box runs of
   G-A9.
 - **Owner:** Co-scientist task (costed first; GCP-scale if on a big box).
@@ -291,7 +291,7 @@ discrepancy), §8.2 (Model B artifact).
   fixed point is identical to 6 decimals at all 8 ladder points
   $(N \in {8, 12, 16, 20} \times$ dt $\in {0.02, 0.01, 0.005, 0.0025})$.
 - **What would close it:** running it (a falsification check only: a
-  ladder point differing from $\langleA\rangle = 0.077682$ / Fexc = $-0.007728$ by more
+  ladder point differing from $\langle A\rangle = 0.077682$ / Fexc = $-0.007728$ by more
   than 1e-6 would falsify resolution-independence; none found in 8
   points).
 - **Owner:** Local Muse verification (trivial local run, if ever wanted).
@@ -299,7 +299,7 @@ discrepancy), §8.2 (Model B artifact).
 ### G-A16 — Model B Hermitian artifact: fix verified, but the shipped sim6 file is unmodified and the manuscript's §I.2 equation still states the non-conserved form
 
 - **Status/grade:** Diagnosis CLOSED (fix verified: stable to t = 30,
-  $\langleA\rangle = 0.077682$, $D_{4} = 1.0000$, 24/24); the file/manuscript residue is
+  $\langle A\rangle = 0.077682$, $D_{4} = 1.0000$, 24/24); the file/manuscript residue is
   OPEN.
 - **What we know:** the shipped-style Model B update grows an
   anti-Hermitian roundoff component $\times1.0142$/step to NaN by ~6000 steps
@@ -331,8 +331,8 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A18 — Thin-wall droplet estimate as the answer — CLOSED (shown to fail; ODE value stands)
 
-- **Status/grade:** CLOSED. Thin-wall $R_{c} = 7.38 / \DeltaF* = 37.2$, grade C
-  (approximation shown to fail); ODE $R_{c} = 12.57 / \DeltaF* = 555$, grade B
+- **Status/grade:** CLOSED. Thin-wall $R_{c} = 7.38 / \Delta F* = 37.2$, grade C
+  (approximation shown to fail); ODE $R_{c} = 12.57 / \Delta F* = 555$, grade B
   (Summary §2, task 4).
 - **What we know:** the correlation length $\xi = 8.64$ exceeds the
   thin-wall radius, so the thin-wall separation of volume gain and
@@ -527,13 +527,13 @@ Manuscript sections: §I.1–I.3 (substrate, dynamics, conserved Model B),
 - **Status/grade:** SUBSTANTIATED on the manuscript text (Hark B1).
   No grade (a manuscript-text finding, not a computation).
 - **What we know:** §I.2 (lines 185–191) states the dynamical equation
-  as $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = **-\deltaF/\delta\psi$** — a damped wave equation with a
+  as $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = **-\delta F/\delta\psi$** — a damped wave equation with a
   NON-conserved right-hand side — and §I.3 (lines 215–219) then derives
   that conserved dynamics is a requirement, citing Model B
-  $\partial_{t}\psi = \nabla^{2}(\deltaF/\delta\psi)$ preserving the mean to 8.3e-17. The manuscript's own
+  $\partial_{t}\psi = \nabla^{2}(\delta F/\delta\psi)$ preserving the mean to 8.3e-17. The manuscript's own
   §I.2 is therefore internally inconsistent: its stated equation is not
   the conserved dynamics its simulations use. The conserved-MPFC form
-  $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = \nabla^{2}\deltaF/\delta\psi$ appears in NEITHER the manuscript nor the
+  $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = \nabla^{2}\delta F/\delta\psi$ appears in NEITHER the manuscript nor the
   package. Hark's citation "REVISION_PLAN 1.1" is unlocated (see G-E3)
   — the substance stands on the manuscript text; the citation does not.
 - **What would close it:** a manuscript correction stating the
@@ -619,7 +619,7 @@ torus-node comparison §7.3.
   stress-energy, two transverse-traceless graviton polarizations. Analog
   models give effective curvature, not GR [19]. "Jacobson $\Rightarrow$ IRH
   transport" FAILS / NOT ESTABLISHED (thermodynamic premises $S \propto A$,
-  $\deltaQ = T$ dS, local equilibrium have no positive analogue in IRH).
+  $\delta Q = T$ dS, local equilibrium have no positive analogue in IRH).
   IRH v93.1's own Part VII retraction stands, confirmed against
   Barceló–Liberati–Visser 2011 and Sindoni 2012.
 - **What would close it:** a derivation of the Einstein equations (with
@@ -737,14 +737,14 @@ torus-node comparison §7.3.
   corrected formula is VERIFIED — the gap that remains is the erratum
   itself.
 - **What we know:** EOM-derived formula:
-  $\sin^{2}(\omega\Deltat/2) = (\Deltat^{2}\cdot2J/(4M$\*$a_{0}^{2}))\cdot\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha))$ +
-  $(\Deltat^{2}\mu^{2})/(4M$\*); printed (7) has $[2\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha)) + \mu^{2}]$ inside one
+  $\sin^{2}(\omega\Delta t/2) = (\Delta t^{2}\cdot2J/(4M$\*$a_{0}^{2}))\cdot\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha))$ +
+  $(\Delta t^{2}\mu^{2})/(4M$\*); printed (7) has $[2\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha)) + \mu^{2}]$ inside one
   bracket — factor of 2 too many in the $\Sigma$ term, $\mu^{2}$ misplaced. Three
   internal checks favour the derived formula (J = M\*$c^{2}/12$, the k = 0
   limit, the CFL table), and the manuscript's own §III.2 expansion uses
   the derived formula. The CFL bound computed from it is VERIFIED.
   Erratum: replace $[2\Sigma(1-\cos) + \mu^{2}]$ by $[\Sigma(1-\cos)]$ with the $\mu^{2}$ term
-  outside the bracket at coefficient $\Deltat^{2}/(4M$\*).
+  outside the bracket at coefficient $\Delta t^{2}/(4M$\*).
 - **What would close it:** filing the erratum.
 - **Owner:** **Brandon's call** (guide §12 Q8). Not closable by the
   programme alone.
@@ -754,12 +754,12 @@ torus-node comparison §7.3.
 - **Status/grade:** UNVERIFIED, not FAILED (WS-D task 10, D17).
 - **What we know:** table $(4\times10^{-5}, 0.1$%, 1.0%, 11%, 133%) NOT
   REPRODUCIBLE; under the natural reading computed errors are $1.67\times10^{-5}$,
-  $4.17\times10^{-4}$, $3.75\times10^{-3}$, 4.11%, 36.3% $(\Deltat\to0)$ — smaller by factors
+  $4.17\times10^{-4}$, $3.75\times10^{-3}$, 4.11%, 36.3% $(\Delta t\to0)$ — smaller by factors
   2.4–3.7; zone-edge 133% unreachable under that reading. The VI.3
   summary boundary (<1% for $a_{0}$|k| ≲ 0.3) survives the recomputation
-  (0.042% at 0.10, 0.375% at 0.30). The table'$s \Deltat$, carrier $\theta ($or $\mu)$,
+  (0.042% at 0.10, 0.375% at 0.30). The table'$s \Delta t$, carrier $\theta ($or $\mu)$,
   direction, and error definition are unstated.
-- **What would close it:** the author stating $\Deltat$, $\theta ($or $\mu)$, direction,
+- **What would close it:** the author stating $\Delta t$, $\theta ($or $\mu)$, direction,
   and error definition for the table (guide §12 Q9).
 - **Owner:** **Brandon's call** (he is the manuscript's author).
 
@@ -827,7 +827,7 @@ torus-node comparison §7.3.
 - **Owner:** Local Muse verification (fetch public repo/archive; read
   only, no contact).
 
-### G-C17 — WS-$D F3\toF2$ question: should the Hark two-route logic lift task-12 G1/G5/G8/G12 to F2? — CLOSED (regraded F2, 2026-11-12)
+### G-C17 — WS-$D F3\to F2$ question: should the Hark two-route logic lift task-12 G1/G5/G8/G12 to F2? — CLOSED (regraded F2, 2026-11-12)
 
 - **Status/grade:** CLOSED. G1/G5/G8/G12 are **F2** (was F3).
 - **What we know:** the Hark regrade table covers only WS-A/WS-C/WS-E
@@ -895,7 +895,7 @@ torus-node comparison §7.3.
   (WS-D tasks 9, 10, 12; definitional identities, F3 as identities).
 - **What we know:** the triad relations are definitional re-expressions
   of measured Planck quantities (a change of variables); the triad
-  closes iff $L_{P}^{2} = \hbarG/c^{3}$, the definition of $L_{P}$. The manuscript itself
+  closes iff $L_{P}^{2} = \hbar G/c^{3}$, the definition of $L_{P}$. The manuscript itself
   states the circle. Task 10 (D1, grade C) and task 12 (G3) agree.
 - **What closed it:** the verdict itself — the claim *as a derivation*
   is refuted. The underlying physics gap (no derivation of the constants
@@ -968,7 +968,7 @@ entirety" (programme brief).
   stand: B1 no expansion history; B2 dimensional assignment undecided
   (§IX.2 A/B/C); B3 Einstein equations not recovered / tensor sector
   unrecovered (effective metric "obeys the substrate's own equation of
-  motion, not $G\mu\nu = 8\piT\mu\nu$"; "the two transverse-traceless graviton
+  motion, not $G\mu\nu = 8\pi T\mu\nu$"; "the two transverse-traceless graviton
   polarizations is a separate and substantially harder [problem]"); B4 no
   nucleation mechanism, no $\bar{\psi}$ mechanism (§IX.5); B5 no photon or baryon
   coupling; B6 no stated cosmological initial conditions. Any
@@ -1179,7 +1179,7 @@ entirety" (programme brief).
   record. Amendment note: `HLRE-6-5-HUMAN-GATE-REPEAL-2026-11-12.md`.
   Nothing in the review depends on the repeal for its Track E conclusions
   (WS-A's A/B grades fall to C on the independence bound alone), but the
-  Track F two-route $F3\toF2$ regrades DO rest on the amendment's terms —
+  Track F two-route $F3\to F2$ regrades DO rest on the amendment's terms —
   and their extension to WS-D is now decided (G-C17 closed, G1/G5/$G8/G12 \to F2)$.
 - **What would close it:** done — Brandon's in-conversation repeal, 2026-11-12.
 - **Owner:** closed.
@@ -1238,7 +1238,7 @@ entirety" (programme brief).
   scratch copy (task 10: 45 + 33 PASS, 0 FAIL; task 12 driver: 55 PASS,
   0 FAIL; driver output identical to the shipped rerun log) and read the
   four reports — but no independent replication audit of WS-D exists.
-  This is also why the $F3\toF2$ question (G-C17) was undecided in the first
+  This is also why the $F3\to F2$ question (G-C17) was undecided in the first
   issue of this inventory; it is now decided by the 2026-11-12 repeal
   (G1/G5/$G8/G12 \to F2)$. The replication-audit question is separate.
 - **What would close it:** an independent replication audit of WS-D on
@@ -1314,7 +1314,7 @@ CLOSED status.)
 4. **"$\delta = 0.5$ kills the ordered branch" plane-wide — FAILED as written;
    corrected to the $\delta^{2}$ shift, VERIFIED** (grade C). $\dagger (G-A17)$
 5. **Thin-wall droplet estimate as the answer — shown to fail; ODE value
-   stands** $(R_{c} = 12.57 / \DeltaF* = 555$, grade B). $\dagger (G-A18)$
+   stands** $(R_{c} = 12.57 / \Delta F* = 555$, grade B). $\dagger (G-A18)$
 6. **Printed dispersion relation (7) as printed — FAILED; corrected
    formula VERIFIED** (three internal checks + the manuscript's own
    §III.2 expansion; CFL bound VERIFIED). The remaining open item is
