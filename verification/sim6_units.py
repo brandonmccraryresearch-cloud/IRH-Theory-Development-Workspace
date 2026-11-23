@@ -70,15 +70,25 @@ def analyze(psi_hat):
     Fexc = F - free_energy(pu)
     return pb, mag.mean(), d4, ndom, lock, rms, Fexc
 
-def test_attractor(conserved_B, steps, dt_use=0.02):
-    """Seeded II.8 test. conserved_B=True -> true Model B; False -> Model A."""
+def test_attractor(conserved_B, steps, dt_use=0.02, hermitian=True):
+    """Seeded II.8 test. conserved_B=True -> true Model B; False -> Model A.
+
+    hermitian=True (run-12 fix, EXP-1200 R-CODE, gap G-A16): per-step
+    projection ph <- fftn(ifftn(ph).real). The exact dynamics keeps the field
+    real (ph Hermitian), but the semi-implicit Model B update amplifies the
+    anti-Hermitian roundoff sector by 1/den = 1/0.986 ~ 1.0142 per step at the
+    shell (den = 1 + dt*K2*omega2), so the unprojected run overflows to NaN
+    near t = 27.5 (dt = 0.005). The projection is an exact no-op in exact
+    arithmetic and removes only that unphysical sector (same fix as WS-C
+    irh_models.run_attractor and WS-A d4model.ModelB.step).
+    hermitian=False reproduces the shipped (unprojected) stepper."""
     ph = np.zeros((N,)*4, complex)
     ph[0,0,0,0] = PSIBAR*N**4
     for n in vecs: ph[gidx(n)] = A_STAR*N**4
     den = 1.0 + dt_use*K2*omega2          # Model B semi-implicit
     denA = 1.0 + dt_use*omega2            # Model A semi-implicit
     filt = (K2 < 200).astype(float)       # kill stiff high-k nonlinear noise
-    tag = "ModelB" if conserved_B else "ModelA"
+    tag = ("ModelB" if conserved_B else "ModelA") + ("" if hermitian else " UNPROJECTED")
     print(f"[{tag} attractor]", "seed: A=0.07760 D4=1.0000 rms=0.3802", flush=True)
     for step in range(1, steps+1):
         p = np.fft.ifftn(ph).real
@@ -87,6 +97,8 @@ def test_attractor(conserved_B, steps, dt_use=0.02):
             ph = (ph + dt_use*K2*nl)/den
         else:
             ph = (ph + dt_use*nl)/denA
+        if hermitian:
+            ph = np.fft.fftn(np.fft.ifftn(ph).real)
         if step in (500, 1500, steps):
             pb,A,d4,ndom,lock,rms,F = analyze(ph)
             print(f"  t={step*dt_use:5.1f} psibar={pb:+.5f} <A>={A:.5f} D4={d4:.4f} "
@@ -122,6 +134,8 @@ if __name__ == "__main__":
     if which in ("all", "attractor"):
         test_attractor(True, 6000, 0.005)
         test_attractor(False, 1500)
+    if which == "attractor-unprojected":   # shipped behaviour, for comparison
+        test_attractor(True, 6000, 0.005, hermitian=False)
     if which in ("all", "quench"):
         test_quench(1.0, 2500)
         test_quench(0.0, 2500)
