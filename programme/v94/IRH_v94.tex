@@ -66,7 +66,7 @@ The framework in this version differs from v92 in kind, not merely in detail. It
 
 \textbf{What is now established.} The D$_4$ pattern is selected dynamically rather than assumed, by a parameter-free criterion $S=\tau^2/q_4$ derived symbolically, validated by recovering the Alexander--McTague BCC result in three dimensions \hyperref[ref1]{[1]}, applied in four where D$_4$ wins at $S=0.454$ with selection quantities that are exact rationals and simple radicals ($64/141$, $16/45$, $73/423$, $\tau_{D_4}/\tau_{\mathrm{BCC}}=\sqrt{2}$) rather than fitted decimals, confirmed by direct simulation from random initial conditions, and independently corroborated by a published molecular-dynamics result obtained by an unrelated method \hyperref[ref40]{[40]}. An independent mechanism-level reproduction finds $77.1\%$ of spectral power on D$_4$ with triads active versus $21.1\%$ with triads removed, rising to $89.5\%$ under annealing --- establishing the cubic triad term as the causal selection mechanism. The full 24-mode standing wave is a genuine dynamical attractor with relaxed free energy $F/V=-0.0077276$, reproduced independently at $-0.007728$. The resonance maximum is unique modulo lattice periodicity (32 periodic maxima on the $16^4$ grid); the transition is first order. The lattice constant $a_0=2\pi/q_0$ is derived rather than postulated. Four-dimensionality acquires a new structural argument: the Swift--Hohenberg \hyperref[ref2]{[2]} curvature term is exactly scale-invariant at $d=4$. The gauge-algebra label is identified as $E_6$, read off the pattern's own group structure via the binary tetrahedral group and the McKay correspondence \hyperref[ref3]{[3]} rather than imposed to fit a target. The geometric core is now machine-checked: eight Lean~4 modules compile cleanly with no \texttt{sorry}, \texttt{admit}, or \texttt{axiom}.
 
-\textbf{What is excluded by theorem.} SO(8) cannot be the gauge algebra, by two independent proofs. The Standard Model algebra does not embed in $\mathfrak{so}(8)$ by any route. The anisotropy coefficient $\xi_2=-1/384$ is not derivable from the stated lattice. Both time-step values stated in v92 violate the framework's own stability bound. Three generations is \textbf{not} a derived result: five candidate mechanisms were tested and all five are closed. Monopole absence, claimed in earlier versions, is inconsistent with an $E_6$ gauge group.
+\textbf{What is excluded by theorem.} SO(8) cannot be the gauge algebra, by two independent proofs. The Standard Model algebra does not embed in $\mathfrak{so}(8)$ by any route. The anisotropy coefficient $\xi_2=-1/384$ is not derivable from the stated lattice. Both time-step values stated in v92 violate the framework's own stability bound. Three generations is \textbf{not} a derived result: five candidate mechanisms were tested and all five are closed. Monopole absence, claimed in earlier versions, is withdrawn: it would be inconsistent with $E_6$ realised as a broken gauge group (\S~V.3).
 
 \textbf{What remains open} is stated exhaustively in \S~IX, classified by the type of work each item requires. Every correction made during verification --- including corrections to the author's own prior output --- is recorded in the appendices, and every externally attributable claim carries a linked numerical citation.
 
@@ -680,7 +680,7 @@ E₆ passes the identical test $\mathfrak{s}$$\mathfrak{o}$(8) fails. It has the
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figs/fig09.png}
-\caption{\textbf{Figure 9.} \textit{Left:} the 24 vertices coloured by coset of $Q_8$ in 2T. \textit{Right:} the resulting structural chain from substrate to Standard Model. Scope (gap G-A22): the box ``$\Rightarrow$ gauge algebra $E_6$'' records the gauge-algebra label adopted by the scope decision of \S IV.4, not a derived gauge algebra; no Yang--Mills kinetic term or Higgs sector for $E_6$ is derived.}
+\caption{\textbf{Figure 9.} \textit{Left:} the 24 vertices coloured by coset of $Q_8$ in 2T. \textit{Right:} the resulting structural chain from substrate to Standard Model. Scope (gap G-A22): the box ``$\Rightarrow$ gauge algebra $E_6$'' records the gauge-algebra label adopted by the scope decision of \S IV.4, not a derived gauge algebra; no Yang--Mills kinetic term or Higgs sector for $E_6$ is derived. The box ``$2T/Q_8=\mathbb{Z}_3$'' records three cosets of eight; three generations are NOT derived from it (\S V.2).}
 \end{figure}
 
 \subsection*{IV.4 The Gauge Decision}
@@ -745,7 +745,7 @@ This must be stated plainly because the coincidence is seductive. The 24-cell re
 
 Any simple gauge group broken to a subgroup containing an unbroken $U(1)$ has $\pi_2(G/H)=\mathbb{Z}$ and therefore stable magnetic monopoles \hyperref[ref33]{[33]}. $E_6\to\cdots\to SU(3)\times SU(2)\times U(1)$ is of exactly this form.
 
-\textbf{EXCLUDED — monopole absence}, claimed in earlier versions, is inconsistent with an E₆ gauge group. If E₆ is realised as a broken gauge group, IRH would inherit the standard unified-theory monopole problem and would require the standard resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
+\textbf{WITHDRAWN — monopole absence}, claimed in earlier versions, is not excluded by proof but withdrawn: it would be inconsistent with E₆ realised as a broken gauge group. If E₆ is realised as a broken gauge group, IRH would inherit the standard unified-theory monopole problem and would require the standard resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
 
 \medskip\hrule\medskip
 
@@ -828,7 +828,7 @@ $\Delta t=a_0/c$ and $\Delta t=T_P$ & \textbf{retracted} & both violate the deri
 Schrödinger emergence & \textbf{corrected} & original carrier degenerate; replaced by §III.3 \\
 Lorentzian signature from $i^2=-1$ & \textbf{retracted} & canonical $i\hbar$ is present in Euclidean field theory also; does not select signature \\
 Einstein equations from elasticity & \textbf{retracted} & analogy, not derivation; see §IX.3 \\
-Monopole absence & \textbf{retracted} & inconsistent with E₆ breaking topology \\
+Monopole absence & \textbf{retracted} & inconsistent with E₆ breaking topology if E₆ is realised as a broken gauge group (§V.3) \\
 Higgs VEV $v_0$, $A_3$ mass and widths, CKM & \textbf{retracted} & computed in an excluded framework, with independent arithmetic errors \\
 "Zero empirical calibration", "100\% closure" & \textbf{retracted} & not defensible in any version \\
 $\alpha^{-1}=137+1/(28-\pi/14)$ as derived & \textbf{downgraded} & arithmetic verified exact; physical derivation absent. Numerical ansatz only \\
@@ -885,7 +885,7 @@ Lean 4 formalization, machine-checked end to end & CONFIRMED & §VI-A.2 \\
 
 \subsection*{VIII.2 Excluded}
 
-$\mathfrak{so}(8)$ as gauge algebra; SM embedding in $\mathfrak{so}(8)$; Pati–Salam from $\mathfrak{so}(8)$; $\xi_2=-1/384$; both v92 time steps; Kerr solitons in 4D; skyrmions from a single real scalar; gauge structure internal to a single scalar; three generations as derived; monopole absence; universal optimality of D₄.
+$\mathfrak{so}(8)$ as gauge algebra; SM embedding in $\mathfrak{so}(8)$; Pati–Salam from $\mathfrak{so}(8)$; $\xi_2=-1/384$; both v92 time steps; Kerr solitons in 4D; skyrmions from a single real scalar; gauge structure internal to a single scalar; three generations as derived; universal optimality of D₄. Monopole absence is withdrawn rather than excluded: it fails only if E₆ is realised as a broken gauge group (§V.3).
 
 \subsection*{VIII.3 Inputs (acknowledged assumptions)}
 
