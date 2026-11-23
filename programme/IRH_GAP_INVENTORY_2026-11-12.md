@@ -87,7 +87,8 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A2 — 11.85% vs 11.90%: which band value is canonical?
 
-- **Status/grade:** Genuine source inconsistency, unresolved; no grade.
+- **Status/grade:** CLOSED (record decision, 2026-11-17; recorded run 12). **$11.85\%$ is canonical** (v94 tex l.349, headline PREDICTION). $11.90\%$ (v94 tex l.368) is the $w_6=0$ cross-check from different code; the manuscript already frames it as reproducing $11.85\%$ ("The $w_6=0$ value independently reproduces the 11.85\% obtained by different code"), so the 0.05 pp is a cross-code difference, not a competing claim. No tex change. Decided by Dragon under Brandon's 2026-11-17 06:53 CST authorization ("All decisions are yours and authorized", MAIN_TRANSCRIPT l.8865–8867; decision l.8873); record fix confirmed under the 2026-11-22 delegation. No grade (bookkeeping). (Was: Genuine source inconsistency, unresolved; no grade.)
+- **Separate, still open (not part of this decision):** $11.85\%$ is **not reproduced** by part 7c: 11.553% on the W1 rows (every second r, $N=16$, Track E C) and 12.971% for the literal WS competitor set; v94's window is unrecorded, so 11.85% is not replaced on that basis (RUN10_PART7C_REPORT l.52; 7c G-A7 trace D-3). That revision belongs to G-A1/G-A19. Side finding routed to G-A1/G-A3: with fcc12 in the competitor set the upper edge at $r=-0.35$ is −0.14, not −0.125 (7c D-4).
 - **What we know:** the band is stated as both **11.85%** (headline
   PREDICTION, §II.7) and **11.90%** $(w_{6} = 0$ value, §II.7 sixth-order
   paragraph; Appendix A item 8 calls 11.9% "the correct" value). Three
@@ -96,8 +97,8 @@ discrepancy), §8.2 (Model B artifact).
   front.
 - **What would close it:** Brandon's decision on the canonical value
   (and whether the other figure is a rounding, a different window, or an
-  error).
-- **Owner:** **Brandon's call alone.** Not closable by the programme.
+  error). Met: decided 2026-11-17 under his authorization (above).
+- **Owner:** Was Brandon's call alone; decided under his 2026-11-17 authorization and the 2026-11-22 delegation.
 
 ### G-A3 — Measured band slice vs the manuscript's quoted union; the +0.03 edge is UNVERIFIED
 
