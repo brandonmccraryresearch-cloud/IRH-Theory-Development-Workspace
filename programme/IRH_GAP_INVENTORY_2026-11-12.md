@@ -47,13 +47,12 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts.** 80 entries in total: **68 open gaps**, **8 closed-as-verdict**
-(recorded inside their groups), **4 recorded non-gaps** (a boundary, a
-standing rule, a gated non-item, a record guard). By group: A — 26 entries
-(24 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (17 open, 3 closed,
-2 recorded non-gaps); D — 12 (11 open, 1 recorded); E — 11 (8 open,
-2 closed, 1 record guard). A further list of verdict-closures that are not gaps at
-all (§6) is given separately and is not counted in the 80.
+**Counts (recounted by script, run 12, 2026-11-23; EXP-1200 R-INV item 6).** 81 entries in total (the 80 entries at 64bd065, with G-C21 split into two rows, G-C21-CDT and G-C21-IRH): **53 open gaps**, **19 closed-as-verdict**, **5 closed-scoped**, **4 recorded non-gaps** (a boundary, a standing rule, a gated non-item, a record guard). By group: A — 26 entries (16 open, 7 closed, 3 closed-scoped); B — 9 (7 open, 2 closed); C — 23 (15 open, 5 closed, 1 closed-scoped, 2 recorded non-gaps); D — 12 (10 open, 1 closed-scoped, 1 recorded non-gap); E — 11 (5 open, 5 closed, 1 record guard). Counted on the 64bd065 entry list. The script and its output are in the run-12 deliverable `RECOUNT.md`; classes come from each entry's Status/grade line only.
+- **Not counted here:** the five gaps G-A27–G-A31 filed 2026-11-18 exist only in an uncommitted local edit of this file and are not in this branch. With them the total would be 86; G-A27–G-A30 are open, and G-A31 is closed-scoped by run 11 (its status line is in `RECORD_FIXES_run12.md` §1). That gives 57 open, 19 closed-as-verdict, 6 closed-scoped and 4 non-gaps once they are committed.
+- **Reconciliation:** the earlier §0 text ("80 entries … 68 open, 8 closed-as-verdict") omitted G-A6, which closed as a mapping task in the 2026-11-12 Batch 2 audit. The same script run on 64bd065 gives 80 / 67 open / 9 closed / 4 non-gaps. The Appendix's "75 / 64 / 7" predated the filing of G-A22–G-A26 and the 2026-11-17 G-C20 resolution.
+- Run 12 moved 14 entries from open to closed: G-A2, G-A4, G-A13, G-A15, G-B1, G-C12, G-C13, G-E8, G-E9 and G-E10 (closed-as-verdict); G-A7, G-A11, G-A12 and G-D6 (closed-scoped). It also split G-C21 into G-C21-IRH (closed-scoped) and G-C21-CDT (open). G-A22 stays open: route (c) is closed by scope decision, with the patch pending merge, and it carries no grade.
+
+A further list of verdict-closures that are not gaps at all (§6) is given separately and is not counted in the 81.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -115,7 +114,7 @@ discrepancy), §8.2 (Model B artifact).
   construction.
 - **Owner:** Co-scientist task (new).
 
-### G-A4 — The 24/24-from-noise rate: 0/5 seeds, unbounded
+### G-A4 — The 24/24-from-noise rate: 0/5 seeds, unbounded — CLOSED as a bounded rate (run 11: 0/240 at $T=50$)
 
 - **Status/grade:** CLOSED as a bounded rate (run 11, EXP-1114; F3 / Track E C, I1). 0/240 noise seeds are in the full 24-mode pattern at $T=50$ under the WS-C quench protocol ($N=16$, $L=\pi$, $r=-0.35$, $q_0^2=8$, $u=v=\gamma=1$, dt 0.02, noise $10^{-2}$, $\bar\psi_0=0$). CP 95% two-sided upper bound 1.53%, one-sided 1.24%. Outcomes: 6-mode 203, 2-mode 33, 8-mode 1, other 3. The verifier found 0/12 full24 on fresh seeds and agreed with R1 on 10/10 reruns. Scope: a $T=50$ snapshot; the class is not settled at $T=50$ for many seeds (219/240 differ from $T=30$, 68/240 from $T=40$). This is not a long-time-attractor rate. $\gamma=1.0$ follows the code; the WS-C task1 report l.363 says 1.2. (Was: Open; 0/5 is an upper bound, not a zero (WS-C task 7, grade C).)
 - **What we know:** noise quenches never reach the full 24-mode pattern
@@ -1250,7 +1249,7 @@ entirety" (programme brief).
   suffice).
 - **Owner:** Co-scientist task (audit) / Brandon's call (commission it).
 
-### G-E9 — Hark'$s \bar{\psi} = 0$ and $\bar{\psi} = +0.10$ transverse runs, and the stripe side-result: REPORTED, NOT RE-RUN
+### G-E9 — Hark'$s \bar{\psi} = 0$ and $\bar{\psi} = +0.10$ transverse runs, and the stripe side-result: re-run in run 11 (EXP-1113) — CLOSED
 
 - **Status/grade:** CLOSED (run 11, EXP-1113): a REPRODUCED; b MIXED (50–70% to a 2-mode decorated stripe, the rest to hex6 or a 12-mode state); c energies REPRODUCED, one-mode stripe metastability REFUTED. F3/I1, rung 2, two code-independent routes on one binary. (Was: REPORTED, NOT RE-RUN (Hark review, F1); the stripe side-result UNVERIFIED (single Hark run).)
 - **What we know:** the reviewer's own transverse check covered $\bar{\psi}$ =
@@ -1298,7 +1297,7 @@ entirety" (programme brief).
 ## 6. Closed in this baseline (graded verdicts that are not gaps)
 
 These items are **closed** under the §0 definition — each has a graded
-verdict — and are therefore not counted among the 64 open gaps. Several
+verdict — and are therefore not counted among the 53 open gaps. Several
 close by showing the claim as written is wrong; the correction is the
 result. (Items marked $\dagger$ are also cross-listed inside their groups with
 CLOSED status.)
@@ -1342,35 +1341,30 @@ CLOSED status.)
 
 ## Appendix — Gap counts by group and by owner
 
-| Group | Entries | Open | Closed-as-verdict | Recorded non-gaps |
-|---|---|---|---|---|
-| A — $D_{4}$ selection, band, basin, truncation | 21 | 19 | 2 (A17, A18) | 0 |
-| B — Substrate models, dynamics convergence | 9 | 8 | 1 (B9) | 0 |
-| C — Frameworks, rivals, constants, gravity | 22 | 18 | 2 (C17, C22) | 2 (C4 boundary, C9 standing rule) |
-| D — Cosmology, early universe | 12 | 11 | 0 | 1 (D12 gated) |
-| E — Programme, provenance, audit scope | 11 | 8 | 2 (E1, E4) | 1 (E11 record guard) |
-| **Total** | **75** | **64** | **7** | **4** |
+| Group | Entries | Open | Closed-as-verdict | Closed-scoped | Recorded non-gaps |
+|---|---|---|---|---|---|
+| A — $D_{4}$ selection, band, basin, truncation | 26 | 16 | 7 (A2, A4, A6, A13, A15, A17, A18) | 3 (A7, A11, A12) | 0 |
+| B — Substrate models, dynamics convergence | 9 | 7 | 2 (B1, B9) | 0 | 0 |
+| C — Frameworks, rivals, constants, gravity | 23 | 15 | 5 (C12, C13, C17, C20, C22) | 1 (C21-IRH) | 2 (C4 boundary, C9 standing rule) |
+| D — Cosmology, early universe | 12 | 10 | 0 | 1 (D6) | 1 (D12 gated) |
+| E — Programme, provenance, audit scope | 11 | 5 | 5 (E1, E4, E8, E9, E10) | 0 | 1 (E11 record guard) |
+| **Total** | **81** | **53** | **19** | **5** | **4** |
 
-**By owner (open gaps only, 64 — counted by each entry's *next* step's owner;
-entries gated on a Brandon decision or a stated input are counted under
-Brandon until that step is taken, and under Co-scientist/local/literature
-after it):**
+(Recounted by script in run 12, EXP-1200 R-INV item 6. G-A27–G-A31 are not included; see §0.)
+
+**By owner (open gaps only, 53). Each entry is counted under the owner of its *next* step. Run 12 rebuilt this table mechanically: it removed the entries that are now closed from the earlier lists, and added G-A22–G-A26 by their Owner lines. Under the 2026-11-22 full delegation the "Brandon's call" class is decided by Dragon except for the carve-outs (money, sending as him, credentials, deletions); the label is kept for traceability.**
 
 | Owner (next step) | Count | Entries |
 |---|---|---|
-| Brandon's call (alone or first) | 23 | A1, A2, A8, A16, B2, B3, B4, B7, C5, C8, C11, C12, C13, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
-| Co-scientist task (new / running / candidate) | 23 | A3, A4, A5 (running), A6 (running), A9, A10, A11, A12, A13, A14, A19, A20 (running), B5, B8, C2, C3, C6, C7, C10, C15, D2, D3, E8 |
-| Local Muse verification | 10 | A7, A15, A21, B1, B6, C16, E2, E3, E5, E9 |
-| Literature / external | 8 | C1, C18, C19, C20, C21, D6, D10, E10 |
-| **Total** | **64** | |
+| Brandon's call (alone or first) | 21 | A1, A8, A16, A22, B2, B3, B4, B7, C5, C8, C11, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
+| Co-scientist task (new / running / candidate) | 17 | A3, A5, A9, A10, A14, A19, A20, B5, B8, C2, C3, C6, C7, C10, C15, D2, D3 |
+| Local Muse verification | 10 | A21, A23, A24, A25, A26, B6, C16, E2, E3, E5 |
+| Literature / external | 5 | C1, C18, C19, C21-CDT, D10 |
+| **Total** | **53** | |
 
-23 + 23 + 10 + 8 = 64. Brandon's call and Co-scientist task are now tied as
-the largest owner classes (23 each of 64) — over a third of the open gaps
-still need a decision or a stated input from Brandon before any task can
-close them. Of the 23 Co-scientist-owned gaps, 3 are running (A5, the 4D
-field test; A6, off-shell instabilities; A20, matched $D_{4}/A_{4}$* onset).
+21 + 17 + 10 + 5 = 53. Removed as closed in run 12 (or earlier, but still listed): A2, C12, C13 (Brandon); A4, A6, A11, A12, A13, E8 (Co-scientist); A7, A15, B1, E9 (local); C20, D6, E10 (literature). G-C21 is replaced by G-C21-CDT.
 
-*Correction note (2026-11-12): this appendix counted 66 open with C17, E1,
+*Correction note (2026-11-12, superseded by the run-12 recount above): this appendix counted 66 open with C17, E1,
 E4 listed as open Brandon's-call items in its first issue; those three
 closed on 2026-11-12 (E1 LOCATED and audited, C17 regraded F2, E4
 provenance resolved), and A6/A20 moved from candidate to running. Counts
