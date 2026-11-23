@@ -47,13 +47,12 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts.** 80 entries in total: **68 open gaps**, **8 closed-as-verdict**
-(recorded inside their groups), **4 recorded non-gaps** (a boundary, a
-standing rule, a gated non-item, a record guard). By group: A — 26 entries
-(24 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (17 open, 3 closed,
-2 recorded non-gaps); D — 12 (11 open, 1 recorded); E — 11 (8 open,
-2 closed, 1 record guard). A further list of verdict-closures that are not gaps at
-all (§6) is given separately and is not counted in the 80.
+**Counts (recounted by script, run 12, 2026-11-23; EXP-1200 R-INV item 6).** 81 entries in total (the 80 entries at 64bd065, with G-C21 split into two rows, G-C21-CDT and G-C21-IRH): **53 open gaps**, **19 closed-as-verdict**, **5 closed-scoped**, **4 recorded non-gaps** (a boundary, a standing rule, a gated non-item, a record guard). By group: A — 26 entries (16 open, 7 closed, 3 closed-scoped); B — 9 (7 open, 2 closed); C — 23 (15 open, 5 closed, 1 closed-scoped, 2 recorded non-gaps); D — 12 (10 open, 1 closed-scoped, 1 recorded non-gap); E — 11 (5 open, 5 closed, 1 record guard). Counted on the 64bd065 entry list. The script and its output are in the run-12 deliverable `RECOUNT.md`; classes come from each entry's Status/grade line only.
+- **Not counted here:** the five gaps G-A27–G-A31 filed 2026-11-18 exist only in an uncommitted local edit of this file and are not in this branch. With them the total would be 86; G-A27–G-A30 are open, and G-A31 is closed-scoped by run 11 (its status line is in `RECORD_FIXES_run12.md` §1). That gives 57 open, 19 closed-as-verdict, 6 closed-scoped and 4 non-gaps once they are committed.
+- **Reconciliation:** the earlier §0 text ("80 entries … 68 open, 8 closed-as-verdict") omitted G-A6, which closed as a mapping task in the 2026-11-12 Batch 2 audit. The same script run on 64bd065 gives 80 / 67 open / 9 closed / 4 non-gaps. The Appendix's "75 / 64 / 7" predated the filing of G-A22–G-A26 and the 2026-11-17 G-C20 resolution.
+- Run 12 moved 14 entries from open to closed: G-A2, G-A4, G-A13, G-A15, G-B1, G-C12, G-C13, G-E8, G-E9 and G-E10 (closed-as-verdict); G-A7, G-A11, G-A12 and G-D6 (closed-scoped). It also split G-C21 into G-C21-IRH (closed-scoped) and G-C21-CDT (open). G-A22 stays open: route (c) is closed by scope decision, with the patch pending merge, and it carries no grade.
+
+A further list of verdict-closures that are not gaps at all (§6) is given separately and is not counted in the 81.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -87,7 +86,8 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A2 — 11.85% vs 11.90%: which band value is canonical?
 
-- **Status/grade:** Genuine source inconsistency, unresolved; no grade.
+- **Status/grade:** CLOSED (record decision, 2026-11-17; recorded run 12). **$11.85\%$ is canonical** (v94 tex l.349, headline PREDICTION). $11.90\%$ (v94 tex l.368) is the $w_6=0$ cross-check from different code; the manuscript already frames it as reproducing $11.85\%$ ("The $w_6=0$ value independently reproduces the 11.85\% obtained by different code"), so the 0.05 pp is a cross-code difference, not a competing claim. No tex change. Decided by Dragon under Brandon's 2026-11-17 06:53 CST authorization ("All decisions are yours and authorized", MAIN_TRANSCRIPT l.8865–8867; decision l.8873); record fix confirmed under the 2026-11-22 delegation. No grade (bookkeeping). (Was: Genuine source inconsistency, unresolved; no grade.)
+- **Separate, still open (not part of this decision):** $11.85\%$ is **not reproduced** by part 7c: 11.553% on the W1 rows (every second r, $N=16$, Track E C) and 12.971% for the literal WS competitor set; v94's window is unrecorded, so 11.85% is not replaced on that basis (RUN10_PART7C_REPORT l.52; 7c G-A7 trace D-3). That revision belongs to G-A1/G-A19. Side finding routed to G-A1/G-A3: with fcc12 in the competitor set the upper edge at $r=-0.35$ is −0.14, not −0.125 (7c D-4).
 - **What we know:** the band is stated as both **11.85%** (headline
   PREDICTION, §II.7) and **11.90%** $(w_{6} = 0$ value, §II.7 sixth-order
   paragraph; Appendix A item 8 calls 11.9% "the correct" value). Three
@@ -96,8 +96,8 @@ discrepancy), §8.2 (Model B artifact).
   front.
 - **What would close it:** Brandon's decision on the canonical value
   (and whether the other figure is a rounding, a different window, or an
-  error).
-- **Owner:** **Brandon's call alone.** Not closable by the programme.
+  error). Met: decided 2026-11-17 under his authorization (above).
+- **Owner:** Was Brandon's call alone; decided under his 2026-11-17 authorization and the 2026-11-22 delegation.
 
 ### G-A3 — Measured band slice vs the manuscript's quoted union; the +0.03 edge is UNVERIFIED
 
@@ -114,10 +114,9 @@ discrepancy), §8.2 (Model B artifact).
   construction.
 - **Owner:** Co-scientist task (new).
 
-### G-A4 — The 24/24-from-noise rate: 0/5 seeds, unbounded
+### G-A4 — The 24/24-from-noise rate: 0/5 seeds, unbounded — CLOSED as a bounded rate (run 11: 0/240 at $T=50$)
 
-- **Status/grade:** Open; 0/5 is an upper bound, not a zero (WS-C task 7,
-  grade C).
+- **Status/grade:** CLOSED as a bounded rate (run 11, EXP-1114; F3 / Track E C, I1). 0/240 noise seeds are in the full 24-mode pattern at $T=50$ under the WS-C quench protocol ($N=16$, $L=\pi$, $r=-0.35$, $q_0^2=8$, $u=v=\gamma=1$, dt 0.02, noise $10^{-2}$, $\bar\psi_0=0$). CP 95% two-sided upper bound 1.53%, one-sided 1.24%. Outcomes: 6-mode 203, 2-mode 33, 8-mode 1, other 3. The verifier found 0/12 full24 on fresh seeds and agreed with R1 on 10/10 reruns. Scope: a $T=50$ snapshot; the class is not settled at $T=50$ for many seeds (219/240 differ from $T=30$, 68/240 from $T=40$). This is not a long-time-attractor rate. $\gamma=1.0$ follows the code; the WS-C task1 report l.363 says 1.2. (Was: Open; 0/5 is an upper bound, not a zero (WS-C task 7, grade C).)
 - **What we know:** noise quenches never reach the full 24-mode pattern
   in the truncation (WS-C: 5 seeds $\to 6$-mode $\times3, 2$-mode, 8-mode; WS-A
   task 5: 0/6 noise seeds grow at all). Damped-wave quenches drift
@@ -130,7 +129,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A5 — The truncation gap: do the $D_{4}$ basin results survive outside the 24-mode truncation? [FIRST JOINT ITEM — PARTIAL, narrowed, stays OPEN — Batch 2 audit 2026-11-12]
 
-- **Status/grade:** PARTIAL, narrowed, stays OPEN. Patterned recovery with harmonics VERIFIED in two cell constructions plus the 4D field test (Track E B / Track F **F1 (PROPOSED**, was F2 — two-leg evidence: full rerun + independent re-derivation)). General selection from noise NOT established anywhere (0/6 field; pooled 0/20 uniform per star, Wilson 95% upper bound $\approx 16\%$; AMS null expected at barrier/noise $\approx 34$). **LANDED and audited 2026-11-14:** noise-nucleation 4D field test (chat 02dfb5cb: 18 runs to $t=200$, meshes $18^{4}$/$28^{4}$; 9/9 patterned + 3/3 bridge recover, 6/6 random decay to uniform) and native-cells (Task 4) — see consolidated comparison.
+- **Status/grade:** PARTIAL, narrowed, stays OPEN. Patterned recovery with harmonics VERIFIED in two cell constructions plus the 4D field test (Track E B / Track F **F1 (PROPOSED**, was F2 — two-leg evidence: full rerun + independent re-derivation)). General selection from noise NOT established anywhere (0/6 broadband random starts in the field; pooled 0/20 uniform per star, Wilson 95% upper bound $\approx 16\%$; AMS null expected at barrier/noise $\approx 34$). **LANDED and audited 2026-11-14:** noise-nucleation 4D field test (chat 02dfb5cb: 18 runs to $t=200$, meshes $18^{4}$/$28^{4}$; 9/9 patterned + 3/3 bridge recover, 6/6 random decay to uniform) and native-cells (Task 4) — see consolidated comparison. **Nucleation pairing (run-12 record fix, EXP-1200 R-INV item 4):** the noise-nucleation bundle is partial — 128/192 runs tabulated, 0/32 per configuration — and the $8.94\%$ figure ($1-0.05^{1/32}=0.0893681989862648$) is a per-configuration 95% gate-entry bound, not a selection rate and not a pooled 0/192 bound (see G-D3). Broadband: 0/6. Related bounded rate: G-A4, 0/240 full24 at $T=50$ (run 11; CP 95% two-sided upper 1.53%). G-A5 stays OPEN.
 - **What we know:** everything in WS-A/WS-C is inside the 24-mode
   truncation $(L = \pi$ box, $16^{4}$ grid, shell modes only). The "Compare $D_{4}$
   Selection Frameworks" gap memo (16th task, finished overnight
@@ -179,20 +178,21 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A7 — Stripe competitor omitted from the band's competitor set
 
-- **Status/grade:** Open; the stripe side-result is UNVERIFIED (one Hark
-  run, not graded, not re-run).
+- **Status/grade:** CLOSED (scoped). $L=\pi$, $N=16$: C-720-S F2/I1, rung 3 (7c + EXP-1102). $L=2\pi$, $N=16$: C-1101∪1111 F3/I1, rung 2, F2 at 6 Wolfram-checked band points (record-bound at $(-0.075,-0.03)$). Traces G-A7_trace (7c), G-A7p2_trace, G-A7_L2pi_trace (adj-D3) and G-A7_L2pi_union_trace (adj-E7).
 - **What we know:** the WS-C band's competitor set {24-mode, 6-mode,
   disordered} omits stripes. A stripe-like state appeared at $\bar{\psi} = +0.10$
-  in one Hark transverse run (Fexc $-0.048943$, metastable not
-  global-minimum). The audit's claim that "the round-1 review had $\approx$
+  in one Hark transverse run, re-run in run 11 (G-E9): the $-0.048943$ state is the decorated stripe (1+8 pairs); "metastable" for it is SCOPING only (adj-E3 kick probe, 4/4 return; not graded). The audit's claim that "the round-1 review had $\approx$
   $[-0.235, -0.14]$ with stripes/A2/A3 included" could NOT be verified
   (see G-E2).
+  **Run 11 scope wording (adj-E7, G-A7_L2pi_union_trace §8):** On the v94 functional ($q_0^2=8$, $u=v=1$) on the $L=2\pi$ periodic 4D cell at $N=16$, a seeded relaxation search finds no stripe-family state below the $D_4$ family at any of the 55 $L=\pi$-band points checked. Those points are the whole $L=\pi$ band at step 0.01, with ±0.02 margins, at $r=-0.6,-0.425,-0.35,-0.25,-0.075,0.1$. The search used 14–18 seeds per point, including on- and off-shell stripes and the Hark transverse state, and a code-independent verifier agrees at 33 of the points. At 52 of the 55 points no stripe-family stationary state survives relaxation. At the 3 points where the exact one-mode coefficient $a_8<0$, the stripe is a stationary but unstable state, at least $4.69\times10^{-3}$ above $D_4$. A binary-independent Wolfram route agrees on winners and energies at 6 band points (F2 there). The band at those $r$ is unchanged by doubling the cell (F3/I1, rung 2). Cells beyond $2\pi$ and states outside the seeded basins are not tested.
+  The Hark transverse test was re-run: 3 seeds per point in R1-ext, 2 in V-ext, none ending as a stripe in the band. The 1-run "stripe-like state at $\bar\psi=+0.10$" is off-band and is superseded by the positive controls: stripe1 wins at $\bar\psi\ge0.25$ in three codes. The G-E2 caveat above is unchanged.
 - **What would close it:** a stripe-inclusive band recomputation
   (re-run the transverse runs, then recompute the band with stripes in
   the competitor family), or a demonstration that stripes never win
-  anywhere in the band.
-- **Owner:** Local Muse verification (re-run Hark's transverse test)
-  $\to$ Co-scientist task (band recomputation).
+  anywhere in the band. Met as a scoped demonstration on $L=\pi$ and $L=2\pi$ cells (seeded; see carried K6).
+- **Owner:** Local Muse verification, done in run 10 part 7c and run 11.
+- **Erratum (part 7c, D-5 / DF-6; record note, CSV not edited):** the column "F_D4" in `~/workspace/swarm/run10p7c/w6/grid_N16_full.csv` holds the **D4-family minimum**, not the uniform in-phase $D_4$ energy everywhere. On the full CSV (3,854 grid points) it is a non-uniform state at **184** points (`D4_amp_spread` ≥ $10^{-6}$; **66** of them with spread ≥ 1.09, max 1.1027), all outside the band and all hex6 winners (run-12 recount `count_fd4.py`, VM log `irh-run12/record/inv-fix/logs/count_fd4.log`, EXIT=0, CSV sha256 9ee75c94…). The verifier v6 found 23 such points (spread ≥ 1.09) among its 241 spot-checked finite pairs, there up to 0.035 below the in-phase $D_4$ (v6 VERIFY_G-A7.md l.75, l.139); the size of the gap below in-phase $D_4$ was not re-measured on the full grid. Not load-bearing: the band uses the winner, and every in-band $D_4$ is uniform. The R2 CSV `w7/grid_N16_R2.csv` has a same-named column that was not adjudicated.
+- **Carried:** K6 (seeded search, no $L\ge4\pi$), N1 (off-band 6pair_other gaps unchecked at $N=24$). Band-value caveat stays as recorded elsewhere: 11.85% vs part-7c 11.553% (Track E C; see G-A2).
 
 ### G-A8 — The $w_{6}$ term form is unstated; $w_{6}$ narrowing not re-derivable; joint (detuning $\times w_{6})$ map open (IX.1.3)
 
@@ -227,8 +227,8 @@ discrepancy), §8.2 (Model B artifact).
 ### G-A10 — Nucleation barrier height and critical droplet size (IX.1.2): full-PDE droplet uncomputed
 
 - **Status/grade:** OPEN (repo register). Partial verdicts: ODE
-  $R_{c} = 12.57 / \DeltaF* = 555$, grade B (exact within the amplitude
-  equation); thin-wall $R_{c} = 7.38 / \DeltaF* = 37.2$, grade C (approximation
+  $R_{c} = 12.57 / \Delta F* = 555$, grade B (exact within the amplitude
+  equation); thin-wall $R_{c} = 7.38 / \Delta F* = 37.2$, grade C (approximation
   shown to fail — $\xi = 8.64 > R_{c})$. **2026-11-14:** saddle energy alone does not decide full-field fate — supported at Track E **C (PROPOSED)** (single-profile family; interface-tension: tensions $0.0189904$ / $0.0264060$ at coexistence, thin-wall transfers $36.95$ / $138.12$ vs saved saddle $550.93$; transferred tension is path-dependent by 40%). Deterministic saddle/threshold supports B / F2. Any rate stays ABSTAIN.
 - **What we know:** the ODE and thin-wall routes use the one-mode
   $F_{mod}$ and the envelope gradient coefficient, ignoring higher harmonics
@@ -236,33 +236,37 @@ discrepancy), §8.2 (Model B artifact).
   box threshold is a finite-box quantity, not the infinite-volume $R_{c}$
   (see Summary §2, task 4).
 - **What would close it:** a full-PDE critical droplet (shooting the PDE,
-  not the amplitude equation) — expected to refine $R_{c} / \DeltaF$* by ~1–10%;
+  not the amplitude equation) — expected to refine $R_{c} / \Delta F$* by ~1–10%;
   the thick-wall character would survive. Plus the larger-box runs of
   G-A9.
 - **Owner:** Co-scientist task (costed first; GCP-scale if on a big box).
 
 ### G-A11 — Defect homotopy beyond elementary Burgers vectors (IX.1.4)
 
-- **Status/grade:** OPEN, narrowed. Shortest-shell classification supported at Track E **B / Track F F2 (PROPOSED)**; full homotopy untouched.
+- **Status/grade:** CLOSED-scoped. **Run 10 part 7c (topology, in-phase pattern; F2, I1, [D], rung 3; trace `run10p7c/adj/G-A11_trace.md`):** G-A11 CLOSED per EXP-719, scoped to the in-phase pattern ($\varphi_k=0$), topological classification only. $\Lambda=\pi D_4^*$; $\lvert P\rvert=1152$, $\lvert P^+\rvert=576$; $\Lambda_{P^+}=0$, so $\Gamma^{ab}=\mathbb Z_2$; 54 defect types (Γ-classes). $\pi_2=0$, $\pi_3=\mathbb Z^2$, $\pi_4=\mathbb Z_2^2$ by exact sequence, with trivial $\pi_1$ action on $\pi_3$ (RUN10_PART7C_REPORT l.50); these rest on the cited standard theorems $\pi_2(S^3)=0$, $\pi_3(S^3)=\mathbb Z$, $\pi_4(S^3)=\mathbb Z_2$ (not computed by any tool; accepted as textbook premises, trace l.28). Energetic stability is out of scope. **Run 11 (relaxed pattern; EXP-1103/1112):** G-A11 (D4 relaxed-pattern topology, $L=\pi$): CLOSED-scoped. At P1 $(-0.35,-0.18)$ and P2 $(-0.495,-0.24)$ the relaxed v94 field is a translate of the in-phase 24-mode $D_4$ pattern, with stabiliser point part $W(F_4)$ (1152). Three code-independent routes on two binaries agree: R1/V on Python and W on Wolfram (P1: $F_{exc}=-0.0077276236034134$, agreement $\le7.5\times10^{-16}$; P2: $-0.0099411477857516$, $\le1.8\times10^{-15}$). Grade: Track F F2, I1, [C]. P2 is at rung 3. P1 is at rung 2, F2 record PASS (adjudicator-observed Wolfram replay, adj-E5b); the run-11 coordinator adopted the passing rung-3 variant (`PROBE_E5b_rung3`, RUN11_REPORT §3). Not covered: the stripe seed at P1, $L=2\pi$ (EXP-1111), other in-band points, and the band membership of P1/P2, which rests on the 7c csv. Earlier status (2026-11-14): shortest-shell classification supported at Track E **B / Track F F2 (PROPOSED)**.
 - **What we know (2026-11-14, phonon-stiffness, Task 8, 31/31 VERIFIED):** the translation (Burgers) lattice is $\pi D_{4}^{*}$, **not** $\pi D_{4}$ — the local side was wrong and Co-scientist is right (GCP confirms $(\pi/2)(1,1,1,1)$ is the shortest vector, $|b|=\pi$); one $W(F_{4})$ orbit per $D_{4}^{*}$ shell $\|b\|^{2}\le6$ verified (group order 1152 by exact-rational BFS). Stiffness $\lambda=\mu=4A^{2}q_{0}^{4}=1.54058921014457$ agrees exactly with the local value. Equilibrium edge/screw factor is $4/3$, **not** $2$ — the local edge coefficient was a non-equilibrium trial-field value, $3/2$ high; corrected elementary edge $K$ $0.490385\to0.326923$, $E/A(R=20)$ $0.899\to0.666$; screw unchanged. **Local edge leg demoted pending correction C5 (script rerun outstanding).** Defect realisation contradicted in the tested setup (Volterra defect heals under relaxation; GCP Job 3).
 - **What would close it:** a computation / classification of the defect
   homotopy, or a stated reason it is out of scope.
 - **Owner:** Co-scientist task (new).
 
-### G-A12 — Projection of $D_{4}$ to three dimensions along irrational directions (IX.1.5): approximate icosahedral signature uncomputed
+### G-A12 — Projection of $D_{4}$ to three dimensions along irrational directions (IX.1.5): approximate icosahedral signature searched (finite window): ABSENT
 
-- **Status/grade:** Partly verified, partly open; stays OPEN. The verified geometric-mapping part supports Track E **B / Track F F1 (PROPOSED)** (peak-ratios, Task 7: 41/41 VERIFIED across two bundles; $A_{1}$–$A_{4}$, $C_{1}$–$C_{4}$, $F_{1}$, $F_{2}$, $D_{1}$ agree to printed precision on both sides). No nearest-icosahedral search was run; the synthetic-discriminant reading supports B / F1, the measurable-discriminant reading stays C (post-hoc selection, I1, no detector/noise model, one normal).
+- **Status/grade:** CLOSED-scoped (run 11, EXP-1117 / C-1117, adj-E4 2026-11-23). A nearest-icosahedral direction search was run in a finite window: $R=5$, $D_4$ root star S1 and diffraction star S2, angular power $l\le10$, metric $D$ = the non-icosahedrally-invariant fraction. The frozen rule ($\tau=0.05$) gives ABSENT. The best values found are $D^*_{S1}=0.5289539681$ at the irrational-looking family $(b,a,a,a)$, $b/a=4.30889\ldots$, and $D_{S2}\le0.4800$ about 0.2° from d110; at best about 47–52% of the anisotropic power is icosahedrally invariant. The $D_4$ star is not more icosahedral than random 4D 12-axis stars (43rd percentile). Track F F3 / Track E C, I1, rung 2; two code-independent routes on one binary. A sampled search, not a theorem.
+  K2 (run 11, EXP-1118 / C-1118, adj-E8 2026-11-23): for the root-star signature S1 the ABSENT finding holds in **all** directions. For every unit $n\in S^3$, $D_{S1}(n)\ge LB_8(n)>0.05$ at $L=10$. Here $LB_8=(5T_2+9T_4+17T_8)/\sum_{l=2,4,\dots,10}(2l+1)T_l$; it is a rotation-free lower bound, valid because $I$ has no invariant harmonics at $l=2,4,8$. Method: a certified interval cover of a chart of the $W(F_4)$ chamber, with the d110 blow-up handled separately, done in two code- and binary-independent engines (CPython/numpy and C/gcc directed rounding), which agree; exact tiling check. Track F **F2**, I1, rung 3, [D]. Computer-assisted, not kernel-verified. Scope: S1 only, $L=10$, the EXP-1117 metric, $\tau=0.05$. S2 stays a sampled, window-dependent search (F3), so the overall G-A12 grade stays F3. Descriptive (C): $\inf_n LB_8\approx0.234$. That is not a bound on $D$. The sampled $D^*_{S1}=0.5290$.
+  Earlier status (kept): the verified geometric-mapping part supports Track E **B / Track F F1 (PROPOSED)** (peak-ratios, Task 7: 41/41 VERIFIED across two bundles; $A_{1}$–$A_{4}$, $C_{1}$–$C_{4}$, $F_{1}$, $F_{2}$, $D_{1}$ agree to printed precision on both sides). The synthetic-discriminant reading supports B / F1, the measurable-discriminant reading stays C (post-hoc selection, I1, no detector/noise model, one normal).
 - **What we know:** an *approximate* or finite-window icosahedral-like
   pattern is a separate, uncomputed question. Window counts (485/339/
   485/819 distinct positions; lattice fraction 249/1465 for irrational
-  directions) are window-dependent (R = 5).
+  directions) are window-dependent (R = 5). Approximate/finite-window question now searched (above); exact icosahedral projection impossible ($5\nmid1152$, Task 1).
 - **What would close it:** a nearest-icosahedral direction search in a
   finite window, or a stated reason it is not pursued.
+- **Closed by:** EXP-1117 search (first option).
+- **K2:** all-directions S1 bound certified (EXP-1118).
 - **Owner:** Co-scientist task (new, small, local-cost).
 
 ### G-A13 — Are the 2-/8-mode quench outcomes transient?
 
-- **Status/grade:** Open; no grade (untested).
+- **Status/grade:** CLOSED (run 11, EXP-1114; F3 / Track E C, I1). The seed-4 2-mode state persists to $t=550$, deterministically and under annealing with $\Theta_0\in\{10^{-4},10^{-3},10^{-2}\}$, ramp 400, 3/3 replicas each. The seed-5 8-mode state is transient: it relaxes to a 2-mode state by $t=10$ (10/10 R1; verifier confirms) and never to the 6-mode. Both settle at $F_{exc}=-0.036540$, and the two end states are equivalent under a lattice symmetry plus a translation (adj-E6, residual $1.6\times10^{-15}$, ungraded). Energy ordering: 6-mode $-0.041772$ < 2-mode $-0.036540$ < 8-mode $-0.035767$, so the 2-mode is metastable at these noise levels. "2-mode" = half-max ndom 2 (a dominant pair plus 16 shell modes at 41.6%). The 6-mode sub-question: one 6-mode state (seed 3) is persistent under the same damped-wave continuation (R1 only). The first-pass (v1) continuations are void because of an anti-Hermitian roundoff defect. (Was: Open; no grade (untested).)
 - **What we know:** quench seeds 4–5 (WS-C) reach 2-mode (Fexc
   $-0.036477)$ and 8-mode $(-0.035767)$ states; whether they anneal to the
   6-mode on longer runs is untested. Same question for the 6-mode
@@ -283,23 +287,21 @@ discrepancy), §8.2 (Model B artifact).
 - **Owner:** Co-scientist task / local Muse verification (analysis, no
   simulation needed).
 
-### G-A15 — N = 24 grid point: NOT RUN
+### G-A15 — N = 24 grid point: run in run 11 (EXP-1116) — CLOSED (weak falsifier)
 
-- **Status/grade:** NOT RUN (WS-C task 13; choice ledger:
-  cost/benefit; N = 20 already identical to N = 8).
-- **What we know:** no information is expected from it — the attractor
-  fixed point is identical to 6 decimals at all 8 ladder points
-  $(N \in {8, 12, 16, 20} \times$ dt $\in {0.02, 0.01, 0.005, 0.0025})$.
+- **Status/grade:** CLOSED (run 11, EXP-1116 / C-1116). The falsification check passed, and it is a weak falsifier. Track F **F3**, I1, rung 2, [C], outcome confirmed. At $N=24$ the seeded in-phase $D_4$ attractor of the WS-C task-13 model gives $\langle A\rangle=0.0776817484$, $F_{exc}=-0.0077276236$ at dt $\in\{0.02,0.01,0.005,0.0025\}$. The model is sim6 Model B with $L=\pi$, $q_0^2=8$, $r=-0.35$, $u=v=1$, $\bar\psi=-0.18$, filter $K^2<200$, $T=30$. These values are within $10^{-6}$ of $0.077682/-0.007728$ in two code-independent routes on one binary (F3, I1), so the falsification check of G-A15 passed. Why it is a weak falsifier (SCOPING, not a theorem): $K^2=4|n|^2<200$ means $|n_i|\le7$; that ball lies wholly on every grid with $N\ge16$, so $N=16\to24$ changes only aliasing and roundoff, and the check tests the code and the fixed point, not continuum resolution-independence. Not shown: noise-started dynamics, other parameters, the transient order, or any manuscript claim. (Was: NOT RUN (WS-C task 13; choice ledger: cost/benefit; N = 20 already identical to N = 8).)
+- **What we know:** the attractor fixed point is identical to 6 decimals over 8 ladder runs (7 distinct points): $N\in\{8,12,16,20\}$ at dt = 0.005 and dt $\in\{0.02,0.01,0.005,0.0025\}$ at $N=16$, + 4 runs at $N=24$ (all 4 dt): 12 runs, 11 distinct points, none beyond $10^{-6}$. (The earlier notation "$N \in \{8, 12, 16, 20\} \times$ dt $\in \{0.02, 0.01, 0.005, 0.0025\}$" was wrong: two 4-point ladders, not a product grid.)
 - **What would close it:** running it (a falsification check only: a
-  ladder point differing from $\langleA\rangle = 0.077682$ / Fexc = $-0.007728$ by more
+  ladder point differing from $\langle A\rangle = 0.077682$ / Fexc = $-0.007728$ by more
   than 1e-6 would falsify resolution-independence; none found in 8
-  points).
-- **Owner:** Local Muse verification (trivial local run, if ever wanted).
+  points). Met in run 11 (none found in 12 runs).
+- **Source location:** the task-13 code is NOT in the repo at 64bd065: `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-c-substrate-convergence/code/irh_models.py` sha256 `f3755b6f710053c0938e717816dbdb256097ec88f37816900a3ce45a8c2fb0f3`, plus `task2a_attractor_ladder.py` sha256 `f412e9e9d88278b097c9b4da612bd476fca0b6dddbea1f849a803b50c3f5a7c9` (local Co-scientist package files, outside the repo).
+- **Owner:** Local Muse verification; done in run 11 (VM run folder `/home/hatch/workspace/vertex-ai-run/session-2026-11-22/irh-run11`, bundle `bundles/G-A15_C-1116/`). Next check for F2 (not needed for closure): one $N=24$ point on a different binary or FFT library.
 
 ### G-A16 — Model B Hermitian artifact: fix verified, but the shipped sim6 file is unmodified and the manuscript's §I.2 equation still states the non-conserved form
 
 - **Status/grade:** Diagnosis CLOSED (fix verified: stable to t = 30,
-  $\langleA\rangle = 0.077682$, $D_{4} = 1.0000$, 24/24); the file/manuscript residue is
+  $\langle A\rangle = 0.077682$, $D_{4} = 1.0000$, 24/24); the file/manuscript residue is
   OPEN.
 - **What we know:** the shipped-style Model B update grows an
   anti-Hermitian roundoff component $\times1.0142$/step to NaN by ~6000 steps
@@ -331,8 +333,8 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A18 — Thin-wall droplet estimate as the answer — CLOSED (shown to fail; ODE value stands)
 
-- **Status/grade:** CLOSED. Thin-wall $R_{c} = 7.38 / \DeltaF* = 37.2$, grade C
-  (approximation shown to fail); ODE $R_{c} = 12.57 / \DeltaF* = 555$, grade B
+- **Status/grade:** CLOSED. Thin-wall $R_{c} = 7.38 / \Delta F* = 37.2$, grade C
+  (approximation shown to fail); ODE $R_{c} = 12.57 / \Delta F* = 555$, grade B
   (Summary §2, task 4).
 - **What we know:** the correlation length $\xi = 8.64$ exceeds the
   thin-wall radius, so the thin-wall separation of volume gain and
@@ -401,7 +403,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A22 (proposed 2026-11-17, filed) — McKay gauge-dynamics gap: v94 never derives a Yang–Mills kinetic term for $E_6$ from the tension–relaxation Lagrangian, nor Higgs representations for $E_6 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ without light exotic relics
 
-- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **Status/grade:** Route (a) SCOPING (run 11, EXP-1107: mechanisms M1–M5 tested against the v94 Lagrangian, no $E_6$ $F^2$ term found; §12.7 not met, not a no-go). Route (c) **CLOSED by scope decision, patch pending merge**: branch `run11/g-a22-gauge-label` @08c57cd (being merged via run-12 R-TEX branch `run12/tex-record-fixes`); no grade (a wording decision). The Higgs/exotics clause is carried as a scope note (B/I2 literature fact, unchanged). Trace `run11/adj/G-A22_trace.md`. (Was: Open; no grade.)
 - **What we know:** v94 identifies $E_6$ as "the gauge algebra" by McKay identification (2T ↔ affine $E_6$) but never derives a Yang–Mills kinetic term $\frac14 F^a_{\mu\nu}F^{a\mu\nu}$ for $E_6$ from the Lagrangian. The deepest-research cross-domain synthesis (2026-11-17) finds the bridge does not exist anywhere in the literature either (scoped absence, C/I1): McKay gives a label; Kronheimer/quiver constructions give $\prod_i U(n_i)$; every $E_6$ dynamics route imports the kinetic term from elsewhere (DBI action, 11D supergravity, dilaton VEV). $E_6 \to$ SM breaking always costs Higgs representations plus light exotics or fine-tuning (B/I2).
 - **What would close it:** (a) a construction of the kinetic term inside IRH's own Lagrangian, (b) an Ali-style root-sum postulate labelled as such (grade D, post-hoc), or (c) downgrading "the gauge algebra" to "the gauge-algebra label" in the manuscript.
 - **Owner:** Brandon's call (construction vs scope decision); Local Muse verification (literature).
@@ -442,13 +444,12 @@ Manuscript sections: §I.1–I.3 (substrate, dynamics, conserved Model B),
 
 ### G-B1 — The reference $\bar{\psi}$-drift value 8.3e-17 is not re-measured at full precision
 
-- **Status/grade:** PARTIAL, grade C (WS-C task 13, C2.5 conservation
-  leg).
+- **Status/grade:** CLOSED (part 7c, F3/I1): full-precision re-measurement of the unprojected shipped sim6 run (Model B, dt=0.005, t=7.5): exact rational drift $-1463/2^{70}\approx-1.24\times10^{-18}$ (ifftn roundoff); fsum/np.mean drift 0.0; Fourier $\bar\psi$ exact. The reference 8.3e-17 is **not reproduced**. Its origin ($3$ ulp of 0.18) is a hypothesis. Preregistered claim 'exact drift = 0' FAILED (exact value above). The part-7 record's "CLOSED F2" claim is retired (superseded; see the part-7b note). Audited rung 2. Trace `run10p7c/adj/G-B1_trace.md`. (Was: PARTIAL, grade C (WS-C task 13, C2.5 conservation leg).)
 - **What we know:** best measurement 1.1e-15 at t = 7.5 (projection on),
   one order coarser than the reference 8.3e-17; P5 (< 1e-12) PASS with
   drift 1.58e-15 at t = 30. The unprojected run's drift is 0.0 even at
   t = 27 (k = 0 mode exactly conserved; blow-up is in the anti-Hermitian
-  sector). Projection costs ~1e-15 of conservation and buys stability
+  sector). [Part-7c check owed: the shipped Model B run overflows to NaN by t=30 (v3); this "t = 27" note has not been checked against the NaN onset.] Projection costs ~1e-15 of conservation and buys stability
   to t = 30.
 - **What would close it:** a full-precision re-measurement of the
   *unprojected* shipped sim6 run'$s \bar{\psi}$ drift at t = 7.5, to settle whether
@@ -527,13 +528,13 @@ Manuscript sections: §I.1–I.3 (substrate, dynamics, conserved Model B),
 - **Status/grade:** SUBSTANTIATED on the manuscript text (Hark B1).
   No grade (a manuscript-text finding, not a computation).
 - **What we know:** §I.2 (lines 185–191) states the dynamical equation
-  as $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = **-\deltaF/\delta\psi$** — a damped wave equation with a
+  as $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = **-\delta F/\delta\psi$** — a damped wave equation with a
   NON-conserved right-hand side — and §I.3 (lines 215–219) then derives
   that conserved dynamics is a requirement, citing Model B
-  $\partial_{t}\psi = \nabla^{2}(\deltaF/\delta\psi)$ preserving the mean to 8.3e-17. The manuscript's own
+  $\partial_{t}\psi = \nabla^{2}(\delta F/\delta\psi)$ preserving the mean to 8.3e-17. The manuscript's own
   §I.2 is therefore internally inconsistent: its stated equation is not
   the conserved dynamics its simulations use. The conserved-MPFC form
-  $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = \nabla^{2}\deltaF/\delta\psi$ appears in NEITHER the manuscript nor the
+  $\partial^{2}_{t}\psi + \gamma\partial_{t}\psi = \nabla^{2}\delta F/\delta\psi$ appears in NEITHER the manuscript nor the
   package. Hark's citation "REVISION_PLAN 1.1" is unlocated (see G-E3)
   — the substance stands on the manuscript text; the citation does not.
 - **What would close it:** a manuscript correction stating the
@@ -619,7 +620,7 @@ torus-node comparison §7.3.
   stress-energy, two transverse-traceless graviton polarizations. Analog
   models give effective curvature, not GR [19]. "Jacobson $\Rightarrow$ IRH
   transport" FAILS / NOT ESTABLISHED (thermodynamic premises $S \propto A$,
-  $\deltaQ = T$ dS, local equilibrium have no positive analogue in IRH).
+  $\delta Q = T$ dS, local equilibrium have no positive analogue in IRH).
   IRH v93.1's own Part VII retraction stands, confirmed against
   Barceló–Liberati–Visser 2011 and Sindoni 2012.
 - **What would close it:** a derivation of the Einstein equations (with
@@ -731,35 +732,32 @@ torus-node comparison §7.3.
   or dropping the number.
 - **Owner:** Brandon's call (manuscript text).
 
-### G-C12 — Printed dispersion relation (7) is wrong as printed: erratum needed
+### G-C12 — Printed dispersion relation (7): WITHDRAWN — the "wrong as printed" finding was a misreading; no erratum needed
 
-- **Status/grade:** FAILED as printed (WS-D task 10, D5, grade C). The
-  corrected formula is VERIFIED — the gap that remains is the erratum
-  itself.
-- **What we know:** EOM-derived formula:
-  $\sin^{2}(\omega\Deltat/2) = (\Deltat^{2}\cdot2J/(4M$\*$a_{0}^{2}))\cdot\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha))$ +
-  $(\Deltat^{2}\mu^{2})/(4M$\*); printed (7) has $[2\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha)) + \mu^{2}]$ inside one
+- **Status/grade:** CLOSED (run 11, 2026-11-22) — no erratum needed. WS-D task 10 D5 REFUTED as a pdftotext misreading (superscript of $a_0^2$ read as a factor 2). Printed (7) equals the EOM-derived dispersion (Singular + Wolfram, F2/I1). v94 (7) is byte-identical to v93.1 (7). Source: run-11 adjudication `G-C12_trace.md` (and G-E8, T10-11 refuted). Downstream WS-D items T10-12, T10-14, T10-16, T10-39 hold only as algebra on the misread form. (Was: FAILED as printed (WS-D task 10, D5, grade C); the gap that remained was the erratum.)
+- **What we know (WITHDRAWN as a finding; kept as history — this text rests on the misreading):** EOM-derived formula:
+  $\sin^{2}(\omega\Delta t/2) = (\Delta t^{2}\cdot2J/(4M$\*$a_{0}^{2}))\cdot\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha))$ +
+  $(\Delta t^{2}\mu^{2})/(4M$\*); printed (7) has $[2\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha)) + \mu^{2}]$ inside one
   bracket — factor of 2 too many in the $\Sigma$ term, $\mu^{2}$ misplaced. Three
   internal checks favour the derived formula (J = M\*$c^{2}/12$, the k = 0
   limit, the CFL table), and the manuscript's own §III.2 expansion uses
   the derived formula. The CFL bound computed from it is VERIFIED.
   Erratum: replace $[2\Sigma(1-\cos) + \mu^{2}]$ by $[\Sigma(1-\cos)]$ with the $\mu^{2}$ term
-  outside the bracket at coefficient $\Deltat^{2}/(4M$\*).
-- **What would close it:** filing the erratum.
-- **Owner:** **Brandon's call** (guide §12 Q8). Not closable by the
-  programme alone.
+  outside the bracket at coefficient $\Delta t^{2}/(4M$\*).
+- **What would close it:** filing the erratum. (Moot: no erratum is needed.) Withdrawal notes, not silent patches, are owed in the six documents that repeat the misread statement (listed in `programme/RECORD_FIXES_run12.md`).
+- **Owner:** Brandon informed, not deciding (it reverses an item he was told was an erratum). Was: Brandon's call (guide §12 Q8).
 
-### G-C13 — §III.3 envelope validity table does not reproduce: UNVERIFIED
+### G-C13 — §III.3 envelope validity table does not reproduce: CLOSED as CORRECTED (run 11)
 
-- **Status/grade:** UNVERIFIED, not FAILED (WS-D task 10, D17).
+- **Status/grade:** CLOSED as CORRECTED (restated with stated parameters; F2/I1; θ-dependent; reproducibility, not physical relevance). Run 11, EXP-1110: Fig. 6 and the table rebuilt from the v94 text alone (Brandon 2026-11-22 15:19 CST) at θ=π/2, Δt=√(3/8), $k\parallel e_1$, error/ω_exact. The 1% crossing is at $a_0|k|=1.057$ (band 0.346–1.908 over θ∈[π/6,5π/6]). The old "<1% for ≲0.3" fails for θ<0.4538 rad. Verified commit 1e6973a; branch `run11/g-c13-fig6-rebuild` tip bd07c93 (being merged via run-12 R-TEX). The original table's parameters remain unknown (question dropped by Brandon, 15:19 CST); the rebuild sits alongside the original, not as a silent replacement. Trace `run11/adj/G-C13r_trace.md`. (Was: UNVERIFIED, not FAILED (WS-D task 10, D17).)
 - **What we know:** table $(4\times10^{-5}, 0.1$%, 1.0%, 11%, 133%) NOT
   REPRODUCIBLE; under the natural reading computed errors are $1.67\times10^{-5}$,
-  $4.17\times10^{-4}$, $3.75\times10^{-3}$, 4.11%, 36.3% $(\Deltat\to0)$ — smaller by factors
+  $4.17\times10^{-4}$, $3.75\times10^{-3}$, 4.11%, 36.3% $(\Delta t\to0)$ — smaller by factors
   2.4–3.7; zone-edge 133% unreachable under that reading. The VI.3
   summary boundary (<1% for $a_{0}$|k| ≲ 0.3) survives the recomputation
-  (0.042% at 0.10, 0.375% at 0.30). The table'$s \Deltat$, carrier $\theta ($or $\mu)$,
+  (0.042% at 0.10, 0.375% at 0.30). The table'$s \Delta t$, carrier $\theta ($or $\mu)$,
   direction, and error definition are unstated.
-- **What would close it:** the author stating $\Deltat$, $\theta ($or $\mu)$, direction,
+- **What would close it:** the author stating $\Delta t$, $\theta ($or $\mu)$, direction,
   and error definition for the table (guide §12 Q9).
 - **Owner:** **Brandon's call** (he is the manuscript's author).
 
@@ -827,7 +825,7 @@ torus-node comparison §7.3.
 - **Owner:** Local Muse verification (fetch public repo/archive; read
   only, no contact).
 
-### G-C17 — WS-$D F3\toF2$ question: should the Hark two-route logic lift task-12 G1/G5/G8/G12 to F2? — CLOSED (regraded F2, 2026-11-12)
+### G-C17 — WS-$D F3\to F2$ question: should the Hark two-route logic lift task-12 G1/G5/G8/G12 to F2? — CLOSED (regraded F2, 2026-11-12)
 
 - **Status/grade:** CLOSED. G1/G5/G8/G12 are **F2** (was F3).
 - **What we know:** the Hark regrade table covers only WS-A/WS-C/WS-E
@@ -877,17 +875,22 @@ torus-node comparison §7.3.
 - **What we know:** the Greensite calculation as stated is correctly reported; the mechanism's conclusion stays conditional on the heat-kernel regularization premise and the massless non-SUSY scope; neither the Greensite (quantum) nor the Mukohyama (classical clock-field) route is instantiated by IRH's substrate (no fermions, no loops, no clock field).
 - **Owner:** Closed as a calculation-recovery verdict; the §IX.3 wording correction is filed in v94.
 
-### G-C21 — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved
+### G-C21-CDT — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved [split from G-C21 in run 12; the IRH-side half is G-C21-IRH below]
 
-- **Status/grade:** Open; continuum UV endpoint bounded to $[3/2, 2]$ at grade **B (PROPOSED)**; sharp value ABSTAIN. Core verdict confirmed (Gemini Sweep 5, audited 2026-11-12): the $\sim 2$ vs $\sim 3/2$ split is bare-coupling and extrapolation-regime dependence; the canonical point is $\approx 2$; the continuum UV value is bounded to $[3/2, 2]$ at B with the sharp value abstained; no grade change to any IRH claim.
+- **Status/grade:** OPEN, owner Literature. This is the ~2 vs ~3/2 split within CDT itself. Part-7c's verdict stands (EXP-715 FAILED; Loll 2019 §7.1, Ambjørn–Loll 2026 "compatible with 2"). Run 11 (EXP-1115) hard-stopped literature work, so nothing there moves it. Continuum UV endpoint bounded to $[3/2, 2]$ at grade **B (PROPOSED)**; sharp value ABSTAIN. Core verdict confirmed (Gemini Sweep 5, audited 2026-11-12): the $\sim 2$ vs $\sim 3/2$ split is bare-coupling and extrapolation-regime dependence; the canonical point is $\approx 2$; the continuum UV value is bounded to $[3/2, 2]$ at B with the sharp value abstained; no grade change to any IRH claim.
 - **What we know:** CDT $D_{s}(\sigma) = 4.02 - 119/(54+\sigma)$ evaluates 1.816 at
-  $\sigma\to0 ($paper $1.80 \pm 0.25)$ and 4.02 at $\sigma\to\infty ($paper $4.02 \pm 0.10)$; IRH
-  holds D = 4 at all scales — largest divergence |$4 - 1.82$| $\approx 2.18$ at
-  $\sigma\to0$, agreement only asymptotically. The small-scale endpoint is
+  $\sigma\to0 ($paper $1.80 \pm 0.25)$ and 4.02 at $\sigma\to\infty ($paper $4.02 \pm 0.10)$. IRH's v94 site-field operator (D4 Laplacian l.466; l.468 dispersion, $\mu=0$) has heat-kernel spectral dimension $d_s\to4$ for $\sigma\gg a_0^2$ (in units $2J/a_0^2=1$; $d_s-4\simeq1/(6\sigma)$), and 5 with the time direction (reading B / l.468 spacetime symbol). It shows no UV dimensional reduction. $d_s$ overshoots to $5.731$ at $\sigma\approx0.213$ and falls to 0 below the lattice scale (lattice artefact; 1 with continuum time). Hence IRH (site-field operator) does not reproduce CDT's UV reduction. The CDT-vs-IRH 'divergence at $\sigma\to0$' is not a like-for-like comparison: the σ units differ and the IRH UV is lattice-dominated. EXP-1115, F2/I1, rung 3. The small-scale endpoint is
   disputed in the literature (~2 vs ~3/2 — Coumbe & Jurkiewicz 2015).
 - **What would close it:** resolution of the literature tension (a
-  retrieved consensus or a new computation).
+  retrieved consensus or a new computation). Next test: post-2016 CDT literature on $D_S(0)$ along a constant-physics trajectory (not accessed in run 11, hard stop).
 - **Owner:** Literature (retrieval).
+
+### G-C21-IRH — IRH-side spectral dimension of the v94 site-field operator — CLOSED-scoped (run 11, negative result) [split from G-C21 in run 12]
+
+- **Status/grade:** CLOSED-scoped (site-field operator). The v94 site-field operator (l.458–468, $\mu=0$, readings A and B) has no UV dimensional reduction. Its heat-kernel spectral dimension runs from the lattice fall-off ($\to0$; or $\to1$ for O2 with continuum time), through an overshoot (max $5.731226$ at $\sigma=0.213384$), to $4^+$ (O1) / $5^+$ (O2), with $z_{\rm eff}\to1$. The operator therefore produces no value in $[3/2,2]$. C-1115a ($d_s=1+d/z$): [D], rung 4D, F2, I1. C-1115b (O1/O2 endpoints + no plateau): [C], rung 3, F2, I1; F2 record passes (RUN11_REPORT §1). EXP-1115, trace `run11/adj/G-C21_trace.md`.
+- **What we know:** v94 l.958 already scopes the $[3/2,2]$ interval to CDT ("the causal-dynamical-triangulation continuum UV endpoint … no IRH grade changes"); it does not claim that IRH produces the interval, so this is not an erratum. Recommended (manuscript, not applied here) addition after "no IRH grade changes": "IRH's own site-field operator (§III.1, l.458–468) has no UV dimensional reduction: its heat-kernel $d_s$ runs from the lattice fall-off through a maximum $\approx5.73$ to 4 (5 with time), so the $[3/2,2]$ interval is not an IRH prediction (EXP-1115, run 11, F2/I1). The Swift–Hohenberg $\psi$ operator was not tested."
+- **Scope limit:** the non-retired Swift–Hohenberg $\psi$ operator (v94 l.149/151) is untested; until a frozen EXP computes $d_s(\sigma)$ for it, "IRH does not produce $[3/2,2]$" must not be stated beyond the site-field operator. Also carried: σ = 3000 Wolfram value; mass term $\mu\neq0$.
+- **Owner:** Local Muse verification (carried: ψ-operator EXP).
 
 ### G-C22 — Triad relations "derive" c, $\hbar$, G: NOT A DERIVATION — CLOSED as a verdict (the physics gap stays open)
 
@@ -895,7 +898,7 @@ torus-node comparison §7.3.
   (WS-D tasks 9, 10, 12; definitional identities, F3 as identities).
 - **What we know:** the triad relations are definitional re-expressions
   of measured Planck quantities (a change of variables); the triad
-  closes iff $L_{P}^{2} = \hbarG/c^{3}$, the definition of $L_{P}$. The manuscript itself
+  closes iff $L_{P}^{2} = \hbar G/c^{3}$, the definition of $L_{P}$. The manuscript itself
   states the circle. Task 10 (D1, grade C) and task 12 (G3) agree.
 - **What closed it:** the verdict itself — the claim *as a derivation*
   is refuted. The underlying physics gap (no derivation of the constants
@@ -949,7 +952,7 @@ entirety" (programme brief).
   $3.8585\times10^{-5}$ at $A_{max} = 0.00980059)$. No nucleation mechanism or rate is
   stated (§II.9 line 641: "Any cosmological account within this
   framework must supply a nucleation mechanism").
-  **2026-11-14 (noise-nucleation chat 923db040, partial bundle):** negative result — no transition-gate crossings in 192 ordinary runs or the bounded adaptive-splitting search; per-configuration 95% upper bound on gate entry by model time 40 is $8.94\%$ (Clopper–Pearson $0/32$; pooled $0/192$ would be $1.55\%$). The null coheres with the local radial-envelope saddle ($550.930573$ at $dr=0.5$): at barrier/noise $\approx 34$ the Kramers factor $\exp(551/16) \approx 9.0\times10^{14}$ predicts $\sim 10^{-13}$ expected hits per run, so the null is expected, not evidence against nucleation. Open item: re-run the audit when the chat's 7 files land, checking the 192-vs-160 count discrepancy first (192 = code's 6-config default $\times 32$; bundle has 160 in `ensemble.log`, 128 tabulated).
+  **2026-11-14 (noise-nucleation chat 923db040, partial bundle):** negative result — no transition-gate crossings in the tabulated ordinary runs (**128/192 tabulated**, 0/32 per configuration) or the bounded adaptive-splitting search; per-configuration 95% upper bound on gate entry by model time 40 is $8.94\%$ (Clopper–Pearson $0/32$: $1-0.05^{1/32}=0.0893681989862648$), a **per-configuration gate-entry bound, NOT a selection rate**. [Run-12 record fix (EXP-1200 R-INV item 4): the earlier text paired "192 ordinary runs" / "pooled $0/192$ would be $1.55\%$" with the $n=32$ bound; only 128 of 192 runs are tabulated, so no pooled 0/192 figure is supported and it is withdrawn.] The null coheres with the local radial-envelope saddle ($550.930573$ at $dr=0.5$): at barrier/noise $\approx 34$ the Kramers factor $\exp(551/16) \approx 9.0\times10^{14}$ predicts $\sim 10^{-13}$ expected hits per run, so the null is expected, not evidence against nucleation. Open item: re-run the audit when the chat's 7 files land, checking the 192-vs-160 count discrepancy first (192 = code's 6-config default $\times 32$; bundle has 160 in `ensemble.log`, 128 tabulated).
 - **What would close it:** a nucleation mechanism and rate — what
   nucleates the $D_{4}$ phase, at what temperature T\*, with what strength $\alpha$
   and duration $\beta/H ($task 15 requirements list, item 5). "These three
@@ -968,7 +971,7 @@ entirety" (programme brief).
   stand: B1 no expansion history; B2 dimensional assignment undecided
   (§IX.2 A/B/C); B3 Einstein equations not recovered / tensor sector
   unrecovered (effective metric "obeys the substrate's own equation of
-  motion, not $G\mu\nu = 8\piT\mu\nu$"; "the two transverse-traceless graviton
+  motion, not $G\mu\nu = 8\pi T\mu\nu$"; "the two transverse-traceless graviton
   polarizations is a separate and substantially harder [problem]"); B4 no
   nucleation mechanism, no $\bar{\psi}$ mechanism (§IX.5); B5 no photon or baryon
   coupling; B6 no stated cosmological initial conditions. Any
@@ -1016,7 +1019,7 @@ entirety" (programme brief).
 
 ### G-D6 — No independent work citing or discussing IRH was found
 
-- **Status/grade:** INCOMPLETE-EVIDENCE (unchanged). Gemini Sweep 6 (Task mode, 2026-11-13) audited 2026-11-13: **MISS** confirmed — zero independent works citing or discussing IRH; G-D6.1 (final) B CONFIRMED; G-D6.2 B (scoped bound) / ABSTAIN (universal negative) CONFIRMED, re-anchored on the Argon run. **Model-label correction:** the follow-up run was **Gemini 4 Hydrogen, not Argon** — cite it as Hydrogen; the two runs are one artificial pipeline ($\to$ I1), not two independent verifications. **Independence correction: G-D6.2 $I2 \to I1$** (the initial report's I2 is refuted as an overclaim; grade impact none — the $I1 \to C$ bound was repealed 2026-11-12). G-D6.3 F2 CONFIRMED and STRENGTHENED (Chaudhary 88-page full-text check closes the pp. 65–88 gap).
+- **Status/grade:** CLOSED as a strengthened scoped bound (run 11, EXP-1109): 103 logged queries, 0 independent works (R1); the verifier's own >30 requests across 7 sources find 0; the planted citation was rejected. The universal negative stays **ABSTAIN**. Track E C, I1, label [C], rung 1. The standing G-D6.2 B (scoped bound) record from the 2026-11-13 sweep-6 audit, below, is untouched. Trace `run11/adj/G-D6_trace.md`. Earlier status: INCOMPLETE-EVIDENCE. Gemini Sweep 6 (Task mode, 2026-11-13) audited 2026-11-13: **MISS** confirmed — zero independent works citing or discussing IRH; G-D6.1 (final) B CONFIRMED; G-D6.2 B (scoped bound) / ABSTAIN (universal negative) CONFIRMED, re-anchored on the Argon run. **Model-label correction:** the follow-up run was **Gemini 4 Hydrogen, not Argon** — cite it as Hydrogen; the two runs are one artificial pipeline ($\to$ I1), not two independent verifications. **Independence correction: G-D6.2 $I2 \to I1$** (the initial report's I2 is refuted as an overclaim; grade impact none — the $I1 \to C$ bound was repealed 2026-11-12). G-D6.3 F2 CONFIRMED and STRENGTHENED (Chaudhary 88-page full-text check closes the pp. 65–88 gap).
 - **What we know:** no independent work citing/discussing IRH was found
   in the 63-query / 73-paper retrieval. "A different query set could
   find something."
@@ -1074,6 +1077,7 @@ entirety" (programme brief).
 ### G-D10 — IRH alone in the (2,2) corner: a structural fact, not evidence; no independent corroboration
 
 - **Status/grade:** Open (narrowed); grade C — strengthened bound (WS-E task 14, M6, C/I1/F1). DECIDED 2026-11-12 ~19:11 CST by the assistant under Brandon's standing decision autonomy ("act as I would"); his widget tap for this option was withdrawn by his "disregard last message" instruction immediately after, so the call is the assistant's, on the audit's evidence. The broad claim stays overturned (audit grade B); the gap continues in narrowed form. **Audit landed 2026-11-12 (Gemini Sweep 1 audit):** the overturn stands under the stated three-criteria definition (IRH is not alone in the (2,2) corner; SSM (2,2,2)); the conditional sub-verdict is preserved at grade C — narrowed to spectral/Turing-only selection, no retrieved approach occupies the spectral-only (2,2) corner (SSM sits at (2,1,2), Lee at (2,1,1), Four Null at (2,1,1) under that reading). What would close the narrowed form: a retrieved approach with emergent spectral/Turing selection in the (2,2) corner, or a wider retrieval that still finds none.
+- **Record note (run 12, EXP-1200 R-INV; record fix only, status above unchanged):** the heading's "IRH alone in the (2,2) corner" and "What we know" below ("IRH is alone in the (substrate 2, selection 2) corner") are contradicted for the literal (2,2) corner by **G-E10** (CLOSED, run 11: 4 non-IRH LITERAL (2,2) entries, SSM and quantum graphity robust). Read them as the narrowed spectral/Turing-only form; see G-E10.
 - **What we know:** on the three structural criteria, no retrieved
   approach is close to IRH on all three at once; IRH is alone in the
   (substrate 2, selection 2) corner. GFT is closest on ontology
@@ -1179,7 +1183,7 @@ entirety" (programme brief).
   record. Amendment note: `HLRE-6-5-HUMAN-GATE-REPEAL-2026-11-12.md`.
   Nothing in the review depends on the repeal for its Track E conclusions
   (WS-A's A/B grades fall to C on the independence bound alone), but the
-  Track F two-route $F3\toF2$ regrades DO rest on the amendment's terms —
+  Track F two-route $F3\to F2$ regrades DO rest on the amendment's terms —
   and their extension to WS-D is now decided (G-C17 closed, G1/G5/$G8/G12 \to F2)$.
 - **What would close it:** done — Brandon's in-conversation repeal, 2026-11-12.
 - **Owner:** closed.
@@ -1227,7 +1231,7 @@ entirety" (programme brief).
 
 ### G-E8 — WS-D was not audited by Hark (audit scope was WS-A/C/E)
 
-- **Status/grade:** Open; audit-scope gap.
+- **Status/grade:** CLOSED (run 11, 2026-11-22): independent replication audit of WS-D (85 claims; 78V/1C/1R/5U; V 32-claim sample agrees); F3/I1; T10-11 refuted → G-C12 closed (no erratum). T10-46 corrected (the undefined envelope column, same issue as G-C13). Five U items remain (T12-15, T12-16, T12-17, T8-06, T9-07); they do not block closure. WS-D's shipped scripts are not in the repo at 64bd065 (local Co-scientist package `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-d-frameworks-rivals/`). EXP-1106, trace `run11/adj/G-E8_trace.md`. (Was: Open; audit-scope gap.)
 - **What we know:** the Hark audit is "an audit of the D4 work package
   (WS-A, WS-C, WS-E)". Its only WS-D content is a section-number note
   and a closing note: "WS-D's deliverables appear to be on disk (task8,
@@ -1238,7 +1242,7 @@ entirety" (programme brief).
   scratch copy (task 10: 45 + 33 PASS, 0 FAIL; task 12 driver: 55 PASS,
   0 FAIL; driver output identical to the shipped rerun log) and read the
   four reports — but no independent replication audit of WS-D exists.
-  This is also why the $F3\toF2$ question (G-C17) was undecided in the first
+  This is also why the $F3\to F2$ question (G-C17) was undecided in the first
   issue of this inventory; it is now decided by the 2026-11-12 repeal
   (G1/G5/$G8/G12 \to F2)$. The replication-audit question is separate.
 - **What would close it:** an independent replication audit of WS-D on
@@ -1246,28 +1250,28 @@ entirety" (programme brief).
   suffice).
 - **Owner:** Co-scientist task (audit) / Brandon's call (commission it).
 
-### G-E9 — Hark'$s \bar{\psi} = 0$ and $\bar{\psi} = +0.10$ transverse runs, and the stripe side-result: REPORTED, NOT RE-RUN
+### G-E9 — Hark'$s \bar{\psi} = 0$ and $\bar{\psi} = +0.10$ transverse runs, and the stripe side-result: re-run in run 11 (EXP-1113) — CLOSED
 
-- **Status/grade:** REPORTED, NOT RE-RUN (Hark review, F1); the stripe
-  side-result is UNVERIFIED (single Hark run).
+- **Status/grade:** CLOSED (run 11, EXP-1113): a REPRODUCED; b MIXED (50–70% to a 2-mode decorated stripe, the rest to hex6 or a 12-mode state); c energies REPRODUCED, one-mode stripe metastability REFUTED. F3/I1, rung 2, two code-independent routes on one binary. (Was: REPORTED, NOT RE-RUN (Hark review, F1); the stripe side-result UNVERIFIED (single Hark run).)
 - **What we know:** the reviewer's own transverse check covered $\bar{\psi}$ =
   $-0.18$ only (5/5 hex6 + 4/4 fcc$12 \to$ full24). Hark'$s \bar{\psi} = 0$ result
   (24-mode + 2% amplitude / 0.2 rad phase noise $\to 6$-mode) and $\bar{\psi} = +0.10$
-  result $(\to 2$-mode stripe-like) are consistent with the WS-C numbers
+  result $(\to 2$-mode stripe-like; '2-mode' means ndom = 2 under the 0.5·max rule of d4model.analyze. The state is one pair at 0.2891 plus 8 pairs at 0.0971, with 3 pairs empty. It is reached in 50–70% of noisy starts, so the claim is MIXED, not reproduced) are consistent with the WS-C numbers
   they quote (A6 6-mode Fexc $-0.041306$ at $\bar{\psi} = 0$ matches the task-1
   report exactly) but are recorded as reported, not independently
   confirmed. The stripe side-result (one run: one-mode stripes Fexc $\approx$
-  $-0.0451$ vs hex$6 -0.0539$ at $\bar{\psi} = +0.10$; metastable alternative, not the
-  global minimum) is a single run and is marked UNVERIFIED. The WS-C
+  $-0.0451$ vs hex$6 -0.0539$ at $\bar{\psi} = +0.10$; the one-mode stripe ($F_{exc}=-0.0450935$) is a transverse saddle. It is stationary only in its invariant subspace and left it in 0/40 kicked runs ($\varepsilon=0.002A^*$, 4 codes). The stripe-like state that persists is the decorated stripe at $-0.048943$, which is also above hex6 ($-0.053935$)) was a single run, now re-run in run 11 (EXP-1113). The WS-C
   one-mode competitor set {24-mode, 6-mode, disordered} omitting stripes
   is a real gap either way (see G-A7).
+  **Run 11 caveats (G-E9_trace §5):** the 24-mode state at $\bar\psi=0$ is itself unstable. It goes to 6 noise-free (V FF cal24_0, one route), so the noise is not selective. Hark's noise protocol and run length are not in any located source; the run-11 protocols are R1 PLAN §4 (sha `de183c1d…`) and V PLAN (sha `4d37f63e…`). The model file d4model.py is not in the repo at 64bd065; cite `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-a-core-computations/d4model.py` sha256 `0015851afe98a14c5ff0e6b18a42e0a5b22fc6ce1b41771ba15e3fdace0b99c1`.
 - **What would close it:** re-running Hark'$s \bar{\psi} = 0 / +0.10$ transverse
   tests and the stripe run locally.
 - **Owner:** Local Muse verification (small local runs).
 
 ### G-E10 — Task 14's most-likely-miss: a small emergence programme at (2,2) not retrieved
 
-- **Status/grade:** Open; bounded by retrieval (WS-E task 14).
+- **Status/grade:** CLOSED (run 11, EXP-1105). Outcome: **M6 refuted as worded** (broad "IRH alone at (2,2)" overturned). 4 non-IRH LITERAL (2,2) entries: SSM (Kulkarni, refereed, Quantum Rep. 8(4) 121, full text), quantum graphity (full text), Kelly–Trugenberger–Biancalana (arXiv:1901.09870), and Hunter's FoR substrate-field paper (abstract only; physics ABSTAIN). The robust ones are SSM and quantum graphity; either alone suffices. Track E **C**, I1, [D] (literature scoring, judgement-based). Scope: bounded by the queries run (R1 84 + R2 re-runs, logged); not a census. (Was: Open; bounded by retrieval (WS-E task 14).)
+- **Reconciliation with v94 l.448 (open record items, not decided here):** (1) v94 records "the broad claim OVERTURNED at grade B"; the run-11 record supports only Track E C / I1 and does not endorse B. Unless v94's B rests on evidence not in the run-11 record, the record should read C. (2) The narrowed v94 sentence ("under the narrowed reading no retrieved approach occupies the corner") is **CONTESTED, pending the FoR full text** (DOI 10.5281/zenodo.19151764 / 19170453): defeated at abstract level for the run-11 retrieval, true of v94's own retrieval. (3) The corrected M6 wording (`G-E10_final_trace.md` §4) is for the map's M6 row and was not applied. Formerly Brandon items; now under the 2026-11-22 delegation.
 - **What we know:** retrieval is bounded by 63 queries / 73 papers —
   "an approach not retrieved is not scored". The most likely miss is a
   small emergence programme scoring (2,2) — which would overturn M6
@@ -1294,7 +1298,7 @@ entirety" (programme brief).
 ## 6. Closed in this baseline (graded verdicts that are not gaps)
 
 These items are **closed** under the §0 definition — each has a graded
-verdict — and are therefore not counted among the 64 open gaps. Several
+verdict — and are therefore not counted among the 53 open gaps. Several
 close by showing the claim as written is wrong; the correction is the
 result. (Items marked $\dagger$ are also cross-listed inside their groups with
 CLOSED status.)
@@ -1314,11 +1318,8 @@ CLOSED status.)
 4. **"$\delta = 0.5$ kills the ordered branch" plane-wide — FAILED as written;
    corrected to the $\delta^{2}$ shift, VERIFIED** (grade C). $\dagger (G-A17)$
 5. **Thin-wall droplet estimate as the answer — shown to fail; ODE value
-   stands** $(R_{c} = 12.57 / \DeltaF* = 555$, grade B). $\dagger (G-A18)$
-6. **Printed dispersion relation (7) as printed — FAILED; corrected
-   formula VERIFIED** (three internal checks + the manuscript's own
-   §III.2 expansion; CFL bound VERIFIED). The remaining open item is
-   filing the erratum (G-C12), not the verification.
+   stands** $(R_{c} = 12.57 / \Delta F* = 555$, grade B). $\dagger (G-A18)$
+6. **Printed dispersion relation (7) — CLOSED (run 11, 2026-11-22) — no erratum needed.** WS-D task 10 D5 REFUTED as a pdftotext misreading (superscript of $a_0^2$ read as a factor 2). Printed (7) equals the EOM-derived dispersion (Singular + Wolfram, F2/I1). v94 (7) is byte-identical to v93.1 (7). (The earlier "FAILED as printed; corrected formula VERIFIED; remaining item the erratum" is withdrawn.) $\dagger (G-C12)$
 7. **Triad relations as derivations of c, $\hbar$, G — NOT A DERIVATION**
    (definitional identities). $\dagger (G-C22)$
 8. **Near-melting scope transfer — split verdict recorded** (combinatorial
@@ -1341,35 +1342,30 @@ CLOSED status.)
 
 ## Appendix — Gap counts by group and by owner
 
-| Group | Entries | Open | Closed-as-verdict | Recorded non-gaps |
-|---|---|---|---|---|
-| A — $D_{4}$ selection, band, basin, truncation | 21 | 19 | 2 (A17, A18) | 0 |
-| B — Substrate models, dynamics convergence | 9 | 8 | 1 (B9) | 0 |
-| C — Frameworks, rivals, constants, gravity | 22 | 18 | 2 (C17, C22) | 2 (C4 boundary, C9 standing rule) |
-| D — Cosmology, early universe | 12 | 11 | 0 | 1 (D12 gated) |
-| E — Programme, provenance, audit scope | 11 | 8 | 2 (E1, E4) | 1 (E11 record guard) |
-| **Total** | **75** | **64** | **7** | **4** |
+| Group | Entries | Open | Closed-as-verdict | Closed-scoped | Recorded non-gaps |
+|---|---|---|---|---|---|
+| A — $D_{4}$ selection, band, basin, truncation | 26 | 16 | 7 (A2, A4, A6, A13, A15, A17, A18) | 3 (A7, A11, A12) | 0 |
+| B — Substrate models, dynamics convergence | 9 | 7 | 2 (B1, B9) | 0 | 0 |
+| C — Frameworks, rivals, constants, gravity | 23 | 15 | 5 (C12, C13, C17, C20, C22) | 1 (C21-IRH) | 2 (C4 boundary, C9 standing rule) |
+| D — Cosmology, early universe | 12 | 10 | 0 | 1 (D6) | 1 (D12 gated) |
+| E — Programme, provenance, audit scope | 11 | 5 | 5 (E1, E4, E8, E9, E10) | 0 | 1 (E11 record guard) |
+| **Total** | **81** | **53** | **19** | **5** | **4** |
 
-**By owner (open gaps only, 64 — counted by each entry's *next* step's owner;
-entries gated on a Brandon decision or a stated input are counted under
-Brandon until that step is taken, and under Co-scientist/local/literature
-after it):**
+(Recounted by script in run 12, EXP-1200 R-INV item 6. G-A27–G-A31 are not included; see §0.)
+
+**By owner (open gaps only, 53). Each entry is counted under the owner of its *next* step. Run 12 rebuilt this table mechanically: it removed the entries that are now closed from the earlier lists, and added G-A22–G-A26 by their Owner lines. Under the 2026-11-22 full delegation the "Brandon's call" class is decided by Dragon except for the carve-outs (money, sending as him, credentials, deletions); the label is kept for traceability.**
 
 | Owner (next step) | Count | Entries |
 |---|---|---|
-| Brandon's call (alone or first) | 23 | A1, A2, A8, A16, B2, B3, B4, B7, C5, C8, C11, C12, C13, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
-| Co-scientist task (new / running / candidate) | 23 | A3, A4, A5 (running), A6 (running), A9, A10, A11, A12, A13, A14, A19, A20 (running), B5, B8, C2, C3, C6, C7, C10, C15, D2, D3, E8 |
-| Local Muse verification | 10 | A7, A15, A21, B1, B6, C16, E2, E3, E5, E9 |
-| Literature / external | 8 | C1, C18, C19, C20, C21, D6, D10, E10 |
-| **Total** | **64** | |
+| Brandon's call (alone or first) | 21 | A1, A8, A16, A22, B2, B3, B4, B7, C5, C8, C11, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
+| Co-scientist task (new / running / candidate) | 17 | A3, A5, A9, A10, A14, A19, A20, B5, B8, C2, C3, C6, C7, C10, C15, D2, D3 |
+| Local Muse verification | 10 | A21, A23, A24, A25, A26, B6, C16, E2, E3, E5 |
+| Literature / external | 5 | C1, C18, C19, C21-CDT, D10 |
+| **Total** | **53** | |
 
-23 + 23 + 10 + 8 = 64. Brandon's call and Co-scientist task are now tied as
-the largest owner classes (23 each of 64) — over a third of the open gaps
-still need a decision or a stated input from Brandon before any task can
-close them. Of the 23 Co-scientist-owned gaps, 3 are running (A5, the 4D
-field test; A6, off-shell instabilities; A20, matched $D_{4}/A_{4}$* onset).
+21 + 17 + 10 + 5 = 53. Removed as closed in run 12 (or earlier, but still listed): A2, C12, C13 (Brandon); A4, A6, A11, A12, A13, E8 (Co-scientist); A7, A15, B1, E9 (local); C20, D6, E10 (literature). G-C21 is replaced by G-C21-CDT.
 
-*Correction note (2026-11-12): this appendix counted 66 open with C17, E1,
+*Correction note (2026-11-12, superseded by the run-12 recount above): this appendix counted 66 open with C17, E1,
 E4 listed as open Brandon's-call items in its first issue; those three
 closed on 2026-11-12 (E1 LOCATED and audited, C17 regraded F2, E4
 provenance resolved), and A6/A20 moved from candidate to running. Counts
