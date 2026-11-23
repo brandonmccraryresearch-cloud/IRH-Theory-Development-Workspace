@@ -286,18 +286,16 @@ discrepancy), §8.2 (Model B artifact).
 - **Owner:** Co-scientist task / local Muse verification (analysis, no
   simulation needed).
 
-### G-A15 — N = 24 grid point: NOT RUN
+### G-A15 — N = 24 grid point: run in run 11 (EXP-1116) — CLOSED (weak falsifier)
 
-- **Status/grade:** NOT RUN (WS-C task 13; choice ledger:
-  cost/benefit; N = 20 already identical to N = 8).
-- **What we know:** no information is expected from it — the attractor
-  fixed point is identical to 6 decimals at all 8 ladder points
-  $(N \in {8, 12, 16, 20} \times$ dt $\in {0.02, 0.01, 0.005, 0.0025})$.
+- **Status/grade:** CLOSED (run 11, EXP-1116 / C-1116). The falsification check passed, and it is a weak falsifier. Track F **F3**, I1, rung 2, [C], outcome confirmed. At $N=24$ the seeded in-phase $D_4$ attractor of the WS-C task-13 model gives $\langle A\rangle=0.0776817484$, $F_{exc}=-0.0077276236$ at dt $\in\{0.02,0.01,0.005,0.0025\}$. The model is sim6 Model B with $L=\pi$, $q_0^2=8$, $r=-0.35$, $u=v=1$, $\bar\psi=-0.18$, filter $K^2<200$, $T=30$. These values are within $10^{-6}$ of $0.077682/-0.007728$ in two code-independent routes on one binary (F3, I1), so the falsification check of G-A15 passed. Why it is a weak falsifier (SCOPING, not a theorem): $K^2=4|n|^2<200$ means $|n_i|\le7$; that ball lies wholly on every grid with $N\ge16$, so $N=16\to24$ changes only aliasing and roundoff, and the check tests the code and the fixed point, not continuum resolution-independence. Not shown: noise-started dynamics, other parameters, the transient order, or any manuscript claim. (Was: NOT RUN (WS-C task 13; choice ledger: cost/benefit; N = 20 already identical to N = 8).)
+- **What we know:** the attractor fixed point is identical to 6 decimals over 8 ladder runs (7 distinct points): $N\in\{8,12,16,20\}$ at dt = 0.005 and dt $\in\{0.02,0.01,0.005,0.0025\}$ at $N=16$, + 4 runs at $N=24$ (all 4 dt): 12 runs, 11 distinct points, none beyond $10^{-6}$. (The earlier notation "$N \in \{8, 12, 16, 20\} \times$ dt $\in \{0.02, 0.01, 0.005, 0.0025\}$" was wrong: two 4-point ladders, not a product grid.)
 - **What would close it:** running it (a falsification check only: a
   ladder point differing from $\langle A\rangle = 0.077682$ / Fexc = $-0.007728$ by more
   than 1e-6 would falsify resolution-independence; none found in 8
-  points).
-- **Owner:** Local Muse verification (trivial local run, if ever wanted).
+  points). Met in run 11 (none found in 12 runs).
+- **Source location:** the task-13 code is NOT in the repo at 64bd065: `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-c-substrate-convergence/code/irh_models.py` sha256 `f3755b6f710053c0938e717816dbdb256097ec88f37816900a3ce45a8c2fb0f3`, plus `task2a_attractor_ladder.py` sha256 `f412e9e9d88278b097c9b4da612bd476fca0b6dddbea1f849a803b50c3f5a7c9` (local Co-scientist package files, outside the repo).
+- **Owner:** Local Muse verification; done in run 11 (VM run folder `/home/hatch/workspace/vertex-ai-run/session-2026-11-22/irh-run11`, bundle `bundles/G-A15_C-1116/`). Next check for F2 (not needed for closure): one $N=24$ point on a different binary or FFT library.
 
 ### G-A16 — Model B Hermitian artifact: fix verified, but the shipped sim6 file is unmodified and the manuscript's §I.2 equation still states the non-conserved form
 
