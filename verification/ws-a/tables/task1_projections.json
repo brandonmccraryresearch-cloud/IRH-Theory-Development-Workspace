@@ -220,9 +220,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 485,
-  "max_multiplicity": 5
+  "S_max": 1465.0
  },
  "d110 (1,1,0,0)/sqrt2 rational": {
   "n_points": 1465,
@@ -421,9 +419,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 339,
-  "max_multiplicity": 7
+  "S_max": 1465.0
  },
  "d1111 (1,1,1,1)/2 rational": {
   "n_points": 1465,
@@ -646,9 +642,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 485,
-  "max_multiplicity": 5
+  "S_max": 1465.0
  },
  "d1110 (1,1,1,0)/sqrt3 rational": {
   "n_points": 1465,
@@ -919,9 +913,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 819,
-  "max_multiplicity": 3
+  "S_max": 1465.0
  },
  "phi1 (1,phi,0,0) irrational": {
   "n_points": 1465,
@@ -1192,9 +1184,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 1465,
-  "max_multiplicity": 1
+  "S_max": 1465.0
  },
  "phi4 (1,phi,phi^2,phi^3) irrational": {
   "n_points": 1465,
@@ -1465,9 +1455,7 @@
     1465.0
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 1465,
-  "max_multiplicity": 1
+  "S_max": 1465.0
  },
  "sqrt (1,sqrt2,sqrt3,sqrt5) irrational": {
   "n_points": 1465,
@@ -1738,8 +1726,6 @@
     1328.639
    ]
   ],
-  "S_max": 1465.0,
-  "n_distinct_positions": 1465,
-  "max_multiplicity": 1
+  "S_max": 1465.0
  }
 }
