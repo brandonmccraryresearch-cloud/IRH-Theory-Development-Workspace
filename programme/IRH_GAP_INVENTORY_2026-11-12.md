@@ -877,17 +877,22 @@ torus-node comparison §7.3.
 - **What we know:** the Greensite calculation as stated is correctly reported; the mechanism's conclusion stays conditional on the heat-kernel regularization premise and the massless non-SUSY scope; neither the Greensite (quantum) nor the Mukohyama (classical clock-field) route is instantiated by IRH's substrate (no fermions, no loops, no clock field).
 - **Owner:** Closed as a calculation-recovery verdict; the §IX.3 wording correction is filed in v94.
 
-### G-C21 — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved
+### G-C21-CDT — CDT small-scale endpoint (~2 vs ~3/2): literature tension unresolved [split from G-C21 in run 12; the IRH-side half is G-C21-IRH below]
 
-- **Status/grade:** Open; continuum UV endpoint bounded to $[3/2, 2]$ at grade **B (PROPOSED)**; sharp value ABSTAIN. Core verdict confirmed (Gemini Sweep 5, audited 2026-11-12): the $\sim 2$ vs $\sim 3/2$ split is bare-coupling and extrapolation-regime dependence; the canonical point is $\approx 2$; the continuum UV value is bounded to $[3/2, 2]$ at B with the sharp value abstained; no grade change to any IRH claim.
+- **Status/grade:** OPEN, owner Literature. This is the ~2 vs ~3/2 split within CDT itself. Part-7c's verdict stands (EXP-715 FAILED; Loll 2019 §7.1, Ambjørn–Loll 2026 "compatible with 2"). Run 11 (EXP-1115) hard-stopped literature work, so nothing there moves it. Continuum UV endpoint bounded to $[3/2, 2]$ at grade **B (PROPOSED)**; sharp value ABSTAIN. Core verdict confirmed (Gemini Sweep 5, audited 2026-11-12): the $\sim 2$ vs $\sim 3/2$ split is bare-coupling and extrapolation-regime dependence; the canonical point is $\approx 2$; the continuum UV value is bounded to $[3/2, 2]$ at B with the sharp value abstained; no grade change to any IRH claim.
 - **What we know:** CDT $D_{s}(\sigma) = 4.02 - 119/(54+\sigma)$ evaluates 1.816 at
-  $\sigma\to0 ($paper $1.80 \pm 0.25)$ and 4.02 at $\sigma\to\infty ($paper $4.02 \pm 0.10)$; IRH
-  holds D = 4 at all scales — largest divergence |$4 - 1.82$| $\approx 2.18$ at
-  $\sigma\to0$, agreement only asymptotically. The small-scale endpoint is
+  $\sigma\to0 ($paper $1.80 \pm 0.25)$ and 4.02 at $\sigma\to\infty ($paper $4.02 \pm 0.10)$. IRH's v94 site-field operator (D4 Laplacian l.466; l.468 dispersion, $\mu=0$) has heat-kernel spectral dimension $d_s\to4$ for $\sigma\gg a_0^2$ (in units $2J/a_0^2=1$; $d_s-4\simeq1/(6\sigma)$), and 5 with the time direction (reading B / l.468 spacetime symbol). It shows no UV dimensional reduction. $d_s$ overshoots to $5.731$ at $\sigma\approx0.213$ and falls to 0 below the lattice scale (lattice artefact; 1 with continuum time). Hence IRH (site-field operator) does not reproduce CDT's UV reduction. The CDT-vs-IRH 'divergence at $\sigma\to0$' is not a like-for-like comparison: the σ units differ and the IRH UV is lattice-dominated. EXP-1115, F2/I1, rung 3. The small-scale endpoint is
   disputed in the literature (~2 vs ~3/2 — Coumbe & Jurkiewicz 2015).
 - **What would close it:** resolution of the literature tension (a
-  retrieved consensus or a new computation).
+  retrieved consensus or a new computation). Next test: post-2016 CDT literature on $D_S(0)$ along a constant-physics trajectory (not accessed in run 11, hard stop).
 - **Owner:** Literature (retrieval).
+
+### G-C21-IRH — IRH-side spectral dimension of the v94 site-field operator — CLOSED-scoped (run 11, negative result) [split from G-C21 in run 12]
+
+- **Status/grade:** CLOSED-scoped (site-field operator). The v94 site-field operator (l.458–468, $\mu=0$, readings A and B) has no UV dimensional reduction. Its heat-kernel spectral dimension runs from the lattice fall-off ($\to0$; or $\to1$ for O2 with continuum time), through an overshoot (max $5.731226$ at $\sigma=0.213384$), to $4^+$ (O1) / $5^+$ (O2), with $z_{\rm eff}\to1$. The operator therefore produces no value in $[3/2,2]$. C-1115a ($d_s=1+d/z$): [D], rung 4D, F2, I1. C-1115b (O1/O2 endpoints + no plateau): [C], rung 3, F2, I1; F2 record passes (RUN11_REPORT §1). EXP-1115, trace `run11/adj/G-C21_trace.md`.
+- **What we know:** v94 l.958 already scopes the $[3/2,2]$ interval to CDT ("the causal-dynamical-triangulation continuum UV endpoint … no IRH grade changes"); it does not claim that IRH produces the interval, so this is not an erratum. Recommended (manuscript, not applied here) addition after "no IRH grade changes": "IRH's own site-field operator (§III.1, l.458–468) has no UV dimensional reduction: its heat-kernel $d_s$ runs from the lattice fall-off through a maximum $\approx5.73$ to 4 (5 with time), so the $[3/2,2]$ interval is not an IRH prediction (EXP-1115, run 11, F2/I1). The Swift–Hohenberg $\psi$ operator was not tested."
+- **Scope limit:** the non-retired Swift–Hohenberg $\psi$ operator (v94 l.149/151) is untested; until a frozen EXP computes $d_s(\sigma)$ for it, "IRH does not produce $[3/2,2]$" must not be stated beyond the site-field operator. Also carried: σ = 3000 Wolfram value; mass term $\mu\neq0$.
+- **Owner:** Local Muse verification (carried: ψ-operator EXP).
 
 ### G-C22 — Triad relations "derive" c, $\hbar$, G: NOT A DERIVATION — CLOSED as a verdict (the physics gap stays open)
 
