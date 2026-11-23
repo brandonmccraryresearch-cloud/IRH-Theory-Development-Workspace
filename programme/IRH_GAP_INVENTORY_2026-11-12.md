@@ -182,8 +182,7 @@ discrepancy), §8.2 (Model B artifact).
 - **Status/grade:** CLOSED (scoped). $L=\pi$, $N=16$: C-720-S F2/I1, rung 3 (7c + EXP-1102). $L=2\pi$, $N=16$: C-1101∪1111 F3/I1, rung 2, F2 at 6 Wolfram-checked band points (record-bound at $(-0.075,-0.03)$). Traces G-A7_trace (7c), G-A7p2_trace, G-A7_L2pi_trace (adj-D3) and G-A7_L2pi_union_trace (adj-E7).
 - **What we know:** the WS-C band's competitor set {24-mode, 6-mode,
   disordered} omits stripes. A stripe-like state appeared at $\bar{\psi} = +0.10$
-  in one Hark transverse run (Fexc $-0.048943$, metastable not
-  global-minimum). The audit's claim that "the round-1 review had $\approx$
+  in one Hark transverse run, re-run in run 11 (G-E9): the $-0.048943$ state is the decorated stripe (1+8 pairs); "metastable" for it is SCOPING only (adj-E3 kick probe, 4/4 return; not graded). The audit's claim that "the round-1 review had $\approx$
   $[-0.235, -0.14]$ with stripes/A2/A3 included" could NOT be verified
   (see G-E2).
   **Run 11 scope wording (adj-E7, G-A7_L2pi_union_trace §8):** On the v94 functional ($q_0^2=8$, $u=v=1$) on the $L=2\pi$ periodic 4D cell at $N=16$, a seeded relaxation search finds no stripe-family state below the $D_4$ family at any of the 55 $L=\pi$-band points checked. Those points are the whole $L=\pi$ band at step 0.01, with ±0.02 margins, at $r=-0.6,-0.425,-0.35,-0.25,-0.075,0.1$. The search used 14–18 seeds per point, including on- and off-shell stripes and the Hark transverse state, and a code-independent verifier agrees at 33 of the points. At 52 of the 55 points no stripe-family stationary state survives relaxation. At the 3 points where the exact one-mode coefficient $a_8<0$, the stripe is a stationary but unstable state, at least $4.69\times10^{-3}$ above $D_4$. A binary-independent Wolfram route agrees on winners and energies at 6 band points (F2 there). The band at those $r$ is unchanged by doubling the cell (F3/I1, rung 2). Cells beyond $2\pi$ and states outside the seeded basins are not tested.
@@ -1249,19 +1248,18 @@ entirety" (programme brief).
 
 ### G-E9 — Hark'$s \bar{\psi} = 0$ and $\bar{\psi} = +0.10$ transverse runs, and the stripe side-result: REPORTED, NOT RE-RUN
 
-- **Status/grade:** REPORTED, NOT RE-RUN (Hark review, F1); the stripe
-  side-result is UNVERIFIED (single Hark run).
+- **Status/grade:** CLOSED (run 11, EXP-1113): a REPRODUCED; b MIXED (50–70% to a 2-mode decorated stripe, the rest to hex6 or a 12-mode state); c energies REPRODUCED, one-mode stripe metastability REFUTED. F3/I1, rung 2, two code-independent routes on one binary. (Was: REPORTED, NOT RE-RUN (Hark review, F1); the stripe side-result UNVERIFIED (single Hark run).)
 - **What we know:** the reviewer's own transverse check covered $\bar{\psi}$ =
   $-0.18$ only (5/5 hex6 + 4/4 fcc$12 \to$ full24). Hark'$s \bar{\psi} = 0$ result
   (24-mode + 2% amplitude / 0.2 rad phase noise $\to 6$-mode) and $\bar{\psi} = +0.10$
-  result $(\to 2$-mode stripe-like) are consistent with the WS-C numbers
+  result $(\to 2$-mode stripe-like; '2-mode' means ndom = 2 under the 0.5·max rule of d4model.analyze. The state is one pair at 0.2891 plus 8 pairs at 0.0971, with 3 pairs empty. It is reached in 50–70% of noisy starts, so the claim is MIXED, not reproduced) are consistent with the WS-C numbers
   they quote (A6 6-mode Fexc $-0.041306$ at $\bar{\psi} = 0$ matches the task-1
   report exactly) but are recorded as reported, not independently
   confirmed. The stripe side-result (one run: one-mode stripes Fexc $\approx$
-  $-0.0451$ vs hex$6 -0.0539$ at $\bar{\psi} = +0.10$; metastable alternative, not the
-  global minimum) is a single run and is marked UNVERIFIED. The WS-C
+  $-0.0451$ vs hex$6 -0.0539$ at $\bar{\psi} = +0.10$; the one-mode stripe ($F_{exc}=-0.0450935$) is a transverse saddle. It is stationary only in its invariant subspace and left it in 0/40 kicked runs ($\varepsilon=0.002A^*$, 4 codes). The stripe-like state that persists is the decorated stripe at $-0.048943$, which is also above hex6 ($-0.053935$)) was a single run, now re-run in run 11 (EXP-1113). The WS-C
   one-mode competitor set {24-mode, 6-mode, disordered} omitting stripes
   is a real gap either way (see G-A7).
+  **Run 11 caveats (G-E9_trace §5):** the 24-mode state at $\bar\psi=0$ is itself unstable. It goes to 6 noise-free (V FF cal24_0, one route), so the noise is not selective. Hark's noise protocol and run length are not in any located source; the run-11 protocols are R1 PLAN §4 (sha `de183c1d…`) and V PLAN (sha `4d37f63e…`). The model file d4model.py is not in the repo at 64bd065; cite `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-a-core-computations/d4model.py` sha256 `0015851afe98a14c5ff0e6b18a42e0a5b22fc6ce1b41771ba15e3fdace0b99c1`. v-ge9's "10 satellite pairs" is a transcription error: 1 dominant pair + 8 satellite pairs (9 of 12 occupied).
 - **What would close it:** re-running Hark'$s \bar{\psi} = 0 / +0.10$ transverse
   tests and the stripe run locally.
 - **Owner:** Local Muse verification (small local runs).
