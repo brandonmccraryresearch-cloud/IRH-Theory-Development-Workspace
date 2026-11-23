@@ -116,8 +116,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A4 — The 24/24-from-noise rate: 0/5 seeds, unbounded
 
-- **Status/grade:** Open; 0/5 is an upper bound, not a zero (WS-C task 7,
-  grade C).
+- **Status/grade:** CLOSED as a bounded rate (run 11, EXP-1114; F3 / Track E C, I1). 0/240 noise seeds are in the full 24-mode pattern at $T=50$ under the WS-C quench protocol ($N=16$, $L=\pi$, $r=-0.35$, $q_0^2=8$, $u=v=\gamma=1$, dt 0.02, noise $10^{-2}$, $\bar\psi_0=0$). CP 95% two-sided upper bound 1.53%, one-sided 1.24%. Outcomes: 6-mode 203, 2-mode 33, 8-mode 1, other 3. The verifier found 0/12 full24 on fresh seeds and agreed with R1 on 10/10 reruns. Scope: a $T=50$ snapshot; the class is not settled at $T=50$ for many seeds (219/240 differ from $T=30$, 68/240 from $T=40$). This is not a long-time-attractor rate. $\gamma=1.0$ follows the code; the WS-C task1 report l.363 says 1.2. (Was: Open; 0/5 is an upper bound, not a zero (WS-C task 7, grade C).)
 - **What we know:** noise quenches never reach the full 24-mode pattern
   in the truncation (WS-C: 5 seeds $\to 6$-mode $\times3, 2$-mode, 8-mode; WS-A
   task 5: 0/6 noise seeds grow at all). Damped-wave quenches drift
@@ -266,7 +265,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A13 — Are the 2-/8-mode quench outcomes transient?
 
-- **Status/grade:** Open; no grade (untested).
+- **Status/grade:** CLOSED (run 11, EXP-1114; F3 / Track E C, I1). The seed-4 2-mode state persists to $t=550$, deterministically and under annealing with $\Theta_0\in\{10^{-4},10^{-3},10^{-2}\}$, ramp 400, 3/3 replicas each. The seed-5 8-mode state is transient: it relaxes to a 2-mode state by $t=10$ (10/10 R1; verifier confirms) and never to the 6-mode. Both settle at $F_{exc}=-0.036540$, and the two end states are equivalent under a lattice symmetry plus a translation (adj-E6, residual $1.6\times10^{-15}$, ungraded). Energy ordering: 6-mode $-0.041772$ < 2-mode $-0.036540$ < 8-mode $-0.035767$, so the 2-mode is metastable at these noise levels. "2-mode" = half-max ndom 2 (a dominant pair plus 16 shell modes at 41.6%). The 6-mode sub-question: one 6-mode state (seed 3) is persistent under the same damped-wave continuation (R1 only). The first-pass (v1) continuations are void because of an anti-Hermitian roundoff defect. (Was: Open; no grade (untested).)
 - **What we know:** quench seeds 4–5 (WS-C) reach 2-mode (Fexc
   $-0.036477)$ and 8-mode $(-0.035767)$ states; whether they anneal to the
   6-mode on longer runs is untested. Same question for the 6-mode
