@@ -17,3 +17,18 @@ The reports that use this code are in
 `programme/workstreams/ws-c-substrate-convergence/`.
 Any change after the import commit is a run-12 artifact fix and cites EXP-1200.
 Run from this folder's `code/`; scripts write to `../results` and `../figures`.
+
+## Run-12 fix G-B2 (EXP-1200): regenerating fig 3
+
+`task2d_transient.py` now loops over T in (5, 0.5, 1.0) and writes all 12
+rows of `results/task2_transient.csv` (plus an `amp_raw` column), so
+
+    cd code && python task2d_transient.py && python make_figures.py
+
+regenerates the T=0.5/1.0 rows in-script and `make_figures.py` no longer
+crashes. Rounding note: the shipped T=0.5/1.0 rows' `err_vs_Astar` was
+evidently computed from the unrounded amplitude, while the script (shipped
+and fixed) subtracts after rounding to 6 decimals; this gives 1e-6
+differences in two `err_vs_Astar` cells (T=1.0, dt=0.02 and dt=0.0025).
+The `seconds` column of the shipped T=0.5/1.0 rows is 0 (not produced by the
+shipped script). Evidence: run-12 w-p0code OUTPUTS.md.
