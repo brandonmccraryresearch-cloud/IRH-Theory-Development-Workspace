@@ -402,7 +402,7 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A22 (proposed 2026-11-17, filed) — McKay gauge-dynamics gap: v94 never derives a Yang–Mills kinetic term for $E_6$ from the tension–relaxation Lagrangian, nor Higgs representations for $E_6 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ without light exotic relics
 
-- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **Status/grade:** Route (a) SCOPING (run 11, EXP-1107: mechanisms M1–M5 tested against the v94 Lagrangian, no $E_6$ $F^2$ term found; §12.7 not met, not a no-go). Route (c) **CLOSED by scope decision, patch pending merge**: branch `run11/g-a22-gauge-label` @08c57cd (being merged via run-12 R-TEX branch `run12/tex-record-fixes`); no grade (a wording decision). The Higgs/exotics clause is carried as a scope note (B/I2 literature fact, unchanged). Trace `run11/adj/G-A22_trace.md`. (Was: Open; no grade.)
 - **What we know:** v94 identifies $E_6$ as "the gauge algebra" by McKay identification (2T ↔ affine $E_6$) but never derives a Yang–Mills kinetic term $\frac14 F^a_{\mu\nu}F^{a\mu\nu}$ for $E_6$ from the Lagrangian. The deepest-research cross-domain synthesis (2026-11-17) finds the bridge does not exist anywhere in the literature either (scoped absence, C/I1): McKay gives a label; Kronheimer/quiver constructions give $\prod_i U(n_i)$; every $E_6$ dynamics route imports the kinetic term from elsewhere (DBI action, 11D supergravity, dilaton VEV). $E_6 \to$ SM breaking always costs Higgs representations plus light exotics or fine-tuning (B/I2).
 - **What would close it:** (a) a construction of the kinetic term inside IRH's own Lagrangian, (b) an Ali-style root-sum postulate labelled as such (grade D, post-hoc), or (c) downgrading "the gauge algebra" to "the gauge-algebra label" in the manuscript.
 - **Owner:** Brandon's call (construction vs scope decision); Local Muse verification (literature).
@@ -747,9 +747,9 @@ torus-node comparison §7.3.
 - **What would close it:** filing the erratum. (Moot: no erratum is needed.) Withdrawal notes, not silent patches, are owed in the six documents that repeat the misread statement (listed in `programme/RECORD_FIXES_run12.md`).
 - **Owner:** Brandon informed, not deciding (it reverses an item he was told was an erratum). Was: Brandon's call (guide §12 Q8).
 
-### G-C13 — §III.3 envelope validity table does not reproduce: UNVERIFIED
+### G-C13 — §III.3 envelope validity table does not reproduce: CLOSED as CORRECTED (run 11)
 
-- **Status/grade:** UNVERIFIED, not FAILED (WS-D task 10, D17).
+- **Status/grade:** CLOSED as CORRECTED (restated with stated parameters; F2/I1; θ-dependent; reproducibility, not physical relevance). Run 11, EXP-1110: Fig. 6 and the table rebuilt from the v94 text alone (Brandon 2026-11-22 15:19 CST) at θ=π/2, Δt=√(3/8), $k\parallel e_1$, error/ω_exact. The 1% crossing is at $a_0|k|=1.057$ (band 0.346–1.908 over θ∈[π/6,5π/6]). The old "<1% for ≲0.3" fails for θ<0.4538 rad. Verified commit 1e6973a; branch `run11/g-c13-fig6-rebuild` tip bd07c93 (being merged via run-12 R-TEX). The original table's parameters remain unknown (question dropped by Brandon, 15:19 CST); the rebuild sits alongside the original, not as a silent replacement. Trace `run11/adj/G-C13r_trace.md`. (Was: UNVERIFIED, not FAILED (WS-D task 10, D17).)
 - **What we know:** table $(4\times10^{-5}, 0.1$%, 1.0%, 11%, 133%) NOT
   REPRODUCIBLE; under the natural reading computed errors are $1.67\times10^{-5}$,
   $4.17\times10^{-4}$, $3.75\times10^{-3}$, 4.11%, 36.3% $(\Delta t\to0)$ — smaller by factors
@@ -1019,7 +1019,7 @@ entirety" (programme brief).
 
 ### G-D6 — No independent work citing or discussing IRH was found
 
-- **Status/grade:** INCOMPLETE-EVIDENCE (unchanged). Gemini Sweep 6 (Task mode, 2026-11-13) audited 2026-11-13: **MISS** confirmed — zero independent works citing or discussing IRH; G-D6.1 (final) B CONFIRMED; G-D6.2 B (scoped bound) / ABSTAIN (universal negative) CONFIRMED, re-anchored on the Argon run. **Model-label correction:** the follow-up run was **Gemini 4 Hydrogen, not Argon** — cite it as Hydrogen; the two runs are one artificial pipeline ($\to$ I1), not two independent verifications. **Independence correction: G-D6.2 $I2 \to I1$** (the initial report's I2 is refuted as an overclaim; grade impact none — the $I1 \to C$ bound was repealed 2026-11-12). G-D6.3 F2 CONFIRMED and STRENGTHENED (Chaudhary 88-page full-text check closes the pp. 65–88 gap).
+- **Status/grade:** CLOSED as a strengthened scoped bound (run 11, EXP-1109): 103 logged queries, 0 independent works (R1); the verifier's own >30 requests across 7 sources find 0; the planted citation was rejected. The universal negative stays **ABSTAIN**. Track E C, I1, label [C], rung 1. The standing G-D6.2 B (scoped bound) record from the 2026-11-13 sweep-6 audit, below, is untouched. Trace `run11/adj/G-D6_trace.md`. Earlier status: INCOMPLETE-EVIDENCE. Gemini Sweep 6 (Task mode, 2026-11-13) audited 2026-11-13: **MISS** confirmed — zero independent works citing or discussing IRH; G-D6.1 (final) B CONFIRMED; G-D6.2 B (scoped bound) / ABSTAIN (universal negative) CONFIRMED, re-anchored on the Argon run. **Model-label correction:** the follow-up run was **Gemini 4 Hydrogen, not Argon** — cite it as Hydrogen; the two runs are one artificial pipeline ($\to$ I1), not two independent verifications. **Independence correction: G-D6.2 $I2 \to I1$** (the initial report's I2 is refuted as an overclaim; grade impact none — the $I1 \to C$ bound was repealed 2026-11-12). G-D6.3 F2 CONFIRMED and STRENGTHENED (Chaudhary 88-page full-text check closes the pp. 65–88 gap).
 - **What we know:** no independent work citing/discussing IRH was found
   in the 63-query / 73-paper retrieval. "A different query set could
   find something."
@@ -1230,7 +1230,7 @@ entirety" (programme brief).
 
 ### G-E8 — WS-D was not audited by Hark (audit scope was WS-A/C/E)
 
-- **Status/grade:** Open; audit-scope gap.
+- **Status/grade:** CLOSED (run 11, 2026-11-22): independent replication audit of WS-D (85 claims; 78V/1C/1R/5U; V 32-claim sample agrees); F3/I1; T10-11 refuted → G-C12 closed (no erratum). T10-46 corrected (the undefined envelope column, same issue as G-C13). Five U items remain (T12-15, T12-16, T12-17, T8-06, T9-07); they do not block closure. WS-D's shipped scripts are not in the repo at 64bd065 (local Co-scientist package `~/workspace/research/irh/co-scientist-tasks-2026-11-10/ws-d-frameworks-rivals/`). EXP-1106, trace `run11/adj/G-E8_trace.md`. (Was: Open; audit-scope gap.)
 - **What we know:** the Hark audit is "an audit of the D4 work package
   (WS-A, WS-C, WS-E)". Its only WS-D content is a section-number note
   and a closing note: "WS-D's deliverables appear to be on disk (task8,
