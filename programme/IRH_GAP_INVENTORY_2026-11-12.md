@@ -732,12 +732,10 @@ torus-node comparison §7.3.
   or dropping the number.
 - **Owner:** Brandon's call (manuscript text).
 
-### G-C12 — Printed dispersion relation (7) is wrong as printed: erratum needed
+### G-C12 — Printed dispersion relation (7): WITHDRAWN — the "wrong as printed" finding was a misreading; no erratum needed
 
-- **Status/grade:** FAILED as printed (WS-D task 10, D5, grade C). The
-  corrected formula is VERIFIED — the gap that remains is the erratum
-  itself.
-- **What we know:** EOM-derived formula:
+- **Status/grade:** CLOSED (run 11, 2026-11-22) — no erratum needed. WS-D task 10 D5 REFUTED as a pdftotext misreading (superscript of $a_0^2$ read as a factor 2). Printed (7) equals the EOM-derived dispersion (Singular + Wolfram, F2/I1). v94 (7) is byte-identical to v93.1 (7). Source: run-11 adjudication `G-C12_trace.md` (and G-E8, T10-11 refuted). Downstream WS-D items T10-12, T10-14, T10-16, T10-39 hold only as algebra on the misread form. (Was: FAILED as printed (WS-D task 10, D5, grade C); the gap that remained was the erratum.)
+- **What we know (WITHDRAWN as a finding; kept as history — this text rests on the misreading):** EOM-derived formula:
   $\sin^{2}(\omega\Delta t/2) = (\Delta t^{2}\cdot2J/(4M$\*$a_{0}^{2}))\cdot\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha))$ +
   $(\Delta t^{2}\mu^{2})/(4M$\*); printed (7) has $[2\Sigma_{\alpha}(1-\cos(a_{0}k\cdot\alpha)) + \mu^{2}]$ inside one
   bracket — factor of 2 too many in the $\Sigma$ term, $\mu^{2}$ misplaced. Three
@@ -746,9 +744,8 @@ torus-node comparison §7.3.
   the derived formula. The CFL bound computed from it is VERIFIED.
   Erratum: replace $[2\Sigma(1-\cos) + \mu^{2}]$ by $[\Sigma(1-\cos)]$ with the $\mu^{2}$ term
   outside the bracket at coefficient $\Delta t^{2}/(4M$\*).
-- **What would close it:** filing the erratum.
-- **Owner:** **Brandon's call** (guide §12 Q8). Not closable by the
-  programme alone.
+- **What would close it:** filing the erratum. (Moot: no erratum is needed.) Withdrawal notes, not silent patches, are owed in the six documents that repeat the misread statement (listed in `programme/RECORD_FIXES_run12.md`).
+- **Owner:** Brandon informed, not deciding (it reverses an item he was told was an erratum). Was: Brandon's call (guide §12 Q8).
 
 ### G-C13 — §III.3 envelope validity table does not reproduce: UNVERIFIED
 
@@ -1320,10 +1317,7 @@ CLOSED status.)
    corrected to the $\delta^{2}$ shift, VERIFIED** (grade C). $\dagger (G-A17)$
 5. **Thin-wall droplet estimate as the answer — shown to fail; ODE value
    stands** $(R_{c} = 12.57 / \Delta F* = 555$, grade B). $\dagger (G-A18)$
-6. **Printed dispersion relation (7) as printed — FAILED; corrected
-   formula VERIFIED** (three internal checks + the manuscript's own
-   §III.2 expansion; CFL bound VERIFIED). The remaining open item is
-   filing the erratum (G-C12), not the verification.
+6. **Printed dispersion relation (7) — CLOSED (run 11, 2026-11-22) — no erratum needed.** WS-D task 10 D5 REFUTED as a pdftotext misreading (superscript of $a_0^2$ read as a factor 2). Printed (7) equals the EOM-derived dispersion (Singular + Wolfram, F2/I1). v94 (7) is byte-identical to v93.1 (7). (The earlier "FAILED as printed; corrected formula VERIFIED; remaining item the erratum" is withdrawn.) $\dagger (G-C12)$
 7. **Triad relations as derivations of c, $\hbar$, G — NOT A DERIVATION**
    (definitional identities). $\dagger (G-C22)$
 8. **Near-melting scope transfer — split verdict recorded** (combinatorial
