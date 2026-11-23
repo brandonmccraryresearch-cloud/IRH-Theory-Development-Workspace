@@ -1,0 +1,3 @@
+test,psibar_final,amp,d4,modes,lock,rms,Fexc,seconds
+wave-vs-ModelB-seeded-attractor,0.00087,0.08585,1.0,24,1.0,0.4206,-0.025597,71.3
+ansatz-vs-relaxed-F,-0.0076323,-0.007728,-0.0077276,-9.6e-05,0.01238
