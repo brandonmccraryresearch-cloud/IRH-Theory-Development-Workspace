@@ -249,15 +249,19 @@ discrepancy), §8.2 (Model B artifact).
   homotopy, or a stated reason it is out of scope.
 - **Owner:** Co-scientist task (new).
 
-### G-A12 — Projection of $D_{4}$ to three dimensions along irrational directions (IX.1.5): approximate icosahedral signature uncomputed
+### G-A12 — Projection of $D_{4}$ to three dimensions along irrational directions (IX.1.5): approximate icosahedral signature searched (finite window): ABSENT
 
-- **Status/grade:** Partly verified, partly open; stays OPEN. The verified geometric-mapping part supports Track E **B / Track F F1 (PROPOSED)** (peak-ratios, Task 7: 41/41 VERIFIED across two bundles; $A_{1}$–$A_{4}$, $C_{1}$–$C_{4}$, $F_{1}$, $F_{2}$, $D_{1}$ agree to printed precision on both sides). No nearest-icosahedral search was run; the synthetic-discriminant reading supports B / F1, the measurable-discriminant reading stays C (post-hoc selection, I1, no detector/noise model, one normal).
+- **Status/grade:** CLOSED-scoped (run 11, EXP-1117 / C-1117, adj-E4 2026-11-23). A nearest-icosahedral direction search was run in a finite window: $R=5$, $D_4$ root star S1 and diffraction star S2, angular power $l\le10$, metric $D$ = the non-icosahedrally-invariant fraction. The frozen rule ($\tau=0.05$) gives ABSENT. The best values found are $D^*_{S1}=0.5289539681$ at the irrational-looking family $(b,a,a,a)$, $b/a=4.30889\ldots$, and $D_{S2}\le0.4800$ about 0.2° from d110; at best about 47–52% of the anisotropic power is icosahedrally invariant. The $D_4$ star is not more icosahedral than random 4D 12-axis stars (43rd percentile). Track F F3 / Track E C, I1, rung 2; two code-independent routes on one binary. A sampled search, not a theorem.
+  K2 (run 11, EXP-1118 / C-1118, adj-E8 2026-11-23): for the root-star signature S1 the ABSENT finding holds in **all** directions. For every unit $n\in S^3$, $D_{S1}(n)\ge LB_8(n)>0.05$ at $L=10$. Here $LB_8=(5T_2+9T_4+17T_8)/\sum_{l=2,4,\dots,10}(2l+1)T_l$; it is a rotation-free lower bound, valid because $I$ has no invariant harmonics at $l=2,4,8$. Method: a certified interval cover of a chart of the $W(F_4)$ chamber, with the d110 blow-up handled separately, done in two code- and binary-independent engines (CPython/numpy and C/gcc directed rounding), which agree; exact tiling check. Track F **F2**, I1, rung 3, [D]. Computer-assisted, not kernel-verified. Scope: S1 only, $L=10$, the EXP-1117 metric, $\tau=0.05$. S2 stays a sampled, window-dependent search (F3), so the overall G-A12 grade stays F3. Descriptive (C): $\inf_n LB_8\approx0.234$. That is not a bound on $D$. The sampled $D^*_{S1}=0.5290$.
+  Earlier status (kept): the verified geometric-mapping part supports Track E **B / Track F F1 (PROPOSED)** (peak-ratios, Task 7: 41/41 VERIFIED across two bundles; $A_{1}$–$A_{4}$, $C_{1}$–$C_{4}$, $F_{1}$, $F_{2}$, $D_{1}$ agree to printed precision on both sides). The synthetic-discriminant reading supports B / F1, the measurable-discriminant reading stays C (post-hoc selection, I1, no detector/noise model, one normal).
 - **What we know:** an *approximate* or finite-window icosahedral-like
   pattern is a separate, uncomputed question. Window counts (485/339/
   485/819 distinct positions; lattice fraction 249/1465 for irrational
-  directions) are window-dependent (R = 5).
+  directions) are window-dependent (R = 5). Approximate/finite-window question now searched (above); exact icosahedral projection impossible ($5\nmid1152$, Task 1).
 - **What would close it:** a nearest-icosahedral direction search in a
   finite window, or a stated reason it is not pursued.
+- **Closed by:** EXP-1117 search (first option).
+- **K2:** all-directions S1 bound certified (EXP-1118).
 - **Owner:** Co-scientist task (new, small, local-cost).
 
 ### G-A13 — Are the 2-/8-mode quench outcomes transient?
