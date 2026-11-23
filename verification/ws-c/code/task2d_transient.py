@@ -13,7 +13,8 @@ names are kept for compatibility; they hold the value at the row's horizon T.
 err_vs_ref is taken per T against that T's dt=0.0025 row. amp_raw (full
 precision amplitude) is appended so Richardson orders can be computed without
 6-decimal rounding. err_vs_Astar follows the shipped mixed recipe: rounded amp
-for the T=5 rows, raw amp for the T=0.5/1.0 rows (run-12 v-p0 VERDICT C1).
+for the T=5 rows, raw amp for the T=0.5/1.0 rows (run-12 v-p0 VERDICT C1);
+err_vs_ref for T=0.5/1.0 is taken against the raw reference amplitude.
 """
 import csv
 import os
@@ -49,9 +50,17 @@ for T in (5, 0.5, 1.0):
         rows.append((row, repr(float(d["amp"]))))
         print(" | ".join(f"{k}={v}" for k, v in row.items()), flush=True)
     ref_amp = rows[-1][0]["amp_at_T5"]
+    ref_raw = float(rows[-1][1])
     for r, raw in rows:
         r2 = dict(r)
-        r2["err_vs_ref"] = round(r["amp_at_T5"] - ref_amp, 6)
+        # err_vs_ref recipe as in the shipped CSV: T=5 rows round(rounded amp -
+        # rounded ref); T=0.5/1.0 rows round(rounded amp - raw ref), which is
+        # the only recipe that reproduces the shipped "-0.0" at T=0.5,
+        # dt=0.0025 (run-12 w-p0fix amendment A1).
+        if T == 5:
+            r2["err_vs_ref"] = round(r["amp_at_T5"] - ref_amp, 6)
+        else:
+            r2["err_vs_ref"] = round(r["amp_at_T5"] - ref_raw, 6)
         # err_vs_Astar recipe as in the shipped CSV (v-p0 VERDICT C1):
         # T=5 rows were shipped as round(rounded amp - A*); the T=0.5/1.0
         # rows were shipped as round(raw amp - A*).
