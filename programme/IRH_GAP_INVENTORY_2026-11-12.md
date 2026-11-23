@@ -179,20 +179,21 @@ discrepancy), §8.2 (Model B artifact).
 
 ### G-A7 — Stripe competitor omitted from the band's competitor set
 
-- **Status/grade:** Open; the stripe side-result is UNVERIFIED (one Hark
-  run, not graded, not re-run).
+- **Status/grade:** CLOSED (scoped). $L=\pi$, $N=16$: C-720-S F2/I1, rung 3 (7c + EXP-1102). $L=2\pi$, $N=16$: C-1101∪1111 F3/I1, rung 2, F2 at 6 Wolfram-checked band points (record-bound at $(-0.075,-0.03)$). Traces G-A7_trace (7c), G-A7p2_trace, G-A7_L2pi_trace (adj-D3) and G-A7_L2pi_union_trace (adj-E7).
 - **What we know:** the WS-C band's competitor set {24-mode, 6-mode,
   disordered} omits stripes. A stripe-like state appeared at $\bar{\psi} = +0.10$
   in one Hark transverse run (Fexc $-0.048943$, metastable not
   global-minimum). The audit's claim that "the round-1 review had $\approx$
   $[-0.235, -0.14]$ with stripes/A2/A3 included" could NOT be verified
   (see G-E2).
+  **Run 11 scope wording (adj-E7, G-A7_L2pi_union_trace §8):** On the v94 functional ($q_0^2=8$, $u=v=1$) on the $L=2\pi$ periodic 4D cell at $N=16$, a seeded relaxation search finds no stripe-family state below the $D_4$ family at any of the 55 $L=\pi$-band points checked. Those points are the whole $L=\pi$ band at step 0.01, with ±0.02 margins, at $r=-0.6,-0.425,-0.35,-0.25,-0.075,0.1$. The search used 14–18 seeds per point, including on- and off-shell stripes and the Hark transverse state, and a code-independent verifier agrees at 33 of the points. At 52 of the 55 points no stripe-family stationary state survives relaxation. At the 3 points where the exact one-mode coefficient $a_8<0$, the stripe is a stationary but unstable state, at least $4.69\times10^{-3}$ above $D_4$. A binary-independent Wolfram route agrees on winners and energies at 6 band points (F2 there). The band at those $r$ is unchanged by doubling the cell (F3/I1, rung 2). Cells beyond $2\pi$ and states outside the seeded basins are not tested.
+  The Hark transverse test was re-run: 3 seeds per point in R1-ext, 2 in V-ext, none ending as a stripe in the band. The 1-run "stripe-like state at $\bar\psi=+0.10$" is off-band and is superseded by the positive controls: stripe1 wins at $\bar\psi\ge0.25$ in three codes. The G-E2 caveat above is unchanged.
 - **What would close it:** a stripe-inclusive band recomputation
   (re-run the transverse runs, then recompute the band with stripes in
   the competitor family), or a demonstration that stripes never win
-  anywhere in the band.
-- **Owner:** Local Muse verification (re-run Hark's transverse test)
-  $\to$ Co-scientist task (band recomputation).
+  anywhere in the band. Met as a scoped demonstration on $L=\pi$ and $L=2\pi$ cells (seeded; see carried K6).
+- **Owner:** Local Muse verification, done in run 10 part 7c and run 11.
+- **Carried:** K6 (seeded search, no $L\ge4\pi$), N1 (off-band 6pair_other gaps unchecked at $N=24$). Band-value caveat stays as recorded elsewhere: 11.85% vs part-7c 11.553% (Track E C; see G-A2).
 
 ### G-A8 — The $w_{6}$ term form is unstated; $w_{6}$ narrowing not re-derivable; joint (detuning $\times w_{6})$ map open (IX.1.3)
 
