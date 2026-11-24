@@ -47,13 +47,13 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts.** 80 entries in total: **68 open gaps**, **8 closed-as-verdict**
+**Counts.** 85 entries in total: **73 open gaps**, **8 closed-as-verdict**
 (recorded inside their groups), **4 recorded non-gaps** (a boundary, a
-standing rule, a gated non-item, a record guard). By group: A — 26 entries
-(24 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (17 open, 3 closed,
+standing rule, a gated non-item, a record guard). By group: A — 31 entries
+(29 open, 2 closed); B — 9 (8 open, 1 closed); C — 22 (17 open, 3 closed,
 2 recorded non-gaps); D — 12 (11 open, 1 recorded); E — 11 (8 open,
 2 closed, 1 record guard). A further list of verdict-closures that are not gaps at
-all (§6) is given separately and is not counted in the 80.
+all (§6) is given separately and is not counted in the 85.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -433,6 +433,41 @@ discrepancy), §8.2 (Model B artifact).
 - **What we know:** "nonlocality or superdeterminism" omits giving up realism/single outcomes (many-worlds, QBism) and retrocausality; superdeterminism is a programme proposal (Hossenfelder–Palmer 2020), not a constructed model.
 - **What would close it:** complete the disjunction or justify the restriction.
 - **Owner:** Local Muse verification (manuscript edit).
+
+### G-A27 (proposed 2026-11-18, filed) — Reflection positivity of the Swift–Hohenberg propagator unanalyzed
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never analyzes the pole structure of the $(q_0^2+\nabla^2)^2$ propagator for Osterwalder–Schrader reflection positivity. Higher-derivative propagators generically violate it (Arici 2018), but higher derivatives alone do not establish failure — positivity is tied to pole structure, so the gap is OPEN, not "violated". Source: Consensus IRH thread audit 2026-11-18 (verified absent by zero-hit grep of v94 and this inventory).
+- **What would close it:** a pole-structure analysis of the Swift–Hohenberg propagator establishing reflection positivity, or a demonstration that it fails (with the consequence stated).
+- **Owner:** Local Muse verification / Literature.
+
+### G-A28 (proposed 2026-11-18, filed) — Lorentz-violation naturalness / percolation unaddressed
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never addresses whether Planck-scale Lorentz violation in the substrate percolates to low-energy observables (Collins 2004: percolates to percent level without fine-tuning) nor invokes a scale separation between the LV scale and the EFT cutoff (Belenchia 2016). Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** a percolation analysis for the substrate's LV operators, or a stated scale-separation argument with its protection quantified.
+- **Owner:** Literature / Local Muse verification.
+
+### G-A29 (proposed 2026-11-18, filed) — Emergent speed of light not derived; no RG flow for the substrate
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 derives no common emergent propagation speed from the substrate and constructs no renormalization-group flow for it (Hořava 2009; Bednik 2013 give the external mechanism, not a transfer). Distinct from G-C21 (CDT continuum UV endpoint). Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** an RG flow for the substrate with the dynamical exponent flowing to $z=1$ in the infrared and a derived common speed, or a stated replacement.
+- **Owner:** Literature / Local Muse verification.
+
+### G-A30 (proposed 2026-11-18, filed) — Causality of dispersive modes: no lightcone-support demonstration
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never demonstrates that the complete retarded response of the substrate has causal (lightcone) support. A single dispersive branch always exits the lightcone (Gavassino 2024); no cancellation across branches is shown. Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** a proof that the full retarded response has causal support (e.g. via complex-momentum analyticity with all branches and residues), or a demonstration that it fails.
+- **Owner:** Literature / Local Muse verification.
+
+### G-A31 (proposed 2026-11-18, filed) — Dissipative-substrate unitarity: no account of commutator preservation
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never addresses how quantization of the dissipative substrate preserves unitarity. Naive quantum Langevin equations make canonical commutators decay exponentially (Araújo 2019). Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** a quantization of the substrate with preserved canonical commutators / unitarity, or a stated replacement (e.g. a non-dissipative quantization route).
+- **Owner:** Literature / Local Muse verification.
 
 ## Group B — Substrate models and dynamics convergence
 
