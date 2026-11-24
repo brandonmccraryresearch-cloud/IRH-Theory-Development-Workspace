@@ -47,13 +47,14 @@ gap* (usually from the task that examined it), not a grade of the gap's
 underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
-**Counts (recounted by script at the run-12 end-of-run record commit, 2026-11-23; same script and rule as EXP-1200 R-INV item 6).** 82 entries in total: the 81 counted in Phase 0 plus G-A31 (added run 12 from its run-11 trace; see the entry). **45 open gaps**, **23 closed-as-verdict**, **10 closed-scoped**, **4 recorded non-gaps** (a boundary, a standing rule, a gated non-item, a record guard). By group: A — 27 entries (12 open, 8 closed, 7 closed-scoped); B — 9 (6 open, 2 closed, 1 closed-scoped); C — 23 (14 open, 6 closed, 1 closed-scoped, 2 recorded non-gaps); D — 12 (10 open, 1 closed-scoped, 1 recorded non-gap); E — 11 (3 open, 7 closed, 1 record guard). Method: `recount.py` (run-12 w-p0inv) classifies each `### G-` entry by its first Status/grade line only (non-gap if it says "Not counted", "Record guard", "acknowledged boundary" or "standing rule"; closed-scoped if it starts CLOSED with "scoped" in its first 60 characters; closed if it starts CLOSED or RESOLVED, or LOCATED + "Closed as"; otherwise open). Phase-0 merged count (same script): 81 / 53 open / 19 closed / 5 closed-scoped / 4 non-gaps.
+**Counts (recounted by script at the run-13 record commit, 2026-11-24, EXP-1300; same script and rule as EXP-1200 R-INV item 6).** 86 entries in total: the 82 of the run-12 end-of-run record commit plus G-A27–G-A30 (filed 2026-11-18; folded in by run 13 from branch `local/g-a27-a31-filing-2026-11-17` @ 6043c9c). **48 open gaps**, **24 closed-as-verdict**, **10 closed-scoped**, **4 recorded non-gaps** (a boundary, a standing rule, a gated non-item, a record guard). By group: A — 31 entries (15 open, 9 closed, 7 closed-scoped); B — 9 (6 open, 2 closed, 1 closed-scoped); C — 23 (14 open, 6 closed, 1 closed-scoped, 2 recorded non-gaps); D — 12 (10 open, 1 closed-scoped, 1 recorded non-gap); E — 11 (3 open, 7 closed, 1 record guard). Method: `recount.py` (run-12 w-p0inv) classifies each `### G-` entry by its first Status/grade line only (non-gap if it says "Not counted", "Record guard", "acknowledged boundary" or "standing rule"; closed-scoped if it starts CLOSED with "scoped" in its first 60 characters; closed if it starts CLOSED or RESOLVED, or LOCATED + "Closed as"; otherwise open). Phase-0 merged count (same script): 81 / 53 open / 19 closed / 5 closed-scoped / 4 non-gaps. Run-12 end-of-run count (same script, at 782a555): 82 / 45 / 23 / 10 / 4; after the run-13 fold-in alone: 86 / 49 / 23 / 10 / 4.
 - **Reconciliation:** the earlier §0 text ("80 entries … 68 open, 8 closed-as-verdict") omitted G-A6, which closed as a mapping task in the 2026-11-12 Batch 2 audit. The same script run on 64bd065 gives 80 / 67 open / 9 closed / 4 non-gaps. The Appendix's "75 / 64 / 7" predated the filing of G-A22–G-A26 and the 2026-11-17 G-C20 resolution.
 - The run-12 Phase-0 record commit applied 14 open-to-closed moves (closures applied in the run-12 Phase-0 record commit; most were made in run 11): G-A2, G-A4, G-A13, G-A15, G-B1, G-C12, G-C13, G-E8, G-E9 and G-E10 (closed-as-verdict); G-A7, G-A11, G-A12 and G-D6 (closed-scoped). It also split G-C21 into G-C21-IRH (closed-scoped) and G-C21-CDT (open). G-A22 stays open: route (c) is closed by scope decision, with the patch merged in Phase 0, and it carries no grade.
 - Run-12 end-of-run record commit (adjudicated run-12 verdicts): G-A3, G-C21-CDT, G-E2 and G-E3 moved open → closed-as-verdict; G-A14, G-A19, G-A21 and G-B8 moved open → closed-scoped; G-A31 added as closed-scoped (run 11). G-A1, G-C16 and G-E5 stay open (G-A1 PENDING-BRANDON, G-C16 and G-E5 OPEN-narrowed).
+- Run-13 record commit (EXP-1300; coordinator decisions D1–D6 under Brandon's 2026-11-22 full delegation): G-A27–G-A30 folded in (all open); G-A1 moved open → closed-as-verdict (D1, canonical $11.5531\%$ = 758/6561); G-A2 stays closed with its canonical value revised (D1); G-B7 stays open with its correction drafted on `run13/tex-errata` (D4; CLOSED on merge after the deepest-research gate); E-A19a (D1), E-B8a (D2) and E-A4a (D3) drafted on the same branch, unmerged; G-C13 unchanged (CLOSED by Brandon's 2026-11-22 15:19 CST decision; D5, verified only). See `RECORD_FIXES_run13.md`.
 - **ABSTAIN entries (run 12, 2026-11-23): to be resolved under no-abstain rule, run 13.** 10 open entries still carry ABSTAIN in their Status/grade text (status unchanged here): whole-entry ABSTAIN — G-C11, G-C19, G-D1, G-D2, G-D3, G-D4, G-D5 (7); an ABSTAIN sub-item inside an open status — G-A9 (infinite-volume $R_c$), G-A10, G-C5 (relic density) (3). Under the no-abstain rule each needs its sharpest reduced problem and next attack named, not a fake closure.
 
-A further list of verdict-closures that are not gaps at all (§6) is given separately and is not counted in the 81.
+A further list of verdict-closures that are not gaps at all (§6) is given separately and is not counted in the 86.
 
 **Standing guard (not a gap).** WS-A task 5 ran **14 runs** (6000 steps
 each), STATUS VERIFIED for the 14-run protocol. The "143 basin runs"
@@ -1420,26 +1421,26 @@ CLOSED status.)
 
 | Group | Entries | Open | Closed-as-verdict | Closed-scoped | Recorded non-gaps |
 |---|---|---|---|---|---|
-| A — $D_{4}$ selection, band, basin, truncation | 27 | 12 | 8 (A2, A3, A4, A6, A13, A15, A17, A18) | 7 (A7, A11, A12, A14, A19, A21, A31) | 0 |
+| A — $D_{4}$ selection, band, basin, truncation | 31 | 15 | 9 (A1, A2, A3, A4, A6, A13, A15, A17, A18) | 7 (A7, A11, A12, A14, A19, A21, A31) | 0 |
 | B — Substrate models, dynamics convergence | 9 | 6 | 2 (B1, B9) | 1 (B8) | 0 |
 | C — Frameworks, rivals, constants, gravity | 23 | 14 | 6 (C12, C13, C17, C20, C21-CDT, C22) | 1 (C21-IRH) | 2 (C4 boundary, C9 standing rule) |
 | D — Cosmology, early universe | 12 | 10 | 0 | 1 (D6) | 1 (D12 gated) |
 | E — Programme, provenance, audit scope | 11 | 3 | 7 (E1, E2, E3, E4, E8, E9, E10) | 0 | 1 (E11 record guard) |
-| **Total** | **82** | **45** | **23** | **10** | **4** |
+| **Total** | **86** | **48** | **24** | **10** | **4** |
 
-(Recounted by script at the run-12 end-of-run record commit, same script as EXP-1200 R-INV item 6. G-A31 is included; G-A27–G-A30 are not; see §0.)
+(Recounted by script at the run-13 record commit, EXP-1300, same script as EXP-1200 R-INV item 6. G-A27–G-A31 are all included; see §0.)
 
-**By owner (open gaps only, 45). Each entry is counted under the owner of its *next* step. Run 12 rebuilt this table mechanically: it removed the entries that are now closed from the earlier lists, and added G-A22–G-A26 by their Owner lines. Under the 2026-11-22 full delegation the "Brandon's call" class is decided by Dragon except for the carve-outs (money, sending as him, credentials, deletions); the label is kept for traceability.**
+**By owner (open gaps only, 48). Each entry is counted under the owner of its *next* step. Run 12 rebuilt this table mechanically: it removed the entries that are now closed from the earlier lists, and added G-A22–G-A26 by their Owner lines. Under the 2026-11-22 full delegation the "Brandon's call" class is decided by Dragon except for the carve-outs (money, sending as him, credentials, deletions); the label is kept for traceability.**
 
 | Owner (next step) | Count | Entries |
 |---|---|---|
-| Brandon's call (alone or first) | 21 | A1, A8, A16, A22, B2, B3, B4, B7, C5, C8, C11, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
+| Brandon's call (alone or first) | 19 | A8, A16, A22, B2, B3, B4, C5, C8, C11, C14, D1, D4, D5, D7, D8, D9, D11, E6, E7 |
 | Co-scientist task (new / running / candidate) | 13 | A5, A9, A10, A20, B5, C2, C3, C6, C7, C10, C15, D2, D3 |
-| Local Muse verification | 7 | A23, A24, A25, A26, B6, C16, E5 |
-| Literature / external | 4 | C1, C18, C19, D10 |
-| **Total** | **45** | |
+| Local Muse verification | 9 | A23, A24, A25, A26, A27, B6, B7, C16, E5 |
+| Literature / external | 7 | A28, A29, A30, C1, C18, C19, D10 |
+| **Total** | **48** | |
 
-21 + 13 + 7 + 4 = 45. Removed as closed at the run-12 end-of-run record commit: A3, A14, A19, B8 (Co-scientist); A21, E2, E3 (local); C21-CDT (literature). Removed as closed in run 12 (or earlier, but still listed): A2, C12, C13 (Brandon); A4, A6, A11, A12, A13, E8 (Co-scientist); A7, A15, B1, E9 (local); C20, D6, E10 (literature). G-C21 is replaced by G-C21-CDT.
+19 + 13 + 9 + 7 = 48. Run-13 record commit: A1 removed as closed (Brandon's call, decided D1); B7 moved from Brandon's call to Local Muse verification (decided D4; next step the deepest-research gate and merge); A27–A30 added by the first owner on their Owner lines (A27 local; A28, A29, A30 literature). Earlier (run 12): Removed as closed at the run-12 end-of-run record commit: A3, A14, A19, B8 (Co-scientist); A21, E2, E3 (local); C21-CDT (literature). Removed as closed in run 12 (or earlier, but still listed): A2, C12, C13 (Brandon); A4, A6, A11, A12, A13, E8 (Co-scientist); A7, A15, B1, E9 (local); C20, D6, E10 (literature). G-C21 is replaced by G-C21-CDT.
 
 *Correction note (2026-11-12, superseded by the run-12 recount above): this appendix counted 66 open with C17, E1,
 E4 listed as open Brandon's-call items in its first issue; those three
