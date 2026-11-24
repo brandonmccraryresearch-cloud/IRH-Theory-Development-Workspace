@@ -25,6 +25,8 @@ counts the active triads. Patterns with no active triad (sq4, sq8) get
 Not changed: WS-C `irh_models.make_analyzer` (l.167) carries the same
 all-triad metric; it is outside EXP-1200's G-B3 scope and is recorded as
 an open item in run-12 w-p0code CHANGES.md.
+Run 13 (EXP-1306 T-B3) also states the active threshold in the
+`analyze` docstring (code unchanged).
 
 ## Run-12 fix G-B4 (EXP-1200): task-1 JSON re-shipped from the current script
 
