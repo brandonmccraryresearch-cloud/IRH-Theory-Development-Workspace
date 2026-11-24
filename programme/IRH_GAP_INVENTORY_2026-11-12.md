@@ -48,7 +48,6 @@ underlying physics. Caps: Track E **C** at I1; Track F **F2** two-route /
 **F3** single-route. ABSTAIN and INCOMPLETE-EVIDENCE carry no grade.
 
 **Counts (recounted by script at the run-12 end-of-run record commit, 2026-11-23; same script and rule as EXP-1200 R-INV item 6).** 82 entries in total: the 81 counted in Phase 0 plus G-A31 (added run 12 from its run-11 trace; see the entry). **45 open gaps**, **23 closed-as-verdict**, **10 closed-scoped**, **4 recorded non-gaps** (a boundary, a standing rule, a gated non-item, a record guard). By group: A — 27 entries (12 open, 8 closed, 7 closed-scoped); B — 9 (6 open, 2 closed, 1 closed-scoped); C — 23 (14 open, 6 closed, 1 closed-scoped, 2 recorded non-gaps); D — 12 (10 open, 1 closed-scoped, 1 recorded non-gap); E — 11 (3 open, 7 closed, 1 record guard). Method: `recount.py` (run-12 w-p0inv) classifies each `### G-` entry by its first Status/grade line only (non-gap if it says "Not counted", "Record guard", "acknowledged boundary" or "standing rule"; closed-scoped if it starts CLOSED with "scoped" in its first 60 characters; closed if it starts CLOSED or RESOLVED, or LOCATED + "Closed as"; otherwise open). Phase-0 merged count (same script): 81 / 53 open / 19 closed / 5 closed-scoped / 4 non-gaps.
-- **Not counted here:** G-A27–G-A30 (filed 2026-11-18) exist only in an uncommitted local edit of this file and are not in this branch. They are open; with them the totals would be 86 / 49 open / 23 closed-as-verdict / 10 closed-scoped / 4 non-gaps.
 - **Reconciliation:** the earlier §0 text ("80 entries … 68 open, 8 closed-as-verdict") omitted G-A6, which closed as a mapping task in the 2026-11-12 Batch 2 audit. The same script run on 64bd065 gives 80 / 67 open / 9 closed / 4 non-gaps. The Appendix's "75 / 64 / 7" predated the filing of G-A22–G-A26 and the 2026-11-17 G-C20 resolution.
 - The run-12 Phase-0 record commit applied 14 open-to-closed moves (closures applied in the run-12 Phase-0 record commit; most were made in run 11): G-A2, G-A4, G-A13, G-A15, G-B1, G-C12, G-C13, G-E8, G-E9 and G-E10 (closed-as-verdict); G-A7, G-A11, G-A12 and G-D6 (closed-scoped). It also split G-C21 into G-C21-IRH (closed-scoped) and G-C21-CDT (open). G-A22 stays open: route (c) is closed by scope decision, with the patch merged in Phase 0, and it carries no grade.
 - Run-12 end-of-run record commit (adjudicated run-12 verdicts): G-A3, G-C21-CDT, G-E2 and G-E3 moved open → closed-as-verdict; G-A14, G-A19, G-A21 and G-B8 moved open → closed-scoped; G-A31 added as closed-scoped (run 11). G-A1, G-C16 and G-E5 stay open (G-A1 PENDING-BRANDON, G-C16 and G-E5 OPEN-narrowed).
@@ -478,13 +477,40 @@ discrepancy), §8.2 (Model B artifact).
 - **What would close it:** complete the disjunction or justify the restriction.
 - **Owner:** Local Muse verification (manuscript edit).
 
+### G-A27 (proposed 2026-11-18, filed) — Reflection positivity of the Swift–Hohenberg propagator unanalyzed
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never analyzes the pole structure of the $(q_0^2+\nabla^2)^2$ propagator for Osterwalder–Schrader reflection positivity. Higher-derivative propagators generically violate it (Arici 2018), but higher derivatives alone do not establish failure — positivity is tied to pole structure, so the gap is OPEN, not "violated". Source: Consensus IRH thread audit 2026-11-18 (verified absent by zero-hit grep of v94 and this inventory).
+- **What would close it:** a pole-structure analysis of the Swift–Hohenberg propagator establishing reflection positivity, or a demonstration that it fails (with the consequence stated).
+- **Owner:** Local Muse verification / Literature.
+
+### G-A28 (proposed 2026-11-18, filed) — Lorentz-violation naturalness / percolation unaddressed
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never addresses whether Planck-scale Lorentz violation in the substrate percolates to low-energy observables (Collins 2004: percolates to percent level without fine-tuning) nor invokes a scale separation between the LV scale and the EFT cutoff (Belenchia 2016). Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** a percolation analysis for the substrate's LV operators, or a stated scale-separation argument with its protection quantified.
+- **Owner:** Literature / Local Muse verification.
+
+### G-A29 (proposed 2026-11-18, filed) — Emergent speed of light not derived; no RG flow for the substrate
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 derives no common emergent propagation speed from the substrate and constructs no renormalization-group flow for it (Hořava 2009; Bednik 2013 give the external mechanism, not a transfer). Distinct from G-C21 (CDT continuum UV endpoint). Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** an RG flow for the substrate with the dynamical exponent flowing to $z=1$ in the infrared and a derived common speed, or a stated replacement.
+- **Owner:** Literature / Local Muse verification.
+
+### G-A30 (proposed 2026-11-18, filed) — Causality of dispersive modes: no lightcone-support demonstration
+
+- **Status/grade:** Open; no grade (unverified, not a failed claim).
+- **What we know:** v94 never demonstrates that the complete retarded response of the substrate has causal (lightcone) support. A single dispersive branch always exits the lightcone (Gavassino 2024); no cancellation across branches is shown. Source: Consensus IRH thread audit 2026-11-18.
+- **What would close it:** a proof that the full retarded response has causal support (e.g. via complex-momentum analyticity with all branches and residues), or a demonstration that it fails.
+- **Owner:** Literature / Local Muse verification.
+
 ### G-A31 (proposed 2026-11-18, filed) — Dissipative-substrate unitarity: no account of commutator preservation
 
 - **Status/grade:** CLOSED-scoped (run 11, 2026-11-22): UV-regulated finite periodic 4D lattice, CK quantization; quadratic sector F2/I1 [D] (two engines); $v>0$ propagator F3/I1 via Simon II.27 (secondhand restatement); gap grade F3/I1; scope limits: continuum/renormalization, cubic-only truncation, $v>0$ vacuum. Trace `run11/adj/G-A31_trace.md` (sha256 `27955cb850339fc5f152e397e56ec33f360a8da2206a4a6b092f542646bcaddd`). (Was: Open; no grade.)
 - **What we know:** v94 never addresses how quantization of the dissipative substrate preserves unitarity. Naive quantum Langevin equations make canonical commutators decay exponentially (Araújo 2019).
 - **What would close it:** a quantization of the substrate with preserved canonical commutators / unitarity, or a stated replacement (e.g. a non-dissipative quantization route). (Met in scope by run 11; the named scope limits stay open.)
 - **Owner:** Literature / Local Muse verification.
-- **Provenance note (run 12, m-end):** this entry is committed here from the run-11 trace and `RECORD_FIXES_run12.md` §1, because the scoped closure needs a counted entry. G-A27–G-A30 (filed 2026-11-18 with it) are still only in the uncommitted local edit of the main clone and are not added here; that edit will conflict with this entry when it is committed.
 
 ## Group B — Substrate models and dynamics convergence
 
