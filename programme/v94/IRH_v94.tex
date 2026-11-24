@@ -142,13 +142,13 @@ Version 92 treated D₄ as a static four-dimensional lattice with fields defined
 
 \textbf{Statement.} The primitive is an oscillatory tension field $\psi(\mathbf{x},t)$ on $\mathbb{R}^4$. D₄ is not postulated; it is the nodal interference pattern into which the field self-organizes. Persistence is dynamic rather than static: the pattern is a standing wave maintained by a balance of tension and relaxation. In the framework's own formulation, the primitive is not a noun but a verb.
 
-\textbf{The dynamical equation.} Tension and relaxation together specify a damped wave equation:
+\textbf{The dynamical equations.} Tension and relaxation together specify the damped wave equation below; it is the form integrated for the noise quenches of §II.6. The attractor tests of §II.8 and the mean-field conservation test of §I.3 integrate the first-order relaxational forms of the same functional: non-conserved (Model A) $\partial_t\psi=-\delta F/\delta\psi$ and conserved (Model B) $\partial_t\psi=\nabla^2(\delta F/\delta\psi)$. The damped wave equation is:
 
 \[\partial_t^2\psi+\gamma\,\partial_t\psi=-\frac{\delta F}{\delta\psi}\]
 
 \[F[\psi]=\int d^4x\;\Big[\tfrac12\psi\big(r+(q_0^2+\nabla^2)^2\big)\psi-\tfrac{u}{3}\psi^3+\tfrac{v}{4}\psi^4\Big]\]
 
-Here $\partial_t^2\psi$ is the tension term, $\gamma\partial_t\psi$ the relaxation term, and $(q_0^2+\nabla^2)^2$ the Swift–Hohenberg operator \hyperref[ref2]{[2]} penalizing wavevectors away from the resonant shell $|\mathbf{k}|=q_0$. The parameter $r$ is the quench depth and $u,v$ the nonlinear couplings.
+Here $\partial_t^2\psi$ is the tension term, $\gamma\partial_t\psi$ the relaxation term, and $(q_0^2+\nabla^2)^2$ the Swift–Hohenberg operator \hyperref[ref2]{[2]} penalizing wavevectors away from the resonant shell $|\mathbf{k}|=q_0$. The parameter $r$ is the quench depth and $u,v$ the nonlinear couplings. The conserved inertial generalisation $\partial_t^2\psi+\gamma\,\partial_t\psi=\nabla^2(\delta F/\delta\psi)$ (the modified phase-field-crystal (MPFC) equation of Stefanovic, Haataja and Provatas, Phys.\ Rev.\ Lett.\ 96, 225504 (2006), which conserves the mean of $\psi$ when the initial $\partial_t\psi$ has zero mean), which joins this tension–relaxation form to the conservation required in §I.3, is stated here only as that generalisation; it is \textbf{not simulated} in this work.
 
 \subsection*{I.3 Immediate Consequences}
 
@@ -346,7 +346,7 @@ The baseline tension directly tunes the triad coupling. It is not a nuisance par
 \caption{\textbf{Figure 4.} Phase diagram in the plane of baseline tension and quench depth. The full 24-mode D₄ standing wave occupies a contiguous band situated along the boundary with the disordered phase. Lower-symmetry sub-patterns occupy the higher-tension region.}
 \end{figure}
 
-\textbf{PREDICTION.} The full 24-mode pattern is the global minimum in a contiguous band occupying 11.85\% of the scanned plane, approximately $-0.33\lesssim\bar\psi\lesssim0.03$ depending on quench depth. The band is finite rather than measure-zero, and lies along the order/disorder boundary — independently what the "orders first" criterion of §II.3 predicts. Two calculations performed for different reasons agree on the location of the D₄ phase.
+\textbf{PREDICTION.} The full 24-mode pattern is the global minimum in a contiguous band occupying $11.55\%$ ($758/6561$) of the window $\bar\psi\in[-0.6,0.2]$, $r\in[-0.6,0.1]$ (relaxed full-field free energies of the functional of §I.2; periodic box $L=\pi$ (one period of the $D_4$ pattern per direction; the convention of §II.6 uses $L=2\pi$, two periods) with $16^4$ grid points, $q_0^2=8$, $u=v=1$, shell detuning $\delta=0$, $w_6=0$; fixed $\bar\psi$; $81\times81$ grid; the frozen seeded competitor set of shell sub-patterns, stripes, a decorated stripe and 20-mode proxies. One-mode on a $161\times161$ grid: $11.60\%$; one-mode with conserved-$\bar\psi$ common tangents: $11.42\%$), spanning $-0.33\lesssim\bar\psi\lesssim0.05$ over that range of quench depths. The band is finite rather than measure-zero, and lies along the order/disorder boundary — independently what the "orders first" criterion of §II.3 predicts. Two calculations performed for different reasons agree on the location of the D₄ phase.
 
 \textbf{Essential qualification, added in this version.} The phase diagram was computed with the \textbf{bare} quench depth, which tacitly assumes $q_0$ sits exactly on the D₄ shell. Any real mode on the shell incurs the penalty $(q_0^2-|k|^2)^2$, so the effective quench depth is $r_{\rm shell}=r+(q_0^2-8)^2$. Solving the ordered branch symbolically at two values:
 
@@ -361,17 +361,17 @@ $q_0^2$ & shell penalty & $r_{\rm shell}$ & ordered branch \\
 \end{xltabular}
 \end{center}
 
-At a detuning of only 0.5 in $q_0^2$ the ordered branch vanishes entirely. \textbf{The D₄ band is conditional on $q_0$ being tuned onto the shell.} Since $a_0=2\pi/q_0$, this states that the substrate's resonant wavelength must match the lattice it forms — self-consistent, but a condition rather than a free outcome. This qualification must accompany every citation of the 11.85\% figure.
+At a detuning of only 0.5 in $q_0^2$ the ordered branch vanishes entirely. \textbf{The D₄ band is conditional on $q_0$ being tuned onto the shell.} Since $a_0=2\pi/q_0$, this states that the substrate's resonant wavelength must match the lattice it forms — self-consistent, but a condition rather than a free outcome. This qualification must accompany every citation of the band fraction.
 
 
-\expansion{With $r = -0.35$: at $q_0^2 = 7.5$, penalty $(7.5-8)^2 = 0.25$, so $r_{\mathrm{shell}} = -0.35 + 0.25 = -0.10$; at $q_0^2 = 8.0$, penalty $0$, so $r_{\mathrm{shell}} = -0.35$. At a detuning of only 0.5 in $q_0^2$ the ordered branch vanishes entirely. The $D_4$ band is conditional on $q_0$ being tuned onto the shell. Since $a_0 = 2\pi/q_0$, this states that the substrate's resonant wavelength must match the lattice it forms --- self-consistent, but a condition rather than a free outcome. This qualification must accompany every citation of the 11.85\% figure.}
-\textbf{Sixth-order terms.} Computed by FFT convolution and validated against brute-force third- and fourth-order values: for the D₄ shell $H=911{,}040$. Adding $w_6$ narrows the band modestly (11.90\% at $w_6=0$ to 8.47\% at $w_6=0.2$) without destroying it. The $w_6=0$ value independently reproduces the 11.85\% obtained by different code.
+\expansion{With $r = -0.35$: at $q_0^2 = 7.5$, penalty $(7.5-8)^2 = 0.25$, so $r_{\mathrm{shell}} = -0.35 + 0.25 = -0.10$; at $q_0^2 = 8.0$, penalty $0$, so $r_{\mathrm{shell}} = -0.35$. At a detuning of only 0.5 in $q_0^2$ the ordered branch vanishes entirely. The $D_4$ band is conditional on $q_0$ being tuned onto the shell. Since $a_0 = 2\pi/q_0$, this states that the substrate's resonant wavelength must match the lattice it forms --- self-consistent, but a condition rather than a free outcome. This qualification must accompany every citation of the band fraction.}
+\textbf{Sixth-order terms.} Computed by FFT convolution and validated against brute-force third- and fourth-order values: for the D₄ shell $H=911{,}040$. Adding $w_6$ narrows the band modestly (in a one-mode map on the same window, $11.60\%$ at $w_6=0$ to $8.36\%$ at $w_6=0.2$, for the one-mode sextic term $\tfrac{w_6H}{6}A^6$; verification package, \texttt{programme/workstreams/ws-a-core-computations/task3\_report.md}) without destroying it.
 
 \subsection*{II.8 Stability of the Full Pattern}
 
 \textbf{DERIVATION.} With $N=24$, $T=192$, $Q=3384$, $r=-0.35$, $\bar\psi=-0.18$ and $q_0$ tuned, the stationarity condition yields a real ordered branch at per-mode amplitude $A^{*}=0.0776$ ($0.0775753$ unrounded) with $F/V=-0.0076323<0$.
 
-\textbf{Free-energy convention.} $F$ here is the excess over the uniform state, so $F=0$ for the disordered phase. The absolute density differs by the uniform baseline $F/V|_{\rm unif}=-0.0034636$. Independent review reported a value of $-0.007728$ and attributed the difference to this baseline; that attribution is incorrect, since the baseline is $\sim3.5\times10^{-3}$ while the discrepancy is $\sim1\times10^{-4}$.
+\textbf{Free-energy convention.} $F$ here is the excess over the uniform state, so $F=0$ for the disordered phase. The absolute density differs by the uniform baseline $F/V|_{\rm unif}=\tfrac12(r+q_0^4)\bar\psi^2-\tfrac u3\bar\psi^3+\tfrac v4\bar\psi^4=1.0333364$ at these parameters. Independent review reported a value of $-0.007728$ and attributed the difference to this baseline; that attribution is incorrect, since the baseline is $\approx1.03$ while the discrepancy is $\sim1\times10^{-4}$. Under conserved dynamics the $k=0$ term $\tfrac12q_0^4\bar\psi^2$ is not an irrelevant constant: it sets the convexity of the uniform branch, and the coexistence-aware $D_4$ band ($11.42\%$ coexistence-aware vs $11.60\%$ at fixed $\bar\psi$, one-mode, on the window of §II.7) relies on it.
 
 \textbf{The correct explanation, and why it strengthens the result.} The one-mode ansatz is variational: it is an upper bound on the true minimum, because a relaxed field develops harmonic content the ansatz excludes. Relaxing the one-mode state under conserved dynamics gives
 
@@ -390,7 +390,7 @@ independent review's value & $-0.007728$ \\
 The relaxed value reproduces the independently obtained number to five decimal places. The gap is harmonic lowering, not a convention mismatch, and it quantifies the accuracy of the one-mode approximation underpinning Part II: \textbf{1.25\%}. That the Landau ansatz is accurate to better than 1.3\% against a full-field relaxation is a validation of the method, not a discrepancy in it. Seeding the substrate at exactly $A^*=0.0776$ with all 24 modes in phase and evolving:
 
 
-\expansion{Gap arithmetic: $|-0.0077276 - (-0.0076323)| = 0.0000953 \approx 1\times10^{-4}$, against a baseline of $0.0034636 \approx 3.5\times10^{-3}$ --- the baseline is about 36 times larger than the gap, so it cannot explain the gap. Relative gap: $0.0000953/0.0077276 = 0.01233\ldots \approx 1.23\%$, quoted as 1.25\% (rounding of the underlying unrounded values). Rounding: $0.0775753 \to 0.0776$ at four decimal places. Verified in SymPy and python-flint.}
+\expansion{Gap arithmetic: $|-0.0077276 - (-0.0076323)| = 0.0000953 \approx 1\times10^{-4}$, against a baseline of $1.0333364 \approx 1.03$ --- the baseline is about $1.1\times10^4$ times larger than the gap, so it cannot explain the gap. Relative gap: $0.0000953/0.0077276 = 0.01233\ldots \approx 1.23\%$, quoted as 1.25\% (rounding of the underlying unrounded values). Rounding: $0.0775753 \to 0.0776$ at four decimal places. Verified in SymPy and python-flint.}
 \begin{center}
 \begin{tabular}{lllll}
 \hline
@@ -403,7 +403,7 @@ Model A (non-conserved) & +0.00087 & 1.0000 & 24/24 & 0.4206 \\
 \end{tabular}
 \end{center}
 
-Under conserved dynamics the baseline tension is held exactly, full occupancy is retained, and the amplitude is unchanged to four significant figures. \textbf{The symmetric 24-mode D₄ standing wave is a genuine dynamical attractor}, not merely a free-energy minimum. Under non-conserved dynamics the pattern also survives but the baseline tension drifts out of the stable band; its survival there is metastability.
+Under conserved dynamics the baseline tension is held exactly, full occupancy is retained, and the amplitude is unchanged to four significant figures. \textbf{The symmetric 24-mode D₄ standing wave is a genuine dynamical attractor}, not merely a free-energy minimum. Under non-conserved dynamics the seeded symmetric pattern stays stationary while the baseline tension drifts to $\bar\psi=+0.00087$, outside the stable band. This persistence is not metastability. At these parameters ($r=-0.35$, $q_0^2=8$, $u=v=1$; $16^4$ grid, $L=\pi$) the drifted state is a saddle of $F$: its Hessian has a 9-fold degenerate negative eigenvalue $\lambda\approx-0.0646$ (a single $W(F_4)$ irreducible representation) outside the four translation zero modes. It survives the seeded run only because the exactly symmetric seed lies on an invariant subspace. A $10^{-4}$ random perturbation sends noise-free Model A to a lower-energy 6-mode state in 9/9 trials. [Index: F2/I1; instability: F3/I1; verification run 12, 2026-11-23.]
 
 \textbf{v94 status note (G-A6; ledger rows 3, 10, 14).} Sampled stability now rests on three routes that agree: no positive rate anywhere sampled --- 52 sector fibers (Co-Scientist), 259 $q$ (local), and a dense GCP map of 14,641 $q$, on which exactly one $q$ has $\lambda_{\max}>0$, the $q=0$ Goldstone roundoff $8.67\times10^{-12}$; the least-damped nonzero rate is $-2.13324\times10^{-5}$. Two cautions: the 52 rates are sector-fiber maxima, not full-fiber maxima, and the $\Gamma$ first finite rate differs by $3.05\times10^{-4}$ between the sides, attributed to sector coverage but UNPROVEN. Decided: sampled stability at grade C; continuum Bloch stability for all $q$ ABSTAIN --- no interval enclosure exists. Relaxed dispersion (row 14) is at measured Track E B (decided): GCP long-wave slopes agree with the frozen-stiffness expectation to $\sim0.5\%$ at $|\mathbf{q}|=0.02$, with $L/T=3.016$ against $3$; extraction of $\lambda_{\mathrm{relaxed}},\mu_{\mathrm{relaxed}}$ is still open.
 
@@ -743,9 +743,9 @@ This must be stated plainly because the coincidence is seductive. The 24-cell re
 
 \subsection*{V.3 An Inherited Liability: Monopoles}
 
-Any simple gauge group broken to a subgroup containing an unbroken $U(1)$ has $\pi_2(G/H)=\mathbb{Z}$ and therefore stable magnetic monopoles \hyperref[ref33]{[33]}. $E_6\to\cdots\to SU(3)\times SU(2)\times U(1)$ is of exactly this form.
+Any simple gauge group broken to a subgroup containing an unbroken $U(1)$ has $\pi_2(G/H)\supseteq\mathbb{Z}$ and therefore stable magnetic monopoles \hyperref[ref33]{[33]}. $E_6\to\cdots\to SU(3)\times SU(2)\times U(1)$ is of exactly this form.
 
-\textbf{Monopole absence — retracted}, claimed in earlier versions, is not excluded by proof but retracted: it would be inconsistent with E₆ realised as a broken gauge group. If E₆ is realised as a broken gauge group, IRH would inherit the standard unified-theory monopole problem and would require the standard resolution: inflationary dilution, or a breaking pattern avoiding the relevant topology.
+\textbf{Monopole absence — retracted}, claimed in earlier versions, is not excluded by proof but retracted: it would be inconsistent with E₆ realised as a broken gauge group. If E₆ is realised as a broken gauge group, IRH would inherit the standard unified-theory monopole problem and would require a non-topological resolution: inflationary dilution, or suppression of monopole production in the breaking transition. A breaking pattern avoiding the relevant topology is not available: since $E_6$ is semisimple, $\pi_2(E_6/H)\cong\ker(\pi_1 H\to\pi_1 E_6)\supseteq\mathbb{Z}$ for every $H$ containing an unbroken $U(1)$, in particular for every chain ending in $SU(3)\times SU(2)\times U(1)$.
 
 \medskip\hrule\medskip
 
@@ -791,10 +791,10 @@ The accompanying Lean 4 development \hyperref[ref34]{[34]} contains no \texttt{s
 
 \subsection*{VI-A.3 Two reviewer findings that did not survive checking}
 
-\textbf{The free-energy gap.} The reviewer attributed a 1.2\% difference to the uniform baseline convention. That attribution is arithmetically wrong: the baseline is 3.5×10⁻³ while the gap is 1×10⁻⁴. The correct explanation is harmonic content beyond the one-mode ansatz, and it reproduces the reviewer's own number to five decimals (§II.8). The result is stronger than the reviewer's reading of it: it quantifies the one-mode approximation's accuracy at 1.25\%.
+\textbf{The free-energy gap.} The reviewer attributed a 1.2\% difference to the uniform baseline convention. That attribution is arithmetically wrong: the baseline is ≈1.03 while the gap is 1×10⁻⁴. The correct explanation is harmonic content beyond the one-mode ansatz, and it reproduces the reviewer's own number to five decimals (§II.8). The result is stronger than the reviewer's reading of it: it quantifies the one-mode approximation's accuracy at 1.25\%.
 
 
-\expansion{Gap $0.0000953$ versus baseline $0.0034636$: see the \S II.8 expansion. The ``1.2\%'' figure is the reviewer's rounded description of the same $\approx$1.23\% relative gap.}
+\expansion{Gap $0.0000953$ versus baseline $1.0333364$: see the \S II.8 expansion. The ``1.2\%'' figure is the reviewer's rounded description of the same $\approx$1.23\% relative gap.}
 \textbf{The periodic-image count.} The reviewer stated that the resonance maximum recurs 16 times on a periodic grid. The correct count is 32. The factor of two is the D₄ checkerboard structure: corner and body-centre sublattices both satisfy the coincidence condition. The reviewer's underlying point — that "unique" must be qualified as "modulo lattice periodicity" — stands and has been incorporated.
 
 
@@ -1003,7 +1003,7 @@ Errors found across five verification cycles, including in this author's own out
 \item \textbf{Incomplete free-energy comparison.} Sub-patterns within a shell were omitted; simulation exposed the omission, leading to the identification of baseline tension as control parameter.
 \item \textbf{Conjugacy classes of 2T.} Trace and element order merge distinct classes, giving five instead of seven; corrected by conjugation-orbit computation.
 \item \textbf{Weight classes in $P/Q$.} An initial computation returned class 0 for all six fundamental weights, inconsistent with a nontrivial centre; corrected via Smith normal form.
-\item \textbf{Mixed normalization.} A free-energy scan combined normalized $\tau,q_4$ with a raw mode count, giving 63.8\% against the correct 11.9\%.
+\item \textbf{Mixed normalization.} A free-energy scan combined normalized $\tau,q_4$ with a raw mode count, giving 63.8\% against the correctly normalised value ($\approx11.6\%$ on the window of §II.7).
 \item \textbf{Explicit integration instability.} An explicit Euler step against an operator reaching $6\times10^4$ overflowed to NaN.
 \item \textbf{Conclusion contradicted by data.} A script printed the pre-written conclusion "Model B preserves the D₄ state" while its own output showed the opposite. The correct explanation — a sub-critical seed at a first-order transition — was found only by rejecting the printed text.
 \item \textbf{Spectrum normalization.} Power fractions computed without subtracting the mean, so nonzero $\bar\psi$ dominated the $k=0$ bin.
