@@ -22,9 +22,10 @@ three modes are all active (`mag > 0.5*mag.max()`, the `ndom` criterion);
 the shipped all-32-triad value is kept as `lock_all`, and `n_lock_triads`
 counts the active triads. Patterns with no active triad (sq4, sq8) get
 `lock = NaN` (undefined) instead of a roundoff-dependent number.
-Not changed: WS-C `irh_models.make_analyzer` (l.167) carries the same
-all-triad metric; it is outside EXP-1200's G-B3 scope and is recorded as
-an open item in run-12 w-p0code CHANGES.md.
+Not changed in run 12: WS-C `irh_models.make_analyzer` (l.167) carried the
+same all-triad metric; it was outside EXP-1200's G-B3 scope and was recorded
+as an open item in run-12 w-p0code CHANGES.md. Run 13 (EXP-1306 T-L167)
+applies the same active-triad fix there; see `../ws-c/README.md`.
 Run 13 (EXP-1306 T-B3) also states the active threshold in the
 `analyze` docstring (code unchanged).
 

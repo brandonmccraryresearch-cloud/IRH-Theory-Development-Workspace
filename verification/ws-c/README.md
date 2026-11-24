@@ -32,3 +32,16 @@ and fixed) subtracts after rounding to 6 decimals; this gives 1e-6
 differences in two `err_vs_Astar` cells (T=1.0, dt=0.02 and dt=0.0025).
 The `seconds` column of the shipped T=0.5/1.0 rows is 0 (not produced by the
 shipped script). Evidence: run-12 w-p0code OUTPUTS.md.
+
+## Run-13 fix T-L167 (EXP-1306): active-triad lock metric in `make_analyzer`
+
+`irh_models.make_analyzer`'s `analyze` (formerly l.167) averaged cos S over
+all 32 closed triads, including modes at roundoff amplitude, so `lock` was
+platform-dependent for partial patterns (same defect as WS-A G-B3 / Hark F2).
+`lock` is now the mean over triads whose three modes are all active
+(`mag > 0.5*mag.max()`, the `modes` criterion; NaN if none); the old value is
+kept as `lock_all`, and `n_lock_triads` counts the active triads. Full
+24-mode states are unchanged (all 32 triads active). The shipped
+`results/*.csv` files were NOT regenerated: their `lock` column is the old
+all-triad metric (for partial patterns, e.g. A5/A6 and the 6-mode quenches,
+it is the roundoff-dependent value). Evidence: run-13 w-art OUTPUTS.md.
