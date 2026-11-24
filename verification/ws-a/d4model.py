@@ -261,6 +261,11 @@ class ModelB:
         """(psibar, mean|A| over shell, D4 shell power fraction, dominant
         mode count, triad phase locking <cos S> over active triads, rms
         modulation, F excess).
+        Active-triad threshold (G-B3 fix): a mode is active iff
+        mag > 0.5 * mag.max() (the ndom criterion); `lock` averages cos S
+        over the triads whose three modes are all active (nan if none);
+        `lock_all` is the old all-32-triad mean (platform-dependent for
+        partial patterns); `n_lock_triads` counts the active triads.
         Fourier indices are the UNSCALED root labels n = (+-1,+-1,0,0):
         physical k = (2*pi/L) n, so with L = pi the shell sits at |k|^2 = 8.
         (d4 is 0.0 when there is no non-zero-mode power at all.)"""

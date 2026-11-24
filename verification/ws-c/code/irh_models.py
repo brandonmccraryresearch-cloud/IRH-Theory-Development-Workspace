@@ -138,6 +138,12 @@ class Grid:
 # ---------------------------------------------------------------- diagnostics (verbatim port of sim6.analyze)
 
 def make_analyzer(grid, q02, r, u, v, vecs):
+    """Return (analyze, free_energy). analyze(psi_hat) -> dict with psibar,
+    amp (mean shell |A|), d4 (shell power fraction), modes (count with
+    mag > 0.5*max), lock (mean cos of the triad phase sum over ACTIVE triads:
+    all three modes with mag > 0.5*mag.max(); nan if none), lock_all (old
+    all-32-triad mean, platform-dependent for partial patterns),
+    n_lock_triads, rms, Fexc, amp_max, amp_min. (Run-13 EXP-1306 T-L167.)"""
     N = grid.N
     K2 = grid.K2
     omega2 = r + (q02 - K2) ** 2
@@ -164,7 +170,23 @@ def make_analyzer(grid, q02, r, u, v, vecs):
         d4 = float((mag ** 2).sum() / (pnz / N ** 8)) if pnz > 0 else 0.0
         ndom = int((mag > 0.5 * mag.max()).sum()) if mag.max() > 0 else 0
         S = np.array([pha[a] + pha[b] + pha[c] for a, b, c in triads])
-        lock = float(np.mean(np.cos(S))) if len(S) else 0.0
+        # Run-13 fix (EXP-1306 T-L167; same defect as WS-A G-B3 / Hark F2,
+        # fixed in d4model.analyze at 9dfe0b5): the ported sim6 metric
+        # averaged cos S over all 32 closed triads, including triads through
+        # modes at roundoff amplitude whose phases are noise, so it was
+        # platform-dependent for partial patterns (G-B3 record: hex6 0.304 /
+        # WS-C A5 0.455 vs shipped 1.000). `lock` is the mean over ACTIVE
+        # triads only: all three modes active, "active" = mag > 0.5 * mag.max() (the same
+        # threshold as `modes`). For the full 24-mode pattern every triad is
+        # active and the value is unchanged. The old all-triad value is kept
+        # as `lock_all`; `n_lock_triads` counts the active triads; no active
+        # triad -> lock = nan (as in d4model).
+        lock_all = float(np.mean(np.cos(S))) if len(S) else 0.0
+        active = (mag > 0.5 * mag.max()) if mag.max() > 0 else \
+            np.zeros(len(mag), bool)
+        act = [k for k, (a, b, c) in enumerate(triads)
+               if active[a] and active[b] and active[c]]
+        lock = float(np.mean(np.cos(S[act]))) if act else float('nan')
         pb = float(psi_hat[0, 0, 0, 0].real / N ** 4)
         fld = np.fft.ifftn(psi_hat).real
         rms = float(np.sqrt(((fld - fld.mean()) ** 2).mean()))
@@ -173,7 +195,8 @@ def make_analyzer(grid, q02, r, u, v, vecs):
         pu[0, 0, 0, 0] = psi_hat[0, 0, 0, 0]
         Fexc = F - free_energy(pu)
         return dict(psibar=pb, amp=float(mag.mean()), d4=d4, modes=ndom,
-                    lock=lock, rms=rms, Fexc=float(Fexc),
+                    lock=lock, lock_all=lock_all, n_lock_triads=len(act),
+                    rms=rms, Fexc=float(Fexc),
                     amp_max=float(mag.max()), amp_min=float(mag.min()))
 
     return analyze, free_energy

@@ -22,9 +22,12 @@ three modes are all active (`mag > 0.5*mag.max()`, the `ndom` criterion);
 the shipped all-32-triad value is kept as `lock_all`, and `n_lock_triads`
 counts the active triads. Patterns with no active triad (sq4, sq8) get
 `lock = NaN` (undefined) instead of a roundoff-dependent number.
-Not changed: WS-C `irh_models.make_analyzer` (l.167) carries the same
-all-triad metric; it is outside EXP-1200's G-B3 scope and is recorded as
-an open item in run-12 w-p0code CHANGES.md.
+Not changed in run 12: WS-C `irh_models.make_analyzer` (l.167) carried the
+same all-triad metric; it was outside EXP-1200's G-B3 scope and was recorded
+as an open item in run-12 w-p0code CHANGES.md. Run 13 (EXP-1306 T-L167)
+applies the same active-triad fix there; see `../ws-c/README.md`.
+Run 13 (EXP-1306 T-B3) also states the active threshold in the
+`analyze` docstring (code unchanged).
 
 ## Run-12 fix G-B4 (EXP-1200): task-1 JSON re-shipped from the current script
 
@@ -49,7 +52,12 @@ does not write (they came from another script revision):
 | sqrt (1,sqrt2,sqrt3,sqrt5) irrational | 1465 | 1 |
 
 These values are carried only by the shipped file; run 12 did not recompute
-them. `task1_slice_peaks.csv` and `task1_bragg.csv` regenerate byte-identical.
+them. Run 13 (EXP-1306 T-B4) recomputed them with an independent script (no
+repo import: D4 points with |x|^2 <= 25, projected onto nhat^perp, positions
+identified after rounding to 9 and to 6 decimals): all 14 values match the
+table above, and a fresh re-run of `task1_projections.py` reproduces the
+re-shipped JSON byte-identically (875 shared leaves, 0 differences vs the
+2026-11-10 file). Evidence: run-13 w-art OUTPUTS.md. `task1_slice_peaks.csv` and `task1_bragg.csv` regenerate byte-identical.
 The regenerated task-1 PNGs differ in bytes and were not re-shipped.
 
 Note on G-B3 and `tables/task5_basin.json`: re-running `task5_basin.py` with
