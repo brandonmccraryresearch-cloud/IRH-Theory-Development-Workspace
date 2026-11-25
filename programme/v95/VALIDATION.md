@@ -61,3 +61,6 @@ G-A12 S2 certification (still running on the VM, not adjudicated; S2 stays F3); 
 | 1, 14 | exact, no grade | — | — |
 
 Not verified here: the main text's statement in §4.6 that the rotated states are degenerate "to $3\times10^{-16}$" is, per a-gd3b R10, an $N=32$ statement ($N=24$ breaks it at up to $\sim10^{-9}$); the text does not say "at $N=32$". Left unchanged in this pass (not one of the two assigned fixes); Figure 4's caption carries the scope. Item 7's "41-subsystem count (only existence recomputed)" is now recomputed in integer arithmetic by the figure script (`fig06` facts: $1+24+16=41$).
+
+## §4.6 scope fix (coordinator, 2026-11-25)
+- xelatex three passes exit 0; 0 missing characters, 0 undefined, 0 overfull; 51 pages. recompute_v95.py exit 0; check_tex_claims.py PASS 54 FAIL 0 exit 0. PDF text confirms the new sentence.
