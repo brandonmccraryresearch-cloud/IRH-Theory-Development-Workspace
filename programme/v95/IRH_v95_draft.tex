@@ -60,7 +60,7 @@ This is a working draft of the ninety-fifth edition. It supersedes version 94 (N
 
 \begin{abstract}
 \noindent
-We study a real scalar field $\psi$ on $\mathbb{R}^4$ whose free energy is the Swift--Hohenberg functional with a cubic and a quartic term, and ask which periodic pattern it forms when the uniform state becomes unstable. A Landau argument over the combinatorics of the reciprocal shell reduces the question to a single number for each candidate lattice, $S=\tau^2/q_4$, built from the counts $T$ of closed triads and $Q$ of closed quadruples of shell vectors. The coupling constants drop out of the ordering. The same code reproduces the Alexander--McTague preference for bcc in three dimensions ($S=16/45$) and finds that in four dimensions the $D_4$ lattice wins, with $S_{D_4}=64/141$ against $S_{A_4^*}=12/31$, a margin of $73/423$. Simulations confirm that the cubic triad term is what decides the winner, that the symmetric 24-mode standing wave is an attractor of conserved dynamics, and that in the barrier-free part of the phase diagram a noise quench in a box of side $3\pi$ ends in a (generally rotated) $D_4$ root system in $29$ of $30$ runs. Selection from noise in general is not established. The $D_4$ phase occupies $758/6561\approx11.55\%$ of the standard parameter window, but only when the resonant wavenumber sits on the $D_4$ shell, and the transition into it is first order; the unrestricted critical droplet has excess free energy $119.06\pm0.03$, about $4.6$ times lower than the restricted-envelope saddle quoted in version 94.
+We study a real scalar field $\psi$ on $\mathbb{R}^4$ whose free energy is the Swift--Hohenberg functional with a cubic and a quartic term, and ask which periodic pattern it forms when the uniform state becomes unstable. A Landau argument over the combinatorics of the reciprocal shell reduces the question to a single number for each candidate lattice, $S=\tau^2/q_4$, built from the counts $T$ of closed triads and $Q$ of closed quadruples among the $N$ shell vectors, normalised as $\tau=T/N^{3/2}$ and $q_4=Q/N^2$. The coupling constants drop out of the ordering. The same code reproduces the Alexander--McTague preference for bcc in three dimensions ($S=16/45$) and finds that in four dimensions the $D_4$ lattice wins, with $S_{D_4}=64/141$ against $S_{A_4^*}=12/31$, a margin of $73/423$. Simulations confirm that the cubic triad term is what decides the winner, that the symmetric 24-mode standing wave is an attractor of conserved dynamics, and that in the barrier-free part of the phase diagram a noise quench in a box of side $3\pi$ ends in a (generally rotated) $D_4$ root system in $29$ of $30$ runs. Selection from noise in general is not established. The $D_4$ phase occupies $758/6561\approx11.55\%$ of the standard parameter window, but only when the resonant wavenumber sits on the $D_4$ shell, and the transition into it is first order; the unrestricted critical droplet has excess free energy $119.06\pm0.03$, about $4.6$ times lower than the restricted-envelope saddle quoted in version 94.
 
 Three results of the present edition bear on how the pattern could be read as spacetime. First, the Gaussian Swift--Hohenberg measure is not reflection positive: its propagator increases with $k^2$ below the shell, so it has no Källén--Lehmann representation, and the reflected kernel changes sign. Second, the long-wavelength phonons of the relaxed $D_4$ crystal form four gapless branches with exactly isotropic quadratic dispersion but two speeds, $c_L/c_T=1.731985$, within $10^{-4}$ of $\sqrt3$; we derive $c_L^2/c_T^2=3$ in closed form from a Cauchy relation that the shell geometry enforces, and show that an isotropic four-dimensional solid with a single sound speed would need a negative bulk modulus. Third, these two results remove the constructive routes of the two readings of the four-dimensional base that had been on the table, and under the rule fixed in advance the working reading becomes the one in which spacetime emerges from defect dynamics, a reading for which no construction yet exists. The algebraic sector is unchanged: $\mathfrak{so}(8)$ is excluded as a gauge algebra, the vertices of the 24-cell form the binary tetrahedral group whose McKay correspondent is affine $E_6$, and $E_6$ enters only as a label. Three generations of matter are an input. Every result carries an evidence grade, defined in Appendix~\ref{app:grades}, and no grade has been raised in this edition.
 \end{abstract}
@@ -74,7 +74,7 @@ Three results of the present edition bear on how the pattern could be read as sp
 
 \subsection{The question}
 
-Version 92 of this programme took the $D_4$ root lattice as a given four-dimensional scaffold and put fields on its sites. That formulation had three defects, all of which survived scrutiny. Its two ``primitive'' scales, the lattice spacing $a_0$ and the frequency $\Omega_P$, were defined through the Planck length as $a_0=L_P/\sqrt{24}$ and $\Omega_P=\sqrt{24}\,c/L_P$, with $L_P=\sqrt{\hbar G/c^3}$, so that the relations $c=a_0\Omega_P$, $\hbar=M^*ca_0$ and $G=24c^2a_0/M^*$ were a change of variables rather than a derivation. Nothing selected $D_4$ over $\mathbb{Z}^4$ or any other lattice; it was chosen because it fitted. And the discrete action mixed integer labels with dimensionful coordinates, writing shifts such as $\phi(n+a_0e_\mu)$ for $n\in\mathbb{Z}^4$, and stated two incompatible time steps.
+Version 92 of this programme took the $D_4$ root lattice as a given four-dimensional scaffold and put fields on its sites. That formulation had three defects, all of which survived scrutiny. Its two ``primitive'' scales, the lattice spacing $a_0$ and the frequency $\Omega_P$, were defined through the Planck length as $a_0=L_P/\sqrt{24}$ and $\Omega_P=\sqrt{24}\,c/L_P$, with $L_P=\sqrt{\hbar G/c^3}$, so that the relations $c=a_0\Omega_P$, $\hbar=M^*ca_0$ and $G=24c^2a_0/M^*$, with $M^*$ the inertia carried by a lattice site, were a change of variables rather than a derivation. Nothing selected $D_4$ over $\mathbb{Z}^4$ or any other lattice; it was chosen because it fitted. And the discrete action mixed integer labels with dimensionful coordinates, writing shifts such as $\phi(n+a_0e_\mu)$ for $n\in\mathbb{Z}^4$, and stated two incompatible time steps.
 
 The present formulation replaces the scaffold by a field. The primitive object is a real scalar $\psi(\mathbf{x},t)$ on $\mathbb{R}^4$, and $D_4$ is not assumed: it is the pattern of extrema into which $\psi$ organises itself when the uniform state becomes unstable. The question of the programme then becomes a question in pattern formation, and it can be asked precisely. Given a free energy that prefers wavevectors of one length, which periodic arrangement of those wavevectors does the field adopt, and is the answer stable, reachable from noise, and insensitive to the parameters?
 
@@ -92,7 +92,40 @@ Several things are not established, and we say so where they arise. Selection of
 
 Section~\ref{sec:substrate} defines the field, the functional and the three dynamics we use. Section~\ref{sec:geometry} collects the geometry of $D_4$ that the rest of the paper needs. Sections~\ref{sec:selection} and \ref{sec:band} derive the selection criterion, test it, and map the region of parameters where $D_4$ is the ground state. Section~\ref{sec:stability} treats the stability of the ordered state and Section~\ref{sec:nucleation} the first-order transition into it. Section~\ref{sec:phonons} computes the elastic constants and phonon spectrum of the crystal. Section~\ref{sec:legacy} keeps, with its scope stated, the discrete site-field action of the earlier versions, and Section~\ref{sec:four} gives the scaling argument for four dimensions. Sections~\ref{sec:algebra} and \ref{sec:defects} treat the algebraic sector and the defects. Section~\ref{sec:rp} is new and concerns reflection positivity; Section~\ref{sec:dimension} brings the phonon and positivity results to bear on the dimensional assignment. Section~\ref{sec:predictions} lists what the framework predicts, Section~\ref{sec:verification} what has been checked independently and formally, Section~\ref{sec:retractions} what has been withdrawn, and Sections~\ref{sec:status}--\ref{sec:assessment} give the status of every gap and our assessment. Appendix~\ref{app:corrections} records every correction, Appendix~\ref{app:methods} the methods, tools and grading rules.
 
-Each claim carries one of six epistemic labels, set in small capitals. A \lbl{Derivation} follows from stated assumptions without empirical input. A \lbl{Prediction} is an output of the model that does not depend on the data it would be compared with. A \lbl{Calibration} is a parameter adjusted to fit data and is never presented as a prediction. An \lbl{Input} is an assumption, acknowledged as such. An \lbl{Exclusion} is a result ruled out by proof. An \lbl{Open} item is a well-posed question not settled here. In addition, results carry an evidence grade in square brackets, for example \grade{B, F2/I1}. The letter (A to D) measures how strong the evidence is, the F-level (F1 to F3) how a computational result was reproduced, and the I-level (I0 to I4) how independent the checks were of the person or system that produced the result. Appendix~\ref{app:grades} defines these levels exactly. One feature of them matters throughout: every computational check reported here was produced and verified by tools run under the author's direction, so independence never exceeds I1, and no grade in this paper should be read as external confirmation.
+Each claim carries one of six epistemic labels, set in small capitals. A \lbl{Derivation} follows from stated assumptions without empirical input. A \lbl{Prediction} is an output of the model that does not depend on the data it would be compared with. A \lbl{Calibration} is a parameter adjusted to fit data and is never presented as a prediction. An \lbl{Input} is an assumption, acknowledged as such. An \lbl{Exclusion} is a result ruled out by proof. An \lbl{Open} item is a well-posed question not settled here. In addition, results carry an evidence grade in square brackets, for example \grade{B, F2/I1}. The letter (A to D) measures how strong the evidence is, the F-level (F1 to F3) how a computational result was reproduced, and the I-level (I0 to I4) how independent the checks were of the person or system that produced the result. Appendix~\ref{app:grades} defines these levels exactly. One feature of them matters throughout: every computational check reported here was produced and verified by tools run under the author's direction, so independence never exceeds I1, and no grade in this paper should be read as external confirmation. Labels of the form G-A5 or G-D3 name entries of the programme's gap inventory, which is kept with the repository records; a run number, such as run 13, names one verification cycle of the programme.
+
+% NOTATION-TABLE-BEGIN
+\subsection{Notation}\label{sec:notation}
+
+Table~\ref{tab:notation} lists the symbols used in more than one section, with the place where each is defined. A few letters carry a second, local meaning in one section only, and the table says where; in each such place the meaning is restated.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{0.2\linewidth}p{0.5\linewidth}p{0.2\linewidth}}
+\toprule
+symbol & meaning & defined in\\
+\midrule
+$\psi$, $\bar\psi$, $\varphi$ & tension field; its spatial mean (baseline tension); its deviation $\psi-\bar\psi$ & Sections~\ref{sec:substrate}, \ref{sec:band}\\
+$F$, $r$, $q_0$, $u$, $v$ & free energy; quench depth; resonant wavenumber; cubic and quartic couplings & \eqref{eq:F}\\
+$\gamma$ & damping of the wave equation & \eqref{eq:dw}\\
+$a_0$ & spatial period of the pattern, $2\pi/q_0$ & \eqref{eq:a0}\\
+$\Phi$, $D_4$, $D_4^*$ & root system of $D_4$; the root lattice; its dual & Section~\ref{sec:geometry}\\
+$N$, $T$, $Q$ & number of shell vectors; ordered closed triads; ordered closed quadruples & Section~\ref{sec:selection}\\
+$\tau$, $q_4$, $S$ & normalised counts $T/N^{3/2}$, $Q/N^2$; selection ratio $\tau^2/q_4$ & \eqref{eq:FB}, \eqref{eq:S}\\
+$A$, $B$ & per-mode amplitude; normalised amplitude $A\sqrt N$ & Section~\ref{sec:selection}\\
+$F_{\rm exc}$, $r_{\rm eff}$, $u_{\rm eff}$ & excess over the uniform state; effective quadratic and cubic coefficients & \eqref{eq:Fmod}\\
+$L$ & side of the periodic simulation box & Section~\ref{sec:sim}\\
+$C_{ijkl}$, $\lambda$, $\mu$, $\rho$, $K$ & elastic tensor; Lamé constants; mass density; bulk modulus & Section~\ref{sec:phonons}\\
+$c_L$, $c_T$ & longitudinal and transverse sound speeds & \eqref{eq:speeds}\\
+$W(D_4)$, $W(F_4)$ & Weyl group of $D_4$; point group of the $D_4$ lattice & Sections~\ref{sec:algebra}, \ref{sec:defects}\\
+$2T$, $Q_8$ & binary tetrahedral group; quaternion group & Section~\ref{sec:algebra}\\
+\bottomrule
+\end{tabular}
+\caption{Notation. Local second meanings: in simulation statements $N$ is also the number of grid points per side; in Section~\ref{sec:legacy} $\phi$ is the site field, $\mu^2$ a mass parameter, $J$ a coupling and $\theta$ a carrier angle; in Section~\ref{sec:nucleation} $J$ is a rate prefactor; in Section~\ref{sec:rp} $\theta$ is a reflection; $\lambda$ also denotes a Hessian eigenvalue, and in Section~\ref{sec:four} a scale factor.}
+\label{tab:notation}
+\end{table}
+% NOTATION-TABLE-END
 
 %===========================================================================
 \section{The substrate and its dynamics}\label{sec:substrate}
@@ -113,7 +146,7 @@ The functional derivative of $F$, which drives all the dynamics below, follows f
 
 \subsection{Three dynamics}
 
-We use three evolution laws built on \eqref{eq:dF}, and it matters which is used where.
+We use three evolution laws built on the functional derivative \eqref{eq:dF}, and it matters which is used where.
 
 The first is a damped wave equation,
 \begin{equation}\label{eq:dw}
@@ -184,20 +217,20 @@ Figure~\ref{fig:moment} contrasts this with the eight vectors $\pm e_i$ of the h
 \subsection{Interference maxima}
 
 The informal picture of the substrate as a resonant cavity becomes a reciprocal-lattice problem: which superposition of plane waves interferes constructively exactly at the points of $D_4$? Put the field on the torus $\mathbb{R}^4/\Lambda$ with $\Lambda\cong D_4$. Then the allowed wavevectors are those of the dual lattice, and the shortest of them form the reciprocal shell. By isoduality this shell is congruent to $\Phi$ itself. Form
-\[
+\begin{equation}\label{eq:Psi}
 \Psi(\mathbf{x})=\sum_{\mathbf{g}}\cos(2\pi\,\mathbf{g}\cdot\mathbf{x}),
-\]
+\end{equation}
 the sum running over the 24 shortest vectors $\mathbf{g}$ of $D_4^*$. At a point of $D_4$ every $\mathbf{g}\cdot\mathbf{x}$ is an integer, so every cosine is $1$ and $\Psi=24$. An exhaustive scan of $25^4=390{,}625$ points of a fundamental domain finds $\Psi=24$ only at the lattice point, $\Psi=-8$ at the nearest point of $\mathbb{Z}^4$ outside $D_4$ and at the deep hole $(\tfrac12,\tfrac12,\tfrac12,\tfrac12)$, and no other point within $0.1\%$ of the maximum.
 
 The maximum is unique modulo the lattice, and only in that sense. On a periodic grid it recurs at every image. A grid of $16^4$ points carrying two periods of the pattern in each direction contains $2^4=16$ copies of the fundamental cell, and the checkerboard structure of $D_4$ gives two maxima per copy (the corner and body-centre families), so the maximum is attained at $32$ grid points. The exact maximum set on that grid is a kernel-checked theorem (claim C16 of Section~\ref{sec:verification}); the $0.1\%$ margin is a floating-point statement.
 
-Isoduality alone does not select $D_4$: the hypercubic lattice is also isodual and resonates with itself trivially. Selection needs the nonlinear terms of \eqref{eq:F}, to which we now turn.
+Isoduality alone does not select $D_4$: the hypercubic lattice is also isodual and resonates with itself by the same argument, since every $\mathbf{g}\cdot\mathbf{x}$ is an integer at its own lattice points. Selection needs the nonlinear terms of the free energy \eqref{eq:F}, to which we now turn.
 
 \subsection{Cross-section and optimality}
 
 \lbl{Derivation} The hyperplane $x_4=0$ meets $D_4$ in the integer vectors of $\mathbb{R}^3$ with even coordinate sum, which is the face-centred cubic lattice $D_3$, of kissing number 12, the densest lattice packing in three dimensions~\cite{ref6}.
 
-$D_4$ is the unique optimal kissing configuration in four dimensions~\cite{ref7}, but it is not universally optimal in the sense of Cohn and Kumar~\cite{ref43}, that is, it does not minimise every completely monotonic pair potential~\cite{ref13}. A random-restart minimisation over the Gaussian family $e^{-\beta|x-y|^2}$, which by Bernstein's theorem~\cite{ref12} generates the completely monotonic class, recovers $D_4$ as the optimum to about $10^{-13}$ relative accuracy for $\beta\in[0.05,2.4]\cup[3.1,12]$ and finds a lower-symmetry configuration that wins by at most $0.007\%$ for $\beta\in[2.6,3.0]$; see also~\cite{ref14}. The claim we make is therefore narrower: $D_4$ minimises the particular triad-reinforcing functional relevant to standing-wave selection.
+The lattice $D_4$ is the unique optimal kissing configuration in four dimensions~\cite{ref7}, but it is not universally optimal in the sense of Cohn and Kumar~\cite{ref43}, that is, it does not minimise every completely monotonic pair potential~\cite{ref13}. A random-restart minimisation over the Gaussian family $e^{-\beta|x-y|^2}$, which by Bernstein's theorem~\cite{ref12} generates the completely monotonic class, recovers $D_4$ as the optimum to about $10^{-13}$ relative accuracy for $\beta\in[0.05,2.4]\cup[3.1,12]$ and finds a lower-symmetry configuration that wins by at most $0.007\%$ for $\beta\in[2.6,3.0]$; see also~\cite{ref14}. The claim we make is therefore narrower: $D_4$ minimises the particular triad-reinforcing functional relevant to standing-wave selection.
 
 A broader claim made in version 93.1, that this programme alone occupies the corner of a classification of selection principles labelled (2,2), does not hold under its own definition: two other published models score (2,2,2) and (2,1,1) \grade{B}. Narrowed to purely spectral (Turing-type) selection, no retrieved approach occupies that corner \grade{C}; we do not evaluate the physics of the rival models (gap G-D10).
 
@@ -211,18 +244,18 @@ Suppose the field orders on a single shell of $N$ wavevectors $\mathbf{g}_1,\dot
 \[
 \psi(\mathbf{x})=A\sum_{a=1}^{N}e^{i\mathbf{g}_a\cdot\mathbf{x}},
 \]
-which is real because the shell is closed under negation. The spatial average of a product of plane waves $e^{i(\mathbf{g}_{a_1}+\dots+\mathbf{g}_{a_m})\cdot\mathbf{x}}$ is $1$ if the wavevectors sum to zero and $0$ otherwise. Hence $\langle\psi^m\rangle=A^m\,\#\{(a_1,\dots,a_m):\mathbf{g}_{a_1}+\dots+\mathbf{g}_{a_m}=0\}$. For $m=2$ the count is $N$ (each $\mathbf{g}$ with $-\mathbf{g}$). Write $T$ for the count at $m=3$, the number of ordered closed triads, and $Q$ for the count at $m=4$, the number of ordered closed quadruples. The free-energy density \eqref{eq:F} becomes
-\[
+which is real because the shell is closed under negation. The spatial average of a product of plane waves $e^{i(\mathbf{g}_{a_1}+\dots+\mathbf{g}_{a_m})\cdot\mathbf{x}}$ is $1$ if the wavevectors sum to zero and $0$ otherwise. Hence $\langle\psi^m\rangle=A^m\,\#\{(a_1,\dots,a_m):\mathbf{g}_{a_1}+\dots+\mathbf{g}_{a_m}=0\}$. For $m=2$ the count is $N$ (each $\mathbf{g}$ with $-\mathbf{g}$). Write $T$ for the count at $m=3$, the number of ordered closed triads, and $Q$ for the count at $m=4$, the number of ordered closed quadruples. Because each mode is annihilated by $(q_0^2+\nabla^2)^2$, the quadratic term of the free energy \eqref{eq:F} reduces to $\tfrac r2\langle\psi^2\rangle$, and averaging the integrand over the volume $V$ gives the free-energy density
+\begin{equation}\label{eq:Fshell}
 \frac{F}{V}=\frac r2\,NA^2-\frac u3\,TA^3+\frac v4\,QA^4 .
-\]
-In the normalised amplitude $B=A\sqrt N$ we have $NA^2=B^2$, $TA^3=(T/N^{3/2})B^3$ and $QA^4=(Q/N^2)B^4$, so
+\end{equation}
+In the normalised amplitude $B=A\sqrt N$ the three powers are $NA^2=B^2$, $TA^3=(T/N^{3/2})B^3$ and $QA^4=(Q/N^2)B^4$, so
 \begin{equation}\label{eq:FB}
 f(B)=\frac r2B^2-\frac u3\,\tau B^3+\frac v4\,q_4B^4,\qquad \tau\equiv\frac{T}{N^{3/2}},\quad q_4\equiv\frac{Q}{N^2}.
 \end{equation}
 
 \subsection{The first-order point}
 
-The ordered state becomes degenerate with the uniform state when $f$ has a nonzero critical point at height zero, $f(B)=0$ and $f'(B)=0$ with $B\ne0$. Dividing $f'(B)=0$ by $B$ gives
+The ordered state becomes degenerate with the uniform state when $f$ has a nonzero critical point at height zero, $f(B)=0$ and $f'(B)=0$ with $B\ne0$. We solve these two conditions for $B$ and $r$ by eliminating $r$ between them. Dividing $f'(B)=0$ by $B$ gives
 \[
 r-u\tau B+vq_4B^2=0,
 \]
@@ -282,7 +315,7 @@ a margin of $73/423\approx17.26\%$. The ratio of triad densities to bcc is $\tau
 
 The triad count has a geometric reading that connects this section to the interference picture. Each root $\alpha\in\Phi$ has exactly $8$ roots $\beta$ with $\alpha\cdot\beta=-1$, that is, at $120^\circ$, and for each such $\beta$ the vector $-\alpha-\beta$ is again a root. So the closed triads are counted by $24\times8=192=T$. The vectors that interfere constructively at the lattice points and the vectors whose triads lower the energy are the same 24 vectors.
 
-The analytic prediction agrees with a molecular-dynamics study, by an entirely different method, in which supercooled four-dimensional Lennard-Jones liquids crystallise into $D_4$ rather than $A_4$~\cite{ref40}; at zero pressure and $0.59<T<0.63$ the liquid crystallises within about $2\times10^4$ time units, and $N=648$ atoms, eight per unit cell, give a $3\times3\times3\times3$-cell single crystal. Freezing of four-dimensional hard spheres is also consistent with $D_4$ symmetry~\cite{ref39}. In the equilibrium Landau setting, Elitzur, Karni and Rabinovici showed that in four dimensions the cubic term is maximised by the cross-polytope, whose reciprocal lattice is $D_4$~\cite{ref45}. Their argument is static and ours is dynamical; they select the same winner.
+The analytic prediction agrees with a molecular-dynamics study, by an entirely different method, in which supercooled four-dimensional Lennard-Jones liquids crystallise into $D_4$ rather than $A_4$~\cite{ref40}; at zero pressure and reduced temperature $T^*$ with $0.59<T^*<0.63$ the liquid crystallises within about $2\times10^4$ time units, and $N=648$ atoms, eight per unit cell, give a $3\times3\times3\times3$-cell single crystal. Freezing of four-dimensional hard spheres is also consistent with $D_4$ symmetry~\cite{ref39}. In the equilibrium Landau setting, Elitzur, Karni and Rabinovici showed that in four dimensions the cubic term is maximised by the cross-polytope, whose reciprocal lattice is $D_4$~\cite{ref45}. Their argument is static and ours is dynamical; they select the same winner.
 
 \subsection{Selection in simulation: the causal test}\label{sec:sim}
 
@@ -321,7 +354,7 @@ The causal test shows what decides a competition between two prescribed shells. 
 
 Patterned recovery is established. A field seeded near a $D_4$ pattern recovers it in $12/12$ runs in two cell constructions and in the four-dimensional field, with a parameter sweep on the compute server agreeing ($32/48$ full $D_4$; every pattern family $8/8$) \grade{B, F1--F2}. General selection from broadband noise is not: $0/6$ broadband random starts in the field reached $D_4$ (Wilson $95\%$ upper bound about $39\%$).
 
-The full 24-mode pattern is also rare as an end state of noise quenches at the operating point $(r,\bar\psi)=(-0.35,-0.18)$, where, as Section~\ref{sec:nucleation} shows, the uniform state is metastable. Under the standard quench protocol ($N=16$, $L=\pi$, $q_0^2=8$, $u=v=1$, $\gamma=1$, time step $0.02$, noise $10^{-2}$, $\bar\psi_0=0$), none of $240$ seeds is in the 24-mode pattern at time $T=50$ (Clopper--Pearson two-sided $95\%$ upper bound $1.53\%$), and at $T=500$ none of $60$ seeds at $\gamma=1.0$ and none of $30$ at $\gamma=1.2$ (bounds $[0,0.0596]$ and $[0,0.1157]$) \grade{C, F3/I1}. Most seeds settle in a 6-mode state of excess free energy $-0.04177187933591782$ per unit volume or a 2-mode state at $-0.03653987282038074$; every settled 6-mode state found stays in its family to $T\ge500$ (gaps G-A4 and G-A13).
+The full 24-mode pattern is also rare as an end state of noise quenches at the operating point $(r,\bar\psi)=(-0.35,-0.18)$, where, as Section~\ref{sec:nucleation} shows, the uniform state is metastable. Under the standard quench protocol ($N=16$, $L=\pi$, $q_0^2=8$, $u=v=1$, $\gamma=1$, time step $0.02$, noise $10^{-2}$, $\bar\psi_0=0$), none of $240$ seeds is in the 24-mode pattern at time $t=50$ (Clopper--Pearson two-sided $95\%$ upper bound $1.53\%$), and at $t=500$ none of $60$ seeds at $\gamma=1.0$ and none of $30$ at $\gamma=1.2$ (bounds $[0,0.0596]$ and $[0,0.1157]$) \grade{C, F3/I1}. Most seeds settle in a 6-mode state of excess free energy $-0.04177187933591782$ per unit volume or a 2-mode state at $-0.03653987282038074$; every settled 6-mode state found stays in its family to $t\ge500$ (gaps G-A4 and G-A13).
 
 The third kind of evidence is new. Where the uniform state is linearly unstable, the question changes, because no barrier has to be crossed. Write $r_{\rm eff}=r-2u\bar\psi+3v\bar\psi^2$ for the coefficient that governs the linear growth of shell modes about a uniform field $\bar\psi$ (derived in Section~\ref{sec:band}). At $P_1=(r,\bar\psi)=(-0.35,-0.14)$,
 \[
@@ -339,16 +372,16 @@ So within the barrier-free sliver, at $L=3\pi$, noise selects $D_4$ with high pr
 
 The annealed run of Section~\ref{sec:sim} populated only $6$ of the $24$ modes. This prompted a comparison the analysis of Section~\ref{sec:selection} had not made: not against other lattices, but against sub-patterns of the $D_4$ shell. At zero baseline field a hexagonal sub-pattern of $6$ modes has lower free energy than the full $24$-mode pattern at every quench depth tested. The simulation was right and the analysis incomplete.
 
-The missing variable is the baseline tension $\bar\psi$, the spatial mean of the field. Write $\psi=\bar\psi+\varphi$ with $\langle\varphi\rangle=0$. Expanding the powers and averaging,
+The missing variable is the baseline tension $\bar\psi$, the spatial mean of the field. To bring it in we expand the free energy about the mean and subtract the free energy of the uniform state, so that only the terms carried by the pattern remain. Write $\psi=\bar\psi+\varphi$ with $\langle\varphi\rangle=0$. Expanding the powers and averaging,
 \begin{align*}
 \langle\psi^2\rangle&=\bar\psi^2+\langle\varphi^2\rangle,\\
 \langle\psi^3\rangle&=\bar\psi^3+3\bar\psi\langle\varphi^2\rangle+\langle\varphi^3\rangle,\\
 \langle\psi^4\rangle&=\bar\psi^4+6\bar\psi^2\langle\varphi^2\rangle+4\bar\psi\langle\varphi^3\rangle+\langle\varphi^4\rangle ,
 \end{align*}
-the terms linear in $\varphi$ vanishing on average. Insert these in \eqref{eq:F}, with the shell modes annihilated by the gradient operator, and subtract the free energy of the uniform state. Collecting terms by the power of $\varphi$,
-\[
+the terms linear in $\varphi$ vanishing on average. Insert these in the free energy \eqref{eq:F}, with the shell modes annihilated by the gradient operator, and subtract the free energy of the uniform state, which removes every term without $\varphi$. Collecting the rest by the power of $\varphi$, the coefficient of $\langle\varphi^2\rangle$ is $\tfrac r2-\tfrac u3\cdot3\bar\psi+\tfrac v4\cdot6\bar\psi^2$, that of $\langle\varphi^3\rangle$ is $-\tfrac u3+\tfrac v4\cdot4\bar\psi$, and that of $\langle\varphi^4\rangle$ is $\tfrac v4$. Hence
+\begin{equation}\label{eq:Fexcphi}
 \frac{F_{\rm exc}}{V}=\tfrac12\big(r-2u\bar\psi+3v\bar\psi^2\big)\langle\varphi^2\rangle-\tfrac13\big(u-3v\bar\psi\big)\langle\varphi^3\rangle+\tfrac v4\langle\varphi^4\rangle .
-\]
+\end{equation}
 For the equal-amplitude shell state of Section~\ref{sec:selection}, $\langle\varphi^2\rangle=NA^2$, $\langle\varphi^3\rangle=TA^3$ and $\langle\varphi^4\rangle=QA^4$, so
 \begin{equation}\label{eq:Fmod}
 \frac{F_{\rm exc}}{V}=\frac N2\,r_{\rm eff}\,A^2-\frac T3\,u_{\rm eff}\,A^3+\frac{vQ}{4}A^4,\qquad
@@ -379,7 +412,7 @@ The band lies along the order--disorder boundary, which is where the ``orders fi
 
 The band was computed with the shell exactly on resonance. A real shell at $|\mathbf{k}|^2=8$ pays the penalty $(q_0^2-8)^2$, so the effective quench depth on the shell is $r_{\rm shell}=r+(q_0^2-8)^2$. At $r=-0.35$ and $\bar\psi=-0.18$: for $q_0^2=8$ the penalty is zero and the ordered branch exists, with $A^*=0.0776$ and $F_{\rm exc}/V=-0.00763$; for $q_0^2=7.5$ the penalty is $0.25$, $r_{\rm shell}=-0.10$, and the ordered branch has disappeared. A detuning of $0.5$ in $q_0^2$ removes the $D_4$ phase.
 
-\lbl{Input} The $D_4$ band is conditional on $q_0$ being tuned onto the shell. Since $a_0=2\pi/q_0$, this says that the resonant wavelength of the substrate must match the lattice it forms. That is self-consistent, but it is a condition, and it must accompany every citation of \eqref{eq:band}.
+\lbl{Input} The $D_4$ band is conditional on $q_0$ being tuned onto the shell. Since $a_0=2\pi/q_0$, this says that the resonant wavelength of the substrate must match the lattice it forms. That is self-consistent, but it is a condition, and it must accompany every citation of the band value \eqref{eq:band}.
 
 Sixth-order terms narrow the band without removing it. For the $D_4$ shell the number of ordered closed $6$-tuples of shell vectors is $H=911{,}040$ (computed by FFT convolution, validated against direct enumeration at third and fourth order, and reproduced by the Lean kernel under this reading of $H$, claim C17). Adding a sextic term $\tfrac{w_6}{6}HA^6$ to the one-mode free energy reduces the one-mode band from $11.60\%$ at $w_6=0$ to $8.36\%$ at $w_6=0.2$.
 
@@ -389,7 +422,7 @@ Sixth-order terms narrow the band without removing it. For the $D_4$ shell the n
 
 \subsection{The one-mode state and the relaxed field}
 
-Take $N=24$, $T=192$, $Q=3384$, $r=-0.35$, $\bar\psi=-0.18$, $u=v=1$ and $q_0^2=8$. Then $r_{\rm eff}=0.1072$ and $u_{\rm eff}=1.54$, and the stationarity condition of \eqref{eq:Fmod} has a real ordered root at per-mode amplitude $A^*=0.0775753$ with $F_{\rm exc}/V=-0.0076323$.
+Take $N=24$, $T=192$, $Q=3384$, $r=-0.35$, $\bar\psi=-0.18$, $u=v=1$ and $q_0^2=8$. Then $r_{\rm eff}=0.1072$ (the arithmetic is displayed in Section~\ref{sec:nucleation}) and $u_{\rm eff}=u-3v\bar\psi=1.54$, and the stationarity condition of the excess free energy \eqref{eq:Fmod} has a real ordered root at per-mode amplitude $A^*=0.0775753$ with $F_{\rm exc}/V=-0.0076323$.
 
 Here $F_{\rm exc}$ is the excess over the uniform state, so the disordered phase has $F_{\rm exc}=0$. The absolute density differs by the uniform value
 \[
@@ -418,7 +451,7 @@ Model~A (non-conserved) & $+0.00087$ & $1.0000$ & $24/24$ & $0.4206$\\
 \label{tab:attractor}
 \end{table}
 
-Under Model~B the baseline is held exactly, all $24$ modes stay occupied and the amplitude is unchanged to four figures: the symmetric $D_4$ standing wave is a dynamical attractor, not only a minimum of $F$. Over a long horizon the rms modulation stays at $0.380565$ and $\max|\psi|$ at $1.689598$, constant to six figures from $t=2$ to $t=18$. Under Model~A the pattern stays symmetric while $\bar\psi$ drifts to $+0.00087$, outside the band. That persistence is not metastability. At $(r,\bar\psi)=(-0.35,+0.00087)$ on the $16^4$ grid with $L=\pi$, the drifted state is a saddle of $F$: apart from the four translation zero modes its Hessian has a $9$-fold degenerate negative eigenvalue $\lambda\approx-0.0646$, carrying one irreducible representation of $W(F_4)$ \grade{index F2/I1; instability F3/I1}. The seeded run stays on the saddle only because an exactly symmetric seed lies in an invariant subspace; a random perturbation of size $10^{-4}$ sends noise-free Model~A to a lower 6-mode state in $9$ of $9$ trials.
+Under Model~B the baseline is held exactly, all $24$ modes stay occupied and the amplitude is unchanged to four figures: the symmetric $D_4$ standing wave is a dynamical attractor, not only a minimum of $F$. Over a long horizon the rms modulation stays at $0.380565$ and $\max|\psi|$ at $1.689598$, constant to six figures from $t=2$ to $t=18$. Under Model~A the pattern stays symmetric while $\bar\psi$ drifts to $+0.00087$, outside the band. That persistence is not metastability. At $(r,\bar\psi)=(-0.35,+0.00087)$ on the $16^4$ grid with $L=\pi$, the drifted state is a saddle of $F$: apart from the four translation zero modes its Hessian has a $9$-fold degenerate negative eigenvalue $\lambda\approx-0.0646$, carrying one irreducible representation of $W(F_4)$, the point group of the $D_4$ lattice (Section~\ref{sec:algebra}) \grade{index F2/I1; instability F3/I1}. The seeded run stays on the saddle only because an exactly symmetric seed lies in an invariant subspace; a random perturbation of size $10^{-4}$ sends noise-free Model~A to a lower 6-mode state in $9$ of $9$ trials.
 
 Linear stability of the Model~B state has been sampled three ways that agree: $52$ sector fibres, $259$ wavevectors on one machine and $14{,}641$ on a dense map. On the dense map exactly one wavevector has a positive rate, the Goldstone mode at $\mathbf{q}=0$, at round-off level $8.67\times10^{-12}$, and the least-damped nonzero rate is $-2.13324\times10^{-5}$ \grade{C}. The $52$ values are maxima over sectors, not over full fibres, and the first finite rate at the zone centre differs by $3.05\times10^{-4}$ between two routes, a difference attributed to sector coverage but not proved.
 
@@ -433,16 +466,16 @@ Every earlier simulation started from noise reached only a $6$- or $12$-mode sub
 \subsection{The transition is first order}
 
 At $\bar\psi=-0.18$, with $r=-0.35$ and $u=v=1$,
-\[
+\begin{equation}\label{eq:reffop}
 r_{\rm eff}=r-2u\bar\psi+3v\bar\psi^2=-0.35+0.36+0.0972=+0.1072>0 .
-\]
+\end{equation}
 The uniform state is linearly stable, and the $D_4$ state, which has lower free energy, can only be reached by crossing a barrier. At $\bar\psi=-0.10$ the same formula gives $-0.35+0.20+0.03=-0.12$, and at $\bar\psi=0$ it gives $-0.35$; in both cases the uniform state is linearly unstable and pattern grows from noise.
 
 \lbl{Derivation} The transition into the $D_4$ phase at the operating point is first order. Any cosmological use of the framework must supply a nucleation event: a seed, a fluctuation above critical size, or a path through the linearly unstable region at smaller $|\bar\psi|$. Spontaneous emergence from a featureless substrate at this baseline tension does not occur. This was found by misreading a null simulation and then diagnosing it correctly.
 
 \subsection{The critical droplet}
 
-The height of the barrier is the excess free energy of the critical droplet, the saddle point of $F$ that separates the uniform state from the crystal. Version 94 quoted $550.93057$ for this quantity, from a radially restricted amplitude-envelope model, together with an ordinary-differential-equation value of $555$. Run 13 computed the critical droplet of the unrestricted field (gap G-A10).
+The height of the barrier is the excess free energy of the critical droplet, the saddle point of $F$ that separates the uniform state from the crystal. Version 94 quoted $550.93057$ for this quantity, from a radially restricted amplitude-envelope model, together with an ordinary-differential-equation value of $555$. The thirteenth verification run of the programme (run 13) computed the critical droplet of the unrestricted field (gap G-A10).
 
 At $r=-0.35$, $\bar\psi=-0.18$, $q_0^2=8$, $u=v=1$, under conserved dynamics on periodic boxes of side $12\pi$ to $32\pi$, two code- and binary-independent solvers (numpy and C/FFTW) find a stationary point with residual below $4\times10^{-11}$ and Hessian index $1$ (certified at $12\pi$ and $16\pi$). Its excess free energy extrapolates to
 \begin{equation}\label{eq:barrier}
@@ -475,9 +508,9 @@ A uniform strain is a linear map of wavevectors, so closed triads and quadruples
 (q_0^2-|\mathbf{G}'|^2)^2=4\,(G_i\varepsilon_{ij}G_j)^2 .
 \]
 With $\varphi=A\sum_{\mathbf{G}}e^{i\mathbf{G}\cdot\mathbf{x}}$ and $\langle\tfrac12\varphi(q_0^2+\nabla^2)^2\varphi\rangle=\tfrac12A^2\sum_{\mathbf{G}}(q_0^2-|\mathbf{G}'|^2)^2$, the elastic energy density is
-\[
+\begin{equation}\label{eq:fel}
 f_{\rm el}=2A^2\sum_{\mathbf{G}}G_iG_jG_kG_l\,\varepsilon_{ij}\varepsilon_{kl}\equiv\tfrac12\,C_{ijkl}\,\varepsilon_{ij}\varepsilon_{kl},\qquad C_{ijkl}=4A^2\sum_{\mathbf{G}}G_iG_jG_kG_l .
-\]
+\end{equation}
 Now use the design property. On the shell of Section~\ref{sec:sim} the $24$ vectors are $\mathbf{G}=2\alpha$, $\alpha\in\Phi$, with $|\mathbf{G}|^2=8$. Because they form a 5-design, the fourth-moment tensor is isotropic, $\sum_{\mathbf{G}}G_iG_jG_kG_l=c\,(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$. Contracting $i=j$ and $k=l$ gives $\sum_{\mathbf{G}}|\mathbf{G}|^4=24\cdot64=1536$ on the left and $c\,(16+4+4)=24c$ on the right, so $c=64$ and
 \begin{equation}\label{eq:Cijkl}
 C_{ijkl}=256A^2\,(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}),\qquad C_{1111}=768A^2,\quad C_{1122}=C_{1212}=256A^2 .
@@ -488,7 +521,7 @@ Comparing with the isotropic form $C_{ijkl}=\lambda\delta_{ij}\delta_{kl}+\mu(\d
 \end{equation}
 The equality $\lambda=\mu$ is a Cauchy relation, $C_{1122}=C_{1212}$, here forced by the geometry of the shell rather than by central forces. At the one-mode amplitude $A=0.0775753$ of Section~\ref{sec:stability}, $256A^2=1.5405892$, which agrees with the stiffness $\lambda=\mu=1.54058921014457$ quoted in version 94. The agreement suggests that the version~94 number is the one-mode stiffness of the one-mode state rather than a property of the relaxed crystal; the script that produced it has not been traced, so this reading is a candidate.
 
-The inertia comes from the term $\partial_t^2\psi$ of \eqref{eq:dw}, whose kinetic density is $\tfrac12(\partial_t\psi)^2$. For a time-dependent displacement, $\partial_t\psi=-\nabla\psi\cdot\dot{\mathbf{u}}$, and averaging over a cell,
+The inertia comes from the term $\partial_t^2\psi$ of the damped wave equation \eqref{eq:dw}, whose kinetic density is $\tfrac12(\partial_t\psi)^2$. For a time-dependent displacement, $\partial_t\psi=-\nabla\psi\cdot\dot{\mathbf{u}}$, and averaging over a cell,
 \[
 \langle(\partial_t\psi)^2\rangle=A^2\sum_{\mathbf{G}}(\mathbf{G}\cdot\dot{\mathbf{u}})^2=A^2\,\dot u_i\dot u_j\sum_{\mathbf{G}}G_iG_j=A^2\cdot\frac{24\cdot8}{4}\,|\dot{\mathbf{u}}|^2=48A^2|\dot{\mathbf{u}}|^2,
 \]
@@ -496,11 +529,11 @@ using the isotropy of the second moment. So the mass density of the crystal is $
 
 \subsection{Sound speeds}
 
-The equation of motion for $\mathbf{u}$ is $\rho\,\ddot u_i=C_{ijkl}\,\partial_j\partial_lu_k$. For a plane wave $\mathbf{u}=\mathbf{e}\,e^{i(\mathbf{q}\cdot\mathbf{x}-\omega t)}$ with the isotropic tensor \eqref{eq:lame} this reads
-\[
+The equation of motion for $\mathbf{u}$ is $\rho\,\ddot u_i=C_{ijkl}\,\partial_j\partial_lu_k$. For a plane wave $\mathbf{u}=\mathbf{e}\,e^{i(\mathbf{q}\cdot\mathbf{x}-\omega t)}$ with the isotropic Lamé form \eqref{eq:lame} this reads
+\begin{equation}\label{eq:phononeom}
 \rho\,\omega^2\,\mathbf{e}=(\lambda+\mu)\,\mathbf{q}\,(\mathbf{q}\cdot\mathbf{e})+\mu\,|\mathbf{q}|^2\,\mathbf{e}.
-\]
-A longitudinal wave, $\mathbf{e}\parallel\mathbf{q}$, has $\rho\omega^2=(\lambda+2\mu)|\mathbf{q}|^2$; each of the three transverse waves, $\mathbf{e}\perp\mathbf{q}$, has $\rho\omega^2=\mu|\mathbf{q}|^2$. Hence
+\end{equation}
+Taking the polarisation along and across $\mathbf{q}$ separates \eqref{eq:phononeom} into its two eigenspaces. A longitudinal wave, $\mathbf{e}\parallel\mathbf{q}$, has $\rho\omega^2=(\lambda+2\mu)|\mathbf{q}|^2$; each of the three transverse waves, $\mathbf{e}\perp\mathbf{q}$, has $\rho\omega^2=\mu|\mathbf{q}|^2$. Hence
 \begin{equation}\label{eq:speeds}
 c_L^2=\frac{\lambda+2\mu}{\rho}=\frac{768}{48}=16,\qquad c_T^2=\frac{\mu}{\rho}=\frac{256}{48}=\frac{16}{3},\qquad \frac{c_L^2}{c_T^2}=3 .
 \end{equation}
@@ -516,15 +549,15 @@ The first directional dependence of the phonon spectrum appears at order $q^4$ i
 
 \subsection{A single sound speed is impossible in a stable isotropic solid}
 
-The ratio $c_L/c_T=\sqrt3$ is not a feature of this model alone. For an isotropic solid in $d$ dimensions with bulk modulus $K=\lambda+2\mu/d$,
+The ratio $c_L/c_T=\sqrt3$ is not a feature of this model alone. For an isotropic solid in $d$ dimensions with bulk modulus $K=\lambda+2\mu/d$, we express the speed ratio through $K$ and then ask what a common speed would require. Substituting $\lambda=K-2\mu/d$,
 \[
 \frac{c_L^2}{c_T^2}=\frac{\lambda+2\mu}{\mu}=\frac{K-2\mu/d+2\mu}{\mu}=\frac K\mu+2-\frac2d,
 \]
-which in four dimensions is $K/\mu+3/2$. A common speed, $c_L=c_T$, would need $K/\mu=-1/2$, that is $K=-\mu/2<0$. But the elastic energy of an isotropic solid, $\mu\,\tilde\varepsilon_{ij}\tilde\varepsilon_{ij}+\tfrac K2(\varepsilon_{kk})^2$ with $\tilde\varepsilon$ the traceless part of the strain, is positive definite only if $\mu>0$ and $K>0$. So no stable isotropic four-dimensional solid has a single sound speed \grade{B}. The Cauchy relation $\lambda=\mu$ gives $K=3\mu/2$ and the ratio $3$ of \eqref{eq:speeds}.
+which in four dimensions is $K/\mu+3/2$. A common speed, $c_L=c_T$, would need $K/\mu=-1/2$, that is $K=-\mu/2<0$. But the elastic energy of an isotropic solid, $\mu\,\tilde\varepsilon_{ij}\tilde\varepsilon_{ij}+\tfrac K2(\varepsilon_{kk})^2$ with $\tilde\varepsilon$ the traceless part of the strain, is positive definite only if $\mu>0$ and $K>0$. So no stable isotropic four-dimensional solid has a single sound speed \grade{B}. The Cauchy relation $\lambda=\mu$ gives $K=3\mu/2$ and the ratio $3$ of the sound speeds \eqref{eq:speeds}.
 
 \subsection{Damping and compactification}
 
-At the damping $\gamma=1.2$ used in the quenches of Section~\ref{sec:sim}, the phonons are not waves at long wavelength. Adding the damping of \eqref{eq:dw} to the equation of motion gives $\omega^2+i\gamma\omega=c^2q^2$, with roots $\omega=-\tfrac{i\gamma}2\pm\sqrt{c^2q^2-\gamma^2/4}$. They are overdamped when $cq<\gamma/2$, that is for $q<0.6/4=0.15$ on the longitudinal branch and $q<0.6\sqrt3/4\approx0.26$ on the transverse ones. Below those wavenumbers the long-wave dynamics is diffusive, with dynamic exponent $z=2$, not propagating with $z=1$ \grade{F2/I1}. Version 94 made no claim that these modes propagate, so nothing in it is contradicted.
+At the damping $\gamma=1.2$ used in the quenches of Section~\ref{sec:sim}, the phonons are not waves at long wavelength. Adding the damping of the wave equation \eqref{eq:dw} to the equation of motion gives $\omega^2+i\gamma\omega=c^2q^2$, with roots $\omega=-\tfrac{i\gamma}2\pm\sqrt{c^2q^2-\gamma^2/4}$. They are overdamped when $cq<\gamma/2$, that is for $q<0.6/4=0.15$ on the longitudinal branch and $q<0.6\sqrt3/4\approx0.26$ on the transverse ones. Below those wavenumbers the long-wave dynamics is diffusive, with dynamic exponent $z=2$, not propagating with $z=1$ \grade{F2/I1}. Version 94 made no claim that these modes propagate, so nothing in it is contradicted.
 
 Suppose one direction of the base is compactified, as one reading of Section~\ref{sec:dimension} requires. Take the circle along $e_4$ with circumference $n\pi$, or along the root direction $(1,1,0,0)/\sqrt2$ with circumference $n\pi\sqrt2$, for $n=1,\dots,4$, so that the crystal fits. At zero momentum along the circle the four acoustic branches remain gapless and keep two speeds: for $\mathbf{q}$ in the three open directions there is one longitudinal branch at $c_L$, and three transverse branches at $c_T$, one of them polarised along the circle \grade{F2/I1}. The tower of Kaluza--Klein gaps is listed in Table~\ref{tab:kk}; these numbers describe the model in those boxes and are not predictions.
 
@@ -553,9 +586,9 @@ Version 92 described the substrate by a field $\phi(n,s)$ living on the sites $n
 \subsection{Action, equation of motion and dispersion}
 
 The action is
-\[
+\begin{equation}\label{eq:siteaction}
 S=\sum_{n,s}a_0^4\Delta t\left[\frac{M^*}{2}\Big(\frac{\phi(n,s{+}1)-\phi(n,s)}{\Delta t}\Big)^2-\frac{J}{2a_0^2}\sum_{\alpha\in\Phi}\big(\phi(n{+}\alpha,s)-\phi(n,s)\big)^2-\frac{\mu^2}{2}\phi(n,s)^2\right],
-\]
+\end{equation}
 with inertia $M^*>0$, coupling $J>0$ and mass parameter $\mu^2\ge0$; here $n+\alpha$ denotes the neighbouring site displaced by $a_0\alpha$. Varying $\phi(n,s)$ and collecting the contributions of the two time links and the $24$ spatial links that contain it (each neighbour bond appears twice in the double sum, once from each end) gives
 \begin{equation}\label{eq:eom}
 M^*\big[\phi(n,s{+}1)-2\phi(n,s)+\phi(n,s{-}1)\big]=\frac{2J\Delta t^2}{a_0^2}\sum_{\alpha}\big[\phi(n{+}\alpha,s)-\phi(n,s)\big]-\Delta t^2\mu^2\phi(n,s).
@@ -578,20 +611,20 @@ The energy conjugate to \eqref{eq:eom} is a sum of three terms, a kinetic square
 
 \subsection{The stability bound}
 
-Real frequencies require $\sin^2(\omega\Delta t/2)\le1$ for every $\mathbf{k}$, so we need the maximum over the Brillouin zone of the bracket $\sum_\alpha(1-\cos a_0\mathbf{k}\cdot\alpha)=24-\sum_\alpha\cos(a_0\mathbf{k}\cdot\alpha)$. By \eqref{eq:cosid}, $\sum_\alpha\cos\ge-2\sum_ic_i^2\ge-8$, since $(\sum c_i)^2\ge0$ and each $c_i^2\le1$. Both inequalities are equalities when $c=(1,1,-1,-1)$ up to order, that is at $a_0\mathbf{k}=(0,0,\pi,\pi)$ and its images. So
-\[
+Real frequencies require $\sin^2(\omega\Delta t/2)\le1$ for every $\mathbf{k}$. We first find the largest value of the lattice sum over the Brillouin zone, then express the prefactor of \eqref{eq:disp} through a wave speed. That lattice sum is the bracket $\sum_\alpha(1-\cos a_0\mathbf{k}\cdot\alpha)=24-\sum_\alpha\cos(a_0\mathbf{k}\cdot\alpha)$. By the cosine identity \eqref{eq:cosid}, $\sum_\alpha\cos\ge-2\sum_ic_i^2\ge-8$, since $(\sum c_i)^2\ge0$ and each $c_i^2\le1$. Both inequalities are equalities when $c=(1,1,-1,-1)$ up to order, that is at $a_0\mathbf{k}=(0,0,\pi,\pi)$ and its images. So
+\begin{equation}\label{eq:bracketmax}
 \max_{\mathbf{k}}\sum_{\alpha}\big(1-\cos a_0\mathbf{k}\cdot\alpha\big)=24+8=32 .
-\]
-The maximum $32$ is now a Lean kernel theorem (Section~\ref{sec:verification}). Match the small-$\mathbf{k}$ limit to a wave speed $c$: with $\mu=0$, \eqref{eq:disp} gives $M^*\omega^2/4\cdot\Delta t^2\approx(\Delta t^2/4)(2J/a_0^2)\cdot\tfrac12\cdot12a_0^2|\mathbf{k}|^2$, hence $\omega^2=12J|\mathbf{k}|^2/M^*$ and $J=M^*c^2/12$. The prefactor of the bracket is then $\Delta t^2\,2J/(4M^*a_0^2)=\Delta t^2c^2/(24a_0^2)$, and at the worst mode
-\[
+\end{equation}
+The maximum $32$ is now a Lean kernel theorem (Section~\ref{sec:verification}). Match the small-$\mathbf{k}$ limit to a wave speed $c$: with $\mu=0$, the dispersion relation \eqref{eq:disp} gives $M^*\omega^2/4\cdot\Delta t^2\approx(\Delta t^2/4)(2J/a_0^2)\cdot\tfrac12\cdot12a_0^2|\mathbf{k}|^2$, hence $\omega^2=12J|\mathbf{k}|^2/M^*$ and $J=M^*c^2/12$. The prefactor of the bracket is then $\Delta t^2\,2J/(4M^*a_0^2)=\Delta t^2c^2/(24a_0^2)$, and at the worst mode, by \eqref{eq:bracketmax},
+\begin{equation}\label{eq:worst}
 \sin^2\!\Big(\frac{\omega\Delta t}{2}\Big)=\frac{32}{24}\Big(\frac{c\,\Delta t}{a_0}\Big)^2=\frac43\Big(\frac{c\,\Delta t}{a_0}\Big)^2 .
-\]
+\end{equation}
 \lbl{Derivation} Stability therefore requires
 \begin{equation}\label{eq:cfl}
 \Delta t\le\Delta t_{\max}=\frac{\sqrt3}{2}\,\frac{a_0}{c}\approx0.866\,\frac{a_0}{c}.
 \end{equation}
 
-\lbl{Exclusion} Both time steps of version 92 violate \eqref{eq:cfl}. At $\Delta t=a_0/c$ the worst-mode value is $4/3$; at $\Delta t=2\pi a_0/c$ it is $\tfrac43\cdot4\pi^2=16\pi^2/3\approx52.6$. The smaller one exceeds the bound by the factor $2/\sqrt3\approx1.155$, about $15\%$. Figure~\ref{fig:cfl} shows the stability quantity against the time step.
+\lbl{Exclusion} Both time steps of version 92 violate the stability bound \eqref{eq:cfl}. At $\Delta t=a_0/c$ the worst-mode value is $4/3$; at $\Delta t=2\pi a_0/c$ it is $\tfrac43\cdot4\pi^2=16\pi^2/3\approx52.6$. The smaller one exceeds the bound by the factor $2/\sqrt3\approx1.155$, about $15\%$. Figure~\ref{fig:cfl} shows the stability quantity against the time step.
 
 \begin{figure}[htbp]
 \centering
@@ -604,11 +637,11 @@ The maximum $32$ is now a Lean kernel theorem (Section~\ref{sec:verification}). 
 
 Version 92 built a carrier $e^{-i\Omega_Ps\,T_P}$ with $T_P=2\pi/\Omega_P$, so that the carrier phase per step is exactly $2\pi$ and $e^{-i\theta s}=1$ for every integer $s$. Then the positive- and negative-frequency basis functions coincide, and the envelope decomposition is degenerate, not merely inaccurate.
 
-With a genuine carrier angle $\theta\ne0,\pi$, write $\phi=\Psi\,e^{-i\theta s}+{\rm c.c.}$ with $\Psi$ slowly varying, and absorb the rest-mass term by choosing $\sin^2(\theta/2)=\Delta t^2\mu^2/(4M^*)$. Expanding \eqref{eq:eom} to first order in the time derivative of $\Psi$ gives
-\[
+With a genuine carrier angle $\theta\ne0,\pi$, write $\phi=\Psi\,e^{-i\theta s}+{\rm c.c.}$ with $\Psi$ slowly varying, and absorb the rest-mass term by choosing $\sin^2(\theta/2)=\Delta t^2\mu^2/(4M^*)$. Expanding the equation of motion \eqref{eq:eom} to first order in the time derivative of $\Psi$ gives
+\begin{equation}\label{eq:schrod}
 i\,\dot\Psi=-\frac{\Delta t\,J}{M^*a_0^2\sin\theta}\sum_{\alpha\in\Phi}\big[\Psi(n{+}\alpha,s)-\Psi(n,s)\big],\qquad m_{\rm eff}=\frac{M^*a_0\sin\theta}{c\,\Delta t}.
-\]
-To quantify where this holds, compare the exact dispersion \eqref{eq:disp} with the quadratic one, $\omega_{\rm quad}=\theta/\Delta t+|\mathbf{k}|^2/(2m_{\rm eff})$, which is its small-$\mathbf{k}$ tangent, and measure the relative error $|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$ along $\mathbf{k}\parallel e_1$. We use units $a_0=c=M^*=1$ and $J=1/12$. The Brillouin zone of $D_4$ is a 24-cell whose facet centres lie at $a_0|\mathbf{k}|=\pi$, so $e_1$ reaches the zone edge at $a_0|\mathbf{k}|=\pi$. With $\mu\ne0$ the bound \eqref{eq:cfl} becomes $\Delta t_{\max}(\theta)=(\sqrt3/2)\cos(\theta/2)\,a_0/c$, and we work at that marginal value. The text fixes only $\theta\ne0,\pi$. Version 94 therefore chose a primary carrier, $\theta=\pi/2$, midway between the excluded values, so that $\Delta t=\sqrt{3/8}\,a_0/c$, and reported the range over $\theta\in[\pi/6,5\pi/6]$ beside it (Table~\ref{tab:nr}). The original statement, ``under $1\%$ for $a_0|\mathbf{k}|\lesssim0.3$'', is kept and qualified rather than replaced.
+\end{equation}
+To quantify where this holds, compare the exact dispersion \eqref{eq:disp} with the quadratic one, $\omega_{\rm quad}=\theta/\Delta t+|\mathbf{k}|^2/(2m_{\rm eff})$, which is its small-$\mathbf{k}$ tangent, and measure the relative error $|\omega_{\rm quad}-\omega_{\rm exact}|/\omega_{\rm exact}$ along $\mathbf{k}\parallel e_1$. We use units $a_0=c=M^*=1$ and $J=1/12$. The Brillouin zone of $D_4$ is a 24-cell whose facet centres lie at $a_0|\mathbf{k}|=\pi$, so $e_1$ reaches the zone edge at $a_0|\mathbf{k}|=\pi$. With $\mu\ne0$ the stability bound \eqref{eq:cfl} becomes $\Delta t_{\max}(\theta)=(\sqrt3/2)\cos(\theta/2)\,a_0/c$, and we work at that marginal value. The text fixes only $\theta\ne0,\pi$. Version 94 therefore chose a primary carrier, $\theta=\pi/2$, midway between the excluded values, so that $\Delta t=\sqrt{3/8}\,a_0/c$, and reported the range over $\theta\in[\pi/6,5\pi/6]$ beside it (Table~\ref{tab:nr}). The original statement, ``under $1\%$ for $a_0|\mathbf{k}|\lesssim0.3$'', is kept and qualified rather than replaced.
 
 \begin{table}[htbp]
 \centering
@@ -641,10 +674,10 @@ At $\theta=\pi/2$ the approximation is good to $1\%$ for $a_0|\mathbf{k}|<1.057$
 %===========================================================================
 
 Rescale a field in $d$ dimensions, $\psi_\lambda(\mathbf{x})=\psi(\lambda\mathbf{x})$. Changing variables $\mathbf{y}=\lambda\mathbf{x}$ gives $d^dx=\lambda^{-d}d^dy$, each gradient brings a factor $\lambda$, and so
-\[
+\begin{equation}\label{eq:derrick}
 \int|\nabla\psi_\lambda|^2d^dx=\lambda^{2-d}I_{\rm grad},\qquad \int V(\psi_\lambda)\,d^dx=\lambda^{-d}I_{\rm pot},\qquad \int(\nabla^2\psi_\lambda)^2d^dx=\lambda^{4-d}I_{\rm curv}.
-\]
-For a two-derivative energy $E(\lambda)=\lambda^{2-d}I_{\rm grad}+\lambda^{-d}I_{\rm pot}$, a static solution must be stationary under rescaling, $E'(1)=(2-d)I_{\rm grad}-dI_{\rm pot}=0$, that is $(d-2)I_{\rm grad}+dI_{\rm pot}=0$. For $d\ge3$ this forces $I_{\rm pot}<0$ unless the field is trivial. So with a non-negative potential there is no static localised solution, and where one exists it is unstable to rescaling. This is Derrick's theorem~\cite{ref15}, and it excludes stable solitons of a two-derivative scalar in four dimensions.
+\end{equation}
+Here $I_{\rm grad}$, $I_{\rm pot}$ and $I_{\rm curv}$ are the three integrals at $\lambda=1$. For a two-derivative energy $E(\lambda)=\lambda^{2-d}I_{\rm grad}+\lambda^{-d}I_{\rm pot}$, a static solution must be stationary under rescaling, $E'(1)=(2-d)I_{\rm grad}-dI_{\rm pot}=0$, that is $(d-2)I_{\rm grad}+dI_{\rm pot}=0$. For $d\ge3$ this forces $I_{\rm pot}<0$ unless the field is trivial. So with a non-negative potential there is no static localised solution, and where one exists it is unstable to rescaling. This is Derrick's theorem~\cite{ref15}, and it excludes stable solitons of a two-derivative scalar in four dimensions.
 
 \lbl{Derivation} The four-derivative term scales as $\lambda^{4-d}$, which is $\lambda^0$ exactly when $d=4$. Four is the only dimension in which the curvature term of a Swift--Hohenberg substrate neither dominates nor disappears under rescaling, while the gradient and potential terms both contract (Figure~\ref{fig:scaling}). This is an argument for four dimensions independent of packing and kissing numbers, and it agrees with them: the dimension that hosts the optimal lattice~\cite{ref8} is the one in which the pattern-forming operator is marginal. It is a scaling statement, and it does not by itself construct a stable localised object.
 
@@ -678,7 +711,7 @@ The Pati--Salam algebra~\cite{ref22} $\mathfrak{su}(4)\oplus\mathfrak{su}(2)\opl
 
 \subsection{The phase sector carries no internal degrees of freedom}
 
-\lbl{Derivation} A real $D_4$ density wave has $24$ modes in $12$ pairs $\pm\mathbf{g}$, so it has $12$ independent phases $\phi_a$. The cubic term of \eqref{eq:F} is lowest when $\phi_a+\phi_b+\phi_c\equiv0\pmod{2\pi}$ on every closed triad. There are $32$ unordered closed triads (the $192$ ordered triads of Section~\ref{sec:selection}, divided by the $3!=6$ orderings), and the $32\times12$ constraint matrix has rank $8$. That leaves $12-8=4$ free phases. A rigid translation $\mathbf{x}\to\mathbf{x}+\mathbf{a}$ shifts each phase by $\mathbf{g}\cdot\mathbf{a}$ and satisfies every triad constraint, because the three wavevectors of a triad sum to zero; translations span a $4$-dimensional subspace of the solutions. So $4-4=0$ phases remain once translations are removed. The order-parameter space is the torus $\mathbb{R}^4/\Lambda$, with no internal continuous symmetry, and its homotopy is $\pi_1=\mathbb{Z}^4$, $\pi_2=0$, $\pi_3=0$~\cite{ref23}. A single real scalar substrate can produce the $D_4$ pattern and dislocations. It cannot produce gauge fields or point defects. If the substrate is to carry either, it needs an internal space, and the question is which.
+\lbl{Derivation} A real $D_4$ density wave has $24$ modes in $12$ pairs $\pm\mathbf{g}$, so it has $12$ independent phases $\phi_a$. The cubic term of the free energy \eqref{eq:F} is lowest when $\phi_a+\phi_b+\phi_c\equiv0\pmod{2\pi}$ on every closed triad. There are $32$ unordered closed triads (the $192$ ordered triads of Section~\ref{sec:selection}, divided by the $3!=6$ orderings), and the $32\times12$ constraint matrix has rank $8$. That leaves $12-8=4$ free phases. A rigid translation $\mathbf{x}\to\mathbf{x}+\mathbf{a}$ shifts each phase by $\mathbf{g}\cdot\mathbf{a}$ and satisfies every triad constraint, because the three wavevectors of a triad sum to zero; translations span a $4$-dimensional subspace of the solutions. So $4-4=0$ phases remain once translations are removed. The order-parameter space is the torus $\mathbb{R}^4/\Lambda$, with no internal continuous symmetry, and its homotopy is $\pi_1=\mathbb{Z}^4$, $\pi_2=0$, $\pi_3=0$~\cite{ref23}. A single real scalar substrate can produce the $D_4$ pattern and dislocations. It cannot produce gauge fields or point defects. If the substrate is to carry either, it needs an internal space, and the question is which.
 
 \subsection{The vertices of the 24-cell form a group}
 
@@ -688,7 +721,7 @@ The eight units $\pm1,\pm i,\pm j,\pm k$ form the quaternion group $Q_8$; it is 
 
 \subsection{The McKay correspondent of $2T$}
 
-Conjugacy classes must be computed as conjugation orbits; trace and element order are too coarse and merge classes, which once gave five classes instead of seven. The orbits have sizes $4,4,4,4,1,1,6$, summing to $24$. The number of irreducible representations equals the number of classes, seven; their dimensions square-sum to the group order; and $2T$ has abelianisation $\mathbb{Z}_3$, so exactly three are one-dimensional. The only solution is $\{1,1,1,2,2,2,3\}$, since $1+1+1+4+4+4+9=24$. These are the marks of the affine $E_6$ diagram, whose seven nodes carry $1,1,1,2,2,2,3$; affine $E_7$ has eight nodes and affine $E_8$ nine. \lbl{Derivation} By the McKay correspondence~\cite{ref3}, $2T$ corresponds to affine $E_6$. An earlier audit document identified it with affine $E_8$; that correspondent belongs to the binary icosahedral group of order $120$, and nothing built on that identification follows.
+Conjugacy classes must be computed as conjugation orbits; trace and element order are too coarse and merge classes, which once gave five classes instead of seven. We find the irreducible representations of $2T$ from its class sizes and its abelianisation alone, without constructing them. The orbits have sizes $4,4,4,4,1,1,6$, summing to $24$. The number of irreducible representations equals the number of classes, seven; their dimensions square-sum to the group order; and $2T$ has abelianisation $\mathbb{Z}_3$, so exactly three are one-dimensional. The only solution is $\{1,1,1,2,2,2,3\}$, since $1+1+1+4+4+4+9=24$. These are the marks of the affine $E_6$ diagram, whose seven nodes carry $1,1,1,2,2,2,3$; affine $E_7$ has eight nodes and affine $E_8$ nine. \lbl{Derivation} By the McKay correspondence~\cite{ref3}, $2T$ corresponds to affine $E_6$. An earlier audit document identified it with affine $E_8$; that correspondent belongs to the binary icosahedral group of order $120$, and nothing built on that identification follows.
 
 The longest element $w_0$ of the Weyl group acts as $-1$ for $D_4$ and not for $D_5$ or $E_6$. So $E_6$ passes the test that $\mathfrak{so}(8)$ fails: it has the complex $\mathbf{27}$~\cite{ref29}, and the rank chain $E_6\,(6)\supset SO(10)\,(5)\supset SU(5)\,(4)\supset{\rm SM}\,(4)$ is the standard non-increasing route~\cite{ref26,ref27,ref28}. One generation of Standard Model fermions fits in one $\mathbf{27}$. The Cartan matrix of $E_6$ has determinant $3$ and Smith normal form ${\rm diag}(1,1,1,1,1,3)$~\cite{ref30}, so the weight lattice modulo the root lattice is $P/Q\cong\mathbb{Z}_3$ (SymPy and Singular).
 
@@ -738,27 +771,28 @@ One reading of the framework (reading (A) of Section~\ref{sec:dimension}) takes 
 \subsection{The condition}
 
 Pick a hyperplane, say $x_4=0$, and let $\theta$ be the reflection $(\mathbf{x}_\perp,x_4)\mapsto(\mathbf{x}_\perp,-x_4)$. For a Gaussian measure with covariance $C(\mathbf{x}-\mathbf{y})$, reflection positivity requires
-\[
+\begin{equation}\label{eq:rpcond}
 \langle\theta f,\,Cf\rangle=\int d^4x\,d^4y\;f(\theta\mathbf{x})\,C(\mathbf{x}-\mathbf{y})\,f(\mathbf{y})\ \ge0
-\]
+\end{equation}
 for every real test function $f$ supported in the half-space $x_4>0$. This is the simplest instance ($n=m=1$) of the Osterwalder--Schrader condition, and a single $f$ that makes the integral negative is enough to violate it.
 
 \subsection{The disordered phase}
 
 For $r>0$ the Gaussian part of \eqref{eq:F} about $\psi=0$ has covariance with Fourier transform
-\[
+\begin{equation}\label{eq:Gs}
 G(s)=\frac{1}{r+(q_0^2-s)^2},\qquad s=|\mathbf{k}|^2 .
-\]
-A reflection-positive, Euclidean-invariant scalar covariance has a Källén--Lehmann form $G(s)=\int\rho(dm^2)/(s+m^2)$ with a positive measure $\rho$, and every such function is non-increasing in $s$. But
+\end{equation}
+A reflection-positive, Euclidean-invariant scalar covariance has a Källén--Lehmann form $G(s)=\int\rho(dm^2)/(s+m^2)$ with a positive measure $\rho$, and every such function is non-increasing in $s$, since each integrand $1/(s+m^2)$ decreases in $s$ and $\rho$ is positive. Differentiating \eqref{eq:Gs}, however,
 \[
 \frac{dG}{ds}=\frac{2(q_0^2-s)}{\big(r+(q_0^2-s)^2\big)^2}>0\qquad\text{for }0\le s<q_0^2 ,
 \]
 so $G$ increases below the shell and has no such representation.
 
 The failure can be exhibited directly. Fix the transverse momentum $\mathbf{k}_\perp$, put $a=q_0^2-|\mathbf{k}_\perp|^2$, and Fourier transform in $k_4$ alone:
-\[
+\begin{equation}\label{eq:Gint}
 \hat G(\mathbf{k}_\perp,x)=\int_{-\infty}^{\infty}\frac{\cos(k_4x)}{r+(a-k_4^2)^2}\,dk_4 .
-\]
+\end{equation}
+We evaluate \eqref{eq:Gint} by residues and then read off its sign.
 The denominator vanishes where $k_4^2=a\pm i\sqrt r$. Let $z=\alpha+i\beta$ be the principal square root of $a+i\sqrt r$; then $\alpha,\beta>0$ for every real $a$ and every $r>0$, because $a+i\sqrt r$ lies in the open upper half-plane and its principal root in the open first quadrant. Squaring, $\alpha^2-\beta^2=a$ and $2\alpha\beta=\sqrt r$. The four poles are $\pm z$ and $\pm\bar z$, and the two in the upper half-plane are $z$ and $-\bar z$. Closing the contour there for $x>0$ and summing the two residues gives
 \begin{equation}\label{eq:Ghat}
 \hat G(\mathbf{k}_\perp,x)=\frac{\pi\,e^{-\beta x}\big(\alpha\cos\alpha x+\beta\sin\alpha x\big)}{2\alpha\beta\,(\alpha^2+\beta^2)} .
@@ -767,7 +801,7 @@ We checked \eqref{eq:Ghat} against direct numerical quadrature (QUADPACK Fourier
 \[
 \hat G(\mathbf{k}_\perp,\pi/\alpha)=-\frac{\pi\,e^{-\beta\pi/\alpha}}{2\beta(\alpha^2+\beta^2)}<0,
 \]
-for every $\mathbf{k}_\perp$ and every $r>0$. At $a=8$, $r=0.1072$ this is $-1.6684$. The reflected kernel is negative at a reflected separation $2x_4=\pi/\alpha$, and a test function concentrated at that height, smeared in $\mathbf{x}_\perp$ and taken to the limit, makes $\langle\theta f,Cf\rangle<0$. The limit is controlled by a uniform bound: $|\alpha\cos\alpha x+\beta\sin\alpha x|\le|z|$, $2\alpha\beta=\sqrt r$ and $|z|^2=\sqrt{a^2+r}\ge\sqrt r$ give $|\hat G|\le\pi/(\sqrt r\,|z|)\le\pi r^{-3/4}$, and $\hat G$ is continuous in $\mathbf{k}_\perp$, so dominated convergence applies. Because $G$ depends only on $|\mathbf{k}|^2$, the measure is invariant under rotations, and every reflection hyperplane gives the same result.
+for every $\mathbf{k}_\perp$ and every $r>0$. At $a=8$, $r=0.1072$ this is $-1.6684$. The reflected kernel is negative at a reflected separation $2x_4=\pi/\alpha$, and a test function concentrated at that height, smeared in $\mathbf{x}_\perp$ and taken to the limit, makes the left side of \eqref{eq:rpcond} negative. The limit is controlled by a uniform bound: $|\alpha\cos\alpha x+\beta\sin\alpha x|\le|z|$, $2\alpha\beta=\sqrt r$ and $|z|^2=\sqrt{a^2+r}\ge\sqrt r$ give $|\hat G|\le\pi/(\sqrt r\,|z|)\le\pi r^{-3/4}$, and $\hat G$ is continuous in $\mathbf{k}_\perp$, so dominated convergence applies. Because $G$ depends only on $|\mathbf{k}|^2$, the measure is invariant under rotations, and every reflection hyperplane gives the same result.
 
 \lbl{Exclusion} The Gaussian Swift--Hohenberg measure of the disordered phase on $\mathbb{R}^4$ is not reflection positive in any direction. The monotonicity, the absence of a Källén--Lehmann form and the sign at $x=\pi/\alpha$ are Lean kernel theorems; the residue identity \eqref{eq:Ghat} and the limiting argument are checked in computer algebra and by hand \grade{B, [MV]4K core / 4D Fourier step, F1/I1}.
 
@@ -799,7 +833,7 @@ Two consequences follow for later work. The three follow-up tests that were writ
 
 \subsection{Related gaps}
 
-Whether a common emergent speed exists for the substrate as specified (gap G-A29) is closed with a negative answer, scoped as above. Whether Lorentz violation is naturally suppressed (gap G-A28) is overtaken: in the phonon sector the violation is not small but of order one at leading order, a species-dependent mismatch of light cones, isotropic at order $q^2$, with direction dependence entering only at order $q^4$ through $P_6$. No separation of scales removes a leading-order mismatch of cones. The causality of the dispersive modes (gap G-A30) is open. Nothing in this paper shows that the full retarded response of the substrate has support inside a light cone, and there is reason to expect the opposite: at large wavenumber the dispersion of \eqref{eq:dw} behaves as $\omega\sim q^2$, so the principal symbol $\tau^2-|\xi|^4$ is of plate type rather than hyperbolic. That argument has been made once and not independently checked, so we state it as the sharpest form of the open question and not as a result.
+Whether a common emergent speed exists for the substrate as specified (gap G-A29) is closed with a negative answer, scoped as above. Whether Lorentz violation is naturally suppressed (gap G-A28) is overtaken: in the phonon sector the violation is not small but of order one at leading order, a species-dependent mismatch of light cones, isotropic at order $q^2$, with direction dependence entering only at order $q^4$ through $P_6$. No separation of scales removes a leading-order mismatch of cones. The causality of the dispersive modes (gap G-A30) is open. Nothing in this paper shows that the full retarded response of the substrate has support inside a light cone, and there is reason to expect the opposite: at large wavenumber the dispersion of the wave equation \eqref{eq:dw} behaves as $\omega\sim q^2$, so the principal symbol $\omega^2-|\xi|^4$, with $(\omega,\xi)$ dual to $(t,\mathbf{x})$, is of plate type rather than hyperbolic. That argument has been made once and not independently checked, so we state it as the sharpest form of the open question and not as a result.
 
 %===========================================================================
 \section{Predictions}\label{sec:predictions}
@@ -809,7 +843,7 @@ The framework makes the following predictions, each stated before the data it wo
 
 Triad phase locking. For a real field with $u>0$ the cubic term is lowest when $\phi_1+\phi_2+\phi_3\equiv0\pmod{2\pi}$ on every closed triad. This distinguishes a genuine $D_4$ standing wave from a superposition of modes that merely lie on the right shell. In simulation the locking order parameter was $0.26$ against a maximum of $1$, which is real but incomplete locking, as expected of a defected state in a small box; a larger volume should drive it towards $1$.
 
-The band of baseline tension. The full $24$-mode pattern is the global minimum only for $\bar\psi$ in a band along the order--disorder boundary, \eqref{eq:band}, and only for $q_0$ tuned onto the shell. Outside either condition a lower-symmetry pattern, or none, results.
+The band of baseline tension. The full $24$-mode pattern is the global minimum only for $\bar\psi$ in a band along the order--disorder boundary, of the size given by the band fraction \eqref{eq:band}, and only for $q_0$ tuned onto the shell. Outside either condition a lower-symmetry pattern, or none, results.
 
 The validity of the envelope limit. The frequency error of the Schrödinger limit of Section~\ref{sec:legacy} is below $1\%$ for $a_0|\mathbf{k}|\lesssim0.3$ when $\theta\in[\pi/6,5\pi/6]$, and degrades as in Table~\ref{tab:nr}.
 
@@ -856,7 +890,7 @@ anisotropy coefficient $\xi_2=-1/384$ & retracted & the $D_4$ fourth moment is e
 $\mathfrak{so}(8)\to\mathfrak{g}_2\to$ Pati--Salam & retracted & dimension rises $15\to21$ and rank $3\to5$\\
 $SO(8)$ as gauge group & retracted & non-chiral, $-1\in W(D_4)$\\
 three generations from triality & retracted & five mechanisms closed; now an input\\
-$\Delta t=a_0/c$ and $\Delta t=T_P$ & retracted & both violate \eqref{eq:cfl}\\
+$\Delta t=a_0/c$ and $\Delta t=T_P$ & retracted & both violate the bound \eqref{eq:cfl}\\
 Schrödinger emergence & corrected & the original carrier is degenerate; replaced in Section~\ref{sec:legacy}\\
 Lorentzian signature from $i^2=-1$ & retracted & complex amplitudes are used in Euclidean field theory too; they do not select a signature\\
 Einstein equations from elasticity & retracted & an analogy, not a derivation\\
@@ -915,7 +949,7 @@ The verification cycles since version 92 have produced a framework that is diffe
 
 What was removed was removed for cause: an anisotropy coefficient that cannot be derived from the stated lattice, a gauge algebra excluded by a Weyl-group computation, time steps that violate their own stability bound, a generation count resting on a confusion of symmetry with multiplicity, and the claimed absence of monopoles. In this edition two further things go. The first is the hope of reading the four-dimensional base as Euclidean spacetime with a positive-norm continuation, which fails at Gaussian level. The second is the hope that the phonons of the crystal supply an emergent light cone, which fails because a stable isotropic solid has two sound speeds. Both were stated as hopes in version 94 and are now settled by computation.
 
-What remains has been computed, checked against known limits, simulated where simulation was possible, and in one instance corroborated by an unrelated published result. The selection criterion $S=\tau^2/q_4$ singles out $D_4$ in four dimensions with an exact margin $496/423$; the full $24$-mode state is a dynamical attractor of conserved dynamics in a definite band of baseline tension; the transition into it is first order, with a full-field barrier of $119.06$ in the units of \eqref{eq:F}; and the vertex set of the pattern is a group whose McKay correspondent is affine $E_6$. These are statements about a pattern-forming field in four dimensions, and they are the part of the programme that is solid.
+What remains has been computed, checked against known limits, simulated where simulation was possible, and in one instance corroborated by an unrelated published result. The selection criterion $S=\tau^2/q_4$ singles out $D_4$ in four dimensions with an exact margin $496/423$; the full $24$-mode state is a dynamical attractor of conserved dynamics in a definite band of baseline tension; the transition into it is first order, with a full-field barrier of $119.06$ in the units of the free energy \eqref{eq:F}; and the vertex set of the pattern is a group whose McKay correspondent is affine $E_6$. These are statements about a pattern-forming field in four dimensions, and they are the part of the programme that is solid.
 
 The position, then, is this. IRH is a well-posed programme about the emergence of a high-symmetry structure from an oscillatory substrate, with a verified geometric core and a list of open problems that Section~\ref{sec:status} states one by one. It is not a unified theory, and after this edition it is further from being a theory of spacetime than version 94 suggested: no reading of the base as spacetime survives as constructed. The central claim, that a high-symmetry discrete structure can be selected dynamically rather than imposed, is supported. Whether that structure has anything to do with the world is the question the programme now has to face directly.
 
