@@ -42,3 +42,22 @@ XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026) in env `jacobian-conjecture-2d`: 
 
 ## 7. Not verified here (stated as such in the text or carried at record grade)
 G-A12 S2 certification (still running on the VM, not adjudicated; S2 stays F3); G-E5 p=5 (Jacobian-side, pending ruling; not in the paper's physics); G-A30 plate-type argument; cubic L–T–T coupling value; n0=10 in infinite volume; the ruling's 41-subsystem count (only existence recomputed); RF-2 provenance of 1.54058921; dislocation edge-leg rerun (C5).
+
+## 8. Figure pass (2026-11-25, evening CST)
+- Build: three xelatex passes exit 0; 0 errors, 0 undefined references, 0 "Missing character", 0 overfull, 10 underfull (prose-pass count; none in captions); 51 pages. Log `validation/xelatex_figs_build.log`.
+- Pages rendered with pdftoppm (80 dpi contact sheets) and inspected: printed pp. 5–7 (notation and Table 1), 8, 9, 10, 13–27 (fix ii on p. 19, fix i on p. 24), 29–35. Every figure placed near its first reference, labels legible, no clipping; Table 1 still directly follows §1.4.
+- `recompute_v95.py` 38 PASS exit 0; `check_tex_claims.py` PASS 54 FAIL 0 exit 0; planted $c_L/c_T=\sqrt2$ caught (exit 1); planted old-wording restorations for both fixes caught (exit 1 each).
+- Figure checks (figure source tree `paper-figures-2026-11-25/irh/`): `check_figs.py` on the shipped figures 67 PASS 0 FAIL exit 0; eight planted variants (dropped root, fibres of 8, rotated mode, extra band row, $\sqrt2$ ratio, dropped Gram pair, envelope barrier, negative odd eigenvalue) each rejected, exit 1. Printed size at `\textwidth`: smallest label 8.02–8.20 pt in all eight. Colour vision (colorspacious 1.1.2, Machado deuteranopia/protanopia/tritanopia at severity 100 and greyscale CAM02-UCS $J'$; threshold $\Delta E'=10$): 305 category pairs, 0 FAIL, 8 WARN, each WARN separated by a second channel (bar position and label in Figure 1(c) and Figure 4(d); six marker shapes in Figure 9). The first run had one FAIL (band map hex6/fcc12 in greyscale, $\Delta E'=3.4$), fixed by changing fcc12 to vermillion ($\Delta E'=11.8$).
+
+## 9. Figure grades against the adjudicated record
+| figure | grade in caption | source | result |
+|---|---|---|---|
+| 5 band | F3/I1 | draft (5.3) and run 12 G-A19 | match |
+| 4 $L=3\pi$ shells | census, $312$: F2/I1 (recomputed); degeneracy F2/I1 at $N=32$; fraction $29/30$ F2/I1 | `swarm/run13/adj/a-gd3b_RULING.md` R1, R3, R5, R10 | match (CAPTIONS.md draft said "exact" and gave one $N=24$ offset; corrected) |
+| 6 Hessian | F2/I1, three points, finite box | draft §6.2; run 13 EXP-1320 | match |
+| 7 droplet | F2/I1; index certified at $12\pi$, $16\pi$ only | draft §7.2 (G-A10) | match |
+| 8 field | phonon values F2/I1; rendering no claim | `run13/adj/a-kb1_RULING.md` items 1, 3c | match |
+| 9 phonons | relaxed F2/I1; one-mode $\sqrt3$ B, [MV]4D/I1; overdamped below $0.15$/$0.26$ at $\gamma=1.2$ | a-kb1 items 3c, 4; ruling l.155 | match; scope $w_6=0$, zero damping stated |
+| 1, 14 | exact, no grade | — | — |
+
+Not verified here: the main text's statement in §4.6 that the rotated states are degenerate "to $3\times10^{-16}$" is, per a-gd3b R10, an $N=32$ statement ($N=24$ breaks it at up to $\sim10^{-9}$); the text does not say "at $N=32$". Left unchanged in this pass (not one of the two assigned fixes); Figure 4's caption carries the scope. Item 7's "41-subsystem count (only existence recomputed)" is now recomputed in integer arithmetic by the figure script (`fig06` facts: $1+24+16=41$).

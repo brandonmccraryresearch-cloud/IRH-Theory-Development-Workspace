@@ -42,3 +42,6 @@ Script `validation/ai_tell_heuristics.py` (body from `\begin{document}` to the b
 | 14 | bare "eq. (n)" references | 0 | 0 |
 
 Body words ≈12,255 before, ≈12,544 after. The four tricolon paragraphs (§6.2 odd-sector test, §13.2 reflected kernel, Appendix A "This edition adds", Appendix B protocol) were read and kept: each list names actual distinct items (three test points, three residue quantities, the frozen protocol's three conditions), not cadence. By reading: every `\eqref` now has a noun phrase before it; all displays end in punctuation or continue the sentence.
+
+## Figure pass (2026-11-25, evening CST)
+`ai_tell_heuristics.py` on the figure-pass tex (`validation/ai_tell_figs.log`): body words ≈14,350 (captions and figure references added); every count unchanged from the prose pass — 0 bold, 0 list lines, 0 em-dashes, 0 excess vocabulary, 0 significance inflation, 0 hedges, 0 participle tails, 0 sentence starts with a symbol, 0 empty assurances, 0 "we have that", 0 symbolic logic, 0 bare equation references; item 9 stays at the same four tricolon paragraphs, already read and kept. By reading: the eleven new figure-reference sentences each say what the reader should look at and add no claim beyond the record; captions use no bold and state scope and grade.

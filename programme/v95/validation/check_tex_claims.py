@@ -33,6 +33,25 @@ a = 137 + 1/(28 - math.pi/14)
 need(abs(a - 137.0360028219) < 1e-9 and abs((a - 137.035999177)/2.1e-8 - 173.6) < 0.1, "alpha sigma")
 # CFL
 need(abs(4/3*(math.sqrt(3)/2)**2 - 1) < 1e-15 and abs(16*math.pi**2/3 - 52.64) < 0.01, "CFL")
+# content fixes (2026-11-25, figure pass)
+need(abs(550.93057/36.95 - 14.9) < 0.05 and abs(550.93057/138.12 - 4.0) < 0.02
+     and "550.93/36.95\\approx14.9" in tex and "550.93/138.12\\approx4.0" in tex, "thin-wall factors 14.9 and 4.0 both stated")
+need("about $15$ times the first thin-wall estimate and about $4.0$ times the second" in tex, "thin-wall summary sentence covers both routes")
+need(re.search(r"one-mode band, computed on a \$161\\times161\$ grid of the same window[^.]*from \$11\.60\\%\$ at \$w_6=0\$", tex) is not None,
+     "w6 sentence: 11.60% scoped as one-mode 161x161")
+need("not the canonical full-field value $11.5531\\%$" in tex and "one-mode value $11.5226\\%$ on that grid" in tex, "w6 sentence distinguishes 11.5531/11.5226")
+# figures: every figure is referenced from the text, and figure grades match the record
+labels = re.findall(r"\\label\{(fig:[^}]*)\}", tex)
+for lab in labels:
+    need(("\\ref{" + lab + "}") in tex, f"figure {lab} not referenced from the text")
+def cap(lab):
+    i = tex.find("\\label{" + lab + "}"); j = tex.rfind("\\caption{", 0, i); return tex[j:i]
+need("\\grade{F3/I1}" in cap("fig:band") and "758/6561=11.5531" in cap("fig:band"), "fig:band grade F3/I1")
+need("\\grade{F2/I1}" in cap("fig:phonons") and "\\grade{B, [MV]4D/I1}" in cap("fig:phonons"), "fig:phonons grades")
+need("\\grade{F2/I1}" in cap("fig:droplet") and "119.06\\pm0.03" in cap("fig:droplet"), "fig:droplet grade")
+need("\\grade{F2/I1}" in cap("fig:hessian") and "0.3423000506" in cap("fig:hessian"), "fig:hessian grade")
+need("6.7\\times10^{-11}" in cap("fig:rotd4") and "-5.6\\times10^{-13}" in cap("fig:rotd4"), "fig:rotd4 both N24 offsets")
+need("exact" not in cap("fig:rotd4").split("census")[-1][:60], "fig:rotd4 census not graded 'exact'")
 # forbidden statements (record-state guards)
 forbidden = [
   (r"c_L/c_T\s*=\s*\\sqrt\{?2", "cL/cT = sqrt2 (false: sqrt3)"),
@@ -46,6 +65,9 @@ forbidden = [
   (r"math/0607446", "wrong arXiv id on EKR"),
   (r"(B|reading \(B\)) is the working reading", "(B) still working"),
   (r"\$46\\times|46 times", "barrier factor 46 (false)"),
+  (r"differ by a factor of about \$15\$", "thin-wall factor 15 stated for both routes"),
+  (r"about \$15\$ times the thin-wall value", "thin-wall summary for one route only"),
+  (r"reduces the one-mode band from \$11\.60", "11.60% without grid scope"),
 ]
 bib = tex[tex.find("\\begin{thebibliography}"):]
 for pat, msg in forbidden:

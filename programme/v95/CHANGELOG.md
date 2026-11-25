@@ -67,3 +67,42 @@ Style pass only. No number, grade, status, citation or claim was changed; no fig
 - Key displays numbered (were unnumbered): $\Psi$, shell free energy, excess free energy in $\varphi$, $r_{\rm eff}$ at the operating point, $f_{\rm el}$, phonon equation of motion, site action, bracket maximum $32$, worst-mode value, envelope equation, Derrick scaling, OS condition, $G(s)$, $\hat G$ integral. Equation references now carry a noun phrase ("the stability bound (9.6)", "the free energy (2.1)").
 - Number multiset (digit sequences of old vs new tex, labels/refs excluded): nothing removed except one literal "$<0$" restated in words ("makes the left side of (13.1) negative"); additions are only exponents/subscripts in the new definitions and shown steps, two gap-label examples, and the notation table's symbols and column widths.
 - Validation rerun: `recompute_v95_prose2.log` 38 PASS exit 0; `check_tex_claims_prose2.log` PASS 26 FAIL 0 exit 0; planted control (`c_L/c_T=\sqrt2`) caught, PASS 25 FAIL 1 exit 1 (`planted_control_prose2.log`). Build log `validation/xelatex_prose2_build.log`. (The `*.log` files are git-ignored, as for the first pass; they sit in the local worktree and in the coordinator's copy.) Heuristic script `validation/ai_tell_heuristics.py`.
+
+## Record-computed figures and two content fixes (2026-11-25, evening CST)
+
+Build 51 pp. (was 44), 0 errors, 0 undefined references, 0 missing glyphs, 0 overfull boxes (10 underfull, the same count as the prose pass; none in a figure caption). Notation (§1.4, p. 6) and Table 1 (p. 7) stay where they were; no figure floats ahead of them.
+
+Figures (final numbers and printed pages). New figures are vector PDFs drawn at `\textwidth`, smallest printed label 8.02–8.20 pt:
+
+| no. | label | file | page | status |
+|---|---|---|---|---|
+| 1 | `fig:d4cell` | `figs/fig01_d4_24cell.pdf` | 9 | added (§3.1) |
+| 2 | `fig:moment` | `figs/fig02.png` | 10 | kept |
+| 3 | `fig:causal` | `figs/fig03.png` | 14 | kept; text reference added |
+| 4 | `fig:rotd4` | `figs/fig06_L3pi_shells.pdf` | 16 | added (§4.6) |
+| 5 | `fig:band` | `figs/fig04_phase_band.pdf` | 18 | replaces old `fig:phase` (`figs/fig04.png`) |
+| 6 | `fig:hessian` | `figs/fig08_hessian_ladder.pdf` | 21 | added (§6.2) |
+| 7 | `fig:droplet` | `figs/fig07_nucleation_saddle.pdf` | 23 | added (§7.2) |
+| 8 | `fig:d4field` | `figs/fig03_d4_field_slices.pdf` | 26 | added (§8.2) |
+| 9 | `fig:phonons` | `figs/fig05_phonons.pdf` | 27 | added (§8.2) |
+| 10 | `fig:cfl` | `figs/fig05.png` | 30 | kept |
+| 11 | `fig:nr` | `figs/fig06.png` | 31 | kept; text reference added |
+| 12 | `fig:scaling` | `figs/fig07.png` | 32 | kept |
+| 13 | `fig:branch` | `figs/fig08.png` | 33 | kept |
+| 14 | `fig:2thopf` | `figs/fig02_2T_hopf.pdf` | 35 | added (§11.3) |
+| 15 | `fig:chain` | `figs/fig09.png` | 35 | kept; text reference added |
+
+- Replaced: the old phase diagram `figs/fig04.png` (v94 legacy, arrived with commit 90b692e; no plotting script in the repo). It showed competitors D4 / hexagonal (6) / subset (12) / lamellar (2) / disordered on $\bar\psi\in[-0.4,0.4]$, including a lamellar region at $\bar\psi\gtrsim0.12$ that the run-12 record (G-A19, $\bar\psi\in[-0.38,0.08]$ computed) never computed, and it cannot be traced to the $758/6561$ data. The new Figure 5 is drawn cell by cell from that record, marks the uncomputed strips, and shows the record's competitor set (hex6, fcc12). The old file stays in `figs/` unreferenced (as do `fig01.png` and `fig10.png`, unreferenced since v95's first build).
+- Every figure is now referred to from the text with a sentence saying what to look at; `fig:causal`, `fig:nr` and `fig:chain` had no `\ref` before this pass.
+- Captions: human prose, no bold, math in `$...$`, scope and grade stated, grades copied from the record and not raised (sources in VALIDATION.md §9). Caption changes against the figure builder's `CAPTIONS.md`: Figure 4 no longer calls the census and $312$ count "exact" as a grade (they are F2/I1 in the record, a-gd3b R1/R3, recomputed here in integer arithmetic); it gives both $N=24$ offsets ($-5.6\times10^{-13}$ and $+6.7\times10^{-11}$, aliasing at $N=24$) and scopes the degeneracy grade to $N=32$ (a-gd3b R10); the selection fraction is pointed to §4.6 since it is not plotted. Figures 5, 8 and 9 state $w_6=0$; Figure 9 states zero damping as its scope; Figure 1 states the triad count $24\cdot8=192$ from the $120^\circ$ partners explicitly (the grey lines are the $60^\circ$ pairs).
+- Figure fixes before insertion (in the figure source tree): all eight redrawn at width 6.3 in with an 8-pt printed-size floor; fig04 fcc12 colour changed to vermillion #D55E00 after the colour-vision check found hex6/fcc12 indistinguishable in greyscale ($\Delta E'=3.4$, now $11.8$); panel titles and legends shortened in figs 3, 6, 7, 8 to meet the floor.
+- Edit script: `validation/insert_figures_2026-11-25.py` (exact-match anchors; reapplied to the HEAD 3ab787d text it reproduces this tex except for the three added references to existing figures).
+
+Content fixes (record-checked before editing):
+
+1. §7.2 thin-wall factors. Old: "Against the envelope saddle these differ by a factor of about $15$; …" and "The amplitude-equation barrier is about $15$ times the thin-wall value; the full-field barrier is within a factor of about $3.2$." New: "Against the envelope saddle they differ by factors of $550.93/36.95\approx14.9$ and $550.93/138.12\approx4.0$; …" and "The amplitude-equation barrier is about $15$ times the first thin-wall estimate and about $4.0$ times the second; the full-field barrier is about $3.2$ times the first and $0.86$ times the second." Record: v94 `IRH_v94.tex` l.938 (thin-wall transfers $36.95$ / $138.12$ against the saddle $550.93$; v94 states only the $14.9\times$ mismatch, which is the first route). Arithmetic: $550.93057/36.95=14.910$, $550.93057/138.12=3.989$.
+2. §5.3 sextic narrowing. Old: "reduces the one-mode band from $11.60\%$ at $w_6=0$ to $8.36\%$ at $w_6=0.2$." New: "reduces the one-mode band, computed on a $161\times161$ grid of the same window with the competitors hex6, fcc12, sq4 and sq8, from $11.60\%$ at $w_6=0$ to $8.36\%$ at $w_6=0.2$. The value $11.60\%$ is that one-mode $161\times161$ number of Section 5; it is not the canonical full-field value $11.5531\%$ of (5.3) on the $81\times81$ grid, nor the one-mode value $11.5226\%$ on that grid." Record: WS-A `programme/workstreams/ws-a-core-computations/task3_report.md` l.7–9 and table l.43 (W1, $161\times161$, family {hex6, fcc12, sq4, sq8}: $11.60\%\to8.36\%$); run 12 `w-ga19/G-A19.md` l.26, 68, 70 and `v-ga19/OUTPUTS.md` l.24, 29 ($11.5531\%$ full field $81\times81$; one-mode $81\times81$ $11.5226\%$; one-mode W1 $161\times161$ recomputed $11.5968\%$); v94 l.368.
+
+Bibliography keys versus printed numbers. This CHANGELOG (and the earlier sections above) name references by printed number where written as [n], but the source uses keys `ref1`…`ref50` with `ref9` (Landau 1937) dropped, so printed numbers run one below the key from `ref10` on: `ref1`–`ref8` print as [1]–[8]; `ref10`→[9], `ref11`→[10], …, `refN`→[N−1], …, `ref50`→[49] (from `IRH_v95_draft.aux`, 49 `\bibcite` entries). The "New references" line of the first pass names keys: Stefanovic–Haataja–Provatas is `ref46`, printed [45]; Chaikin–Lubensky `ref47`, [46]; Osterwalder–Schrader `ref48`/`ref49`, [47]/[48]; Williams–Turyshev–Boggs `ref50`, [49].
+
+Validation rerun: `recompute_v95_figs.log` 38 PASS, exit 0; `check_tex_claims_figs.log` PASS 54 FAIL 0, exit 0 (28 new assertions: both fixes, every figure referenced, figure grades); planted control `c_L/c_T=\sqrt2` caught (PASS 53 FAIL 1, exit 1, `planted_control_figs.log`); two new plants restoring each old wording caught (exit 1 each, `planted_factor15_figs.log`, `planted_1160_figs.log`); the HEAD 3ab787d text fails 14 of the new assertions, as it should. `ai_tell_figs.log`: same counts as the prose pass (only item 9, four tricolon paragraphs, all previously read and kept). Build log `validation/xelatex_figs_build.log`.
