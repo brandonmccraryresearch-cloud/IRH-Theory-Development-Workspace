@@ -1392,3 +1392,5 @@ place.
   shipped rerun log) and read the four reports. The zip was rebuilt
   from the corrected guide (142 files, integrity-tested). The
   workstream files themselves were NOT edited.
+
+> **Addendum pointer (run 13, 2026-11-26; historical text above unchanged).** Statements here of the "~$15\times$ thin-wall" ratio, or of $555$ / $550.93$ as "the" barrier, refer to the amplitude-equation / radial restricted-envelope barrier. The unrestricted full-field critical droplet has $\Delta F^*_\infty=119.06\pm0.03$ (run 13, EXP-1307, F2/I1), about $3.2\times$ the thin-wall value. See inventory G-A10 and G-A18 and `swarm/run13/adj/a-ga10_RULING.md` §6 (sha256 `96c3db44c144…`).
