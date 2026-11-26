@@ -75,7 +75,7 @@ the bounded adaptive-splitting search; per-configuration 95% upper bound on gate
 entry by model time 40 is $8.94\%$ (Clopper–Pearson $0/32$). The null is expected
 at barrier/noise $\approx 34$ (Kramers factor $\sim 10^{15}$); it is a
 per-configuration gate-entry bound in the radial envelope, not a selection rate,
-and it neither confirms nor refutes a nucleation mechanism.
+and it neither confirms nor refutes a nucleation mechanism. Run-13 note (2026-11-26): in the full field, at the same noise, barrier/noise ≈7.3 (run 13 barrier 119.06), with an uncontrolled prefactor; the radial-envelope null does not transfer (`swarm/run13/adj/a-ga10_RULING.md` §6 R5, sha256 `96c3db44c144…`; inventory G-A10).
 
 $\to$ Brief: `problems/IX5-genuinely-open.md`
 
