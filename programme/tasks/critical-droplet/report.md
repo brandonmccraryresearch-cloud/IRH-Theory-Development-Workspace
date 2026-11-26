@@ -6,6 +6,8 @@ At the manuscript’s tuned point **$r = -0.35$, mean $m = -0.18$, u = v = 1, $q
 
 A separate nonuniform stationary saddle has **$L^{2}$-equivalent radius 13.52856 and total excess energy 550.93057** on that grid. It has one positive radial dynamical eigenvalue. Contracting or expanding its profile by 2% produces decay or growth, respectively. On the finest tested grid its radius is 13.53027 and energy 551.24848. These are **restricted-envelope estimates**, not a verified critical nucleus of the unrestricted 4D scalar field.
 
+> **Addendum (run 13, 2026-11-26; record note, report text unchanged).** Run 13 (EXP-1307, F2/I1): the unrestricted field's critical droplet has $\Delta F^*_\infty=119.06\pm0.03$; the envelope saddle embedded in the full functional is not stationary (rel. gradient 0.234). The §223 'next validation' has been done. Source: `swarm/run13/adj/a-ga10_RULING.md` §6 R4 (sha256 `96c3db44c144…`); see inventory G-A10.
+
 **No noise was used. No waiting-time distribution, temperature, stochastic action, physical nucleation rate or cosmological timescale is inferred.** A deterministic separatrix is not a stochastic waiting time. The saddle energy is not automatically the activation exponent of an unspecified noise process.
 
 ![Growth thresholds, near-critical trajectories, initial-seed excess energies and the stationary radial profile.](size_growth_energy.png)
