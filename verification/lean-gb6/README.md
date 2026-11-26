@@ -27,6 +27,7 @@ Build order (each file only imports files above it, plus Mathlib):
 5. `GB6H` → `GB6HI` → `GB6HI2` (imports HILit) → `GB6HJ` (imports HJLit) → `GB6HJ6`
 6. Controls: `GB6CtrlFailCounts`, `GB6CtrlFailHeavy1–3` (Core), `GB6CtrlFailReal` (Real), `GB6CtrlNeg` (Real, Grid), `GB6CtrlFailH` (HJ)
 7. Verifier: `verifier/GB6V_audit`, `verifier/GB6V_ctrl_fail`, `verifier/GB6V_ctrl_neg` (import production modules up to `GB6HJ6`)
+8. Run 13, N7 (EXP-1313): `N7Bracket` (imports `GB6Real`) → controls `N7CtrlFail31`, `N7CtrlFailRoots` (import `N7Bracket`; must fail); verifier `verifier/VN7Indep` (imports `N7Bracket`) → `verifier/VN7Ctrl` (imports `VN7Indep`; must fail)
 
 Peak RSS reached about 12.8 GB (`GB6CountsD4Q`), so budget at least 16 GB.
 
@@ -38,6 +39,9 @@ Peak RSS reached about 12.8 GB (`GB6CountsD4Q`), so budget at least 16 GB.
 | `GB6CtrlFail*.lean` (6), `GB6CtrlNeg.lean` | must-fail perturbed controls and must-compile negations | w-gb6 |
 | `verifier/GB6V_audit.lean` | verifier audit, including the C11 dual-shell supplement `GB6V.V11_dual_*`, the plant check `RG_Q`, `V_dual_T` and `V18_nonvacuous` | **v-gb6 (verifier)**, copied verbatim |
 | `verifier/GB6V_ctrl_fail.lean`, `verifier/GB6V_ctrl_neg.lean` | the verifier's own 10 must-fail controls (including the plant) and 7 must-compile negations | **v-gb6**, copied verbatim |
+| `N7Bracket.lean`, `N7CtrlFail31.lean`, `N7CtrlFailRoots.lean` | N7: bracket supremum 32 and the unconditional C21 instance; two must-fail controls (run 13, EXP-1313) | w-n7 (author), copied verbatim (sha256 in `MANIFEST.sha256`) |
+| `verifier/VN7Indep.lean`, `verifier/VN7Ctrl.lean` | N7 verifier: independent restatement (incl. `int_norm2_mem`, `C21_hbr_trivial`, `N7B_pi4`) and a must-fail control (planted P13-L, `vctrl_pi4_is_32`) | **v-n7 (verifier)**, copied verbatim |
+| `crosscheck/n7_xcheck.py`, `crosscheck/vn7_xcheck.py`, `crosscheck/vn7_xcheck.wls`, `crosscheck/vn7_xcheck2.wls` | optional N7 cross-checks (SymPy / Wolfram) | w-n7 / v-n7, copied verbatim |
 | `generators/genI.py`, `generators/genJ.py` | generators for the literal tables in `GB6HILit` / `GB6HJLit` | w-gb6 |
 | `crosscheck/xcheck_counts.py` | author's Python enumeration (nested loops, exact `Fraction`) | w-gb6 |
 | `crosscheck/v_enum.py` | verifier's independent enumeration (Counter convolution; does not import author code) | v-gb6 |
@@ -79,7 +83,7 @@ The verbatim v94 / WS-C quotes with file:line (repo 782a555) are in the frozen c
 
 - **C11** — closed via the verifier's supplement `GB6V.V11_dual_*` (verifier-authored). The author file alone covers only the root half and is PARTIAL. The identification of `P4 := shellOf 4 2 4` with $2\cdot\min(D_4^*)$ is checked by hand and in Python, not proved in Lean. "$D_4$ is isodual" is cited, not formalized.
 - **C17** — holds under the **D-H reading**: $H$ is the number of ordered zero-sum 6-tuples of roots. The definition of $H$ is not printed in the source. The printed $911040$ is reproduced exactly, which supports the reading but does not prove it is the source's definition.
-- **C21** — **CONDITIONAL** on (i) the bracket maximum $=32$ (hypothesis `hbr`, carried, see N7) and (ii) the l.505 reading of the eq. (7) prefactor $\Delta t^2\,2J/(4Ma_0^2)$, which is carried and not re-derived.
+- **C21** — **CONDITIONAL** only on the l.505 reading of the eq. (7) prefactor $\Delta t^2\,2J/(4M_*a_0^2)$ (condition (ii), carried, not re-derived). Its former condition (i), the bracket maximum $=32$, is settled by N7 (run 13, EXP-1313, ruling a-n7b `858c2421…`): the printed bracket's supremum is kernel-proved to be 32 (`N7.hbr_discharged : sSup (Set.range N7.B) = 32`, attained at $k=(0,0,\pi,\pi)$), and `N7.C21_sin2_unconditional` instantiates `GB6.C21_sin2` at that object. The `hbr` hypothesis of `GB6.C21_sin2` is over a free real and is satisfiable by instantiation (`VN7.C21_hbr_trivial`), so the content is the instantiation, not the hypothesis.
 - **C23** — under an **unprinted convention**: $D_4=\{y\in\mathbb Z^4:\sum y\ \text{even}\}$, the shell is $\min(D_4^*)$, $\Psi=\sum\cos(2\pi g\cdot x)$, encoded as $h=2g$ (24 vectors, $\lvert h\rvert^2=4$, list proved complete) with $x=y/2$. "Global maximum, unique" and the 0.1 % clause are not covered (N1).
 - **C19** — two minor non-load-bearing items are unformalized: the edge equivalence is proved as two facts rather than one theorem, and the task2 "small root unstable, $F>0$" remark is not formalized.
 
@@ -93,7 +97,7 @@ The verbatim v94 / WS-C quotes with file:line (repo 782a555) are in the frozen c
 | N4 | power shares | not Lean-able (simulation) |
 | N5 | relaxed $F/V$, 1.24 % lowering | not Lean-able (PDE relaxation) |
 | N6 | WS-C C1.1–C1.3, C1.5, C1.6, C2.1–C2.4, P1–P5 | not Lean-able (simulation) |
-| N7 | "maximum exactly 32" (l.505 bracket) | **Lean-able, not attempted, OPEN.** Next attack: a Lean theorem $\forall k\in\mathbb R^4,\ \sum_\alpha(1-\cos(k\cdot\alpha))\le32$ plus attainment at $k=(0,0,\pi,\pi)$; it would remove condition (i) of C21. The paper argument $\sum_\alpha\cos(k\cdot\alpha)=2[(\sum c_i)^2-\sum c_i^2]\ge-8$ is UNVERIFIED. |
+| N7 | "maximum exactly 32" (v94 l.478; l.505 bracket) | **CLOSED (run 13, EXP-1313; ruling a-n7b), B [MV]4K F1/I1.** $\sum_{\alpha\in\Phi_{D_4}}(1-\cos(k\cdot\alpha))\le32$ for all $k\in\mathbb R^4$, attained at $k=(0,0,\pi,\pi)$: `N7.hbr_discharged`, `N7.bracket_attained`, `N7.C21_sin2_unconditional` (`N7Bracket.lean`); must-fail controls `N7CtrlFail31.lean`, `N7CtrlFailRoots.lean`; verifier `verifier/VN7Indep.lean` (incl. `int_norm2_mem`, `C21_hbr_trivial`, `N7B_pi4`) and must-fail `verifier/VN7Ctrl.lean`; optional cross-checks `crosscheck/n7_xcheck.py`, `vn7_xcheck.py`, `vn7_xcheck.wls`, `vn7_xcheck2.wls`. Removes condition (i) of C21. |
 | N8 | Weyl / $W(F_4)$ orders | **out of scope** for EXP-1304 (Lean-able in principle) |
 | N9 | C1.4 "ontology dissolves circularity" | not Lean-able (interpretive) |
 
