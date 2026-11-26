@@ -161,7 +161,7 @@ Branch `run13/record-end`, cut from main `1ea6c14ac4bd793a62daec6f3b2c946d5c1744
 
 ### 9.2 Corrections to frozen deliverables (record wording only)
 - **6-mode cluster list (a-b1 §4, `a-b1_RULING.md` sha256 `00f02ffaa5ef…`).** Correction (run 13, a-b1, on v-ma4b's verification): the 6-mode control spectrum listed in `w-ma4b/M-A4b.md` §(a) and `w-ma4b/OUTPUTS.md` ("0.354616 ×4, 0.598209, 0.598834, 0.697240, 0.712527, 0.758273 ×10, 1.17409, 1.38791") is REFUTED. The list is incomplete (20 nonzero plus 2 zero, against 24 eigenvalues below the Weyl floor $15.32$), and it contains values excluded by the verifier's bracketed Wolfram Galerkin and Kahan-certified numpy spectra. The verified lowest Hessian eigenvalues of the 6-mode state ($F_{exc}=-0.04177200107014797$) are $0.354616\times6$, $0.598834\times2$, $0.758273\times12$, $1.172415$ (unconstrained; $1.174160$ constrained) and $1.387976$, plus 2 translation zero modes. The inertia $(0,2,22)$ and the M-A4b verdict are unaffected. No repo text carried the list (`git grep` 0 hits at b8a496a).
-- **R-A4c (a-b1 §2).** SPLIT: withdrawn as worded (the shipped `verification/sim6_units.py`, sha256 `fd18f582…`, projects by default); the missing non-finite guard is carried under R-A4c. Full text in inventory G-A4.
+- **R-A4c (a-b1 §2).** SPLIT: withdrawn as worded (the shipped `verification/sim6_units.py`, sha256 `fd18f582…`, projects by default); the missing non-finite guard is carried under R-A4c. Full text in inventory G-A4. (`a-b1_RULING.md` sha256 `00f02ffaa5ef…`)
 - **K-A.md l.95 (a-ka row 2a, `a-ka_RULING.md` sha256 `986b7de9c377…`).** The sentence ending "the SH fluctuation measure about either phase is not an OS-positive Euclidean field theory in these directions" drops "lattice-regularised" for the crystal. Record wording: "… about the disordered phase on $\mathbb R^4$, and about the crystal for the lattice-regularised $F_h$, in the tested directions".
 - **G-D3b (a-gd3b Q4, `a-gd3b_RULING.md` sha256 `c42524f43311…`):**
   1. `G-D3b.md:90`: read "$\lvert dF_{exc}\rvert_{50}=8.6\times10^{-13}$ (total-$F$ $\lvert dF\rvert_{50}=4.74\times10^{-12}$)" for "$\lvert dF_{exc}\rvert_{50}=4.74\times10^{-12}$".
@@ -187,10 +187,10 @@ Branch `run13/record-end`, cut from main `1ea6c14ac4bd793a62daec6f3b2c946d5c1744
 Recorded as notes on G-B2, G-B3 and G-B4; their Status lines are unchanged because no adjudicated ruling closes them. Open items: `sim6_units.analyze` l.62–63 still averages the lock over all triads with no empty/zero-state guard; the absolute floor `max(0.5·max, 1e-3·A*)` needs coordinator countersign before any run; the shipped ws-c csv `lock` columns use the old metric; the T-B4 JSON is byte-identical only on the numpy 2.x VM env (physics fields agree).
 
 ### 9.5 Other record items
-- **G-C13:** stale "being merged" text replaced by "merged on main via run-12 R-TEX (899efb8 → cda11ec)".
+- **G-C13:** stale "being merged" text replaced by "merged on main via run-12 R-TEX (899efb8 → cda11ec)" (basis: Brandon's closure 2026-11-22 15:19 CST and run-12 R-TEX; no run-13 ruling).
 - **G-C8:** reading (B) decided 2026-11-25 ~05:45 CST under Brandon's delegation and reversed the same day when the memo's K-B1 trigger fired (EXP-1315, `a-kb1_RULING.md` sha256 `f8df06b8dfdd…`); (C) is the working reading with no construction; (A) not reinstated. Memo copied verbatim as `programme/G-C8_DECISION_2026-11-25.md` (sha256 `6073322da2cc27b883b064005e029754ba4bc5b7385ef0ba7da6ac1e7c45f7d3`). v94 §IX.2 unchanged.
 - **G-E10 Q5:** v1 DOI 10.5281/zenodo.19151765 is a deleted record (HTTP 410), so Q5 is CLOSED (`G-E10_Q5_NOTE.md` sha256 `90ceff7e073c…`); M6 dated correction note added under the M6 row of `programme/workstreams/ws-e-cosmology-map/14-researcher-map-report.md` (row kept).
-- **G-C19:** the ABSTAIN record was stale; resolved at G8/F1 on 2026-11-12 (a-abst §4).
+- **G-C19:** the ABSTAIN record was stale; resolved at G8/F1 on 2026-11-12 (a-abst §4) (`a-abst_RULING.md` sha256 `6db0a198e48a…`).
 
 ### 9.6 Recount (frozen `recount.py`, sha256 `17ff88cd68497ce597325ec7943b2dc05cdf57714424ca92a0921dc1987cd6d7`)
 
