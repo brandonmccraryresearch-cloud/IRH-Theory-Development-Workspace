@@ -1,42 +1,210 @@
+% !TEX program = lualatex
 \documentclass[a4paper,11pt]{article}
-\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[a4paper,top=2.5cm,bottom=2.4cm,left=2.4cm,right=2.4cm]{geometry}
 \usepackage{amsmath,amsthm}
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{xltabular}
-\usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
-% ---------------------------------------------------------------------------
-% Fonts (author's specification, 2026-11-25): Noto Sans for text, Noto Sans
-% Math for mathematics, Fira Math as fallback for glyphs absent from Noto Sans
-% Math. Fallback ranges are listed explicitly and were chosen from the build
-% log ("Missing character" lines), not guessed.
-% ---------------------------------------------------------------------------
-\setmainfont{NotoSans}[Path=/usr/share/fonts/truetype/noto/,Extension=.ttf,
-  UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
-\setsansfont{NotoSans}[Path=/usr/share/fonts/truetype/noto/,Extension=.ttf,
-  UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
-\setmonofont{NotoSansMono}[Path=/usr/share/fonts/truetype/noto/,Extension=.ttf,UprightFont=*-Regular,Scale=0.92]
-\setmathfont{NotoSansMath-Regular.otf}[Path=./fonts/]
-% Fira Math fallback for glyphs absent from Noto Sans Math: none needed (build log has no Missing character).
-\setlength{\emergencystretch}{2em}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{hyperref}
+\newcommand{\JSshorttitle}{Intrinsic Resonance Holography, v95}
+\newcommand{\JSauthor}{B.\ D.\ McCrary}
+\newcommand{\JSfootline}{Draft of November 25, 2026}
+\usepackage{etoolbox}
+% ==============================================================================
+% JOURNAL STYLE BLOCK (2026-11-26), built on the preamble of the corrected
+% topology report (main_corrected.tex, 2026-11-25): Noto Sans text with a
+% per-glyph Fira Sans fallback chain (luaotfload), Noto Sans Mono, Noto Sans
+% Math v3.000 (bundled in ./fonts, has the OpenType MATH table) with a Fira
+% Math range fallback; the report's light-mode palette; titlesec section
+% rules; fancyhdr hairline header/footer; caption setup; hyperref colour links.
+% Compile with LuaLaTeX.
+% ==============================================================================
+\directlua{
+  luaotfload.add_fallback("notoregfb",  {"FiraSans-Regular.otf:mode=harf;"})
+  luaotfload.add_fallback("notoboldfb", {"FiraSans-Bold.otf:mode=harf;"})
+  luaotfload.add_fallback("notoitfb",   {"FiraSans-Italic.otf:mode=harf;"})
+  luaotfload.add_fallback("notobifb",   {"FiraSans-BoldItalic.otf:mode=harf;"})
+}
+\setmainfont{NotoSans}[
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  UprightFeatures    = {RawFeature={fallback=notoregfb}},
+  BoldFeatures       = {RawFeature={fallback=notoboldfb}},
+  ItalicFeatures     = {RawFeature={fallback=notoitfb}},
+  BoldItalicFeatures = {RawFeature={fallback=notobifb}}
+]
+\setsansfont{NotoSans}[
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  UprightFeatures    = {RawFeature={fallback=notoregfb}},
+  BoldFeatures       = {RawFeature={fallback=notoboldfb}},
+  ItalicFeatures     = {RawFeature={fallback=notoitfb}},
+  BoldItalicFeatures = {RawFeature={fallback=notobifb}}
+]
+\setmonofont{NotoSansMono}[
+  Extension   = .ttf,
+  UprightFont = *-Regular,
+  BoldFont    = *-Bold,
+  ItalicFont  = *-Regular,
+  ItalicFeatures = {FakeSlant=0.2},
+  Scale       = 0.88
+]
+\setlength{\emergencystretch}{3em}
+\setmathfont{NotoSansMath-Regular.otf}[Path = ./fonts/, Scale = 1.0]
+\setmathfont{FiraMath-Regular.otf}[
+  Scale = MatchLowercase,
+  range = {"2011,"2012,"2013,"201A,"201E,"2030,"2039,"203A,"203F,"20B4,"20BA,"20BD,"2116,"2122,"212A,"212E,"2153,"2154,"2155,"2156,"2157,"2158,"2159,"215A,"215B,"215C,"215D,"215E,"215F,"2581,"2582,"2583,"2585,"2586,"2587,"2589,"258A,"258B,"258D,"258E,"258F,"2594,"2595,"2596,"2597,"2598,"2599,"259A,"259B,"259C,"259D,"259E,"259F,"2620,"2639,"263A,"FB00,"FB01,"FB02,"FB03,"FB04}
+]
 \tracinglostchars=3 % any glyph missing from the loaded fonts is a hard error
+
+% ---- palette (exact light-mode palette of the topology report) -------------
+\definecolor{surface}{HTML}{FFFFFF}
+\definecolor{bgsubtle}{HTML}{F8F9FA}
+\definecolor{bgheader}{HTML}{F4F5F7}
+\definecolor{inkprimary}{HTML}{1B1C1D}
+\definecolor{inksecondary}{HTML}{575B5F}
+\definecolor{borderhairline}{HTML}{E0E0E0}
+\definecolor{borderstrong}{HTML}{C4C7C5}
+\definecolor{truebg}{HTML}{E8F0FE}
+\definecolor{trueborder}{HTML}{C6DAFC}
+\definecolor{trueaccent}{HTML}{1A73E8}
+\definecolor{truetext}{HTML}{174EA6}
+\definecolor{truesub}{HTML}{1967D2}
+\definecolor{openbg}{HTML}{FEF3E6}
+\definecolor{openborder}{HTML}{FAD7B4}
+\definecolor{openaccent}{HTML}{FA903E}
+\definecolor{opentext}{HTML}{B05B00}
+\definecolor{falsebg}{HTML}{FCE8E6}
+\definecolor{falseborder}{HTML}{F5C2BE}
+\definecolor{falseaccent}{HTML}{D93025}
+\definecolor{falsetext}{HTML}{A50E0E}
+\definecolor{badgebg}{HTML}{ECEFF1}
+\definecolor{badgetext}{HTML}{37474F}
+\definecolor{neonmagenta}{HTML}{FF10F0}
+
+% ---- status tags (used sparingly, only where the text already states the status)
+\newcommand{\sttag}[3]{{\setlength{\fboxsep}{1.2pt}\colorbox{#1}{\textcolor{#2}{\footnotesize #3}}}}
+\newcommand{\stproved}[1]{\sttag{truebg}{truetext}{#1}}
+\newcommand{\stopen}[1]{\sttag{openbg}{opentext}{#1}}
+\newcommand{\strefuted}[1]{\sttag{falsebg}{falsetext}{#1}}
+\newcommand{\stneutral}[1]{\sttag{badgebg}{badgetext}{#1}}
+
+% ---- tables: booktabs rules in palette grey, light header shading ----------
+\arrayrulecolor{borderstrong}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\renewcommand{\arraystretch}{1.22}
+\let\jsOldToprule\toprule
+\renewcommand{\toprule}{\jsOldToprule\rowcolor{bgheader}}
+
+% ---- headings ---------------------------------------------------------------
+\titleformat{\part}[display]
+  {\centering\Huge\bfseries\color{inkprimary}}
+  {\large\color{trueaccent}\MakeUppercase{\partname}~\thepart}{8pt}{}
+  [\vspace{6pt}{\color{trueaccent}\titlerule[1.2pt]}]
+\titleformat{\section}
+  {\large\bfseries\color{inkprimary}}
+  {\textcolor{trueaccent}{\thesection.}}{0.5em}{}
+  [\vspace{2pt}{\color{borderhairline}\titlerule[0.8pt]}]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{inkprimary}}
+  {\textcolor{trueaccent}{\thesubsection}}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalsize\itshape\color{inkprimary}}
+  {\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titlespacing*{\subsection}{0pt}{12pt}{5pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{4pt}
+
+% ---- header / footer --------------------------------------------------------
+\setlength{\headheight}{21.3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\bfseries\color{inkprimary}\JSshorttitle}
+\fancyhead[R]{\footnotesize\color{inksecondary}\JSauthor}
+\fancyfoot[L]{\footnotesize\color{inksecondary}\JSfootline}
+\fancyfoot[R]{\footnotesize\bfseries\color{inkprimary}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{borderhairline}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{borderhairline}\leaders\hrule height \footrulewidth\hfill}}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[R]{\footnotesize\bfseries\color{inkprimary}\thepage}%
+  \fancyfoot[L]{\footnotesize\color{inksecondary}\JSfootline}}
+
+% ---- captions ---------------------------------------------------------------
+\captionsetup{
+  font={footnotesize},
+  labelfont={bf, color=truetext},
+  textfont={color=inksecondary},
+  justification=raggedright,
+  singlelinecheck=false,
+  skip=6pt
+}
+
+% ---- abstract in a light panel ---------------------------------------------
+\newtcolorbox{jsabstractbox}{enhanced, breakable, colback=bgsubtle,
+  colframe=bgsubtle, boxrule=0pt, arc=2pt, borderline west={2.2pt}{0pt}{trueaccent},
+  left=10pt, right=10pt, top=8pt, bottom=8pt}
+\renewenvironment{abstract}
+  {\begin{jsabstractbox}{\small\bfseries\color{truetext}\MakeUppercase{Abstract}\par}\vspace{3pt}\small}
+  {\end{jsabstractbox}}
+
+\makeatletter\renewcommand\@biblabel[1]{\textcolor{truetext}{[#1]}}\makeatother
+
+% ---- hyperref ---------------------------------------------------------------
+\hypersetup{colorlinks=true, linkcolor=trueaccent, urlcolor=trueaccent,
+  citecolor=truesub, filecolor=trueaccent, pdfauthor={Brandon D. McCrary}}
+
+
+% ---- title block ------------------------------------------------------------
+\makeatletter
+\renewcommand{\@maketitle}{%
+  \newpage\null\vskip -1.2em
+  {\color{trueaccent}\hrule height 2.2pt}\vskip 0.3em
+  {\color{borderhairline}\hrule height 0.4pt}\vskip 1.6em
+  \begin{center}%
+    {\LARGE\bfseries\color{inkprimary}\@title\par}\vskip 1.4em
+    {\normalsize\color{inkprimary}\lineskip .5em\begin{tabular}[t]{c}\@author\end{tabular}\par}\vskip 1em
+    {\small\color{inksecondary}\@date\par}%
+  \end{center}\par\vskip 1.2em}
+\makeatother
 \usepackage{newunicodechar}
 \newunicodechar{ℤ}{$\mathbb{Z}$}
 \setlength{\parskip}{0.45em}
 \setlength{\parindent}{1.2em}
-\setlength{\emergencystretch}{2em}
-\tracinglostchars=3 % any glyph missing from the loaded fonts is a hard error
+\linespread{1.06}
 \numberwithin{equation}{section}
+\newtheoremstyle{jsplain}{8pt}{8pt}{\itshape}{}{\bfseries\color{truetext}}{.}{0.5em}{}
+\newtheoremstyle{jsrem}{6pt}{6pt}{\normalfont}{}{\itshape\color{inksecondary}}{.}{0.5em}{}
+\theoremstyle{jsplain}
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}[proposition]{Lemma}
-\theoremstyle{remark}
+\theoremstyle{jsrem}
 \newtheorem*{remark}{Remark}
 % Epistemic label: rendered in small capitals, never in bold.
-\newcommand{\lbl}[1]{\textsc{#1}.\ }
+% Label colour follows its kind (palette of the topology report): derived or
+% predicted = blue, exclusion = red, open = orange, input/calibration = slate.
+\colorlet{lbl@Derivation}{truetext}\colorlet{lbl@Prediction}{truetext}
+\colorlet{lbl@Exclusion}{falsetext}\colorlet{lbl@Open}{opentext}
+\colorlet{lbl@Input}{badgetext}\colorlet{lbl@Calibration}{badgetext}
+\newcommand{\lbl}[1]{\textcolor{lbl@#1}{\textsc{#1}}.\ }
 \newcommand{\grade}[1]{[\,#1\,]}
 \newcommand{\Dfour}{D_4}
 
@@ -44,18 +212,22 @@
 
 \begin{titlepage}
 \centering
-\vspace*{2.5cm}
-{\LARGE Intrinsic Resonance Holography}\\[0.8em]
-{\Large Dynamical selection of a $D_4$ substrate from interference dynamics}\\[1.2em]
-{\large Version 95 (draft of November 25, 2026)}\\[2.5em]
+\thispagestyle{empty}
+{\color{trueaccent}\hrule height 2.2pt}\vskip 0.3em
+{\color{borderhairline}\hrule height 0.4pt}
+\vspace*{2.2cm}
+{\LARGE\bfseries\color{inkprimary} Intrinsic Resonance Holography}\\[0.8em]
+{\Large\color{truetext} Dynamical selection of a $D_4$ substrate from interference dynamics}\\[1.2em]
+{\large\color{inksecondary} Version 95 (draft of November 25, 2026)}\\[2.5em]
 {\large Brandon D. McCrary}\\[0.4em]
-Independent researcher\\[0.3em]
+\textit{Independent researcher}\\[0.3em]
 ORCID \href{https://orcid.org/0009-0008-2804-7165}{0009-0008-2804-7165}\\[2.5em]
-\begin{minipage}{0.86\linewidth}
+\begin{tcolorbox}[enhanced, width=0.9\linewidth, colback=bgsubtle, colframe=bgsubtle, boxrule=0pt, arc=2pt, borderline west={2.2pt}{0pt}{trueaccent}, left=10pt, right=10pt, top=8pt, bottom=8pt, halign=justify]
 \small
 This is a working draft of the ninety-fifth edition. It supersedes version 94 (November 14, 2026) as a statement of the programme, but version 94 remains the citable record of what was claimed on that date. Every change from version 94 is listed in Appendix~\ref{app:corrections} and in the accompanying change log. Verification data, scripts and the frozen pre-registrations referred to in the text are in the public repository \texttt{IRH-Theory-Development-Workspace} (GitHub account \texttt{brandonmccraryresearch-cloud}), under \texttt{programme/}.
-\end{minipage}
+\end{tcolorbox}
 \vfill
+{\color{borderhairline}\hrule height 0.6pt}
 \end{titlepage}
 
 \begin{abstract}
@@ -947,19 +1119,19 @@ Each claim in Table~\ref{tab:retract} is withdrawn for a stated reason.
 \toprule
 version 92 claim & status & reason\\
 \midrule
-anisotropy coefficient $\xi_2=-1/384$ & retracted & the $D_4$ fourth moment is exactly isotropic; the value comes from a hypercubic stand-in, whose own substitution gives $-1/768$\\
-$\mathfrak{so}(8)\to\mathfrak{g}_2\to$ Pati--Salam & retracted & dimension rises $15\to21$ and rank $3\to5$\\
-$SO(8)$ as gauge group & retracted & non-chiral, $-1\in W(D_4)$\\
-three generations from triality & retracted & five mechanisms closed; now an input\\
-$\Delta t=a_0/c$ and $\Delta t=T_P$ & retracted & both violate the bound \eqref{eq:cfl}\\
-Schrödinger emergence & corrected & the original carrier is degenerate; replaced in Section~\ref{sec:legacy}\\
-Lorentzian signature from $i^2=-1$ & retracted & complex amplitudes are used in Euclidean field theory too; they do not select a signature\\
-Einstein equations from elasticity & retracted & an analogy, not a derivation\\
-absence of monopoles & retracted & inconsistent with $E_6$ broken to a group with a $U(1)$\\
-Higgs value $v_0$, $A_3$ mass and widths, CKM & retracted & computed in an excluded framework, with separate arithmetic errors\\
-``zero empirical calibration'', ``100\% closure'' & retracted & not defensible in any version\\
-$\alpha^{-1}=137+1/(28-\pi/14)$ as derived & downgraded & the arithmetic is exact, the derivation absent \grade{D}\\
-normalisation $R=2589$ & downgraded & the subtraction of $3$ is not forced by any displayed symmetry\\
+anisotropy coefficient $\xi_2=-1/384$ & \strefuted{retracted} & the $D_4$ fourth moment is exactly isotropic; the value comes from a hypercubic stand-in, whose own substitution gives $-1/768$\\
+$\mathfrak{so}(8)\to\mathfrak{g}_2\to$ Pati--Salam & \strefuted{retracted} & dimension rises $15\to21$ and rank $3\to5$\\
+$SO(8)$ as gauge group & \strefuted{retracted} & non-chiral, $-1\in W(D_4)$\\
+three generations from triality & \strefuted{retracted} & five mechanisms closed; now an input\\
+$\Delta t=a_0/c$ and $\Delta t=T_P$ & \strefuted{retracted} & both violate the bound \eqref{eq:cfl}\\
+Schrödinger emergence & \stneutral{corrected} & the original carrier is degenerate; replaced in Section~\ref{sec:legacy}\\
+Lorentzian signature from $i^2=-1$ & \strefuted{retracted} & complex amplitudes are used in Euclidean field theory too; they do not select a signature\\
+Einstein equations from elasticity & \strefuted{retracted} & an analogy, not a derivation\\
+absence of monopoles & \strefuted{retracted} & inconsistent with $E_6$ broken to a group with a $U(1)$\\
+Higgs value $v_0$, $A_3$ mass and widths, CKM & \strefuted{retracted} & computed in an excluded framework, with separate arithmetic errors\\
+``zero empirical calibration'', ``100\% closure'' & \strefuted{retracted} & not defensible in any version\\
+$\alpha^{-1}=137+1/(28-\pi/14)$ as derived & \stneutral{downgraded} & the arithmetic is exact, the derivation absent \grade{D}\\
+normalisation $R=2589$ & \stneutral{downgraded} & the subtraction of $3$ is not forced by any displayed symmetry\\
 \bottomrule
 \end{tabular}
 \caption{Claims withdrawn from version 92.}
@@ -1045,57 +1217,57 @@ Grades follow the HLRE~v5.1 protocol. For empirical and computational support (T
 The paper uses standard mathematical and physical terms (Lie algebra, gauge field, discrete Laplacian, dispersion relation, order parameter) rather than relabellings of them, so that every result can be checked against the literature on spherical designs, Lie algebras and pattern formation.
 
 %===========================================================================
-\begin{thebibliography}{99}
+\begin{thebibliography}{99}\urlstyle{same}
 \small
-\bibitem{ref1} S. Alexander and J. McTague, Should all crystals be bcc? Landau theory of solidification and crystal nucleation, \textit{Phys.\ Rev.\ Lett.} \textbf{41} (1978) 702--705, doi:10.1103/PhysRevLett.41.702.
-\bibitem{ref2} J. Swift and P. C. Hohenberg, Hydrodynamic fluctuations at the convective instability, \textit{Phys.\ Rev.\ A} \textbf{15} (1977) 319--328, doi:10.1103/PhysRevA.15.319.
+\bibitem{ref1} S. Alexander and J. McTague, Should all crystals be bcc? Landau theory of solidification and crystal nucleation, \textit{Phys.\ Rev.\ Lett.} \textbf{41} (1978) 702--705, \href{https://doi.org/10.1103/PhysRevLett.41.702}{doi:\nolinkurl{10.1103/PhysRevLett.41.702}}.
+\bibitem{ref2} J. Swift and P. C. Hohenberg, Hydrodynamic fluctuations at the convective instability, \textit{Phys.\ Rev.\ A} \textbf{15} (1977) 319--328, \href{https://doi.org/10.1103/PhysRevA.15.319}{doi:\nolinkurl{10.1103/PhysRevA.15.319}}.
 \bibitem{ref3} J. McKay, Graphs, singularities, and finite groups, \textit{Proc.\ Sympos.\ Pure Math.} \textbf{37} (1980) 183--186.
-\bibitem{ref4} P. C. Hohenberg and B. I. Halperin, Theory of dynamic critical phenomena, \textit{Rev.\ Mod.\ Phys.} \textbf{49} (1977) 435--479, doi:10.1103/RevModPhys.49.435.
-\bibitem{ref5} P. Delsarte, J. M. Goethals and J. J. Seidel, Spherical codes and designs, \textit{Geom.\ Dedicata} \textbf{6} (1977) 363--388, doi:10.1007/BF03187604.
+\bibitem{ref4} P. C. Hohenberg and B. I. Halperin, Theory of dynamic critical phenomena, \textit{Rev.\ Mod.\ Phys.} \textbf{49} (1977) 435--479, \href{https://doi.org/10.1103/RevModPhys.49.435}{doi:\nolinkurl{10.1103/RevModPhys.49.435}}.
+\bibitem{ref5} P. Delsarte, J. M. Goethals and J. J. Seidel, Spherical codes and designs, \textit{Geom.\ Dedicata} \textbf{6} (1977) 363--388, \href{https://doi.org/10.1007/BF03187604}{doi:\nolinkurl{10.1007/BF03187604}}.
 \bibitem{ref6} J. H. Conway and N. J. A. Sloane, \textit{Sphere Packings, Lattices and Groups}, 3rd ed., Springer, New York, 1999.
-\bibitem{ref7} O. R. Musin, The kissing number in four dimensions, \textit{Ann.\ of Math.} \textbf{168} (2008) 1--32, doi:10.4007/annals.2008.168.1.
-\bibitem{ref8} A. Korkine and G. Zolotareff, Sur les formes quadratiques positives, \textit{Math.\ Ann.} \textbf{11} (1877) 242--292, doi:10.1007/BF01442667.
+\bibitem{ref7} O. R. Musin, The kissing number in four dimensions, \textit{Ann.\ of Math.} \textbf{168} (2008) 1--32, \href{https://doi.org/10.4007/annals.2008.168.1}{doi:\nolinkurl{10.4007/annals.2008.168.1}}.
+\bibitem{ref8} A. Korkine and G. Zolotareff, Sur les formes quadratiques positives, \textit{Math.\ Ann.} \textbf{11} (1877) 242--292, \href{https://doi.org/10.1007/BF01442667}{doi:\nolinkurl{10.1007/BF01442667}}.
 \bibitem{ref10} L. N. Trefethen, \textit{Spectral Methods in MATLAB}, SIAM, Philadelphia, 2000.
-\bibitem{ref11} P. Virtanen et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, \textit{Nature Methods} \textbf{17} (2020) 261--272, doi:10.1038/s41592-019-0686-2.
-\bibitem{ref12} S. Bernstein, Sur les fonctions absolument monotones, \textit{Acta Math.} \textbf{52} (1929) 1--66, doi:10.1007/BF02592679.
-\bibitem{ref13} H. Cohn, J. H. Conway, N. D. Elkies and A. Kumar, The $D_4$ root system is not universally optimal, \textit{Experiment.\ Math.} \textbf{16} (2007) 313--320, arXiv:math/0607447.
-\bibitem{ref14} D. de Laat, N. Leijenhorst and C. de Muinck Keizer, Optimality and uniqueness of the $D_4$ root system, arXiv:2404.18794 (2024).
-\bibitem{ref15} G. H. Derrick, Comments on nonlinear wave equations as models for elementary particles, \textit{J.\ Math.\ Phys.} \textbf{5} (1964) 1252--1254, doi:10.1063/1.1704233.
-\bibitem{ref16} C. Barceló, S. Liberati and M. Visser, Analogue gravity, \textit{Living Rev.\ Relativ.} \textbf{14} (2011) 3, doi:10.12942/lrr-2011-3.
-\bibitem{ref17} S. Mukohyama and J.-P. Uzan, From configuration to dynamics: emergence of Lorentz signature in classical field theory, \textit{Phys.\ Rev.\ D} \textbf{87} (2013) 065020, arXiv:1301.1361.
-\bibitem{ref18} J. Kehayias, S. Mukohyama and J.-P. Uzan, Emergent Lorentz signature, fermions, and the Standard Model, arXiv:1403.0580 (2014).
-\bibitem{ref19} L. Sindoni, Emergent models for gravity: an overview of microscopic models, \textit{SIGMA} \textbf{8} (2012) 027, arXiv:1110.0686.
-\bibitem{ref20} A. Borel and J. de Siebenthal, Les sous-groupes fermés de rang maximum des groupes de Lie clos, \textit{Comment.\ Math.\ Helv.} \textbf{23} (1949) 200--221, doi:10.5169/seals-23242.
+\bibitem{ref11} P. Virtanen et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, \textit{Nature Methods} \textbf{17} (2020) 261--272, \href{https://doi.org/10.1038/s41592-019-0686-2}{doi:\nolinkurl{10.1038/s41592-019-0686-2}}.
+\bibitem{ref12} S. Bernstein, Sur les fonctions absolument monotones, \textit{Acta Math.} \textbf{52} (1929) 1--66, \href{https://doi.org/10.1007/BF02592679}{doi:\nolinkurl{10.1007/BF02592679}}.
+\bibitem{ref13} H. Cohn, J. H. Conway, N. D. Elkies and A. Kumar, The $D_4$ root system is not universally optimal, \textit{Experiment.\ Math.} \textbf{16} (2007) 313--320, \href{https://arxiv.org/abs/math/0607447}{arXiv:\nolinkurl{math/0607447}}.
+\bibitem{ref14} D. de Laat, N. Leijenhorst and C. de Muinck Keizer, Optimality and uniqueness of the $D_4$ root system, \href{https://arxiv.org/abs/2404.18794}{arXiv:\nolinkurl{2404.18794}} (2024).
+\bibitem{ref15} G. H. Derrick, Comments on nonlinear wave equations as models for elementary particles, \textit{J.\ Math.\ Phys.} \textbf{5} (1964) 1252--1254, \href{https://doi.org/10.1063/1.1704233}{doi:\nolinkurl{10.1063/1.1704233}}.
+\bibitem{ref16} C. Barceló, S. Liberati and M. Visser, Analogue gravity, \textit{Living Rev.\ Relativ.} \textbf{14} (2011) 3, \href{https://doi.org/10.12942/lrr-2011-3}{doi:\nolinkurl{10.12942/lrr-2011-3}}.
+\bibitem{ref17} S. Mukohyama and J.-P. Uzan, From configuration to dynamics: emergence of Lorentz signature in classical field theory, \textit{Phys.\ Rev.\ D} \textbf{87} (2013) 065020, \href{https://arxiv.org/abs/1301.1361}{arXiv:\nolinkurl{1301.1361}}.
+\bibitem{ref18} J. Kehayias, S. Mukohyama and J.-P. Uzan, Emergent Lorentz signature, fermions, and the Standard Model, \href{https://arxiv.org/abs/1403.0580}{arXiv:\nolinkurl{1403.0580}} (2014).
+\bibitem{ref19} L. Sindoni, Emergent models for gravity: an overview of microscopic models, \textit{SIGMA} \textbf{8} (2012) 027, \href{https://arxiv.org/abs/1110.0686}{arXiv:\nolinkurl{1110.0686}}.
+\bibitem{ref20} A. Borel and J. de Siebenthal, Les sous-groupes fermés de rang maximum des groupes de Lie clos, \textit{Comment.\ Math.\ Helv.} \textbf{23} (1949) 200--221, \href{https://doi.org/10.5169/seals-23242}{doi:\nolinkurl{10.5169/seals-23242}}.
 \bibitem{ref21} J. E. Humphreys, \textit{Introduction to Lie Algebras and Representation Theory}, Springer, New York, 1972.
-\bibitem{ref22} J. C. Pati and A. Salam, Lepton number as the fourth color, \textit{Phys.\ Rev.\ D} \textbf{10} (1974) 275--289, doi:10.1103/PhysRevD.10.275.
-\bibitem{ref23} N. D. Mermin, The topological theory of defects in ordered media, \textit{Rev.\ Mod.\ Phys.} \textbf{51} (1979) 591--648, doi:10.1103/RevModPhys.51.591.
+\bibitem{ref22} J. C. Pati and A. Salam, Lepton number as the fourth color, \textit{Phys.\ Rev.\ D} \textbf{10} (1974) 275--289, \href{https://doi.org/10.1103/PhysRevD.10.275}{doi:\nolinkurl{10.1103/PhysRevD.10.275}}.
+\bibitem{ref23} N. D. Mermin, The topological theory of defects in ordered media, \textit{Rev.\ Mod.\ Phys.} \textbf{51} (1979) 591--648, \href{https://doi.org/10.1103/RevModPhys.51.591}{doi:\nolinkurl{10.1103/RevModPhys.51.591}}.
 \bibitem{ref24} A. Hurwitz, Über die Zahlentheorie der Quaternionen, \textit{Nachr.\ Ges.\ Wiss.\ Göttingen} (1896) 314--340.
 \bibitem{ref25} H. S. M. Coxeter and W. O. J. Moser, \textit{Generators and Relations for Discrete Groups}, Springer, Berlin, 1957.
-\bibitem{ref26} F. Gürsey, P. Ramond and P. Sikivie, A universal gauge theory model based on $E_6$, \textit{Phys.\ Lett.\ B} \textbf{60} (1976) 177--180, doi:10.1016/0370-2693(76)90417-2.
-\bibitem{ref27} H. Fritzsch and P. Minkowski, Unified interactions of leptons and hadrons, \textit{Ann.\ Phys.} \textbf{93} (1975) 193--266, doi:10.1016/0003-4916(75)90211-0.
-\bibitem{ref28} H. Georgi and S. L. Glashow, Unity of all elementary-particle forces, \textit{Phys.\ Rev.\ Lett.} \textbf{32} (1974) 438--441, doi:10.1103/PhysRevLett.32.438.
-\bibitem{ref29} R. Slansky, Group theory for unified model building, \textit{Phys.\ Rep.} \textbf{79} (1981) 1--128, doi:10.1016/0370-1573(81)90092-2.
+\bibitem{ref26} F. Gürsey, P. Ramond and P. Sikivie, A universal gauge theory model based on $E_6$, \textit{Phys.\ Lett.\ B} \textbf{60} (1976) 177--180, \href{https://doi.org/10.1016/0370-2693(76)90417-2}{doi:\nolinkurl{10.1016/0370-2693(76)90417-2}}.
+\bibitem{ref27} H. Fritzsch and P. Minkowski, Unified interactions of leptons and hadrons, \textit{Ann.\ Phys.} \textbf{93} (1975) 193--266, \href{https://doi.org/10.1016/0003-4916(75)90211-0}{doi:\nolinkurl{10.1016/0003-4916(75)90211-0}}.
+\bibitem{ref28} H. Georgi and S. L. Glashow, Unity of all elementary-particle forces, \textit{Phys.\ Rev.\ Lett.} \textbf{32} (1974) 438--441, \href{https://doi.org/10.1103/PhysRevLett.32.438}{doi:\nolinkurl{10.1103/PhysRevLett.32.438}}.
+\bibitem{ref29} R. Slansky, Group theory for unified model building, \textit{Phys.\ Rep.} \textbf{79} (1981) 1--128, \href{https://doi.org/10.1016/0370-1573(81)90092-2}{doi:\nolinkurl{10.1016/0370-1573(81)90092-2}}.
 \bibitem{ref30} M. Newman, \textit{Integral Matrices}, Academic Press, New York, 1972.
 \bibitem{ref31} A. Lichnerowicz, Spineurs harmoniques, \textit{C.\ R.\ Acad.\ Sci.\ Paris} \textbf{257} (1963) 7--9.
 \bibitem{ref32} H. B. Lawson and M.-L. Michelsohn, \textit{Spin Geometry}, Princeton University Press, Princeton, 1989.
-\bibitem{ref33} J. Preskill, Magnetic monopoles, \textit{Annu.\ Rev.\ Nucl.\ Part.\ Sci.} \textbf{34} (1984) 461--530, doi:10.1146/annurev.ns.34.120184.002333.
-\bibitem{ref34} L. de Moura et al., The Lean theorem prover (system description), in \textit{Automated Deduction, CADE-25}, Lecture Notes in Comput.\ Sci.\ \textbf{9195}, Springer, 2015, 378--388, doi:10.1007/978-3-319-21401-6\_26.
-\bibitem{ref35} The Mathlib Community, The Lean mathematical library, in \textit{Proc.\ 9th ACM SIGPLAN Int.\ Conf.\ on Certified Programs and Proofs (CPP 2020)}, 367--381, doi:10.1145/3372885.3373824.
-\bibitem{ref36} A. Meurer et al., SymPy: symbolic computing in Python, \textit{PeerJ Comput.\ Sci.} \textbf{3} (2017) e103, doi:10.7717/peerj-cs.103.
-\bibitem{ref37} J. S. Bell, On the Einstein Podolsky Rosen paradox, \textit{Physics} \textbf{1} (1964) 195--200, doi:10.1103/PhysicsPhysiqueFizika.1.195.
-\bibitem{ref38} S. Hossenfelder and T. Palmer, Rethinking superdeterminism, \textit{Front.\ Phys.} \textbf{8} (2020) 139, doi:10.3389/fphy.2020.00139.
-\bibitem{ref39} J. A. van Meel, D. Frenkel and P. Charbonneau, Geometrical frustration: a study of four-dimensional hard spheres, \textit{Phys.\ Rev.\ E} \textbf{79} (2009) 030201(R), doi:10.1103/PhysRevE.79.030201.
-\bibitem{ref40} R. S. Hoy, Homogeneous crystallization in four-dimensional Lennard-Jones liquids, \textit{Phys.\ Rev.\ E} \textbf{109} (2024) 044604, doi:10.1103/PhysRevE.109.044604, arXiv:2311.03465.
-\bibitem{ref41} J. Greensite, Dynamical origin of the Lorentzian signature of spacetime, \textit{Phys.\ Lett.\ B} \textbf{300} (1993) 34, arXiv:gr-qc/9210008.
-\bibitem{ref42} A. Carlini and J. Greensite, Why is spacetime Lorentzian?, \textit{Phys.\ Rev.\ D} \textbf{49} (1994) 866--878, doi:10.1103/PhysRevD.49.866.
-\bibitem{ref43} H. Cohn and A. Kumar, Universally optimal distribution of points on spheres, \textit{J.\ Amer.\ Math.\ Soc.} \textbf{20} (2007) 99--148, doi:10.1090/S0894-0347-06-00546-7.
-\bibitem{ref44} B. Groh and B. Mulder, Why all crystals need not be bcc: symmetry breaking at the liquid--solid transition revisited, \textit{Phys.\ Rev.\ E} \textbf{59} (1999) 5613--5620, doi:10.1103/PhysRevE.59.5613.
-\bibitem{ref45} S. Elitzur, B. Karni and E. Rabinovici, A comment on BCC crystallization in higher dimensions, \textit{Mod.\ Phys.\ Lett.\ B} \textbf{25} (2011) 1343--1347, doi:10.1142/S0217984911026358, arXiv:1101.1631.
-\bibitem{ref46} P. Stefanovic, M. Haataja and N. Provatas, Phase-field crystals with elastic interactions, \textit{Phys.\ Rev.\ Lett.} \textbf{96} (2006) 225504, doi:10.1103/PhysRevLett.96.225504.
+\bibitem{ref33} J. Preskill, Magnetic monopoles, \textit{Annu.\ Rev.\ Nucl.\ Part.\ Sci.} \textbf{34} (1984) 461--530, \href{https://doi.org/10.1146/annurev.ns.34.120184.002333}{doi:\nolinkurl{10.1146/annurev.ns.34.120184.002333}}.
+\bibitem{ref34} L. de Moura et al., The Lean theorem prover (system description), in \textit{Automated Deduction, CADE-25}, Lecture Notes in Comput.\ Sci.\ \textbf{9195}, Springer, 2015, 378--388, \href{https://doi.org/10.1007/978-3-319-21401-6_26}{doi:\nolinkurl{10.1007/978-3-319-21401-6_26}}.
+\bibitem{ref35} The Mathlib Community, The Lean mathematical library, in \textit{Proc.\ 9th ACM SIGPLAN Int.\ Conf.\ on Certified Programs and Proofs (CPP 2020)}, 367--381, \href{https://doi.org/10.1145/3372885.3373824}{doi:\nolinkurl{10.1145/3372885.3373824}}.
+\bibitem{ref36} A. Meurer et al., SymPy: symbolic computing in Python, \textit{PeerJ Comput.\ Sci.} \textbf{3} (2017) e103, \href{https://doi.org/10.7717/peerj-cs.103}{doi:\nolinkurl{10.7717/peerj-cs.103}}.
+\bibitem{ref37} J. S. Bell, On the Einstein Podolsky Rosen paradox, \textit{Physics} \textbf{1} (1964) 195--200, \href{https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195}{doi:\nolinkurl{10.1103/PhysicsPhysiqueFizika.1.195}}.
+\bibitem{ref38} S. Hossenfelder and T. Palmer, Rethinking superdeterminism, \textit{Front.\ Phys.} \textbf{8} (2020) 139, \href{https://doi.org/10.3389/fphy.2020.00139}{doi:\nolinkurl{10.3389/fphy.2020.00139}}.
+\bibitem{ref39} J. A. van Meel, D. Frenkel and P. Charbonneau, Geometrical frustration: a study of four-dimensional hard spheres, \textit{Phys.\ Rev.\ E} \textbf{79} (2009) 030201(R), \href{https://doi.org/10.1103/PhysRevE.79.030201}{doi:\nolinkurl{10.1103/PhysRevE.79.030201}}.
+\bibitem{ref40} R. S. Hoy, Homogeneous crystallization in four-dimensional Lennard-Jones liquids, \textit{Phys.\ Rev.\ E} \textbf{109} (2024) 044604, \href{https://doi.org/10.1103/PhysRevE.109.044604}{doi:\nolinkurl{10.1103/PhysRevE.109.044604}}, \href{https://arxiv.org/abs/2311.03465}{arXiv:\nolinkurl{2311.03465}}.
+\bibitem{ref41} J. Greensite, Dynamical origin of the Lorentzian signature of spacetime, \textit{Phys.\ Lett.\ B} \textbf{300} (1993) 34, \href{https://arxiv.org/abs/gr-qc/9210008}{arXiv:\nolinkurl{gr-qc/9210008}}.
+\bibitem{ref42} A. Carlini and J. Greensite, Why is spacetime Lorentzian?, \textit{Phys.\ Rev.\ D} \textbf{49} (1994) 866--878, \href{https://doi.org/10.1103/PhysRevD.49.866}{doi:\nolinkurl{10.1103/PhysRevD.49.866}}.
+\bibitem{ref43} H. Cohn and A. Kumar, Universally optimal distribution of points on spheres, \textit{J.\ Amer.\ Math.\ Soc.} \textbf{20} (2007) 99--148, \href{https://doi.org/10.1090/S0894-0347-06-00546-7}{doi:\nolinkurl{10.1090/S0894-0347-06-00546-7}}.
+\bibitem{ref44} B. Groh and B. Mulder, Why all crystals need not be bcc: symmetry breaking at the liquid--solid transition revisited, \textit{Phys.\ Rev.\ E} \textbf{59} (1999) 5613--5620, \href{https://doi.org/10.1103/PhysRevE.59.5613}{doi:\nolinkurl{10.1103/PhysRevE.59.5613}}.
+\bibitem{ref45} S. Elitzur, B. Karni and E. Rabinovici, A comment on BCC crystallization in higher dimensions, \textit{Mod.\ Phys.\ Lett.\ B} \textbf{25} (2011) 1343--1347, \href{https://doi.org/10.1142/S0217984911026358}{doi:\nolinkurl{10.1142/S0217984911026358}}, \href{https://arxiv.org/abs/1101.1631}{arXiv:\nolinkurl{1101.1631}}.
+\bibitem{ref46} P. Stefanovic, M. Haataja and N. Provatas, Phase-field crystals with elastic interactions, \textit{Phys.\ Rev.\ Lett.} \textbf{96} (2006) 225504, \href{https://doi.org/10.1103/PhysRevLett.96.225504}{doi:\nolinkurl{10.1103/PhysRevLett.96.225504}}.
 \bibitem{ref47} P. M. Chaikin and T. C. Lubensky, \textit{Principles of Condensed Matter Physics}, Cambridge University Press, Cambridge, 1995.
-\bibitem{ref48} K. Osterwalder and R. Schrader, Axioms for Euclidean Green's functions, \textit{Comm.\ Math.\ Phys.} \textbf{31} (1973) 83--112, doi:10.1007/BF01645738.
-\bibitem{ref49} K. Osterwalder and R. Schrader, Axioms for Euclidean Green's functions II, \textit{Comm.\ Math.\ Phys.} \textbf{42} (1975) 281--305, doi:10.1007/BF01608978.
-\bibitem{ref50} J. G. Williams, S. G. Turyshev and D. H. Boggs, Progress in lunar laser ranging tests of relativistic gravity, \textit{Phys.\ Rev.\ Lett.} \textbf{93} (2004) 261101, doi:10.1103/PhysRevLett.93.261101.
+\bibitem{ref48} K. Osterwalder and R. Schrader, Axioms for Euclidean Green's functions, \textit{Comm.\ Math.\ Phys.} \textbf{31} (1973) 83--112, \href{https://doi.org/10.1007/BF01645738}{doi:\nolinkurl{10.1007/BF01645738}}.
+\bibitem{ref49} K. Osterwalder and R. Schrader, Axioms for Euclidean Green's functions II, \textit{Comm.\ Math.\ Phys.} \textbf{42} (1975) 281--305, \href{https://doi.org/10.1007/BF01608978}{doi:\nolinkurl{10.1007/BF01608978}}.
+\bibitem{ref50} J. G. Williams, S. G. Turyshev and D. H. Boggs, Progress in lunar laser ranging tests of relativistic gravity, \textit{Phys.\ Rev.\ Lett.} \textbf{93} (2004) 261101, \href{https://doi.org/10.1103/PhysRevLett.93.261101}{doi:\nolinkurl{10.1103/PhysRevLett.93.261101}}.
 \end{thebibliography}
 
 \section*{A note on assistance}
