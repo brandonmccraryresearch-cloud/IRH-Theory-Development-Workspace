@@ -22,13 +22,13 @@ Source: `a-gd3c_RULING.md`, sha256 `ca0aebed68bdfe07675685e861eff8f570aff0d9de40
 
 - **Status-note wording (RF2, ToE bar T1.1).** "$D_4$ (up to rotation among the 97 shell subsystems) is selected at $L=5\pi$, P1, 80/80 over two routes (F2/I1). At P2 the fraction is 0.975 per route ('mixed' at frozen n=40). Under prior U\* (Dragon's choice, swappable) the 62-point sliver label is 'selects $D_4$' (F2/I1). The only competitor is $2.14\times10^{-3}$ above $D_4$. T1.1 stays PARTIAL: box-scoped, three box sizes, no infinite-volume claim."
 - **Prior sentence (RF3).** Every pooled rate must carry "under prior U\* (Dragon's choice, swappable)". Do not write "D4 is selected on the sliver" without it. The prior is Dragon's choice under Brandon's 2026-11-27 delegation (`coord/D-1403-prior.md`, sha256 `a6f9be78abaf…`); a manuscript may swap it, using the per-point table (P1 1.0, P2 0.975, S0–S3 1.0).
-- **Do not cite** "$D_4$ dynamically selected" without the box scope; no infinite-volume statement is established. Member-type ordering at $N=32$ (including "star highest") is grid aliasing (C/I1).
+- **Do not cite** "$D_4$ dynamically selected" without the box scope; no infinite-volume statement is established. Member-type ordering at $N=32$ (including "star highest") is grid aliasing (C/I1). (author note, from a-gd3c §4 'Not established')
 
 ## 3. Projection / icosahedral signature S2 — a-ga12s2d
 
 Source: `a-ga12s2d_RULING.md`, sha256 `b9b422d9fc19516fdab9ad82dc2234e87f693bc0539189997af6e607e610863a`. v94 §II.10 / §IX.1.5 (G-A12).
 
-- **Status-note wording (ToE bar T1.3).** "93.769% certified (C/I1), 0 U leaves; ball cover 11/13 charts tiled (F3/I1); tier status unchanged (PARTIAL)." The coverage figure is the run-13 measurement; run 14 gives only the frozen bound [0.93769, 0.93771]. Any "96.769%" is a transcription error.
+- **Status-note wording (ToE bar T1.3).** "93.769% certified (C/I1), 0 U leaves; ball cover 11/13 charts tiled (F3/I1); tier status unchanged (PARTIAL)." The coverage figure is the run-13 measurement; run 14 gives only the frozen bound [0.93769, 0.93771].
 
 ## 4. G-E5 ($p=5$) — a-ge5
 
